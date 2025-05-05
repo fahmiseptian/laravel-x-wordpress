@@ -11,20 +11,41 @@ class PageController extends BaseController
 {
     public function index()
     {
-        // Test Login
         $wordpress = new Wordpress();
         $wordpress->Token();
-
-
         $token = session('wp_token');
-        $response = Http::withToken($token)
+
+        // Ambil halaman bahasa Indonesia
+        $response_id = Http::withToken($token)
             ->get(env('URL_WP') . '/wp-json/wp/v2/pages', [
-                'status' => 'any'
+                'status' => 'any',
+                'lang' => 'id'
             ]);
 
-        $pages = $response->json();
+        // Ambil halaman bahasa Inggris
+        $response_en = Http::withToken($token)
+            ->get(env('URL_WP') . '/wp-json/wp/v2/pages', [
+                'status' => 'any',
+                'lang' => 'en'
+            ]);
+
+        $pages_id = $response_id->json();
+        $pages_en = $response_en->json();
+
+        // Tambahkan informasi bahasa manual
+        foreach ($pages_id as &$page) {
+            $page['lang'] = 'id';
+        }
+        foreach ($pages_en as &$page) {
+            $page['lang'] = 'en';
+        }
+
+        // Gabungkan
+        $pages = array_merge($pages_id, $pages_en);
+
         return view('page.index', compact('pages'));
     }
+
 
     public function UpdatePage(Request $request)
     {

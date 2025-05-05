@@ -35,11 +35,19 @@
                             <option value="publish">Publish</option>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="lang" class="form-label">Bahasa</label>
+                        <select class="form-control" id="lang" name="lang">
+                            <option value="id">Indonesia</option>
+                            <option value="en">Inggris</option>
+                        </select>
+                    </div>
 
                     <!-- Input Gambar Sampul -->
                     <div class="mb-3">
-                        <label for="cover_image" class="form-label">Gambar Sampul</label>
-                        <input type="file" class="form-control" id="cover_image" name="cover_image" accept="image/*">
+                        <label for="featured_image" class="form-label">Gambar Sampul</label>
+                        <input type="file" class="form-control" id="featured_image" name="featured_image"
+                            accept="image/*">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Simpan Postingan</button>
@@ -67,7 +75,7 @@
             formData.append('content', tinymce.get('content').getContent());
 
             $.ajax({
-                url: '/api/post-add', 
+                url: '/api/post-add',
                 type: 'POST',
                 data: formData,
                 processData: false,
@@ -75,7 +83,7 @@
                 success: function(response) {
                     if (response.status === 'success') {
                         alert('Post berhasil ditambahkan');
-                        window.location.href = '{{ route("posts") }}'; 
+                        window.location.href = '{{ route('posts') }}';
                     } else {
                         alert('Gagal menambahkan post: ' + response.message);
                     }

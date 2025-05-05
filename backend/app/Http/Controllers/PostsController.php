@@ -11,19 +11,37 @@ class PostsController extends BaseController
 {
     function index()
     {
-        // Test Login
         $wordpress = new Wordpress();
         $wordpress->Token();
         $token = session('wp_token');
 
-        $response = Http::withToken($token)
-            ->get(env('URL_WP') . '/wp-json/wp/v2/posts', [
-                'status' => 'any'
-            ]);
+        $response_id = Http::withToken($token)->get(env('URL_WP') . '/wp-json/wp/v2/posts', [
+            'status' => 'any',
+            'lang' => 'id',
+        ]);
 
-        $posts = $response->json();
+        $response_en = Http::withToken($token)->get(env('URL_WP') . '/wp-json/wp/v2/posts', [
+            'status' => 'any',
+            'lang' => 'en',
+        ]);
+
+        $posts_id = $response_id->json();
+        $posts_en = $response_en->json();
+
+        // Tambahkan field 'lang' secara manual jika belum ada
+        foreach ($posts_id as &$post) {
+            $post['lang'] = 'id';
+        }
+        foreach ($posts_en as &$post) {
+            $post['lang'] = 'en';
+        }
+
+        // Gabungkan keduanya
+        $posts = array_merge($posts_id, $posts_en);
+
         return view('posts.index', compact('posts'));
     }
+
 
     function addView()
     {
@@ -35,6 +53,7 @@ class PostsController extends BaseController
         $title = $request->input('title');
         $content = $request->input('content');
         $status = $request->input('status');
+        $lang = $request->input('lang'); //id or en
         $featured_image = $request->file('featured_image');
 
         $wordpress = new Wordpress();
@@ -53,6 +72,7 @@ class PostsController extends BaseController
                 'title' => $title,
                 'content' => $content,
                 'status' => $status,
+                'lang' => $lang,
                 'featured_media' => $featured_image_id,
             ]);
 
@@ -75,18 +95,19 @@ class PostsController extends BaseController
         $wordpress->Token();
         $token = session('wp_token');
 
-        // Mengirim permintaan POST untuk mengupload gambar ke WordPress
         $response = Http::withToken($token)
-            ->attach('file', file_get_contents($file), 'featured_image.jpg') // pastikan file diattach dengan benar
-            ->post(env('URL_WP') . '/wp-json/wp/v2/media', [
-                'headers' => [
-                    'Content-Type' => 'image/jpeg'
-                ]
-            ]);
+            ->attach(
+                'file',
+                file_get_contents($file),
+                $file->getClientOriginalName()
+            )
+            ->post(env('URL_WP') . '/wp-json/wp/v2/media');
 
         if ($response->successful()) {
             return $response->json()['id'];
         } else {
+            // Debugging jika gagal
+            logger($response->body());
             return null;
         }
     }

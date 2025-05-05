@@ -21,43 +21,49 @@
                                 <th>ID</th>
                                 <th>Title</th>
                                 <th>Slug</th>
+                                <th>Bahasa</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
                             @forelse ($pages as $page)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $page['title']['rendered'] ?? '-' }}</td>
-                                <td>{{ $page['slug'] }}</td>
-                                <td>
-                                    @if($page['status'] === 'publish')
-                                    <span title="Published" style="color: green;" onclick="updatePageStatus('{{ $page['id'] }}', 'draft')">
-                                        <i class="bi bi-check-circle-fill"></i>
-                                    </span>
-                                    @else
-                                    <span title="Draft" style="color: gray;" onclick="updatePageStatus('{{ $page['id'] }}', 'publish')">
-                                        <i class="bi bi-dash-circle-fill"></i>
-                                    </span>
-                                    @endif
-                                </td>
-                                <td>
-                                    <!-- Edit (lempar ke Elementor) -->
-                                    <a href="{{ env('URL_WP') }}/auto-login?token={{ env('TOKEN_WP') }}&post={{ $page['id'] }}" class="btn btn-sm btn-primary" title="Edit Elementor" target="_blank">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $page['title']['rendered'] ?? '-' }}</td>
+                                    <td>{{ $page['slug'] }}</td>
+                                    <td>{{ $page['lang'] }}</td>
+                                    <td>
+                                        @if ($page['status'] === 'publish')
+                                            <span title="Published" style="color: green;"
+                                                onclick="updatePageStatus('{{ $page['id'] }}', 'draft')">
+                                                <i class="bi bi-check-circle-fill"></i>
+                                            </span>
+                                        @else
+                                            <span title="Draft" style="color: gray;"
+                                                onclick="updatePageStatus('{{ $page['id'] }}', 'publish')">
+                                                <i class="bi bi-dash-circle-fill"></i>
+                                            </span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <!-- Edit (lempar ke Elementor) -->
+                                        <a href="{{ env('URL_WP') }}/auto-login?token={{ env('TOKEN_WP') }}&post={{ $page['id'] }}"
+                                            class="btn btn-sm btn-primary" title="Edit Elementor" target="_blank">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
 
-                                    <!-- Delete -->
-                                    <button class="btn btn-sm btn-danger" title="Delete" onclick="deletePage('{{ $page['id'] }}')">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
+                                        <!-- Delete -->
+                                        <button class="btn btn-sm btn-danger" title="Delete"
+                                            onclick="deletePage('{{ $page['id'] }}')">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
                             @empty
-                            <tr>
-                                <td colspan="5" class="text-center">Tidak ada data halaman.</td>
-                            </tr>
+                                <tr>
+                                    <td colspan="5" class="text-center">Tidak ada data halaman.</td>
+                                </tr>
                             @endforelse
                         </tbody>
                     </table>

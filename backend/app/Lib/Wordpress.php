@@ -10,8 +10,8 @@ class Wordpress
     {
         // Data login yang dikirim ke WordPress
         $response = Http::post(env('URL_WP') . '/wp-json/jwt-auth/v1/token', [
-            'username' => 'Admin',
-            'password' => 'Admin@1020',
+            'username' => 'Admin Del',
+            'password' => 'Fahmi@1020',
         ]);
 
         if ($response->successful()) {

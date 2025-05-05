@@ -23,27 +23,37 @@
                             <tr>
                                 <th>No</th>
                                 <th>Judul</th>
+                                <th>Bahasa</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
                             @foreach ($posts as $index => $post)
-                            <tr>
-                                <td>{{ $index + 1 }}</td>
-                                <td>{{ $post['title']['rendered'] }}</td>
-                                <td>
-                                    @if ($post['status'] !== 'publish')
-                                    <button class="btn btn-warning btn-sm update-status" onclick="updatePostStatus('{{ $post['id'] }}', 'publish')"> <i class="bi bi-arrow-down-circle-fill"></i> Draft</button>
-                                    @else
-                                    <button class="btn btn-success btn-sm update-status" onclick="updatePostStatus('{{ $post['id'] }}', 'draft')"><i class="bi bi-arrow-up-circle-fill"></i> Publish</button>
-                                    @endif
-                                </td>
-                                <td>
-                                    <button class="btn btn-primary btn-sm edit-post" data-id="{{ $post['id'] }}" data-title="{{ $post['title']['rendered'] }}"><i class="bi bi-pencil-square"></i> Edit</button>
-                                    <button class="btn btn-danger btn-sm delete-post" onclick="deletePost('{{ $post['id'] }}')"><i class="bi bi-trash"></i> Delete</button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ $post['title']['rendered'] }}</td>
+                                    <td>{{ $post['lang'] }}</td>
+                                    <td>
+                                        @if ($post['status'] !== 'publish')
+                                            <button class="btn btn-warning btn-sm update-status"
+                                                onclick="updatePostStatus('{{ $post['id'] }}', 'publish')"> <i
+                                                    class="bi bi-arrow-down-circle-fill"></i> Draft</button>
+                                        @else
+                                            <button class="btn btn-success btn-sm update-status"
+                                                onclick="updatePostStatus('{{ $post['id'] }}', 'draft')"><i
+                                                    class="bi bi-arrow-up-circle-fill"></i> Publish</button>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm edit-post" data-id="{{ $post['id'] }}"
+                                            data-title="{{ $post['title']['rendered'] }}"><i
+                                                class="bi bi-pencil-square"></i> Edit</button>
+                                        <button class="btn btn-danger btn-sm delete-post"
+                                            onclick="deletePost('{{ $post['id'] }}')"><i class="bi bi-trash"></i>
+                                            Delete</button>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
