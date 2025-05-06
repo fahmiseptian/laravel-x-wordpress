@@ -2,44 +2,92 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'email',
+        'username',
         'password',
+        'status'
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
+
+    public static function register(array $data)
+    {
+        return self::create([
+            'name'     => $data['name'],
+            'email'    => $data['email'],
+            'username' => $data['username'],
+            'password' => Hash::make($data['password']),
+            'status'   => 'active',
+        ]);
+    }
+
+    public static function checkStatus($identifier)
+    {
+        return self::where('email', $identifier)
+            ->orWhere('username', $identifier)
+            ->select('id', 'email', 'username', 'status')
+            ->first();
+    }
+
+    public static function editUser($id)
+    {
+        return self::find($id);
+    }
+
+    public static function updateUser($id, array $data)
+    {
+        $user = self::findOrFail($id);
+
+        if (isset($data['password']) && $data['password']) {
+            $data['password'] = Hash::make($data['password']);
+        } else {
+            unset($data['password']);
+        }
+
+        $user->update($data);
+        return $user;
+    }
+
+    public static function updateStatus($id, $status)
+    {
+        $user = self::findOrFail($id);
+        $user->status = $status;
+        $user->save();
+        return $user;
+    }
+
+    public static function getDetail($id)
+    {
+        return self::find($id);
+    }
+
+    public static function changePassword($id, $oldPassword, $newPassword)
+    {
+        $user = self::find($id);
+
+        if (!$user || !Hash::check($oldPassword, $user->password)) {
+            return false;
+        }
+
+        $user->password = Hash::make($newPassword);
+        $user->save();
+
+        return true;
+    }
 }

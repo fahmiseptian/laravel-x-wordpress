@@ -15,17 +15,17 @@
             @include('partials.navbar')
             <div class="container-fluid">
                 <div class="mb-2">
-                    <a href="{{ route('posts.add') }}" class="btn btn-success">Tambah Postingan Baru</a>
+                    <a href="{{ route('posts.add') }}" class="btn btn-success">Add New Post</a>
                 </div>
                 <div class="table-responsive mt-3">
                     <table class="table text-nowrap align-middle mb-0">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Judul</th>
-                                <th>Bahasa</th>
+                                <th>Title</th>
+                                <th>Language</th>
                                 <th>Status</th>
-                                <th>Aksi</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
@@ -33,7 +33,7 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $post['title']['rendered'] }}</td>
-                                    <td>{{ $post['lang'] }}</td>
+                                    <td>{{ $post['lang'] == 'en' ? 'English' : 'Indonesia' }}</td>
                                     <td>
                                         @if ($post['status'] !== 'publish')
                                             <button class="btn btn-warning btn-sm update-status"
@@ -46,9 +46,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button class="btn btn-primary btn-sm edit-post" data-id="{{ $post['id'] }}"
-                                            data-title="{{ $post['title']['rendered'] }}"><i
-                                                class="bi bi-pencil-square"></i> Edit</button>
+                                        <a href="{{ route('posts.edit', ['id' => $post['id']]) }}" class="btn btn-primary btn-sm edit-post"><i
+                                                class="bi bi-pencil-square"></i> Edit</a>
                                         <button class="btn btn-danger btn-sm delete-post"
                                             onclick="deletePost('{{ $post['id'] }}')"><i class="bi bi-trash"></i>
                                             Delete</button>

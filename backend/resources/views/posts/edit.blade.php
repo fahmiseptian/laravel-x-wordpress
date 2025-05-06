@@ -14,40 +14,18 @@
             @include('partials.navbar')
 
             <div class="container-fluid">
-                <h1 class="my-4">Add New Post</h1>
+                <h1 class="my-4">Edit Post</h1>
 
-                <form id="add-post-form">
-                    @csrf
+                <form id="edit-post-form">
                     <div class="mb-3">
                         <label for="title" class="form-label">Post Title</label>
-                        <input type="text" class="form-control" id="title" name="title" required>
+                        <input type="text" class="form-control" id="title" name="title" required value="{{ $post['title']['rendered'] ?? '' }}">
+                        <input type="text" class="form-control" id="id" name="id" required value="{{ $post['id'] }}" hidden>
                     </div>
 
                     <div class="mb-3">
                         <label for="content" class="form-label">Post Content</label>
-                        <textarea class="form-control" id="content" name="content" rows="10"></textarea>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="status" class="form-label">Status</label>
-                        <select class="form-control" id="status" name="status">
-                            <option value="draft">Draft</option>
-                            <option value="publish">Publish</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="lang" class="form-label">Language</label>
-                        <select class="form-control" id="lang" name="lang">
-                            <option value="id">Indonesian</option>
-                            <option value="en">English</option>
-                        </select>
-                    </div>
-
-                    <!-- Input Gambar Sampul -->
-                    <div class="mb-3">
-                        <label for="featured_image" class="form-label">Featured Image</label>
-                        <input type="file" class="form-control" id="featured_image" name="featured_image"
-                            accept="image/*">
+                        <textarea class="form-control" id="content" name="content" rows="10">{{ $post['content']['rendered'] ?? '' }}</textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Save Post</button>
@@ -63,28 +41,28 @@
         // Initialize TinyMCE editor
         tinymce.init({
             selector: '#content',
-            height: 300,
+            height: 700,
             plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor colorpicker textpattern',
             toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code'
         });
 
-        $('#add-post-form').submit(function(e) {
+        $('#edit-post-form').submit(function(e) {
             e.preventDefault();
 
             var formData = new FormData(this);
             formData.append('content', tinymce.get('content').getContent());
 
             $.ajax({
-                url: '/api/post-add',
+                url: '/api/post-update',
                 type: 'POST',
                 data: formData,
                 processData: false,
-                contentType: false,
+                contentType: false, 
                 success: function(response) {
                     if (response.status === 'success') {
                         Swal.fire({
                             icon: 'success',
-                            title: 'Post successfully added',
+                            title: 'Post successfully updated',
                             showConfirmButton: false,
                             timer: 1500
                         }).then(() => {
@@ -93,7 +71,7 @@
                     } else {
                         Swal.fire({
                             icon: 'error',
-                            title: 'Failed to add post',
+                            title: 'Failed to update post',
                             text: response.message,
                             showConfirmButton: true
                         });

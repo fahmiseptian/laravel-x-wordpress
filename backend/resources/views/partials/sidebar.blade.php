@@ -16,8 +16,8 @@
                     <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
                     <span class="hide-menu">Home</span>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                <li class="sidebar-item active">
+                    <a class="sidebar-link" href="{{ route('home') }}" aria-expanded="false">
                         <span>
                             <iconify-icon icon="solar:home-smile-bold-duotone" class="fs-6"></iconify-icon>
                         </span>
@@ -39,33 +39,41 @@
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('page') }}" aria-expanded="false">
                         <span>
-                            <iconify-icon icon="solar:danger-circle-bold-duotone" class="fs-6"></iconify-icon>
+                            <iconify-icon icon="material-symbols:page-header-sharp" class="fs-6"></iconify-icon>
                         </span>
-                        <span class="hide-menu">Page</span>
+                        <span class="hide-menu">Pages</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('contact-us') }}" aria-expanded="false">
                         <span>
-                            <iconify-icon icon="solar:bookmark-square-minimalistic-bold-duotone" class="fs-6"></iconify-icon>
+                            <iconify-icon icon="ic:baseline-message" class="fs-6"></iconify-icon>
                         </span>
-                        <span class="hide-menu">Contact Us</span>
+                        <span class="hide-menu">Messages</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('banner') }}" aria-expanded="false">
                         <span>
-                            <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
+                            <iconify-icon icon="material-symbols:planner-banner-ad-pt-rounded" class="fs-6"></iconify-icon>
                         </span>
-                        <span class="hide-menu">Banner Setting</span>
+                        <span class="hide-menu">Banner Settings</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('theme') }}" aria-expanded="false">
                         <span>
-                            <iconify-icon icon="solar:text-field-focus-bold-duotone" class="fs-6"></iconify-icon>
+                            <iconify-icon icon="mdi:theme" class="fs-6"></iconify-icon>
                         </span>
-                        <span class="hide-menu">User</span>
+                        <span class="hide-menu">Theme Builder</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('users') }}" aria-expanded="false">
+                        <span>
+                            <iconify-icon icon="mdi:users" class="fs-6"></iconify-icon>
+                        </span>
+                        <span class="hide-menu">Users</span>
                     </a>
                 </li>
             </ul>

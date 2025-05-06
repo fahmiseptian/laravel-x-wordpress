@@ -18,10 +18,10 @@
                     <table class="table text-nowrap align-middle mb-0">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>No</th>
                                 <th>Title</th>
                                 <th>Slug</th>
-                                <th>Bahasa</th>
+                                <th>Language</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -32,7 +32,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $page['title']['rendered'] ?? '-' }}</td>
                                     <td>{{ $page['slug'] }}</td>
-                                    <td>{{ $page['lang'] }}</td>
+                                    <td>{{ $page['lang'] == 'en' ? 'English' : 'Indonesia' }}</td>
                                     <td>
                                         @if ($page['status'] === 'publish')
                                             <span title="Published" style="color: green;"

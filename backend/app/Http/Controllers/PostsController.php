@@ -89,6 +89,23 @@ class PostsController extends BaseController
         }
     }
 
+    function editView($id)
+    {
+        $wordpress = new Wordpress();
+        $wordpress->Token();
+        $token = session('wp_token');
+
+        $response = Http::withToken($token)->get(env('URL_WP') . '/wp-json/wp/v2/posts/' . $id);
+
+        if ($response->successful()) {
+            $post = $response->json();
+            return view('posts.edit', compact('post'));
+        } else {
+            abort(404, 'Post tidak ditemukan');
+        }
+    }
+
+
     public function uploadFeaturedImage($file)
     {
         $wordpress = new Wordpress();
