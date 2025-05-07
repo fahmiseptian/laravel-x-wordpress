@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Imunify Security 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/imunify-security\n"
+"Last-Translator: CloudLinux\n"
+"Language-Team: Slovak\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-01-21T09:14:34+00:00\n"
+"PO-Revision-Date: 2025-01-21T09:14:34+00:00\n"
+"Language: sk_SK\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: imunify-security\n"
+
+#. Plugin Name of the plugin
+#: imunify-security.php
+#: inc/App/Views/Widget.php:157
+msgid "Imunify Security"
+msgstr "Imunify Security"
+
+#. Plugin URI of the plugin
+#: imunify-security.php
+msgid "https://imunify360.com/"
+msgstr "https://imunify360.com/"
+
+#. Description of the plugin
+#: imunify-security.php
+msgid "Imunify Security WordPress plugin is a comprehensive tool offering malware scanning, firewall protection, and intrusion detection for WordPress websites."
+msgstr "Plugin Imunify Security pre WordPress je komplexný nástroj ponúkajúci skenovanie malvéru, ochranu firewallu a detekciu prienikov pre webové stránky WordPress."
+
+#. Author of the plugin
+#: imunify-security.php
+msgid "CloudLinux"
+msgstr "CloudLinux"
+
+#. Author URI of the plugin
+#: imunify-security.php
+msgid "https://www.cloudlinux.com"
+msgstr "https://www.cloudlinux.com"
+
+#: inc/App/Helpers/DateTimeFormatter.php:27
+msgctxt "scan date format"
+msgid "j M"
+msgstr "j. M"
+
+#: inc/App/Helpers/DateTimeFormatter.php:28
+msgctxt "scan time format"
+msgid "g:i A"
+msgstr "H:i"
+
+#. translators: 1: Date (e.g. "25 Dec"), 2: Time (e.g. "8:00 PM")
+#: inc/App/Helpers/DateTimeFormatter.php:35
+msgctxt "scan time"
+msgid "%1$s at %2$s"
+msgstr "%1$s o %2$s"
+
+#: inc/App/Helpers/DateTimeFormatter.php:53
+msgctxt "detection date format"
+msgid "M j"
+msgstr "j. M"
+
+#: inc/App/Views/Widget.php:76
+msgid "Malware Scanning"
+msgstr "Skenovanie Malvéru"
+
+#: inc/App/Views/Widget.php:78
+#: inc/App/Views/Widget.php:85
+msgid "Enabled"
+msgstr "Povolené"
+
+#: inc/App/Views/Widget.php:83
+msgid "Proactive Defence"
+msgstr "Proaktívna Ochrana"
+
+#: inc/App/Views/Widget.php:126
+msgid "Today"
+msgstr "Dnes"
+
+#: inc/App/Views/Widget.php:134
+msgid "Last Week"
+msgstr "Minulý Týždeň"
+
+#: inc/App/Views/Widget.php:137
+msgid "Older"
+msgstr "Staršie"
+
+#: views/widget-not-installed.php:24
+msgid "Not protected"
+msgstr "Nechránené"
+
+#: views/widget-not-installed.php:25
+msgid "Imunify Software is not installed"
+msgstr "Softvér Imunify nie je nainštalovaný"
+
+#: views/widget-not-installed.php:27
+msgid "Get Imunify360"
+msgstr "Získať Imunify360"
+
+#: views/widget.php:47
+msgid "Protected"
+msgstr "Chránené"
+
+#: views/widget.php:66
+msgid "Last scan:"
+msgstr "Posledné skenovanie:"
+
+#: views/widget.php:78
+msgid "Next scan:"
+msgstr "Ďalšie skenovanie:"
+
+#: views/widget.php:92
+msgid "No malware found"
+msgstr "Nebol nájdený žiadny malvér"
+
+#. translators: %d: number of malware items cleaned
+#: views/widget.php:105
+msgid "%d malware cleaned"
+msgid_plural "%d malware cleaned"
+msgstr[0] "%d malvér odstránený"
+msgstr[1] "%d malvéry odstránené"
+msgstr[2] "%d malvérov odstránených"
+
+#: views/widget.php:119
+msgid "Show more results"
+msgstr "Zobraziť viac výsledkov"
+
+#: views/widget.php:122
+msgid "Hide notifications"
+msgstr "Skryť upozornenia"
+
+#: views/widget.php:130
+msgid "Imunify Security - Malware Cleanup Details"
+msgstr "Imunify Security - Podrobnosti o Odstránení Malvéru"
+
+#: views/widget.php:131
+msgid "Close"
+msgstr "Zavrieť"
+
+#: views/widget.php:139
+msgid "For additional management options, open Imunify360 plugin page in your control panel."
+msgstr "Pre ďalšie možnosti správy otvorte stránku pluginu Imunify360 vo vašom ovládacom paneli."
+
+#: views/widget.php:169
+msgid "Snooze for:"
+msgstr ""
+
+#. translators: %d: number of weeks
+#: views/widget.php:175
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: views/widget.php:180
+msgid "Snooze"
+msgstr ""
+
+#: inc/App/Views/Widget.php:128
+msgid "Yesterday"
+msgstr ""
+
+#: views/widget.php:72
+msgid "never"
+msgstr ""
+
+#: views/widget.php:84
+msgid "not scheduled"
+msgstr ""

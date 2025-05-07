@@ -1,0 +1,60 @@
+[26-Mar-2025 07:55:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_get_the_languages() in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/front-page.php:45
+Stack trace:
+#0 /home/akfsmyid/public_html/yayasanDel/wp-includes/template-loader.php(106): include()
+#1 /home/akfsmyid/public_html/yayasanDel/wp-blog-header.php(19): require_once('/home/akfsmyid/...')
+#2 /home/akfsmyid/public_html/yayasanDel/index.php(17): require('/home/akfsmyid/...')
+#3 {main}
+  thrown in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/front-page.php on line 45
+[26-Mar-2025 07:55:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_get_the_languages() in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/front-page.php:45
+Stack trace:
+#0 /home/akfsmyid/public_html/yayasanDel/wp-includes/template-loader.php(106): include()
+#1 /home/akfsmyid/public_html/yayasanDel/wp-blog-header.php(19): require_once('/home/akfsmyid/...')
+#2 /home/akfsmyid/public_html/yayasanDel/index.php(17): require('/home/akfsmyid/...')
+#3 {main}
+  thrown in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/front-page.php on line 45
+[26-Mar-2025 07:56:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_get_the_languages() in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/front-page.php:45
+Stack trace:
+#0 /home/akfsmyid/public_html/yayasanDel/wp-includes/template-loader.php(106): include()
+#1 /home/akfsmyid/public_html/yayasanDel/wp-blog-header.php(19): require_once('/home/akfsmyid/...')
+#2 /home/akfsmyid/public_html/yayasanDel/index.php(17): require('/home/akfsmyid/...')
+#3 {main}
+  thrown in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/front-page.php on line 45
+[26-Mar-2025 07:57:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_get_the_languages() in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/front-page.php:45
+Stack trace:
+#0 /home/akfsmyid/public_html/yayasanDel/wp-includes/template-loader.php(106): include()
+#1 /home/akfsmyid/public_html/yayasanDel/wp-blog-header.php(19): require_once('/home/akfsmyid/...')
+#2 /home/akfsmyid/public_html/yayasanDel/index.php(17): require('/home/akfsmyid/...')
+#3 {main}
+  thrown in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/front-page.php on line 45
+[26-Mar-2025 08:04:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_the_languages() in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/front-page.php:44
+Stack trace:
+#0 /home/akfsmyid/public_html/yayasanDel/wp-includes/template-loader.php(106): include()
+#1 /home/akfsmyid/public_html/yayasanDel/wp-blog-header.php(19): require_once('/home/akfsmyid/...')
+#2 /home/akfsmyid/public_html/yayasanDel/index.php(17): require('/home/akfsmyid/...')
+#3 {main}
+  thrown in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/front-page.php on line 44
+[26-Mar-2025 08:39:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_get_the_languages() in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/page-contact.php:46
+Stack trace:
+#0 /home/akfsmyid/public_html/yayasanDel/wp-includes/template-loader.php(106): include()
+#1 /home/akfsmyid/public_html/yayasanDel/wp-blog-header.php(19): require_once('/home/akfsmyid/...')
+#2 /home/akfsmyid/public_html/yayasanDel/index.php(17): require('/home/akfsmyid/...')
+#3 {main}
+  thrown in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/page-contact.php on line 46
+[26-Mar-2025 08:42:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_get_the_languages() in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/page-contact.php:68
+Stack trace:
+#0 /home/akfsmyid/public_html/yayasanDel/wp-includes/template-loader.php(106): include()
+#1 /home/akfsmyid/public_html/yayasanDel/wp-blog-header.php(19): require_once('/home/akfsmyid/...')
+#2 /home/akfsmyid/public_html/yayasanDel/index.php(17): require('/home/akfsmyid/...')
+#3 {main}
+  thrown in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/page-contact.php on line 68
+[26-Mar-2025 08:43:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_get_the_languages() in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/page-contact.php:68
+Stack trace:
+#0 /home/akfsmyid/public_html/yayasanDel/wp-includes/template-loader.php(106): include()
+#1 /home/akfsmyid/public_html/yayasanDel/wp-blog-header.php(19): require_once('/home/akfsmyid/...')
+#2 /home/akfsmyid/public_html/yayasanDel/index.php(17): require('/home/akfsmyid/...')
+#3 {main}
+  thrown in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/page-contact.php on line 68
+[26-Mar-2025 09:41:32 UTC] PHP Warning:  Undefined variable $icon in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/page-about-us.php on line 40
+[26-Mar-2025 09:42:00 UTC] PHP Warning:  Undefined variable $icon in /home/akfsmyid/public_html/yayasanDel/wp-content/themes/Akfsstyale/page-about-us.php on line 40
+[08-Apr-2025 09:00:01 UTC] Cron reschedule event error for hook: elementor_1_elementor_updater_cron, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"elementor_1_elementor_updater_cron_interval","args":[],"interval":300}
+[15-Apr-2025 04:28:20 UTC] Cron reschedule event error for hook: wp_privacy_delete_old_export_files, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"hourly","args":[],"interval":3600}

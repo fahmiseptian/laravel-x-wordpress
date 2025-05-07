@@ -1852,83 +1852,83 @@ module.exports.my = Symbol('my')
 /***/ 1443:
 /***/ ((module) => {
 
-module.exports = function postcssPrefixSelector(options) {
-  const prefix = options.prefix;
-  const prefixWithSpace = /\s+$/.test(prefix) ? prefix : `${prefix} `;
-  const ignoreFiles = options.ignoreFiles ? [].concat(options.ignoreFiles) : [];
-  const includeFiles = options.includeFiles
-    ? [].concat(options.includeFiles)
-    : [];
-
-  return function (root) {
-    if (
-      ignoreFiles.length &&
-      root.source.input.file &&
-      isFileInArray(root.source.input.file, ignoreFiles)
-    ) {
-      return;
-    }
-    if (
-      includeFiles.length &&
-      root.source.input.file &&
-      !isFileInArray(root.source.input.file, includeFiles)
-    ) {
-      return;
-    }
-
-    root.walkRules((rule) => {
-      const keyframeRules = [
-        'keyframes',
-        '-webkit-keyframes',
-        '-moz-keyframes',
-        '-o-keyframes',
-        '-ms-keyframes',
-      ];
-
-      if (rule.parent && keyframeRules.includes(rule.parent.name)) {
-        return;
-      }
-
-      rule.selectors = rule.selectors.map((selector) => {
-        if (options.exclude && excludeSelector(selector, options.exclude)) {
-          return selector;
-        }
-
-        if (options.transform) {
-          return options.transform(
-            prefix,
-            selector,
-            prefixWithSpace + selector,
-            root.source.input.file,
-            rule
-          );
-        }
-
-        return prefixWithSpace + selector;
-      });
-    });
-  };
-};
-
-function isFileInArray(file, arr) {
-  return arr.some((ruleOrString) => {
-    if (ruleOrString instanceof RegExp) {
-      return ruleOrString.test(file);
-    }
-
-    return file.includes(ruleOrString);
-  });
-}
-
-function excludeSelector(selector, excludeArr) {
-  return excludeArr.some((excludeRule) => {
-    if (excludeRule instanceof RegExp) {
-      return excludeRule.test(selector);
-    }
-
-    return selector === excludeRule;
-  });
-}
+module.exports = function postcssPrefixSelector(options) {
+  const prefix = options.prefix;
+  const prefixWithSpace = /\s+$/.test(prefix) ? prefix : `${prefix} `;
+  const ignoreFiles = options.ignoreFiles ? [].concat(options.ignoreFiles) : [];
+  const includeFiles = options.includeFiles
+    ? [].concat(options.includeFiles)
+    : [];
+
+  return function (root) {
+    if (
+      ignoreFiles.length &&
+      root.source.input.file &&
+      isFileInArray(root.source.input.file, ignoreFiles)
+    ) {
+      return;
+    }
+    if (
+      includeFiles.length &&
+      root.source.input.file &&
+      !isFileInArray(root.source.input.file, includeFiles)
+    ) {
+      return;
+    }
+
+    root.walkRules((rule) => {
+      const keyframeRules = [
+        'keyframes',
+        '-webkit-keyframes',
+        '-moz-keyframes',
+        '-o-keyframes',
+        '-ms-keyframes',
+      ];
+
+      if (rule.parent && keyframeRules.includes(rule.parent.name)) {
+        return;
+      }
+
+      rule.selectors = rule.selectors.map((selector) => {
+        if (options.exclude && excludeSelector(selector, options.exclude)) {
+          return selector;
+        }
+
+        if (options.transform) {
+          return options.transform(
+            prefix,
+            selector,
+            prefixWithSpace + selector,
+            root.source.input.file,
+            rule
+          );
+        }
+
+        return prefixWithSpace + selector;
+      });
+    });
+  };
+};
+
+function isFileInArray(file, arr) {
+  return arr.some((ruleOrString) => {
+    if (ruleOrString instanceof RegExp) {
+      return ruleOrString.test(file);
+    }
+
+    return file.includes(ruleOrString);
+  });
+}
+
+function excludeSelector(selector, excludeArr) {
+  return excludeArr.some((excludeRule) => {
+    if (excludeRule instanceof RegExp) {
+      return excludeRule.test(selector);
+    }
+
+    return selector === excludeRule;
+  });
+}
 
 
 /***/ }),
@@ -66920,9 +66920,9 @@ var normalize_wheel_default = /*#__PURE__*/__webpack_require__.n(normalize_wheel
 
 
 
-/**
- * Compute the dimension of the crop area based on media size,
- * aspect ratio and optionally rotation
+/**
+ * Compute the dimension of the crop area based on media size,
+ * aspect ratio and optionally rotation
  */
 function getCropSize(mediaWidth, mediaHeight, containerWidth, containerHeight, aspect, rotation) {
   if (rotation === void 0) {
@@ -66944,16 +66944,16 @@ function getCropSize(mediaWidth, mediaHeight, containerWidth, containerHeight, a
     height: fittingWidth / aspect
   };
 }
-/**
- * Compute media zoom.
- * We fit the media into the container with "max-width: 100%; max-height: 100%;"
+/**
+ * Compute media zoom.
+ * We fit the media into the container with "max-width: 100%; max-height: 100%;"
  */
 function getMediaZoom(mediaSize) {
   // Take the axis with more pixels to improve accuracy
   return mediaSize.width > mediaSize.height ? mediaSize.width / mediaSize.naturalWidth : mediaSize.height / mediaSize.naturalHeight;
 }
-/**
- * Ensure a new media position stays in the crop area.
+/**
+ * Ensure a new media position stays in the crop area.
  */
 function restrictPosition(position, mediaSize, cropSize, zoom, rotation) {
   if (rotation === void 0) {
@@ -66977,9 +66977,9 @@ function getDistanceBetweenPoints(pointA, pointB) {
 function getRotationBetweenPoints(pointA, pointB) {
   return Math.atan2(pointB.y - pointA.y, pointB.x - pointA.x) * 180 / Math.PI;
 }
-/**
- * Compute the output cropped area of the media in percentages and pixels.
- * x/y are the top-left coordinates on the src media
+/**
+ * Compute the output cropped area of the media in percentages and pixels.
+ * x/y are the top-left coordinates on the src media
  */
 function computeCroppedArea(crop, mediaSize, cropSize, aspect, zoom, rotation, restrictPosition) {
   if (rotation === void 0) {
@@ -67025,8 +67025,8 @@ function computeCroppedArea(crop, mediaSize, cropSize, aspect, zoom, rotation, r
     croppedAreaPixels: croppedAreaPixels
   };
 }
-/**
- * Ensure the returned value is between 0 and max
+/**
+ * Ensure the returned value is between 0 and max
  */
 function limitArea(max, value) {
   return Math.min(max, Math.max(0, value));
@@ -67034,8 +67034,8 @@ function limitArea(max, value) {
 function noOp(_max, value) {
   return value;
 }
-/**
- * Compute crop and zoom from the croppedAreaPercentages.
+/**
+ * Compute crop and zoom from the croppedAreaPercentages.
  */
 function getInitialCropFromCroppedAreaPercentages(croppedAreaPercentages, mediaSize, rotation, cropSize, minZoom, maxZoom) {
   var mediaBBoxSize = rotateSize(mediaSize.width, mediaSize.height, rotation);
@@ -67050,15 +67050,15 @@ function getInitialCropFromCroppedAreaPercentages(croppedAreaPercentages, mediaS
     zoom: zoom
   };
 }
-/**
- * Compute zoom from the croppedAreaPixels
+/**
+ * Compute zoom from the croppedAreaPixels
  */
 function getZoomFromCroppedAreaPixels(croppedAreaPixels, mediaSize, cropSize) {
   var mediaZoom = getMediaZoom(mediaSize);
   return cropSize.height > cropSize.width ? cropSize.height / (croppedAreaPixels.height * mediaZoom) : cropSize.width / (croppedAreaPixels.width * mediaZoom);
 }
-/**
- * Compute crop and zoom from the croppedAreaPixels
+/**
+ * Compute crop and zoom from the croppedAreaPixels
  */
 function getInitialCropFromCroppedAreaPixels(croppedAreaPixels, mediaSize, rotation, cropSize, minZoom, maxZoom) {
   if (rotation === void 0) {
@@ -67076,8 +67076,8 @@ function getInitialCropFromCroppedAreaPixels(croppedAreaPixels, mediaSize, rotat
     zoom: zoom
   };
 }
-/**
- * Return the point that is the center of point a and b
+/**
+ * Return the point that is the center of point a and b
  */
 function getCenter(a, b) {
   return {
@@ -67088,8 +67088,8 @@ function getCenter(a, b) {
 function getRadianAngle(degreeValue) {
   return degreeValue * Math.PI / 180;
 }
-/**
- * Returns the new bounding area of a rotated rectangle.
+/**
+ * Returns the new bounding area of a rotated rectangle.
  */
 function rotateSize(width, height, rotation) {
   var rotRad = getRadianAngle(rotation);
@@ -67098,14 +67098,14 @@ function rotateSize(width, height, rotation) {
     height: Math.abs(Math.sin(rotRad) * width) + Math.abs(Math.cos(rotRad) * height)
   };
 }
-/**
- * Clamp value between min and max
+/**
+ * Clamp value between min and max
  */
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
-/**
- * Combine multiple class names into a single string.
+/**
+ * Combine multiple class names into a single string.
  */
 function classNames() {
   var args = [];

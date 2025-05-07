@@ -1,0 +1,286 @@
+/*
+Theme Name: AkfsStyles
+Theme URI: https://akfs.my.id
+Author: Achmad Khaerul fahmi Septiansyah
+Text Domain: AkfsStyles
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+body {
+  font-family: "Urbanist", sans-serif;
+}
+
+p {
+  font-size: 12px;
+}
+
+
+.lebel {
+  font-size: 40px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+.font_primary {
+  color: #da3832;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+}
+
+.navbar {
+  position: absolute; /* Navbar menumpuk di atas banner */
+  height: 65px !important;
+  left: 50%;
+  transform: translateX(-50%); /* Agar berada di tengah */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: rgba(255, 255, 255, 0.1); /* Warna transparan */
+  width: 90%; /* Tidak mentok kiri-kanan */
+  max-width: 1200px; /* Batas lebar maksimal */
+  border-radius: 60px; /* Ujung melengkung */
+  box-shadow: 0px 5px 16px #00000047; /* Shadow hitam */
+  backdrop-filter: blur(30px); /* Efek blur */
+  z-index: 10; /* Pastikan navbar ada di atas banner */
+  margin-top: 30px;
+}
+
+.logo img {
+  height: 40px;
+  margin-top:-20px;
+}
+
+.menu,
+.menu2 {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center; /* Pastikan menu sejajar vertikal */
+
+}
+
+
+
+.menu li,
+.menu2 li {
+  display: flex;
+  align-items: center; /* Pastikan setiap item menu sejajar vertikal */
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  font-size: smaller;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu2 li a {
+  color: #da3832;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  font-size: smaller;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu li a:hover {
+  color: #da3832;
+}
+
+.menu2 li a:hover {
+  color: #da3832;
+}
+
+.menu li a i,
+.menu2 li a i {
+  font-size: 16px;
+}
+.menu li a.active {
+  color: white; /* Teks tetap putih */
+  font-weight: bold; /* Buat teks lebih tebal */
+  background-color: #da3832; /* Warna latar belakang merah */
+  border-radius: 15px; /* Radius sudut */
+  padding: 5px 10px;
+}
+
+.menu2 li a.active {
+  color: white; /* Teks tetap putih */
+  font-weight: bold; /* Buat teks lebih tebal */
+  background-color: #da3832; /* Warna latar belakang merah */
+  border-radius: 15px; /* Radius sudut */
+  padding: 5px 10px;
+}
+
+.translate-menu {
+  position: relative;
+}
+
+.translate-menu .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.translate-menu:hover .sub-menu {
+  display: block;
+}
+
+.responsive-img {
+  width: 100%;
+  height: 300px; /* Sesuaikan tinggi sesuai kebutuhan */
+  object-fit: cover; /* Bisa diganti 'contain' jika ingin full gambar tanpa crop */
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: #333;
+  transition: 0.3s;
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+
+  .logo img {
+    margin-top: -10px;
+    height: 30px;
+  }
+  .navbar{
+   height: 45px !important;
+}
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #c0c0c0;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .menu.active {
+    display: flex;
+    align-items: flex-start;
+  }
+
+.menu li a {
+  color: #da3832;
+}
+
+  .menu2 {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .menu2.active {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+.pll-switcher-select {
+    width: 150px; /* Sesuaikan lebar */
+    padding: 7px;
+    border-radius: 8px;
+    border: 2px solid #DA3832; /* Warna border */
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: bold;
+    color: #DA3832;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Saat dropdown di-hover */
+.pll-switcher-select:hover {
+    background-color: #f8f8f8;
+}
+
+/* Saat dropdown diklik */
+.pll-switcher-select:focus {
+    border-color: #A0271F;
+}
+
+/* Mengubah tampilan opsi */
+.pll-switcher-select option {
+    background: #fff;
+    color: #333;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Style dasar untuk judul */
+.elementor-post__title a {
+  display: block;
+  position: relative;
+  padding-left: 12px;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Garis merah di kiri saat hover */
+.elementor-post__title a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: red;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+}
+
+/* Efek hover: munculkan garis */
+.elementor-post__title a:hover::before {
+  transform: scaleY(1);
+}
+
+/* Opsional: ubah warna teks saat hover */
+.elementor-post__title a:hover {
+  color: #b80000;
+}
+
