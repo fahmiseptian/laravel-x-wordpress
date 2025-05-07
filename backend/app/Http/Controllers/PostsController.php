@@ -18,29 +18,36 @@ class PostsController extends BaseController
         $response_id = Http::withToken($token)->get(env('URL_WP') . '/wp-json/wp/v2/posts', [
             'status' => 'any',
             'lang' => 'id',
+            '_embed' => true
         ]);
 
         $response_en = Http::withToken($token)->get(env('URL_WP') . '/wp-json/wp/v2/posts', [
             'status' => 'any',
             'lang' => 'en',
+            '_embed' => true
         ]);
 
         $posts_id = $response_id->json();
         $posts_en = $response_en->json();
 
-        // Tambahkan field 'lang' secara manual jika belum ada
         foreach ($posts_id as &$post) {
             $post['lang'] = 'id';
+            $post['cover'] = isset($post['_embedded']['wp:featuredmedia'][0]['source_url'])
+                ? $post['_embedded']['wp:featuredmedia'][0]['source_url']
+                : null;
         }
         foreach ($posts_en as &$post) {
             $post['lang'] = 'en';
+            $post['cover'] = isset($post['_embedded']['wp:featuredmedia'][0]['source_url'])
+                ? $post['_embedded']['wp:featuredmedia'][0]['source_url']
+                : null;
         }
 
-        // Gabungkan keduanya
         $posts = array_merge($posts_id, $posts_en);
 
         return view('posts.index', compact('posts'));
     }
+
 
 
     function addView()
@@ -211,5 +218,31 @@ class PostsController extends BaseController
                 'message' => 'Gagal menghapus post'
             ], $response->status());
         }
+    }
+
+    public function updateCover(Request $request)
+    {
+        $postId = $request->post_id;
+        $file = $request->file('cover');
+
+        if ($file) {
+            $mediaId = $this->uploadFeaturedImage($file);
+            if ($mediaId) {
+                $wordpress = new Wordpress();
+                $wordpress->Token();
+                $token = session('wp_token');
+
+                // Update cover post di WordPress
+                $response = Http::withToken($token)->post(env('URL_WP') . "/wp-json/wp/v2/posts/{$postId}", [
+                    'featured_media' => $mediaId
+                ]);
+
+                if ($response->successful()) {
+                    return response()->json(['success' => true, 'cover' => $response->json()['guid']['rendered']]);
+                }
+            }
+        }
+
+        return response()->json(['success' => false], 400);
     }
 }

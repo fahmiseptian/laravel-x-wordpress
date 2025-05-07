@@ -13,7 +13,7 @@
         <div class="body-wrapper">
             @include('partials.navbar')
             <div class="container-fluid">
-                <h1 class="mb-4">Pengaturan Banner</h1>
+                <h1 class="mb-4">Banner Settings</h1>
                 <form action="" method="POST" enctype="multipart/form-data">
                     {{-- === Banner Dashboard === --}}
                     <h2>Banner Dashboard</h2>
@@ -21,14 +21,14 @@
                         @forelse ($banners['banner_dashboard'] ?? [] as $index => $url)
                         <div class="col-md-3 mb-3 text-center banner-item">
                             <img src="{{ $url }}" class="img-fluid mb-2" style="max-width:150px; height:auto;">
-                            <button type="button" class="btn btn-danger btn-sm remove-banner btn-delete-banner" data-url="{{ $url }}">Hapus</button>
+                            <button type="button" class="btn btn-danger btn-sm remove-banner btn-delete-banner" data-url="{{ $url }}">Delete</button>
                             <input type="hidden" name="banner_dashboard[]" value="{{ $url }}">
                         </div>
                         @empty
-                        <p class="text-muted">Belum ada banner dashboard.</p>
+                        <p class="text-muted">No dashboard banner yet.</p>
                         @endforelse
                     </div>
-                    <button type="button" class="btn btn-primary mb-4" id="add-dashboard-banner">Pilih Gambar (Maks 4)</button>
+                    <button type="button" class="btn btn-primary mb-4" id="add-dashboard-banner">Choose Image (Max 4)</button>
 
                     {{-- === Banner Contact Us === --}}
                     <h2>Banner Contact Us</h2>
@@ -36,19 +36,19 @@
                         @if ($banners['banner_contact'])
                         <div class="banner-item text-center">
                             <img src="{{ $banners['banner_contact'] }}" class="img-fluid mb-2" style="max-width:300px; height:auto;">
-                            <button type="button" class="btn btn-danger btn-sm remove-banner btn-delete-banner" data-url="{{ $banners['banner_contact'] }}">Hapus</button>
+                            <button type="button" class="btn btn-danger btn-sm remove-banner btn-delete-banner" data-url="{{ $banners['banner_contact'] }}">Delete</button>
                             <input type="hidden" name="banner_contact" value="{{ $banners['banner_contact'] }}">
                         </div>
                         @else
-                        <p class="text-muted">Belum ada banner untuk halaman Contact Us.</p>
+                        <p class="text-muted">No banner for the Contact Us page yet.</p>
                         @endif
                     </div>
-                    <button type="button" class="btn btn-primary mb-4" id="add-contact-banner">Pilih Gambar</button>
+                    <button type="button" class="btn btn-primary mb-4" id="add-contact-banner">Choose Image</button>
                     <input type="file" id="banner-file-dashboard" accept="image/*" style="display: none;" multiple>
                     <input type="file" id="banner-file-contact" accept="image/*" style="display: none;">
 
                     <br>
-                    <button type="button" class="btn btn-success" onclick="saveChanges()">Simpan Perubahan</button>
+                    <button type="button" class="btn btn-success" onclick="saveChanges()">Save Changes</button>
             </div>
         </div>
     </main>

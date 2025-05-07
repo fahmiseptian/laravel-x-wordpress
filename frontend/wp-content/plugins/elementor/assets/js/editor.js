@@ -1,4 +1,4 @@
-/*! elementor - v3.28.0 - 22-04-2025 */
+/*! elementor - v3.28.0 - 01-04-2025 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -68,2018 +68,2018 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "../node_modules/redux/es/redux.js");
 /* harmony import */ var reselect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reselect */ "../node_modules/reselect/es/index.js");
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux-thunk */ "../node_modules/redux-thunk/es/index.js");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
-    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-    return to;
-};
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = function (obj, key, value) { return key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value: value }) : obj[key] = value; };
-var __spreadValues = function (a, b) {
-    for (var prop in b || (b = {}))
-        if (__hasOwnProp.call(b, prop))
-            __defNormalProp(a, prop, b[prop]);
-    if (__getOwnPropSymbols)
-        for (var _i = 0, _c = __getOwnPropSymbols(b); _i < _c.length; _i++) {
-            var prop = _c[_i];
-            if (__propIsEnum.call(b, prop))
-                __defNormalProp(a, prop, b[prop]);
-        }
-    return a;
-};
-var __spreadProps = function (a, b) { return __defProps(a, __getOwnPropDescs(b)); };
-var __async = function (__this, __arguments, generator) {
-    return new Promise(function (resolve, reject) {
-        var fulfilled = function (value) {
-            try {
-                step(generator.next(value));
-            }
-            catch (e) {
-                reject(e);
-            }
-        };
-        var rejected = function (value) {
-            try {
-                step(generator.throw(value));
-            }
-            catch (e) {
-                reject(e);
-            }
-        };
-        var step = function (x) { return x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected); };
-        step((generator = generator.apply(__this, __arguments)).next());
-    });
-};
-// src/index.ts
-
-
-
-
-// src/createDraftSafeSelector.ts
-
-
-var createDraftSafeSelector = function () {
-    var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
-    }
-    var selector = reselect__WEBPACK_IMPORTED_MODULE_1__.createSelector.apply(void 0, args);
-    var wrappedSelector = function (value) {
-        var rest = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            rest[_i - 1] = arguments[_i];
-        }
-        return selector.apply(void 0, __spreadArray([(0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraft)(value) ? (0,immer__WEBPACK_IMPORTED_MODULE_2__.current)(value) : value], rest));
-    };
-    return wrappedSelector;
-};
-// src/configureStore.ts
-
-// src/devtoolsExtension.ts
-
-var composeWithDevTools = typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : function () {
-    if (arguments.length === 0)
-        return void 0;
-    if (typeof arguments[0] === "object")
-        return redux__WEBPACK_IMPORTED_MODULE_0__.compose;
-    return redux__WEBPACK_IMPORTED_MODULE_0__.compose.apply(null, arguments);
-};
-var devToolsEnhancer = typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__ : function () {
-    return function (noop2) {
-        return noop2;
-    };
-};
-// src/isPlainObject.ts
-function isPlainObject(value) {
-    if (typeof value !== "object" || value === null)
-        return false;
-    var proto = Object.getPrototypeOf(value);
-    if (proto === null)
-        return true;
-    var baseProto = proto;
-    while (Object.getPrototypeOf(baseProto) !== null) {
-        baseProto = Object.getPrototypeOf(baseProto);
-    }
-    return proto === baseProto;
-}
-// src/getDefaultMiddleware.ts
-
-// src/tsHelpers.ts
-var hasMatchFunction = function (v) {
-    return v && typeof v.match === "function";
-};
-// src/createAction.ts
-function createAction(type, prepareAction) {
-    function actionCreator() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-        if (prepareAction) {
-            var prepared = prepareAction.apply(void 0, args);
-            if (!prepared) {
-                throw new Error("prepareAction did not return an object");
-            }
-            return __spreadValues(__spreadValues({
-                type: type,
-                payload: prepared.payload
-            }, "meta" in prepared && { meta: prepared.meta }), "error" in prepared && { error: prepared.error });
-        }
-        return { type: type, payload: args[0] };
-    }
-    actionCreator.toString = function () { return "" + type; };
-    actionCreator.type = type;
-    actionCreator.match = function (action) { return action.type === type; };
-    return actionCreator;
-}
-function isAction(action) {
-    return isPlainObject(action) && "type" in action;
-}
-function isActionCreator(action) {
-    return typeof action === "function" && "type" in action && hasMatchFunction(action);
-}
-function isFSA(action) {
-    return isAction(action) && typeof action.type === "string" && Object.keys(action).every(isValidKey);
-}
-function isValidKey(key) {
-    return ["type", "payload", "error", "meta"].indexOf(key) > -1;
-}
-function getType(actionCreator) {
-    return "" + actionCreator;
-}
-// src/actionCreatorInvariantMiddleware.ts
-function getMessage(type) {
-    var splitType = type ? ("" + type).split("/") : [];
-    var actionName = splitType[splitType.length - 1] || "actionCreator";
-    return "Detected an action creator with type \"" + (type || "unknown") + "\" being dispatched. \nMake sure you're calling the action creator before dispatching, i.e. `dispatch(" + actionName + "())` instead of `dispatch(" + actionName + ")`. This is necessary even if the action has no payload.";
-}
-function createActionCreatorInvariantMiddleware(options) {
-    if (options === void 0) { options = {}; }
-    if (false) {}
-    var _c = options.isActionCreator, isActionCreator2 = _c === void 0 ? isActionCreator : _c;
-    return function () { return function (next) { return function (action) {
-        if (isActionCreator2(action)) {
-            console.warn(getMessage(action.type));
-        }
-        return next(action);
-    }; }; };
-}
-// src/utils.ts
-
-function getTimeMeasureUtils(maxDelay, fnName) {
-    var elapsed = 0;
-    return {
-        measureTime: function (fn) {
-            var started = Date.now();
-            try {
-                return fn();
-            }
-            finally {
-                var finished = Date.now();
-                elapsed += finished - started;
-            }
-        },
-        warnIfExceeded: function () {
-            if (elapsed > maxDelay) {
-                console.warn(fnName + " took " + elapsed + "ms, which is more than the warning threshold of " + maxDelay + "ms. \nIf your state or actions are very large, you may want to disable the middleware as it might cause too much of a slowdown in development mode. See https://redux-toolkit.js.org/api/getDefaultMiddleware for instructions.\nIt is disabled in production builds, so you don't need to worry about that.");
-            }
-        }
-    };
-}
-var MiddlewareArray = /** @class */ (function (_super) {
-    __extends(MiddlewareArray, _super);
-    function MiddlewareArray() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-        var _this = _super.apply(this, args) || this;
-        Object.setPrototypeOf(_this, MiddlewareArray.prototype);
-        return _this;
-    }
-    Object.defineProperty(MiddlewareArray, Symbol.species, {
-        get: function () {
-            return MiddlewareArray;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    MiddlewareArray.prototype.concat = function () {
-        var arr = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            arr[_i] = arguments[_i];
-        }
-        return _super.prototype.concat.apply(this, arr);
-    };
-    MiddlewareArray.prototype.prepend = function () {
-        var arr = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            arr[_i] = arguments[_i];
-        }
-        if (arr.length === 1 && Array.isArray(arr[0])) {
-            return new (MiddlewareArray.bind.apply(MiddlewareArray, __spreadArray([void 0], arr[0].concat(this))))();
-        }
-        return new (MiddlewareArray.bind.apply(MiddlewareArray, __spreadArray([void 0], arr.concat(this))))();
-    };
-    return MiddlewareArray;
-}(Array));
-var EnhancerArray = /** @class */ (function (_super) {
-    __extends(EnhancerArray, _super);
-    function EnhancerArray() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-        var _this = _super.apply(this, args) || this;
-        Object.setPrototypeOf(_this, EnhancerArray.prototype);
-        return _this;
-    }
-    Object.defineProperty(EnhancerArray, Symbol.species, {
-        get: function () {
-            return EnhancerArray;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    EnhancerArray.prototype.concat = function () {
-        var arr = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            arr[_i] = arguments[_i];
-        }
-        return _super.prototype.concat.apply(this, arr);
-    };
-    EnhancerArray.prototype.prepend = function () {
-        var arr = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            arr[_i] = arguments[_i];
-        }
-        if (arr.length === 1 && Array.isArray(arr[0])) {
-            return new (EnhancerArray.bind.apply(EnhancerArray, __spreadArray([void 0], arr[0].concat(this))))();
-        }
-        return new (EnhancerArray.bind.apply(EnhancerArray, __spreadArray([void 0], arr.concat(this))))();
-    };
-    return EnhancerArray;
-}(Array));
-function freezeDraftable(val) {
-    return (0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraftable)(val) ? (0,immer__WEBPACK_IMPORTED_MODULE_2__["default"])(val, function () {
-    }) : val;
-}
-// src/immutableStateInvariantMiddleware.ts
-var isProduction = "development" === "production";
-var prefix = "Invariant failed";
-function invariant(condition, message) {
-    if (condition) {
-        return;
-    }
-    if (isProduction) {
-        throw new Error(prefix);
-    }
-    throw new Error(prefix + ": " + (message || ""));
-}
-function stringify(obj, serializer, indent, decycler) {
-    return JSON.stringify(obj, getSerialize(serializer, decycler), indent);
-}
-function getSerialize(serializer, decycler) {
-    var stack = [], keys = [];
-    if (!decycler)
-        decycler = function (_, value) {
-            if (stack[0] === value)
-                return "[Circular ~]";
-            return "[Circular ~." + keys.slice(0, stack.indexOf(value)).join(".") + "]";
-        };
-    return function (key, value) {
-        if (stack.length > 0) {
-            var thisPos = stack.indexOf(this);
-            ~thisPos ? stack.splice(thisPos + 1) : stack.push(this);
-            ~thisPos ? keys.splice(thisPos, Infinity, key) : keys.push(key);
-            if (~stack.indexOf(value))
-                value = decycler.call(this, key, value);
-        }
-        else
-            stack.push(value);
-        return serializer == null ? value : serializer.call(this, key, value);
-    };
-}
-function isImmutableDefault(value) {
-    return typeof value !== "object" || value == null || Object.isFrozen(value);
-}
-function trackForMutations(isImmutable, ignorePaths, obj) {
-    var trackedProperties = trackProperties(isImmutable, ignorePaths, obj);
-    return {
-        detectMutations: function () {
-            return detectMutations(isImmutable, ignorePaths, trackedProperties, obj);
-        }
-    };
-}
-function trackProperties(isImmutable, ignorePaths, obj, path, checkedObjects) {
-    if (ignorePaths === void 0) { ignorePaths = []; }
-    if (path === void 0) { path = ""; }
-    if (checkedObjects === void 0) { checkedObjects = new Set(); }
-    var tracked = { value: obj };
-    if (!isImmutable(obj) && !checkedObjects.has(obj)) {
-        checkedObjects.add(obj);
-        tracked.children = {};
-        for (var key in obj) {
-            var childPath = path ? path + "." + key : key;
-            if (ignorePaths.length && ignorePaths.indexOf(childPath) !== -1) {
-                continue;
-            }
-            tracked.children[key] = trackProperties(isImmutable, ignorePaths, obj[key], childPath);
-        }
-    }
-    return tracked;
-}
-function detectMutations(isImmutable, ignoredPaths, trackedProperty, obj, sameParentRef, path) {
-    if (ignoredPaths === void 0) { ignoredPaths = []; }
-    if (sameParentRef === void 0) { sameParentRef = false; }
-    if (path === void 0) { path = ""; }
-    var prevObj = trackedProperty ? trackedProperty.value : void 0;
-    var sameRef = prevObj === obj;
-    if (sameParentRef && !sameRef && !Number.isNaN(obj)) {
-        return { wasMutated: true, path: path };
-    }
-    if (isImmutable(prevObj) || isImmutable(obj)) {
-        return { wasMutated: false };
-    }
-    var keysToDetect = {};
-    for (var key in trackedProperty.children) {
-        keysToDetect[key] = true;
-    }
-    for (var key in obj) {
-        keysToDetect[key] = true;
-    }
-    var hasIgnoredPaths = ignoredPaths.length > 0;
-    var _loop_1 = function (key) {
-        var nestedPath = path ? path + "." + key : key;
-        if (hasIgnoredPaths) {
-            var hasMatches = ignoredPaths.some(function (ignored) {
-                if (ignored instanceof RegExp) {
-                    return ignored.test(nestedPath);
-                }
-                return nestedPath === ignored;
-            });
-            if (hasMatches) {
-                return "continue";
-            }
-        }
-        var result = detectMutations(isImmutable, ignoredPaths, trackedProperty.children[key], obj[key], sameRef, nestedPath);
-        if (result.wasMutated) {
-            return { value: result };
-        }
-    };
-    for (var key in keysToDetect) {
-        var state_1 = _loop_1(key);
-        if (typeof state_1 === "object")
-            return state_1.value;
-    }
-    return { wasMutated: false };
-}
-function createImmutableStateInvariantMiddleware(options) {
-    if (options === void 0) { options = {}; }
-    if (false) {}
-    var _c = options.isImmutable, isImmutable = _c === void 0 ? isImmutableDefault : _c, ignoredPaths = options.ignoredPaths, _d = options.warnAfter, warnAfter = _d === void 0 ? 32 : _d, ignore = options.ignore;
-    ignoredPaths = ignoredPaths || ignore;
-    var track = trackForMutations.bind(null, isImmutable, ignoredPaths);
-    return function (_c) {
-        var getState = _c.getState;
-        var state = getState();
-        var tracker = track(state);
-        var result;
-        return function (next) { return function (action) {
-            var measureUtils = getTimeMeasureUtils(warnAfter, "ImmutableStateInvariantMiddleware");
-            measureUtils.measureTime(function () {
-                state = getState();
-                result = tracker.detectMutations();
-                tracker = track(state);
-                invariant(!result.wasMutated, "A state mutation was detected between dispatches, in the path '" + (result.path || "") + "'.  This may cause incorrect behavior. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)");
-            });
-            var dispatchedAction = next(action);
-            measureUtils.measureTime(function () {
-                state = getState();
-                result = tracker.detectMutations();
-                tracker = track(state);
-                result.wasMutated && invariant(!result.wasMutated, "A state mutation was detected inside a dispatch, in the path: " + (result.path || "") + ". Take a look at the reducer(s) handling the action " + stringify(action) + ". (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)");
-            });
-            measureUtils.warnIfExceeded();
-            return dispatchedAction;
-        }; };
-    };
-}
-// src/serializableStateInvariantMiddleware.ts
-function isPlain(val) {
-    var type = typeof val;
-    return val == null || type === "string" || type === "boolean" || type === "number" || Array.isArray(val) || isPlainObject(val);
-}
-function findNonSerializableValue(value, path, isSerializable, getEntries, ignoredPaths, cache) {
-    if (path === void 0) { path = ""; }
-    if (isSerializable === void 0) { isSerializable = isPlain; }
-    if (ignoredPaths === void 0) { ignoredPaths = []; }
-    var foundNestedSerializable;
-    if (!isSerializable(value)) {
-        return {
-            keyPath: path || "<root>",
-            value: value
-        };
-    }
-    if (typeof value !== "object" || value === null) {
-        return false;
-    }
-    if (cache == null ? void 0 : cache.has(value))
-        return false;
-    var entries = getEntries != null ? getEntries(value) : Object.entries(value);
-    var hasIgnoredPaths = ignoredPaths.length > 0;
-    var _loop_2 = function (key, nestedValue) {
-        var nestedPath = path ? path + "." + key : key;
-        if (hasIgnoredPaths) {
-            var hasMatches = ignoredPaths.some(function (ignored) {
-                if (ignored instanceof RegExp) {
-                    return ignored.test(nestedPath);
-                }
-                return nestedPath === ignored;
-            });
-            if (hasMatches) {
-                return "continue";
-            }
-        }
-        if (!isSerializable(nestedValue)) {
-            return { value: {
-                    keyPath: nestedPath,
-                    value: nestedValue
-                } };
-        }
-        if (typeof nestedValue === "object") {
-            foundNestedSerializable = findNonSerializableValue(nestedValue, nestedPath, isSerializable, getEntries, ignoredPaths, cache);
-            if (foundNestedSerializable) {
-                return { value: foundNestedSerializable };
-            }
-        }
-    };
-    for (var _i = 0, entries_1 = entries; _i < entries_1.length; _i++) {
-        var _c = entries_1[_i], key = _c[0], nestedValue = _c[1];
-        var state_2 = _loop_2(key, nestedValue);
-        if (typeof state_2 === "object")
-            return state_2.value;
-    }
-    if (cache && isNestedFrozen(value))
-        cache.add(value);
-    return false;
-}
-function isNestedFrozen(value) {
-    if (!Object.isFrozen(value))
-        return false;
-    for (var _i = 0, _c = Object.values(value); _i < _c.length; _i++) {
-        var nestedValue = _c[_i];
-        if (typeof nestedValue !== "object" || nestedValue === null)
-            continue;
-        if (!isNestedFrozen(nestedValue))
-            return false;
-    }
-    return true;
-}
-function createSerializableStateInvariantMiddleware(options) {
-    if (options === void 0) { options = {}; }
-    if (false) {}
-    var _c = options.isSerializable, isSerializable = _c === void 0 ? isPlain : _c, getEntries = options.getEntries, _d = options.ignoredActions, ignoredActions = _d === void 0 ? [] : _d, _e = options.ignoredActionPaths, ignoredActionPaths = _e === void 0 ? ["meta.arg", "meta.baseQueryMeta"] : _e, _f = options.ignoredPaths, ignoredPaths = _f === void 0 ? [] : _f, _g = options.warnAfter, warnAfter = _g === void 0 ? 32 : _g, _h = options.ignoreState, ignoreState = _h === void 0 ? false : _h, _j = options.ignoreActions, ignoreActions = _j === void 0 ? false : _j, _k = options.disableCache, disableCache = _k === void 0 ? false : _k;
-    var cache = !disableCache && WeakSet ? new WeakSet() : void 0;
-    return function (storeAPI) { return function (next) { return function (action) {
-        var result = next(action);
-        var measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
-        if (!ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action.type) !== -1)) {
-            measureUtils.measureTime(function () {
-                var foundActionNonSerializableValue = findNonSerializableValue(action, "", isSerializable, getEntries, ignoredActionPaths, cache);
-                if (foundActionNonSerializableValue) {
-                    var keyPath = foundActionNonSerializableValue.keyPath, value = foundActionNonSerializableValue.value;
-                    console.error("A non-serializable value was detected in an action, in the path: `" + keyPath + "`. Value:", value, "\nTake a look at the logic that dispatched this action: ", action, "\n(See https://redux.js.org/faq/actions#why-should-type-be-a-string-or-at-least-serializable-why-should-my-action-types-be-constants)", "\n(To allow non-serializable values see: https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data)");
-                }
-            });
-        }
-        if (!ignoreState) {
-            measureUtils.measureTime(function () {
-                var state = storeAPI.getState();
-                var foundStateNonSerializableValue = findNonSerializableValue(state, "", isSerializable, getEntries, ignoredPaths, cache);
-                if (foundStateNonSerializableValue) {
-                    var keyPath = foundStateNonSerializableValue.keyPath, value = foundStateNonSerializableValue.value;
-                    console.error("A non-serializable value was detected in the state, in the path: `" + keyPath + "`. Value:", value, "\nTake a look at the reducer(s) handling this action type: " + action.type + ".\n(See https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)");
-                }
-            });
-            measureUtils.warnIfExceeded();
-        }
-        return result;
-    }; }; };
-}
-// src/getDefaultMiddleware.ts
-function isBoolean(x) {
-    return typeof x === "boolean";
-}
-function curryGetDefaultMiddleware() {
-    return function curriedGetDefaultMiddleware(options) {
-        return getDefaultMiddleware(options);
-    };
-}
-function getDefaultMiddleware(options) {
-    if (options === void 0) { options = {}; }
-    var _c = options.thunk, thunk = _c === void 0 ? true : _c, _d = options.immutableCheck, immutableCheck = _d === void 0 ? true : _d, _e = options.serializableCheck, serializableCheck = _e === void 0 ? true : _e, _f = options.actionCreatorCheck, actionCreatorCheck = _f === void 0 ? true : _f;
-    var middlewareArray = new MiddlewareArray();
-    if (thunk) {
-        if (isBoolean(thunk)) {
-            middlewareArray.push(redux_thunk__WEBPACK_IMPORTED_MODULE_3__["default"]);
-        }
-        else {
-            middlewareArray.push(redux_thunk__WEBPACK_IMPORTED_MODULE_3__["default"].withExtraArgument(thunk.extraArgument));
-        }
-    }
-    if (true) {
-        if (immutableCheck) {
-            var immutableOptions = {};
-            if (!isBoolean(immutableCheck)) {
-                immutableOptions = immutableCheck;
-            }
-            middlewareArray.unshift(createImmutableStateInvariantMiddleware(immutableOptions));
-        }
-        if (serializableCheck) {
-            var serializableOptions = {};
-            if (!isBoolean(serializableCheck)) {
-                serializableOptions = serializableCheck;
-            }
-            middlewareArray.push(createSerializableStateInvariantMiddleware(serializableOptions));
-        }
-        if (actionCreatorCheck) {
-            var actionCreatorOptions = {};
-            if (!isBoolean(actionCreatorCheck)) {
-                actionCreatorOptions = actionCreatorCheck;
-            }
-            middlewareArray.unshift(createActionCreatorInvariantMiddleware(actionCreatorOptions));
-        }
-    }
-    return middlewareArray;
-}
-// src/configureStore.ts
-var IS_PRODUCTION = "development" === "production";
-function configureStore(options) {
-    var curriedGetDefaultMiddleware = curryGetDefaultMiddleware();
-    var _c = options || {}, _d = _c.reducer, reducer = _d === void 0 ? void 0 : _d, _e = _c.middleware, middleware = _e === void 0 ? curriedGetDefaultMiddleware() : _e, _f = _c.devTools, devTools = _f === void 0 ? true : _f, _g = _c.preloadedState, preloadedState = _g === void 0 ? void 0 : _g, _h = _c.enhancers, enhancers = _h === void 0 ? void 0 : _h;
-    var rootReducer;
-    if (typeof reducer === "function") {
-        rootReducer = reducer;
-    }
-    else if (isPlainObject(reducer)) {
-        rootReducer = (0,redux__WEBPACK_IMPORTED_MODULE_0__.combineReducers)(reducer);
-    }
-    else {
-        throw new Error('"reducer" is a required argument, and must be a function or an object of functions that can be passed to combineReducers');
-    }
-    var finalMiddleware = middleware;
-    if (typeof finalMiddleware === "function") {
-        finalMiddleware = finalMiddleware(curriedGetDefaultMiddleware);
-        if (!IS_PRODUCTION && !Array.isArray(finalMiddleware)) {
-            throw new Error("when using a middleware builder function, an array of middleware must be returned");
-        }
-    }
-    if (!IS_PRODUCTION && finalMiddleware.some(function (item) { return typeof item !== "function"; })) {
-        throw new Error("each middleware provided to configureStore must be a function");
-    }
-    var middlewareEnhancer = redux__WEBPACK_IMPORTED_MODULE_0__.applyMiddleware.apply(void 0, finalMiddleware);
-    var finalCompose = redux__WEBPACK_IMPORTED_MODULE_0__.compose;
-    if (devTools) {
-        finalCompose = composeWithDevTools(__spreadValues({
-            trace: !IS_PRODUCTION
-        }, typeof devTools === "object" && devTools));
-    }
-    var defaultEnhancers = new EnhancerArray(middlewareEnhancer);
-    var storeEnhancers = defaultEnhancers;
-    if (Array.isArray(enhancers)) {
-        storeEnhancers = __spreadArray([middlewareEnhancer], enhancers);
-    }
-    else if (typeof enhancers === "function") {
-        storeEnhancers = enhancers(defaultEnhancers);
-    }
-    var composedEnhancer = finalCompose.apply(void 0, storeEnhancers);
-    return (0,redux__WEBPACK_IMPORTED_MODULE_0__.createStore)(rootReducer, preloadedState, composedEnhancer);
-}
-// src/createReducer.ts
-
-// src/mapBuilders.ts
-function executeReducerBuilderCallback(builderCallback) {
-    var actionsMap = {};
-    var actionMatchers = [];
-    var defaultCaseReducer;
-    var builder = {
-        addCase: function (typeOrActionCreator, reducer) {
-            if (true) {
-                if (actionMatchers.length > 0) {
-                    throw new Error("`builder.addCase` should only be called before calling `builder.addMatcher`");
-                }
-                if (defaultCaseReducer) {
-                    throw new Error("`builder.addCase` should only be called before calling `builder.addDefaultCase`");
-                }
-            }
-            var type = typeof typeOrActionCreator === "string" ? typeOrActionCreator : typeOrActionCreator.type;
-            if (!type) {
-                throw new Error("`builder.addCase` cannot be called with an empty action type");
-            }
-            if (type in actionsMap) {
-                throw new Error("`builder.addCase` cannot be called with two reducers for the same action type");
-            }
-            actionsMap[type] = reducer;
-            return builder;
-        },
-        addMatcher: function (matcher, reducer) {
-            if (true) {
-                if (defaultCaseReducer) {
-                    throw new Error("`builder.addMatcher` should only be called before calling `builder.addDefaultCase`");
-                }
-            }
-            actionMatchers.push({ matcher: matcher, reducer: reducer });
-            return builder;
-        },
-        addDefaultCase: function (reducer) {
-            if (true) {
-                if (defaultCaseReducer) {
-                    throw new Error("`builder.addDefaultCase` can only be called once");
-                }
-            }
-            defaultCaseReducer = reducer;
-            return builder;
-        }
-    };
-    builderCallback(builder);
-    return [actionsMap, actionMatchers, defaultCaseReducer];
-}
-// src/createReducer.ts
-function isStateFunction(x) {
-    return typeof x === "function";
-}
-var hasWarnedAboutObjectNotation = false;
-function createReducer(initialState, mapOrBuilderCallback, actionMatchers, defaultCaseReducer) {
-    if (actionMatchers === void 0) { actionMatchers = []; }
-    if (true) {
-        if (typeof mapOrBuilderCallback === "object") {
-            if (!hasWarnedAboutObjectNotation) {
-                hasWarnedAboutObjectNotation = true;
-                console.warn("The object notation for `createReducer` is deprecated, and will be removed in RTK 2.0. Please use the 'builder callback' notation instead: https://redux-toolkit.js.org/api/createReducer");
-            }
-        }
-    }
-    var _c = typeof mapOrBuilderCallback === "function" ? executeReducerBuilderCallback(mapOrBuilderCallback) : [mapOrBuilderCallback, actionMatchers, defaultCaseReducer], actionsMap = _c[0], finalActionMatchers = _c[1], finalDefaultCaseReducer = _c[2];
-    var getInitialState;
-    if (isStateFunction(initialState)) {
-        getInitialState = function () { return freezeDraftable(initialState()); };
-    }
-    else {
-        var frozenInitialState_1 = freezeDraftable(initialState);
-        getInitialState = function () { return frozenInitialState_1; };
-    }
-    function reducer(state, action) {
-        if (state === void 0) { state = getInitialState(); }
-        var caseReducers = __spreadArray([
-            actionsMap[action.type]
-        ], finalActionMatchers.filter(function (_c) {
-            var matcher = _c.matcher;
-            return matcher(action);
-        }).map(function (_c) {
-            var reducer2 = _c.reducer;
-            return reducer2;
-        }));
-        if (caseReducers.filter(function (cr) { return !!cr; }).length === 0) {
-            caseReducers = [finalDefaultCaseReducer];
-        }
-        return caseReducers.reduce(function (previousState, caseReducer) {
-            if (caseReducer) {
-                if ((0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraft)(previousState)) {
-                    var draft = previousState;
-                    var result = caseReducer(draft, action);
-                    if (result === void 0) {
-                        return previousState;
-                    }
-                    return result;
-                }
-                else if (!(0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraftable)(previousState)) {
-                    var result = caseReducer(previousState, action);
-                    if (result === void 0) {
-                        if (previousState === null) {
-                            return previousState;
-                        }
-                        throw Error("A case reducer on a non-draftable value must not return undefined");
-                    }
-                    return result;
-                }
-                else {
-                    return (0,immer__WEBPACK_IMPORTED_MODULE_2__["default"])(previousState, function (draft) {
-                        return caseReducer(draft, action);
-                    });
-                }
-            }
-            return previousState;
-        }, state);
-    }
-    reducer.getInitialState = getInitialState;
-    return reducer;
-}
-// src/createSlice.ts
-var hasWarnedAboutObjectNotation2 = false;
-function getType2(slice, actionKey) {
-    return slice + "/" + actionKey;
-}
-function createSlice(options) {
-    var name = options.name;
-    if (!name) {
-        throw new Error("`name` is a required option for createSlice");
-    }
-    if (typeof process !== "undefined" && "development" === "development") {
-        if (options.initialState === void 0) {
-            console.error("You must provide an `initialState` value that is not `undefined`. You may have misspelled `initialState`");
-        }
-    }
-    var initialState = typeof options.initialState == "function" ? options.initialState : freezeDraftable(options.initialState);
-    var reducers = options.reducers || {};
-    var reducerNames = Object.keys(reducers);
-    var sliceCaseReducersByName = {};
-    var sliceCaseReducersByType = {};
-    var actionCreators = {};
-    reducerNames.forEach(function (reducerName) {
-        var maybeReducerWithPrepare = reducers[reducerName];
-        var type = getType2(name, reducerName);
-        var caseReducer;
-        var prepareCallback;
-        if ("reducer" in maybeReducerWithPrepare) {
-            caseReducer = maybeReducerWithPrepare.reducer;
-            prepareCallback = maybeReducerWithPrepare.prepare;
-        }
-        else {
-            caseReducer = maybeReducerWithPrepare;
-        }
-        sliceCaseReducersByName[reducerName] = caseReducer;
-        sliceCaseReducersByType[type] = caseReducer;
-        actionCreators[reducerName] = prepareCallback ? createAction(type, prepareCallback) : createAction(type);
-    });
-    function buildReducer() {
-        if (true) {
-            if (typeof options.extraReducers === "object") {
-                if (!hasWarnedAboutObjectNotation2) {
-                    hasWarnedAboutObjectNotation2 = true;
-                    console.warn("The object notation for `createSlice.extraReducers` is deprecated, and will be removed in RTK 2.0. Please use the 'builder callback' notation instead: https://redux-toolkit.js.org/api/createSlice");
-                }
-            }
-        }
-        var _c = typeof options.extraReducers === "function" ? executeReducerBuilderCallback(options.extraReducers) : [options.extraReducers], _d = _c[0], extraReducers = _d === void 0 ? {} : _d, _e = _c[1], actionMatchers = _e === void 0 ? [] : _e, _f = _c[2], defaultCaseReducer = _f === void 0 ? void 0 : _f;
-        var finalCaseReducers = __spreadValues(__spreadValues({}, extraReducers), sliceCaseReducersByType);
-        return createReducer(initialState, function (builder) {
-            for (var key in finalCaseReducers) {
-                builder.addCase(key, finalCaseReducers[key]);
-            }
-            for (var _i = 0, actionMatchers_1 = actionMatchers; _i < actionMatchers_1.length; _i++) {
-                var m = actionMatchers_1[_i];
-                builder.addMatcher(m.matcher, m.reducer);
-            }
-            if (defaultCaseReducer) {
-                builder.addDefaultCase(defaultCaseReducer);
-            }
-        });
-    }
-    var _reducer;
-    return {
-        name: name,
-        reducer: function (state, action) {
-            if (!_reducer)
-                _reducer = buildReducer();
-            return _reducer(state, action);
-        },
-        actions: actionCreators,
-        caseReducers: sliceCaseReducersByName,
-        getInitialState: function () {
-            if (!_reducer)
-                _reducer = buildReducer();
-            return _reducer.getInitialState();
-        }
-    };
-}
-// src/entities/entity_state.ts
-function getInitialEntityState() {
-    return {
-        ids: [],
-        entities: {}
-    };
-}
-function createInitialStateFactory() {
-    function getInitialState(additionalState) {
-        if (additionalState === void 0) { additionalState = {}; }
-        return Object.assign(getInitialEntityState(), additionalState);
-    }
-    return { getInitialState: getInitialState };
-}
-// src/entities/state_selectors.ts
-function createSelectorsFactory() {
-    function getSelectors(selectState) {
-        var selectIds = function (state) { return state.ids; };
-        var selectEntities = function (state) { return state.entities; };
-        var selectAll = createDraftSafeSelector(selectIds, selectEntities, function (ids, entities) { return ids.map(function (id) { return entities[id]; }); });
-        var selectId = function (_, id) { return id; };
-        var selectById = function (entities, id) { return entities[id]; };
-        var selectTotal = createDraftSafeSelector(selectIds, function (ids) { return ids.length; });
-        if (!selectState) {
-            return {
-                selectIds: selectIds,
-                selectEntities: selectEntities,
-                selectAll: selectAll,
-                selectTotal: selectTotal,
-                selectById: createDraftSafeSelector(selectEntities, selectId, selectById)
-            };
-        }
-        var selectGlobalizedEntities = createDraftSafeSelector(selectState, selectEntities);
-        return {
-            selectIds: createDraftSafeSelector(selectState, selectIds),
-            selectEntities: selectGlobalizedEntities,
-            selectAll: createDraftSafeSelector(selectState, selectAll),
-            selectTotal: createDraftSafeSelector(selectState, selectTotal),
-            selectById: createDraftSafeSelector(selectGlobalizedEntities, selectId, selectById)
-        };
-    }
-    return { getSelectors: getSelectors };
-}
-// src/entities/state_adapter.ts
-
-function createSingleArgumentStateOperator(mutator) {
-    var operator = createStateOperator(function (_, state) { return mutator(state); });
-    return function operation(state) {
-        return operator(state, void 0);
-    };
-}
-function createStateOperator(mutator) {
-    return function operation(state, arg) {
-        function isPayloadActionArgument(arg2) {
-            return isFSA(arg2);
-        }
-        var runMutator = function (draft) {
-            if (isPayloadActionArgument(arg)) {
-                mutator(arg.payload, draft);
-            }
-            else {
-                mutator(arg, draft);
-            }
-        };
-        if ((0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraft)(state)) {
-            runMutator(state);
-            return state;
-        }
-        else {
-            return (0,immer__WEBPACK_IMPORTED_MODULE_2__["default"])(state, runMutator);
-        }
-    };
-}
-// src/entities/utils.ts
-function selectIdValue(entity, selectId) {
-    var key = selectId(entity);
-    if ( true && key === void 0) {
-        console.warn("The entity passed to the `selectId` implementation returned undefined.", "You should probably provide your own `selectId` implementation.", "The entity that was passed:", entity, "The `selectId` implementation:", selectId.toString());
-    }
-    return key;
-}
-function ensureEntitiesArray(entities) {
-    if (!Array.isArray(entities)) {
-        entities = Object.values(entities);
-    }
-    return entities;
-}
-function splitAddedUpdatedEntities(newEntities, selectId, state) {
-    newEntities = ensureEntitiesArray(newEntities);
-    var added = [];
-    var updated = [];
-    for (var _i = 0, newEntities_1 = newEntities; _i < newEntities_1.length; _i++) {
-        var entity = newEntities_1[_i];
-        var id = selectIdValue(entity, selectId);
-        if (id in state.entities) {
-            updated.push({ id: id, changes: entity });
-        }
-        else {
-            added.push(entity);
-        }
-    }
-    return [added, updated];
-}
-// src/entities/unsorted_state_adapter.ts
-function createUnsortedStateAdapter(selectId) {
-    function addOneMutably(entity, state) {
-        var key = selectIdValue(entity, selectId);
-        if (key in state.entities) {
-            return;
-        }
-        state.ids.push(key);
-        state.entities[key] = entity;
-    }
-    function addManyMutably(newEntities, state) {
-        newEntities = ensureEntitiesArray(newEntities);
-        for (var _i = 0, newEntities_2 = newEntities; _i < newEntities_2.length; _i++) {
-            var entity = newEntities_2[_i];
-            addOneMutably(entity, state);
-        }
-    }
-    function setOneMutably(entity, state) {
-        var key = selectIdValue(entity, selectId);
-        if (!(key in state.entities)) {
-            state.ids.push(key);
-        }
-        state.entities[key] = entity;
-    }
-    function setManyMutably(newEntities, state) {
-        newEntities = ensureEntitiesArray(newEntities);
-        for (var _i = 0, newEntities_3 = newEntities; _i < newEntities_3.length; _i++) {
-            var entity = newEntities_3[_i];
-            setOneMutably(entity, state);
-        }
-    }
-    function setAllMutably(newEntities, state) {
-        newEntities = ensureEntitiesArray(newEntities);
-        state.ids = [];
-        state.entities = {};
-        addManyMutably(newEntities, state);
-    }
-    function removeOneMutably(key, state) {
-        return removeManyMutably([key], state);
-    }
-    function removeManyMutably(keys, state) {
-        var didMutate = false;
-        keys.forEach(function (key) {
-            if (key in state.entities) {
-                delete state.entities[key];
-                didMutate = true;
-            }
-        });
-        if (didMutate) {
-            state.ids = state.ids.filter(function (id) { return id in state.entities; });
-        }
-    }
-    function removeAllMutably(state) {
-        Object.assign(state, {
-            ids: [],
-            entities: {}
-        });
-    }
-    function takeNewKey(keys, update, state) {
-        var original2 = state.entities[update.id];
-        var updated = Object.assign({}, original2, update.changes);
-        var newKey = selectIdValue(updated, selectId);
-        var hasNewKey = newKey !== update.id;
-        if (hasNewKey) {
-            keys[update.id] = newKey;
-            delete state.entities[update.id];
-        }
-        state.entities[newKey] = updated;
-        return hasNewKey;
-    }
-    function updateOneMutably(update, state) {
-        return updateManyMutably([update], state);
-    }
-    function updateManyMutably(updates, state) {
-        var newKeys = {};
-        var updatesPerEntity = {};
-        updates.forEach(function (update) {
-            if (update.id in state.entities) {
-                updatesPerEntity[update.id] = {
-                    id: update.id,
-                    changes: __spreadValues(__spreadValues({}, updatesPerEntity[update.id] ? updatesPerEntity[update.id].changes : null), update.changes)
-                };
-            }
-        });
-        updates = Object.values(updatesPerEntity);
-        var didMutateEntities = updates.length > 0;
-        if (didMutateEntities) {
-            var didMutateIds = updates.filter(function (update) { return takeNewKey(newKeys, update, state); }).length > 0;
-            if (didMutateIds) {
-                state.ids = Object.keys(state.entities);
-            }
-        }
-    }
-    function upsertOneMutably(entity, state) {
-        return upsertManyMutably([entity], state);
-    }
-    function upsertManyMutably(newEntities, state) {
-        var _c = splitAddedUpdatedEntities(newEntities, selectId, state), added = _c[0], updated = _c[1];
-        updateManyMutably(updated, state);
-        addManyMutably(added, state);
-    }
-    return {
-        removeAll: createSingleArgumentStateOperator(removeAllMutably),
-        addOne: createStateOperator(addOneMutably),
-        addMany: createStateOperator(addManyMutably),
-        setOne: createStateOperator(setOneMutably),
-        setMany: createStateOperator(setManyMutably),
-        setAll: createStateOperator(setAllMutably),
-        updateOne: createStateOperator(updateOneMutably),
-        updateMany: createStateOperator(updateManyMutably),
-        upsertOne: createStateOperator(upsertOneMutably),
-        upsertMany: createStateOperator(upsertManyMutably),
-        removeOne: createStateOperator(removeOneMutably),
-        removeMany: createStateOperator(removeManyMutably)
-    };
-}
-// src/entities/sorted_state_adapter.ts
-function createSortedStateAdapter(selectId, sort) {
-    var _c = createUnsortedStateAdapter(selectId), removeOne = _c.removeOne, removeMany = _c.removeMany, removeAll = _c.removeAll;
-    function addOneMutably(entity, state) {
-        return addManyMutably([entity], state);
-    }
-    function addManyMutably(newEntities, state) {
-        newEntities = ensureEntitiesArray(newEntities);
-        var models = newEntities.filter(function (model) { return !(selectIdValue(model, selectId) in state.entities); });
-        if (models.length !== 0) {
-            merge(models, state);
-        }
-    }
-    function setOneMutably(entity, state) {
-        return setManyMutably([entity], state);
-    }
-    function setManyMutably(newEntities, state) {
-        newEntities = ensureEntitiesArray(newEntities);
-        if (newEntities.length !== 0) {
-            merge(newEntities, state);
-        }
-    }
-    function setAllMutably(newEntities, state) {
-        newEntities = ensureEntitiesArray(newEntities);
-        state.entities = {};
-        state.ids = [];
-        addManyMutably(newEntities, state);
-    }
-    function updateOneMutably(update, state) {
-        return updateManyMutably([update], state);
-    }
-    function updateManyMutably(updates, state) {
-        var appliedUpdates = false;
-        for (var _i = 0, updates_1 = updates; _i < updates_1.length; _i++) {
-            var update = updates_1[_i];
-            var entity = state.entities[update.id];
-            if (!entity) {
-                continue;
-            }
-            appliedUpdates = true;
-            Object.assign(entity, update.changes);
-            var newId = selectId(entity);
-            if (update.id !== newId) {
-                delete state.entities[update.id];
-                state.entities[newId] = entity;
-            }
-        }
-        if (appliedUpdates) {
-            resortEntities(state);
-        }
-    }
-    function upsertOneMutably(entity, state) {
-        return upsertManyMutably([entity], state);
-    }
-    function upsertManyMutably(newEntities, state) {
-        var _c = splitAddedUpdatedEntities(newEntities, selectId, state), added = _c[0], updated = _c[1];
-        updateManyMutably(updated, state);
-        addManyMutably(added, state);
-    }
-    function areArraysEqual(a, b) {
-        if (a.length !== b.length) {
-            return false;
-        }
-        for (var i = 0; i < a.length && i < b.length; i++) {
-            if (a[i] === b[i]) {
-                continue;
-            }
-            return false;
-        }
-        return true;
-    }
-    function merge(models, state) {
-        models.forEach(function (model) {
-            state.entities[selectId(model)] = model;
-        });
-        resortEntities(state);
-    }
-    function resortEntities(state) {
-        var allEntities = Object.values(state.entities);
-        allEntities.sort(sort);
-        var newSortedIds = allEntities.map(selectId);
-        var ids = state.ids;
-        if (!areArraysEqual(ids, newSortedIds)) {
-            state.ids = newSortedIds;
-        }
-    }
-    return {
-        removeOne: removeOne,
-        removeMany: removeMany,
-        removeAll: removeAll,
-        addOne: createStateOperator(addOneMutably),
-        updateOne: createStateOperator(updateOneMutably),
-        upsertOne: createStateOperator(upsertOneMutably),
-        setOne: createStateOperator(setOneMutably),
-        setMany: createStateOperator(setManyMutably),
-        setAll: createStateOperator(setAllMutably),
-        addMany: createStateOperator(addManyMutably),
-        updateMany: createStateOperator(updateManyMutably),
-        upsertMany: createStateOperator(upsertManyMutably)
-    };
-}
-// src/entities/create_adapter.ts
-function createEntityAdapter(options) {
-    if (options === void 0) { options = {}; }
-    var _c = __spreadValues({
-        sortComparer: false,
-        selectId: function (instance) { return instance.id; }
-    }, options), selectId = _c.selectId, sortComparer = _c.sortComparer;
-    var stateFactory = createInitialStateFactory();
-    var selectorsFactory = createSelectorsFactory();
-    var stateAdapter = sortComparer ? createSortedStateAdapter(selectId, sortComparer) : createUnsortedStateAdapter(selectId);
-    return __spreadValues(__spreadValues(__spreadValues({
-        selectId: selectId,
-        sortComparer: sortComparer
-    }, stateFactory), selectorsFactory), stateAdapter);
-}
-// src/nanoid.ts
-var urlAlphabet = "ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXIjQW";
-var nanoid = function (size) {
-    if (size === void 0) { size = 21; }
-    var id = "";
-    var i = size;
-    while (i--) {
-        id += urlAlphabet[Math.random() * 64 | 0];
-    }
-    return id;
-};
-// src/createAsyncThunk.ts
-var commonProperties = [
-    "name",
-    "message",
-    "stack",
-    "code"
-];
-var RejectWithValue = /** @class */ (function () {
-    function RejectWithValue(payload, meta) {
-        this.payload = payload;
-        this.meta = meta;
-    }
-    return RejectWithValue;
-}());
-var FulfillWithMeta = /** @class */ (function () {
-    function FulfillWithMeta(payload, meta) {
-        this.payload = payload;
-        this.meta = meta;
-    }
-    return FulfillWithMeta;
-}());
-var miniSerializeError = function (value) {
-    if (typeof value === "object" && value !== null) {
-        var simpleError = {};
-        for (var _i = 0, commonProperties_1 = commonProperties; _i < commonProperties_1.length; _i++) {
-            var property = commonProperties_1[_i];
-            if (typeof value[property] === "string") {
-                simpleError[property] = value[property];
-            }
-        }
-        return simpleError;
-    }
-    return { message: String(value) };
-};
-var createAsyncThunk = (function () {
-    function createAsyncThunk2(typePrefix, payloadCreator, options) {
-        var fulfilled = createAction(typePrefix + "/fulfilled", function (payload, requestId, arg, meta) { return ({
-            payload: payload,
-            meta: __spreadProps(__spreadValues({}, meta || {}), {
-                arg: arg,
-                requestId: requestId,
-                requestStatus: "fulfilled"
-            })
-        }); });
-        var pending = createAction(typePrefix + "/pending", function (requestId, arg, meta) { return ({
-            payload: void 0,
-            meta: __spreadProps(__spreadValues({}, meta || {}), {
-                arg: arg,
-                requestId: requestId,
-                requestStatus: "pending"
-            })
-        }); });
-        var rejected = createAction(typePrefix + "/rejected", function (error, requestId, arg, payload, meta) { return ({
-            payload: payload,
-            error: (options && options.serializeError || miniSerializeError)(error || "Rejected"),
-            meta: __spreadProps(__spreadValues({}, meta || {}), {
-                arg: arg,
-                requestId: requestId,
-                rejectedWithValue: !!payload,
-                requestStatus: "rejected",
-                aborted: (error == null ? void 0 : error.name) === "AbortError",
-                condition: (error == null ? void 0 : error.name) === "ConditionError"
-            })
-        }); });
-        var displayedWarning = false;
-        var AC = typeof AbortController !== "undefined" ? AbortController : /** @class */ (function () {
-            function class_1() {
-                this.signal = {
-                    aborted: false,
-                    addEventListener: function () {
-                    },
-                    dispatchEvent: function () {
-                        return false;
-                    },
-                    onabort: function () {
-                    },
-                    removeEventListener: function () {
-                    },
-                    reason: void 0,
-                    throwIfAborted: function () {
-                    }
-                };
-            }
-            class_1.prototype.abort = function () {
-                if (true) {
-                    if (!displayedWarning) {
-                        displayedWarning = true;
-                        console.info("This platform does not implement AbortController. \nIf you want to use the AbortController to react to `abort` events, please consider importing a polyfill like 'abortcontroller-polyfill/dist/abortcontroller-polyfill-only'.");
-                    }
-                }
-            };
-            return class_1;
-        }());
-        function actionCreator(arg) {
-            return function (dispatch, getState, extra) {
-                var requestId = (options == null ? void 0 : options.idGenerator) ? options.idGenerator(arg) : nanoid();
-                var abortController = new AC();
-                var abortReason;
-                var started = false;
-                function abort(reason) {
-                    abortReason = reason;
-                    abortController.abort();
-                }
-                var promise2 = function () {
-                    return __async(this, null, function () {
-                        var _a, _b, finalAction, conditionResult, abortedPromise, err_1, skipDispatch;
-                        return __generator(this, function (_c) {
-                            switch (_c.label) {
-                                case 0:
-                                    _c.trys.push([0, 4, , 5]);
-                                    conditionResult = (_a = options == null ? void 0 : options.condition) == null ? void 0 : _a.call(options, arg, { getState: getState, extra: extra });
-                                    if (!isThenable(conditionResult)) return [3 /*break*/, 2];
-                                    return [4 /*yield*/, conditionResult];
-                                case 1:
-                                    conditionResult = _c.sent();
-                                    _c.label = 2;
-                                case 2:
-                                    if (conditionResult === false || abortController.signal.aborted) {
-                                        throw {
-                                            name: "ConditionError",
-                                            message: "Aborted due to condition callback returning false."
-                                        };
-                                    }
-                                    started = true;
-                                    abortedPromise = new Promise(function (_, reject) { return abortController.signal.addEventListener("abort", function () { return reject({
-                                        name: "AbortError",
-                                        message: abortReason || "Aborted"
-                                    }); }); });
-                                    dispatch(pending(requestId, arg, (_b = options == null ? void 0 : options.getPendingMeta) == null ? void 0 : _b.call(options, { requestId: requestId, arg: arg }, { getState: getState, extra: extra })));
-                                    return [4 /*yield*/, Promise.race([
-                                            abortedPromise,
-                                            Promise.resolve(payloadCreator(arg, {
-                                                dispatch: dispatch,
-                                                getState: getState,
-                                                extra: extra,
-                                                requestId: requestId,
-                                                signal: abortController.signal,
-                                                abort: abort,
-                                                rejectWithValue: function (value, meta) {
-                                                    return new RejectWithValue(value, meta);
-                                                },
-                                                fulfillWithValue: function (value, meta) {
-                                                    return new FulfillWithMeta(value, meta);
-                                                }
-                                            })).then(function (result) {
-                                                if (result instanceof RejectWithValue) {
-                                                    throw result;
-                                                }
-                                                if (result instanceof FulfillWithMeta) {
-                                                    return fulfilled(result.payload, requestId, arg, result.meta);
-                                                }
-                                                return fulfilled(result, requestId, arg);
-                                            })
-                                        ])];
-                                case 3:
-                                    finalAction = _c.sent();
-                                    return [3 /*break*/, 5];
-                                case 4:
-                                    err_1 = _c.sent();
-                                    finalAction = err_1 instanceof RejectWithValue ? rejected(null, requestId, arg, err_1.payload, err_1.meta) : rejected(err_1, requestId, arg);
-                                    return [3 /*break*/, 5];
-                                case 5:
-                                    skipDispatch = options && !options.dispatchConditionRejection && rejected.match(finalAction) && finalAction.meta.condition;
-                                    if (!skipDispatch) {
-                                        dispatch(finalAction);
-                                    }
-                                    return [2 /*return*/, finalAction];
-                            }
-                        });
-                    });
-                }();
-                return Object.assign(promise2, {
-                    abort: abort,
-                    requestId: requestId,
-                    arg: arg,
-                    unwrap: function () {
-                        return promise2.then(unwrapResult);
-                    }
-                });
-            };
-        }
-        return Object.assign(actionCreator, {
-            pending: pending,
-            rejected: rejected,
-            fulfilled: fulfilled,
-            typePrefix: typePrefix
-        });
-    }
-    createAsyncThunk2.withTypes = function () { return createAsyncThunk2; };
-    return createAsyncThunk2;
-})();
-function unwrapResult(action) {
-    if (action.meta && action.meta.rejectedWithValue) {
-        throw action.payload;
-    }
-    if (action.error) {
-        throw action.error;
-    }
-    return action.payload;
-}
-function isThenable(value) {
-    return value !== null && typeof value === "object" && typeof value.then === "function";
-}
-// src/matchers.ts
-var matches = function (matcher, action) {
-    if (hasMatchFunction(matcher)) {
-        return matcher.match(action);
-    }
-    else {
-        return matcher(action);
-    }
-};
-function isAnyOf() {
-    var matchers = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        matchers[_i] = arguments[_i];
-    }
-    return function (action) {
-        return matchers.some(function (matcher) { return matches(matcher, action); });
-    };
-}
-function isAllOf() {
-    var matchers = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        matchers[_i] = arguments[_i];
-    }
-    return function (action) {
-        return matchers.every(function (matcher) { return matches(matcher, action); });
-    };
-}
-function hasExpectedRequestMetadata(action, validStatus) {
-    if (!action || !action.meta)
-        return false;
-    var hasValidRequestId = typeof action.meta.requestId === "string";
-    var hasValidRequestStatus = validStatus.indexOf(action.meta.requestStatus) > -1;
-    return hasValidRequestId && hasValidRequestStatus;
-}
-function isAsyncThunkArray(a) {
-    return typeof a[0] === "function" && "pending" in a[0] && "fulfilled" in a[0] && "rejected" in a[0];
-}
-function isPending() {
-    var asyncThunks = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        asyncThunks[_i] = arguments[_i];
-    }
-    if (asyncThunks.length === 0) {
-        return function (action) { return hasExpectedRequestMetadata(action, ["pending"]); };
-    }
-    if (!isAsyncThunkArray(asyncThunks)) {
-        return isPending()(asyncThunks[0]);
-    }
-    return function (action) {
-        var matchers = asyncThunks.map(function (asyncThunk) { return asyncThunk.pending; });
-        var combinedMatcher = isAnyOf.apply(void 0, matchers);
-        return combinedMatcher(action);
-    };
-}
-function isRejected() {
-    var asyncThunks = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        asyncThunks[_i] = arguments[_i];
-    }
-    if (asyncThunks.length === 0) {
-        return function (action) { return hasExpectedRequestMetadata(action, ["rejected"]); };
-    }
-    if (!isAsyncThunkArray(asyncThunks)) {
-        return isRejected()(asyncThunks[0]);
-    }
-    return function (action) {
-        var matchers = asyncThunks.map(function (asyncThunk) { return asyncThunk.rejected; });
-        var combinedMatcher = isAnyOf.apply(void 0, matchers);
-        return combinedMatcher(action);
-    };
-}
-function isRejectedWithValue() {
-    var asyncThunks = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        asyncThunks[_i] = arguments[_i];
-    }
-    var hasFlag = function (action) {
-        return action && action.meta && action.meta.rejectedWithValue;
-    };
-    if (asyncThunks.length === 0) {
-        return function (action) {
-            var combinedMatcher = isAllOf(isRejected.apply(void 0, asyncThunks), hasFlag);
-            return combinedMatcher(action);
-        };
-    }
-    if (!isAsyncThunkArray(asyncThunks)) {
-        return isRejectedWithValue()(asyncThunks[0]);
-    }
-    return function (action) {
-        var combinedMatcher = isAllOf(isRejected.apply(void 0, asyncThunks), hasFlag);
-        return combinedMatcher(action);
-    };
-}
-function isFulfilled() {
-    var asyncThunks = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        asyncThunks[_i] = arguments[_i];
-    }
-    if (asyncThunks.length === 0) {
-        return function (action) { return hasExpectedRequestMetadata(action, ["fulfilled"]); };
-    }
-    if (!isAsyncThunkArray(asyncThunks)) {
-        return isFulfilled()(asyncThunks[0]);
-    }
-    return function (action) {
-        var matchers = asyncThunks.map(function (asyncThunk) { return asyncThunk.fulfilled; });
-        var combinedMatcher = isAnyOf.apply(void 0, matchers);
-        return combinedMatcher(action);
-    };
-}
-function isAsyncThunkAction() {
-    var asyncThunks = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        asyncThunks[_i] = arguments[_i];
-    }
-    if (asyncThunks.length === 0) {
-        return function (action) { return hasExpectedRequestMetadata(action, ["pending", "fulfilled", "rejected"]); };
-    }
-    if (!isAsyncThunkArray(asyncThunks)) {
-        return isAsyncThunkAction()(asyncThunks[0]);
-    }
-    return function (action) {
-        var matchers = [];
-        for (var _i = 0, asyncThunks_1 = asyncThunks; _i < asyncThunks_1.length; _i++) {
-            var asyncThunk = asyncThunks_1[_i];
-            matchers.push(asyncThunk.pending, asyncThunk.rejected, asyncThunk.fulfilled);
-        }
-        var combinedMatcher = isAnyOf.apply(void 0, matchers);
-        return combinedMatcher(action);
-    };
-}
-// src/listenerMiddleware/utils.ts
-var assertFunction = function (func, expected) {
-    if (typeof func !== "function") {
-        throw new TypeError(expected + " is not a function");
-    }
-};
-var noop = function () {
-};
-var catchRejection = function (promise2, onError) {
-    if (onError === void 0) { onError = noop; }
-    promise2.catch(onError);
-    return promise2;
-};
-var addAbortSignalListener = function (abortSignal, callback) {
-    abortSignal.addEventListener("abort", callback, { once: true });
-    return function () { return abortSignal.removeEventListener("abort", callback); };
-};
-var abortControllerWithReason = function (abortController, reason) {
-    var signal = abortController.signal;
-    if (signal.aborted) {
-        return;
-    }
-    if (!("reason" in signal)) {
-        Object.defineProperty(signal, "reason", {
-            enumerable: true,
-            value: reason,
-            configurable: true,
-            writable: true
-        });
-    }
-    ;
-    abortController.abort(reason);
-};
-// src/listenerMiddleware/exceptions.ts
-var task = "task";
-var listener = "listener";
-var completed = "completed";
-var cancelled = "cancelled";
-var taskCancelled = "task-" + cancelled;
-var taskCompleted = "task-" + completed;
-var listenerCancelled = listener + "-" + cancelled;
-var listenerCompleted = listener + "-" + completed;
-var TaskAbortError = /** @class */ (function () {
-    function TaskAbortError(code) {
-        this.code = code;
-        this.name = "TaskAbortError";
-        this.message = task + " " + cancelled + " (reason: " + code + ")";
-    }
-    return TaskAbortError;
-}());
-// src/listenerMiddleware/task.ts
-var validateActive = function (signal) {
-    if (signal.aborted) {
-        throw new TaskAbortError(signal.reason);
-    }
-};
-function raceWithSignal(signal, promise2) {
-    var cleanup = noop;
-    return new Promise(function (resolve, reject) {
-        var notifyRejection = function () { return reject(new TaskAbortError(signal.reason)); };
-        if (signal.aborted) {
-            notifyRejection();
-            return;
-        }
-        cleanup = addAbortSignalListener(signal, notifyRejection);
-        promise2.finally(function () { return cleanup(); }).then(resolve, reject);
-    }).finally(function () {
-        cleanup = noop;
-    });
-}
-var runTask = function (task2, cleanUp) { return __async(void 0, null, function () {
-    var value, error_1;
-    return __generator(this, function (_c) {
-        switch (_c.label) {
-            case 0:
-                _c.trys.push([0, 3, 4, 5]);
-                return [4 /*yield*/, Promise.resolve()];
-            case 1:
-                _c.sent();
-                return [4 /*yield*/, task2()];
-            case 2:
-                value = _c.sent();
-                return [2 /*return*/, {
-                        status: "ok",
-                        value: value
-                    }];
-            case 3:
-                error_1 = _c.sent();
-                return [2 /*return*/, {
-                        status: error_1 instanceof TaskAbortError ? "cancelled" : "rejected",
-                        error: error_1
-                    }];
-            case 4:
-                cleanUp == null ? void 0 : cleanUp();
-                return [7 /*endfinally*/];
-            case 5: return [2 /*return*/];
-        }
-    });
-}); };
-var createPause = function (signal) {
-    return function (promise2) {
-        return catchRejection(raceWithSignal(signal, promise2).then(function (output) {
-            validateActive(signal);
-            return output;
-        }));
-    };
-};
-var createDelay = function (signal) {
-    var pause = createPause(signal);
-    return function (timeoutMs) {
-        return pause(new Promise(function (resolve) { return setTimeout(resolve, timeoutMs); }));
-    };
-};
-// src/listenerMiddleware/index.ts
-var assign = Object.assign;
-var INTERNAL_NIL_TOKEN = {};
-var alm = "listenerMiddleware";
-var createFork = function (parentAbortSignal, parentBlockingPromises) {
-    var linkControllers = function (controller) { return addAbortSignalListener(parentAbortSignal, function () { return abortControllerWithReason(controller, parentAbortSignal.reason); }); };
-    return function (taskExecutor, opts) {
-        assertFunction(taskExecutor, "taskExecutor");
-        var childAbortController = new AbortController();
-        linkControllers(childAbortController);
-        var result = runTask(function () { return __async(void 0, null, function () {
-            var result2;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
-                    case 0:
-                        validateActive(parentAbortSignal);
-                        validateActive(childAbortController.signal);
-                        return [4 /*yield*/, taskExecutor({
-                                pause: createPause(childAbortController.signal),
-                                delay: createDelay(childAbortController.signal),
-                                signal: childAbortController.signal
-                            })];
-                    case 1:
-                        result2 = _c.sent();
-                        validateActive(childAbortController.signal);
-                        return [2 /*return*/, result2];
-                }
-            });
-        }); }, function () { return abortControllerWithReason(childAbortController, taskCompleted); });
-        if (opts == null ? void 0 : opts.autoJoin) {
-            parentBlockingPromises.push(result);
-        }
-        return {
-            result: createPause(parentAbortSignal)(result),
-            cancel: function () {
-                abortControllerWithReason(childAbortController, taskCancelled);
-            }
-        };
-    };
-};
-var createTakePattern = function (startListening, signal) {
-    var take = function (predicate, timeout) { return __async(void 0, null, function () {
-        var unsubscribe, tuplePromise, promises, output;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
-                case 0:
-                    validateActive(signal);
-                    unsubscribe = function () {
-                    };
-                    tuplePromise = new Promise(function (resolve, reject) {
-                        var stopListening = startListening({
-                            predicate: predicate,
-                            effect: function (action, listenerApi) {
-                                listenerApi.unsubscribe();
-                                resolve([
-                                    action,
-                                    listenerApi.getState(),
-                                    listenerApi.getOriginalState()
-                                ]);
-                            }
-                        });
-                        unsubscribe = function () {
-                            stopListening();
-                            reject();
-                        };
-                    });
-                    promises = [
-                        tuplePromise
-                    ];
-                    if (timeout != null) {
-                        promises.push(new Promise(function (resolve) { return setTimeout(resolve, timeout, null); }));
-                    }
-                    _c.label = 1;
-                case 1:
-                    _c.trys.push([1, , 3, 4]);
-                    return [4 /*yield*/, raceWithSignal(signal, Promise.race(promises))];
-                case 2:
-                    output = _c.sent();
-                    validateActive(signal);
-                    return [2 /*return*/, output];
-                case 3:
-                    unsubscribe();
-                    return [7 /*endfinally*/];
-                case 4: return [2 /*return*/];
-            }
-        });
-    }); };
-    return function (predicate, timeout) { return catchRejection(take(predicate, timeout)); };
-};
-var getListenerEntryPropsFrom = function (options) {
-    var type = options.type, actionCreator = options.actionCreator, matcher = options.matcher, predicate = options.predicate, effect = options.effect;
-    if (type) {
-        predicate = createAction(type).match;
-    }
-    else if (actionCreator) {
-        type = actionCreator.type;
-        predicate = actionCreator.match;
-    }
-    else if (matcher) {
-        predicate = matcher;
-    }
-    else if (predicate) {
-    }
-    else {
-        throw new Error("Creating or removing a listener requires one of the known fields for matching an action");
-    }
-    assertFunction(effect, "options.listener");
-    return { predicate: predicate, type: type, effect: effect };
-};
-var createListenerEntry = function (options) {
-    var _c = getListenerEntryPropsFrom(options), type = _c.type, predicate = _c.predicate, effect = _c.effect;
-    var id = nanoid();
-    var entry = {
-        id: id,
-        effect: effect,
-        type: type,
-        predicate: predicate,
-        pending: new Set(),
-        unsubscribe: function () {
-            throw new Error("Unsubscribe not initialized");
-        }
-    };
-    return entry;
-};
-var cancelActiveListeners = function (entry) {
-    entry.pending.forEach(function (controller) {
-        abortControllerWithReason(controller, listenerCancelled);
-    });
-};
-var createClearListenerMiddleware = function (listenerMap) {
-    return function () {
-        listenerMap.forEach(cancelActiveListeners);
-        listenerMap.clear();
-    };
-};
-var safelyNotifyError = function (errorHandler, errorToNotify, errorInfo) {
-    try {
-        errorHandler(errorToNotify, errorInfo);
-    }
-    catch (errorHandlerError) {
-        setTimeout(function () {
-            throw errorHandlerError;
-        }, 0);
-    }
-};
-var addListener = createAction(alm + "/add");
-var clearAllListeners = createAction(alm + "/removeAll");
-var removeListener = createAction(alm + "/remove");
-var defaultErrorHandler = function () {
-    var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
-    }
-    console.error.apply(console, __spreadArray([alm + "/error"], args));
-};
-function createListenerMiddleware(middlewareOptions) {
-    var _this = this;
-    if (middlewareOptions === void 0) { middlewareOptions = {}; }
-    var listenerMap = new Map();
-    var extra = middlewareOptions.extra, _c = middlewareOptions.onError, onError = _c === void 0 ? defaultErrorHandler : _c;
-    assertFunction(onError, "onError");
-    var insertEntry = function (entry) {
-        entry.unsubscribe = function () { return listenerMap.delete(entry.id); };
-        listenerMap.set(entry.id, entry);
-        return function (cancelOptions) {
-            entry.unsubscribe();
-            if (cancelOptions == null ? void 0 : cancelOptions.cancelActive) {
-                cancelActiveListeners(entry);
-            }
-        };
-    };
-    var findListenerEntry = function (comparator) {
-        for (var _i = 0, _c = Array.from(listenerMap.values()); _i < _c.length; _i++) {
-            var entry = _c[_i];
-            if (comparator(entry)) {
-                return entry;
-            }
-        }
-        return void 0;
-    };
-    var startListening = function (options) {
-        var entry = findListenerEntry(function (existingEntry) { return existingEntry.effect === options.effect; });
-        if (!entry) {
-            entry = createListenerEntry(options);
-        }
-        return insertEntry(entry);
-    };
-    var stopListening = function (options) {
-        var _c = getListenerEntryPropsFrom(options), type = _c.type, effect = _c.effect, predicate = _c.predicate;
-        var entry = findListenerEntry(function (entry2) {
-            var matchPredicateOrType = typeof type === "string" ? entry2.type === type : entry2.predicate === predicate;
-            return matchPredicateOrType && entry2.effect === effect;
-        });
-        if (entry) {
-            entry.unsubscribe();
-            if (options.cancelActive) {
-                cancelActiveListeners(entry);
-            }
-        }
-        return !!entry;
-    };
-    var notifyListener = function (entry, action, api, getOriginalState) { return __async(_this, null, function () {
-        var internalTaskController, take, autoJoinPromises, listenerError_1;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
-                case 0:
-                    internalTaskController = new AbortController();
-                    take = createTakePattern(startListening, internalTaskController.signal);
-                    autoJoinPromises = [];
-                    _c.label = 1;
-                case 1:
-                    _c.trys.push([1, 3, 4, 6]);
-                    entry.pending.add(internalTaskController);
-                    return [4 /*yield*/, Promise.resolve(entry.effect(action, assign({}, api, {
-                            getOriginalState: getOriginalState,
-                            condition: function (predicate, timeout) { return take(predicate, timeout).then(Boolean); },
-                            take: take,
-                            delay: createDelay(internalTaskController.signal),
-                            pause: createPause(internalTaskController.signal),
-                            extra: extra,
-                            signal: internalTaskController.signal,
-                            fork: createFork(internalTaskController.signal, autoJoinPromises),
-                            unsubscribe: entry.unsubscribe,
-                            subscribe: function () {
-                                listenerMap.set(entry.id, entry);
-                            },
-                            cancelActiveListeners: function () {
-                                entry.pending.forEach(function (controller, _, set) {
-                                    if (controller !== internalTaskController) {
-                                        abortControllerWithReason(controller, listenerCancelled);
-                                        set.delete(controller);
-                                    }
-                                });
-                            }
-                        })))];
-                case 2:
-                    _c.sent();
-                    return [3 /*break*/, 6];
-                case 3:
-                    listenerError_1 = _c.sent();
-                    if (!(listenerError_1 instanceof TaskAbortError)) {
-                        safelyNotifyError(onError, listenerError_1, {
-                            raisedBy: "effect"
-                        });
-                    }
-                    return [3 /*break*/, 6];
-                case 4: return [4 /*yield*/, Promise.allSettled(autoJoinPromises)];
-                case 5:
-                    _c.sent();
-                    abortControllerWithReason(internalTaskController, listenerCompleted);
-                    entry.pending.delete(internalTaskController);
-                    return [7 /*endfinally*/];
-                case 6: return [2 /*return*/];
-            }
-        });
-    }); };
-    var clearListenerMiddleware = createClearListenerMiddleware(listenerMap);
-    var middleware = function (api) { return function (next) { return function (action) {
-        if (!isAction(action)) {
-            return next(action);
-        }
-        if (addListener.match(action)) {
-            return startListening(action.payload);
-        }
-        if (clearAllListeners.match(action)) {
-            clearListenerMiddleware();
-            return;
-        }
-        if (removeListener.match(action)) {
-            return stopListening(action.payload);
-        }
-        var originalState = api.getState();
-        var getOriginalState = function () {
-            if (originalState === INTERNAL_NIL_TOKEN) {
-                throw new Error(alm + ": getOriginalState can only be called synchronously");
-            }
-            return originalState;
-        };
-        var result;
-        try {
-            result = next(action);
-            if (listenerMap.size > 0) {
-                var currentState = api.getState();
-                var listenerEntries = Array.from(listenerMap.values());
-                for (var _i = 0, listenerEntries_1 = listenerEntries; _i < listenerEntries_1.length; _i++) {
-                    var entry = listenerEntries_1[_i];
-                    var runListener = false;
-                    try {
-                        runListener = entry.predicate(action, currentState, originalState);
-                    }
-                    catch (predicateError) {
-                        runListener = false;
-                        safelyNotifyError(onError, predicateError, {
-                            raisedBy: "predicate"
-                        });
-                    }
-                    if (!runListener) {
-                        continue;
-                    }
-                    notifyListener(entry, action, api, getOriginalState);
-                }
-            }
-        }
-        finally {
-            originalState = INTERNAL_NIL_TOKEN;
-        }
-        return result;
-    }; }; };
-    return {
-        middleware: middleware,
-        startListening: startListening,
-        stopListening: stopListening,
-        clearListeners: clearListenerMiddleware
-    };
-}
-// src/autoBatchEnhancer.ts
-var SHOULD_AUTOBATCH = "RTK_autoBatch";
-var prepareAutoBatched = function () { return function (payload) {
-    var _c;
-    return ({
-        payload: payload,
-        meta: (_c = {}, _c[SHOULD_AUTOBATCH] = true, _c)
-    });
-}; };
-var promise;
-var queueMicrotaskShim = typeof queueMicrotask === "function" ? queueMicrotask.bind(typeof window !== "undefined" ? window : typeof __webpack_require__.g !== "undefined" ? __webpack_require__.g : globalThis) : function (cb) { return (promise || (promise = Promise.resolve())).then(cb).catch(function (err) { return setTimeout(function () {
-    throw err;
-}, 0); }); };
-var createQueueWithTimer = function (timeout) {
-    return function (notify) {
-        setTimeout(notify, timeout);
-    };
-};
-var rAF = typeof window !== "undefined" && window.requestAnimationFrame ? window.requestAnimationFrame : createQueueWithTimer(10);
-var autoBatchEnhancer = function (options) {
-    if (options === void 0) { options = { type: "raf" }; }
-    return function (next) { return function () {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-        var store = next.apply(void 0, args);
-        var notifying = true;
-        var shouldNotifyAtEndOfTick = false;
-        var notificationQueued = false;
-        var listeners = new Set();
-        var queueCallback = options.type === "tick" ? queueMicrotaskShim : options.type === "raf" ? rAF : options.type === "callback" ? options.queueNotification : createQueueWithTimer(options.timeout);
-        var notifyListeners = function () {
-            notificationQueued = false;
-            if (shouldNotifyAtEndOfTick) {
-                shouldNotifyAtEndOfTick = false;
-                listeners.forEach(function (l) { return l(); });
-            }
-        };
-        return Object.assign({}, store, {
-            subscribe: function (listener2) {
-                var wrappedListener = function () { return notifying && listener2(); };
-                var unsubscribe = store.subscribe(wrappedListener);
-                listeners.add(listener2);
-                return function () {
-                    unsubscribe();
-                    listeners.delete(listener2);
-                };
-            },
-            dispatch: function (action) {
-                var _a;
-                try {
-                    notifying = !((_a = action == null ? void 0 : action.meta) == null ? void 0 : _a[SHOULD_AUTOBATCH]);
-                    shouldNotifyAtEndOfTick = !notifying;
-                    if (shouldNotifyAtEndOfTick) {
-                        if (!notificationQueued) {
-                            notificationQueued = true;
-                            queueCallback(notifyListeners);
-                        }
-                    }
-                    return store.dispatch(action);
-                }
-                finally {
-                    notifying = true;
-                }
-            }
-        });
-    }; };
-};
-// src/index.ts
-(0,immer__WEBPACK_IMPORTED_MODULE_2__.enableES5)();
-
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = function (obj, key, value) { return key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value: value }) : obj[key] = value; };
+var __spreadValues = function (a, b) {
+    for (var prop in b || (b = {}))
+        if (__hasOwnProp.call(b, prop))
+            __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+        for (var _i = 0, _c = __getOwnPropSymbols(b); _i < _c.length; _i++) {
+            var prop = _c[_i];
+            if (__propIsEnum.call(b, prop))
+                __defNormalProp(a, prop, b[prop]);
+        }
+    return a;
+};
+var __spreadProps = function (a, b) { return __defProps(a, __getOwnPropDescs(b)); };
+var __async = function (__this, __arguments, generator) {
+    return new Promise(function (resolve, reject) {
+        var fulfilled = function (value) {
+            try {
+                step(generator.next(value));
+            }
+            catch (e) {
+                reject(e);
+            }
+        };
+        var rejected = function (value) {
+            try {
+                step(generator.throw(value));
+            }
+            catch (e) {
+                reject(e);
+            }
+        };
+        var step = function (x) { return x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected); };
+        step((generator = generator.apply(__this, __arguments)).next());
+    });
+};
+// src/index.ts
+
+
+
+
+// src/createDraftSafeSelector.ts
+
+
+var createDraftSafeSelector = function () {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    var selector = reselect__WEBPACK_IMPORTED_MODULE_1__.createSelector.apply(void 0, args);
+    var wrappedSelector = function (value) {
+        var rest = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            rest[_i - 1] = arguments[_i];
+        }
+        return selector.apply(void 0, __spreadArray([(0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraft)(value) ? (0,immer__WEBPACK_IMPORTED_MODULE_2__.current)(value) : value], rest));
+    };
+    return wrappedSelector;
+};
+// src/configureStore.ts
+
+// src/devtoolsExtension.ts
+
+var composeWithDevTools = typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : function () {
+    if (arguments.length === 0)
+        return void 0;
+    if (typeof arguments[0] === "object")
+        return redux__WEBPACK_IMPORTED_MODULE_0__.compose;
+    return redux__WEBPACK_IMPORTED_MODULE_0__.compose.apply(null, arguments);
+};
+var devToolsEnhancer = typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__ : function () {
+    return function (noop2) {
+        return noop2;
+    };
+};
+// src/isPlainObject.ts
+function isPlainObject(value) {
+    if (typeof value !== "object" || value === null)
+        return false;
+    var proto = Object.getPrototypeOf(value);
+    if (proto === null)
+        return true;
+    var baseProto = proto;
+    while (Object.getPrototypeOf(baseProto) !== null) {
+        baseProto = Object.getPrototypeOf(baseProto);
+    }
+    return proto === baseProto;
+}
+// src/getDefaultMiddleware.ts
+
+// src/tsHelpers.ts
+var hasMatchFunction = function (v) {
+    return v && typeof v.match === "function";
+};
+// src/createAction.ts
+function createAction(type, prepareAction) {
+    function actionCreator() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        if (prepareAction) {
+            var prepared = prepareAction.apply(void 0, args);
+            if (!prepared) {
+                throw new Error("prepareAction did not return an object");
+            }
+            return __spreadValues(__spreadValues({
+                type: type,
+                payload: prepared.payload
+            }, "meta" in prepared && { meta: prepared.meta }), "error" in prepared && { error: prepared.error });
+        }
+        return { type: type, payload: args[0] };
+    }
+    actionCreator.toString = function () { return "" + type; };
+    actionCreator.type = type;
+    actionCreator.match = function (action) { return action.type === type; };
+    return actionCreator;
+}
+function isAction(action) {
+    return isPlainObject(action) && "type" in action;
+}
+function isActionCreator(action) {
+    return typeof action === "function" && "type" in action && hasMatchFunction(action);
+}
+function isFSA(action) {
+    return isAction(action) && typeof action.type === "string" && Object.keys(action).every(isValidKey);
+}
+function isValidKey(key) {
+    return ["type", "payload", "error", "meta"].indexOf(key) > -1;
+}
+function getType(actionCreator) {
+    return "" + actionCreator;
+}
+// src/actionCreatorInvariantMiddleware.ts
+function getMessage(type) {
+    var splitType = type ? ("" + type).split("/") : [];
+    var actionName = splitType[splitType.length - 1] || "actionCreator";
+    return "Detected an action creator with type \"" + (type || "unknown") + "\" being dispatched. \nMake sure you're calling the action creator before dispatching, i.e. `dispatch(" + actionName + "())` instead of `dispatch(" + actionName + ")`. This is necessary even if the action has no payload.";
+}
+function createActionCreatorInvariantMiddleware(options) {
+    if (options === void 0) { options = {}; }
+    if (false) {}
+    var _c = options.isActionCreator, isActionCreator2 = _c === void 0 ? isActionCreator : _c;
+    return function () { return function (next) { return function (action) {
+        if (isActionCreator2(action)) {
+            console.warn(getMessage(action.type));
+        }
+        return next(action);
+    }; }; };
+}
+// src/utils.ts
+
+function getTimeMeasureUtils(maxDelay, fnName) {
+    var elapsed = 0;
+    return {
+        measureTime: function (fn) {
+            var started = Date.now();
+            try {
+                return fn();
+            }
+            finally {
+                var finished = Date.now();
+                elapsed += finished - started;
+            }
+        },
+        warnIfExceeded: function () {
+            if (elapsed > maxDelay) {
+                console.warn(fnName + " took " + elapsed + "ms, which is more than the warning threshold of " + maxDelay + "ms. \nIf your state or actions are very large, you may want to disable the middleware as it might cause too much of a slowdown in development mode. See https://redux-toolkit.js.org/api/getDefaultMiddleware for instructions.\nIt is disabled in production builds, so you don't need to worry about that.");
+            }
+        }
+    };
+}
+var MiddlewareArray = /** @class */ (function (_super) {
+    __extends(MiddlewareArray, _super);
+    function MiddlewareArray() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var _this = _super.apply(this, args) || this;
+        Object.setPrototypeOf(_this, MiddlewareArray.prototype);
+        return _this;
+    }
+    Object.defineProperty(MiddlewareArray, Symbol.species, {
+        get: function () {
+            return MiddlewareArray;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    MiddlewareArray.prototype.concat = function () {
+        var arr = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            arr[_i] = arguments[_i];
+        }
+        return _super.prototype.concat.apply(this, arr);
+    };
+    MiddlewareArray.prototype.prepend = function () {
+        var arr = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            arr[_i] = arguments[_i];
+        }
+        if (arr.length === 1 && Array.isArray(arr[0])) {
+            return new (MiddlewareArray.bind.apply(MiddlewareArray, __spreadArray([void 0], arr[0].concat(this))))();
+        }
+        return new (MiddlewareArray.bind.apply(MiddlewareArray, __spreadArray([void 0], arr.concat(this))))();
+    };
+    return MiddlewareArray;
+}(Array));
+var EnhancerArray = /** @class */ (function (_super) {
+    __extends(EnhancerArray, _super);
+    function EnhancerArray() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var _this = _super.apply(this, args) || this;
+        Object.setPrototypeOf(_this, EnhancerArray.prototype);
+        return _this;
+    }
+    Object.defineProperty(EnhancerArray, Symbol.species, {
+        get: function () {
+            return EnhancerArray;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    EnhancerArray.prototype.concat = function () {
+        var arr = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            arr[_i] = arguments[_i];
+        }
+        return _super.prototype.concat.apply(this, arr);
+    };
+    EnhancerArray.prototype.prepend = function () {
+        var arr = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            arr[_i] = arguments[_i];
+        }
+        if (arr.length === 1 && Array.isArray(arr[0])) {
+            return new (EnhancerArray.bind.apply(EnhancerArray, __spreadArray([void 0], arr[0].concat(this))))();
+        }
+        return new (EnhancerArray.bind.apply(EnhancerArray, __spreadArray([void 0], arr.concat(this))))();
+    };
+    return EnhancerArray;
+}(Array));
+function freezeDraftable(val) {
+    return (0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraftable)(val) ? (0,immer__WEBPACK_IMPORTED_MODULE_2__["default"])(val, function () {
+    }) : val;
+}
+// src/immutableStateInvariantMiddleware.ts
+var isProduction = "development" === "production";
+var prefix = "Invariant failed";
+function invariant(condition, message) {
+    if (condition) {
+        return;
+    }
+    if (isProduction) {
+        throw new Error(prefix);
+    }
+    throw new Error(prefix + ": " + (message || ""));
+}
+function stringify(obj, serializer, indent, decycler) {
+    return JSON.stringify(obj, getSerialize(serializer, decycler), indent);
+}
+function getSerialize(serializer, decycler) {
+    var stack = [], keys = [];
+    if (!decycler)
+        decycler = function (_, value) {
+            if (stack[0] === value)
+                return "[Circular ~]";
+            return "[Circular ~." + keys.slice(0, stack.indexOf(value)).join(".") + "]";
+        };
+    return function (key, value) {
+        if (stack.length > 0) {
+            var thisPos = stack.indexOf(this);
+            ~thisPos ? stack.splice(thisPos + 1) : stack.push(this);
+            ~thisPos ? keys.splice(thisPos, Infinity, key) : keys.push(key);
+            if (~stack.indexOf(value))
+                value = decycler.call(this, key, value);
+        }
+        else
+            stack.push(value);
+        return serializer == null ? value : serializer.call(this, key, value);
+    };
+}
+function isImmutableDefault(value) {
+    return typeof value !== "object" || value == null || Object.isFrozen(value);
+}
+function trackForMutations(isImmutable, ignorePaths, obj) {
+    var trackedProperties = trackProperties(isImmutable, ignorePaths, obj);
+    return {
+        detectMutations: function () {
+            return detectMutations(isImmutable, ignorePaths, trackedProperties, obj);
+        }
+    };
+}
+function trackProperties(isImmutable, ignorePaths, obj, path, checkedObjects) {
+    if (ignorePaths === void 0) { ignorePaths = []; }
+    if (path === void 0) { path = ""; }
+    if (checkedObjects === void 0) { checkedObjects = new Set(); }
+    var tracked = { value: obj };
+    if (!isImmutable(obj) && !checkedObjects.has(obj)) {
+        checkedObjects.add(obj);
+        tracked.children = {};
+        for (var key in obj) {
+            var childPath = path ? path + "." + key : key;
+            if (ignorePaths.length && ignorePaths.indexOf(childPath) !== -1) {
+                continue;
+            }
+            tracked.children[key] = trackProperties(isImmutable, ignorePaths, obj[key], childPath);
+        }
+    }
+    return tracked;
+}
+function detectMutations(isImmutable, ignoredPaths, trackedProperty, obj, sameParentRef, path) {
+    if (ignoredPaths === void 0) { ignoredPaths = []; }
+    if (sameParentRef === void 0) { sameParentRef = false; }
+    if (path === void 0) { path = ""; }
+    var prevObj = trackedProperty ? trackedProperty.value : void 0;
+    var sameRef = prevObj === obj;
+    if (sameParentRef && !sameRef && !Number.isNaN(obj)) {
+        return { wasMutated: true, path: path };
+    }
+    if (isImmutable(prevObj) || isImmutable(obj)) {
+        return { wasMutated: false };
+    }
+    var keysToDetect = {};
+    for (var key in trackedProperty.children) {
+        keysToDetect[key] = true;
+    }
+    for (var key in obj) {
+        keysToDetect[key] = true;
+    }
+    var hasIgnoredPaths = ignoredPaths.length > 0;
+    var _loop_1 = function (key) {
+        var nestedPath = path ? path + "." + key : key;
+        if (hasIgnoredPaths) {
+            var hasMatches = ignoredPaths.some(function (ignored) {
+                if (ignored instanceof RegExp) {
+                    return ignored.test(nestedPath);
+                }
+                return nestedPath === ignored;
+            });
+            if (hasMatches) {
+                return "continue";
+            }
+        }
+        var result = detectMutations(isImmutable, ignoredPaths, trackedProperty.children[key], obj[key], sameRef, nestedPath);
+        if (result.wasMutated) {
+            return { value: result };
+        }
+    };
+    for (var key in keysToDetect) {
+        var state_1 = _loop_1(key);
+        if (typeof state_1 === "object")
+            return state_1.value;
+    }
+    return { wasMutated: false };
+}
+function createImmutableStateInvariantMiddleware(options) {
+    if (options === void 0) { options = {}; }
+    if (false) {}
+    var _c = options.isImmutable, isImmutable = _c === void 0 ? isImmutableDefault : _c, ignoredPaths = options.ignoredPaths, _d = options.warnAfter, warnAfter = _d === void 0 ? 32 : _d, ignore = options.ignore;
+    ignoredPaths = ignoredPaths || ignore;
+    var track = trackForMutations.bind(null, isImmutable, ignoredPaths);
+    return function (_c) {
+        var getState = _c.getState;
+        var state = getState();
+        var tracker = track(state);
+        var result;
+        return function (next) { return function (action) {
+            var measureUtils = getTimeMeasureUtils(warnAfter, "ImmutableStateInvariantMiddleware");
+            measureUtils.measureTime(function () {
+                state = getState();
+                result = tracker.detectMutations();
+                tracker = track(state);
+                invariant(!result.wasMutated, "A state mutation was detected between dispatches, in the path '" + (result.path || "") + "'.  This may cause incorrect behavior. (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)");
+            });
+            var dispatchedAction = next(action);
+            measureUtils.measureTime(function () {
+                state = getState();
+                result = tracker.detectMutations();
+                tracker = track(state);
+                result.wasMutated && invariant(!result.wasMutated, "A state mutation was detected inside a dispatch, in the path: " + (result.path || "") + ". Take a look at the reducer(s) handling the action " + stringify(action) + ". (https://redux.js.org/style-guide/style-guide#do-not-mutate-state)");
+            });
+            measureUtils.warnIfExceeded();
+            return dispatchedAction;
+        }; };
+    };
+}
+// src/serializableStateInvariantMiddleware.ts
+function isPlain(val) {
+    var type = typeof val;
+    return val == null || type === "string" || type === "boolean" || type === "number" || Array.isArray(val) || isPlainObject(val);
+}
+function findNonSerializableValue(value, path, isSerializable, getEntries, ignoredPaths, cache) {
+    if (path === void 0) { path = ""; }
+    if (isSerializable === void 0) { isSerializable = isPlain; }
+    if (ignoredPaths === void 0) { ignoredPaths = []; }
+    var foundNestedSerializable;
+    if (!isSerializable(value)) {
+        return {
+            keyPath: path || "<root>",
+            value: value
+        };
+    }
+    if (typeof value !== "object" || value === null) {
+        return false;
+    }
+    if (cache == null ? void 0 : cache.has(value))
+        return false;
+    var entries = getEntries != null ? getEntries(value) : Object.entries(value);
+    var hasIgnoredPaths = ignoredPaths.length > 0;
+    var _loop_2 = function (key, nestedValue) {
+        var nestedPath = path ? path + "." + key : key;
+        if (hasIgnoredPaths) {
+            var hasMatches = ignoredPaths.some(function (ignored) {
+                if (ignored instanceof RegExp) {
+                    return ignored.test(nestedPath);
+                }
+                return nestedPath === ignored;
+            });
+            if (hasMatches) {
+                return "continue";
+            }
+        }
+        if (!isSerializable(nestedValue)) {
+            return { value: {
+                    keyPath: nestedPath,
+                    value: nestedValue
+                } };
+        }
+        if (typeof nestedValue === "object") {
+            foundNestedSerializable = findNonSerializableValue(nestedValue, nestedPath, isSerializable, getEntries, ignoredPaths, cache);
+            if (foundNestedSerializable) {
+                return { value: foundNestedSerializable };
+            }
+        }
+    };
+    for (var _i = 0, entries_1 = entries; _i < entries_1.length; _i++) {
+        var _c = entries_1[_i], key = _c[0], nestedValue = _c[1];
+        var state_2 = _loop_2(key, nestedValue);
+        if (typeof state_2 === "object")
+            return state_2.value;
+    }
+    if (cache && isNestedFrozen(value))
+        cache.add(value);
+    return false;
+}
+function isNestedFrozen(value) {
+    if (!Object.isFrozen(value))
+        return false;
+    for (var _i = 0, _c = Object.values(value); _i < _c.length; _i++) {
+        var nestedValue = _c[_i];
+        if (typeof nestedValue !== "object" || nestedValue === null)
+            continue;
+        if (!isNestedFrozen(nestedValue))
+            return false;
+    }
+    return true;
+}
+function createSerializableStateInvariantMiddleware(options) {
+    if (options === void 0) { options = {}; }
+    if (false) {}
+    var _c = options.isSerializable, isSerializable = _c === void 0 ? isPlain : _c, getEntries = options.getEntries, _d = options.ignoredActions, ignoredActions = _d === void 0 ? [] : _d, _e = options.ignoredActionPaths, ignoredActionPaths = _e === void 0 ? ["meta.arg", "meta.baseQueryMeta"] : _e, _f = options.ignoredPaths, ignoredPaths = _f === void 0 ? [] : _f, _g = options.warnAfter, warnAfter = _g === void 0 ? 32 : _g, _h = options.ignoreState, ignoreState = _h === void 0 ? false : _h, _j = options.ignoreActions, ignoreActions = _j === void 0 ? false : _j, _k = options.disableCache, disableCache = _k === void 0 ? false : _k;
+    var cache = !disableCache && WeakSet ? new WeakSet() : void 0;
+    return function (storeAPI) { return function (next) { return function (action) {
+        var result = next(action);
+        var measureUtils = getTimeMeasureUtils(warnAfter, "SerializableStateInvariantMiddleware");
+        if (!ignoreActions && !(ignoredActions.length && ignoredActions.indexOf(action.type) !== -1)) {
+            measureUtils.measureTime(function () {
+                var foundActionNonSerializableValue = findNonSerializableValue(action, "", isSerializable, getEntries, ignoredActionPaths, cache);
+                if (foundActionNonSerializableValue) {
+                    var keyPath = foundActionNonSerializableValue.keyPath, value = foundActionNonSerializableValue.value;
+                    console.error("A non-serializable value was detected in an action, in the path: `" + keyPath + "`. Value:", value, "\nTake a look at the logic that dispatched this action: ", action, "\n(See https://redux.js.org/faq/actions#why-should-type-be-a-string-or-at-least-serializable-why-should-my-action-types-be-constants)", "\n(To allow non-serializable values see: https://redux-toolkit.js.org/usage/usage-guide#working-with-non-serializable-data)");
+                }
+            });
+        }
+        if (!ignoreState) {
+            measureUtils.measureTime(function () {
+                var state = storeAPI.getState();
+                var foundStateNonSerializableValue = findNonSerializableValue(state, "", isSerializable, getEntries, ignoredPaths, cache);
+                if (foundStateNonSerializableValue) {
+                    var keyPath = foundStateNonSerializableValue.keyPath, value = foundStateNonSerializableValue.value;
+                    console.error("A non-serializable value was detected in the state, in the path: `" + keyPath + "`. Value:", value, "\nTake a look at the reducer(s) handling this action type: " + action.type + ".\n(See https://redux.js.org/faq/organizing-state#can-i-put-functions-promises-or-other-non-serializable-items-in-my-store-state)");
+                }
+            });
+            measureUtils.warnIfExceeded();
+        }
+        return result;
+    }; }; };
+}
+// src/getDefaultMiddleware.ts
+function isBoolean(x) {
+    return typeof x === "boolean";
+}
+function curryGetDefaultMiddleware() {
+    return function curriedGetDefaultMiddleware(options) {
+        return getDefaultMiddleware(options);
+    };
+}
+function getDefaultMiddleware(options) {
+    if (options === void 0) { options = {}; }
+    var _c = options.thunk, thunk = _c === void 0 ? true : _c, _d = options.immutableCheck, immutableCheck = _d === void 0 ? true : _d, _e = options.serializableCheck, serializableCheck = _e === void 0 ? true : _e, _f = options.actionCreatorCheck, actionCreatorCheck = _f === void 0 ? true : _f;
+    var middlewareArray = new MiddlewareArray();
+    if (thunk) {
+        if (isBoolean(thunk)) {
+            middlewareArray.push(redux_thunk__WEBPACK_IMPORTED_MODULE_3__["default"]);
+        }
+        else {
+            middlewareArray.push(redux_thunk__WEBPACK_IMPORTED_MODULE_3__["default"].withExtraArgument(thunk.extraArgument));
+        }
+    }
+    if (true) {
+        if (immutableCheck) {
+            var immutableOptions = {};
+            if (!isBoolean(immutableCheck)) {
+                immutableOptions = immutableCheck;
+            }
+            middlewareArray.unshift(createImmutableStateInvariantMiddleware(immutableOptions));
+        }
+        if (serializableCheck) {
+            var serializableOptions = {};
+            if (!isBoolean(serializableCheck)) {
+                serializableOptions = serializableCheck;
+            }
+            middlewareArray.push(createSerializableStateInvariantMiddleware(serializableOptions));
+        }
+        if (actionCreatorCheck) {
+            var actionCreatorOptions = {};
+            if (!isBoolean(actionCreatorCheck)) {
+                actionCreatorOptions = actionCreatorCheck;
+            }
+            middlewareArray.unshift(createActionCreatorInvariantMiddleware(actionCreatorOptions));
+        }
+    }
+    return middlewareArray;
+}
+// src/configureStore.ts
+var IS_PRODUCTION = "development" === "production";
+function configureStore(options) {
+    var curriedGetDefaultMiddleware = curryGetDefaultMiddleware();
+    var _c = options || {}, _d = _c.reducer, reducer = _d === void 0 ? void 0 : _d, _e = _c.middleware, middleware = _e === void 0 ? curriedGetDefaultMiddleware() : _e, _f = _c.devTools, devTools = _f === void 0 ? true : _f, _g = _c.preloadedState, preloadedState = _g === void 0 ? void 0 : _g, _h = _c.enhancers, enhancers = _h === void 0 ? void 0 : _h;
+    var rootReducer;
+    if (typeof reducer === "function") {
+        rootReducer = reducer;
+    }
+    else if (isPlainObject(reducer)) {
+        rootReducer = (0,redux__WEBPACK_IMPORTED_MODULE_0__.combineReducers)(reducer);
+    }
+    else {
+        throw new Error('"reducer" is a required argument, and must be a function or an object of functions that can be passed to combineReducers');
+    }
+    var finalMiddleware = middleware;
+    if (typeof finalMiddleware === "function") {
+        finalMiddleware = finalMiddleware(curriedGetDefaultMiddleware);
+        if (!IS_PRODUCTION && !Array.isArray(finalMiddleware)) {
+            throw new Error("when using a middleware builder function, an array of middleware must be returned");
+        }
+    }
+    if (!IS_PRODUCTION && finalMiddleware.some(function (item) { return typeof item !== "function"; })) {
+        throw new Error("each middleware provided to configureStore must be a function");
+    }
+    var middlewareEnhancer = redux__WEBPACK_IMPORTED_MODULE_0__.applyMiddleware.apply(void 0, finalMiddleware);
+    var finalCompose = redux__WEBPACK_IMPORTED_MODULE_0__.compose;
+    if (devTools) {
+        finalCompose = composeWithDevTools(__spreadValues({
+            trace: !IS_PRODUCTION
+        }, typeof devTools === "object" && devTools));
+    }
+    var defaultEnhancers = new EnhancerArray(middlewareEnhancer);
+    var storeEnhancers = defaultEnhancers;
+    if (Array.isArray(enhancers)) {
+        storeEnhancers = __spreadArray([middlewareEnhancer], enhancers);
+    }
+    else if (typeof enhancers === "function") {
+        storeEnhancers = enhancers(defaultEnhancers);
+    }
+    var composedEnhancer = finalCompose.apply(void 0, storeEnhancers);
+    return (0,redux__WEBPACK_IMPORTED_MODULE_0__.createStore)(rootReducer, preloadedState, composedEnhancer);
+}
+// src/createReducer.ts
+
+// src/mapBuilders.ts
+function executeReducerBuilderCallback(builderCallback) {
+    var actionsMap = {};
+    var actionMatchers = [];
+    var defaultCaseReducer;
+    var builder = {
+        addCase: function (typeOrActionCreator, reducer) {
+            if (true) {
+                if (actionMatchers.length > 0) {
+                    throw new Error("`builder.addCase` should only be called before calling `builder.addMatcher`");
+                }
+                if (defaultCaseReducer) {
+                    throw new Error("`builder.addCase` should only be called before calling `builder.addDefaultCase`");
+                }
+            }
+            var type = typeof typeOrActionCreator === "string" ? typeOrActionCreator : typeOrActionCreator.type;
+            if (!type) {
+                throw new Error("`builder.addCase` cannot be called with an empty action type");
+            }
+            if (type in actionsMap) {
+                throw new Error("`builder.addCase` cannot be called with two reducers for the same action type");
+            }
+            actionsMap[type] = reducer;
+            return builder;
+        },
+        addMatcher: function (matcher, reducer) {
+            if (true) {
+                if (defaultCaseReducer) {
+                    throw new Error("`builder.addMatcher` should only be called before calling `builder.addDefaultCase`");
+                }
+            }
+            actionMatchers.push({ matcher: matcher, reducer: reducer });
+            return builder;
+        },
+        addDefaultCase: function (reducer) {
+            if (true) {
+                if (defaultCaseReducer) {
+                    throw new Error("`builder.addDefaultCase` can only be called once");
+                }
+            }
+            defaultCaseReducer = reducer;
+            return builder;
+        }
+    };
+    builderCallback(builder);
+    return [actionsMap, actionMatchers, defaultCaseReducer];
+}
+// src/createReducer.ts
+function isStateFunction(x) {
+    return typeof x === "function";
+}
+var hasWarnedAboutObjectNotation = false;
+function createReducer(initialState, mapOrBuilderCallback, actionMatchers, defaultCaseReducer) {
+    if (actionMatchers === void 0) { actionMatchers = []; }
+    if (true) {
+        if (typeof mapOrBuilderCallback === "object") {
+            if (!hasWarnedAboutObjectNotation) {
+                hasWarnedAboutObjectNotation = true;
+                console.warn("The object notation for `createReducer` is deprecated, and will be removed in RTK 2.0. Please use the 'builder callback' notation instead: https://redux-toolkit.js.org/api/createReducer");
+            }
+        }
+    }
+    var _c = typeof mapOrBuilderCallback === "function" ? executeReducerBuilderCallback(mapOrBuilderCallback) : [mapOrBuilderCallback, actionMatchers, defaultCaseReducer], actionsMap = _c[0], finalActionMatchers = _c[1], finalDefaultCaseReducer = _c[2];
+    var getInitialState;
+    if (isStateFunction(initialState)) {
+        getInitialState = function () { return freezeDraftable(initialState()); };
+    }
+    else {
+        var frozenInitialState_1 = freezeDraftable(initialState);
+        getInitialState = function () { return frozenInitialState_1; };
+    }
+    function reducer(state, action) {
+        if (state === void 0) { state = getInitialState(); }
+        var caseReducers = __spreadArray([
+            actionsMap[action.type]
+        ], finalActionMatchers.filter(function (_c) {
+            var matcher = _c.matcher;
+            return matcher(action);
+        }).map(function (_c) {
+            var reducer2 = _c.reducer;
+            return reducer2;
+        }));
+        if (caseReducers.filter(function (cr) { return !!cr; }).length === 0) {
+            caseReducers = [finalDefaultCaseReducer];
+        }
+        return caseReducers.reduce(function (previousState, caseReducer) {
+            if (caseReducer) {
+                if ((0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraft)(previousState)) {
+                    var draft = previousState;
+                    var result = caseReducer(draft, action);
+                    if (result === void 0) {
+                        return previousState;
+                    }
+                    return result;
+                }
+                else if (!(0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraftable)(previousState)) {
+                    var result = caseReducer(previousState, action);
+                    if (result === void 0) {
+                        if (previousState === null) {
+                            return previousState;
+                        }
+                        throw Error("A case reducer on a non-draftable value must not return undefined");
+                    }
+                    return result;
+                }
+                else {
+                    return (0,immer__WEBPACK_IMPORTED_MODULE_2__["default"])(previousState, function (draft) {
+                        return caseReducer(draft, action);
+                    });
+                }
+            }
+            return previousState;
+        }, state);
+    }
+    reducer.getInitialState = getInitialState;
+    return reducer;
+}
+// src/createSlice.ts
+var hasWarnedAboutObjectNotation2 = false;
+function getType2(slice, actionKey) {
+    return slice + "/" + actionKey;
+}
+function createSlice(options) {
+    var name = options.name;
+    if (!name) {
+        throw new Error("`name` is a required option for createSlice");
+    }
+    if (typeof process !== "undefined" && "development" === "development") {
+        if (options.initialState === void 0) {
+            console.error("You must provide an `initialState` value that is not `undefined`. You may have misspelled `initialState`");
+        }
+    }
+    var initialState = typeof options.initialState == "function" ? options.initialState : freezeDraftable(options.initialState);
+    var reducers = options.reducers || {};
+    var reducerNames = Object.keys(reducers);
+    var sliceCaseReducersByName = {};
+    var sliceCaseReducersByType = {};
+    var actionCreators = {};
+    reducerNames.forEach(function (reducerName) {
+        var maybeReducerWithPrepare = reducers[reducerName];
+        var type = getType2(name, reducerName);
+        var caseReducer;
+        var prepareCallback;
+        if ("reducer" in maybeReducerWithPrepare) {
+            caseReducer = maybeReducerWithPrepare.reducer;
+            prepareCallback = maybeReducerWithPrepare.prepare;
+        }
+        else {
+            caseReducer = maybeReducerWithPrepare;
+        }
+        sliceCaseReducersByName[reducerName] = caseReducer;
+        sliceCaseReducersByType[type] = caseReducer;
+        actionCreators[reducerName] = prepareCallback ? createAction(type, prepareCallback) : createAction(type);
+    });
+    function buildReducer() {
+        if (true) {
+            if (typeof options.extraReducers === "object") {
+                if (!hasWarnedAboutObjectNotation2) {
+                    hasWarnedAboutObjectNotation2 = true;
+                    console.warn("The object notation for `createSlice.extraReducers` is deprecated, and will be removed in RTK 2.0. Please use the 'builder callback' notation instead: https://redux-toolkit.js.org/api/createSlice");
+                }
+            }
+        }
+        var _c = typeof options.extraReducers === "function" ? executeReducerBuilderCallback(options.extraReducers) : [options.extraReducers], _d = _c[0], extraReducers = _d === void 0 ? {} : _d, _e = _c[1], actionMatchers = _e === void 0 ? [] : _e, _f = _c[2], defaultCaseReducer = _f === void 0 ? void 0 : _f;
+        var finalCaseReducers = __spreadValues(__spreadValues({}, extraReducers), sliceCaseReducersByType);
+        return createReducer(initialState, function (builder) {
+            for (var key in finalCaseReducers) {
+                builder.addCase(key, finalCaseReducers[key]);
+            }
+            for (var _i = 0, actionMatchers_1 = actionMatchers; _i < actionMatchers_1.length; _i++) {
+                var m = actionMatchers_1[_i];
+                builder.addMatcher(m.matcher, m.reducer);
+            }
+            if (defaultCaseReducer) {
+                builder.addDefaultCase(defaultCaseReducer);
+            }
+        });
+    }
+    var _reducer;
+    return {
+        name: name,
+        reducer: function (state, action) {
+            if (!_reducer)
+                _reducer = buildReducer();
+            return _reducer(state, action);
+        },
+        actions: actionCreators,
+        caseReducers: sliceCaseReducersByName,
+        getInitialState: function () {
+            if (!_reducer)
+                _reducer = buildReducer();
+            return _reducer.getInitialState();
+        }
+    };
+}
+// src/entities/entity_state.ts
+function getInitialEntityState() {
+    return {
+        ids: [],
+        entities: {}
+    };
+}
+function createInitialStateFactory() {
+    function getInitialState(additionalState) {
+        if (additionalState === void 0) { additionalState = {}; }
+        return Object.assign(getInitialEntityState(), additionalState);
+    }
+    return { getInitialState: getInitialState };
+}
+// src/entities/state_selectors.ts
+function createSelectorsFactory() {
+    function getSelectors(selectState) {
+        var selectIds = function (state) { return state.ids; };
+        var selectEntities = function (state) { return state.entities; };
+        var selectAll = createDraftSafeSelector(selectIds, selectEntities, function (ids, entities) { return ids.map(function (id) { return entities[id]; }); });
+        var selectId = function (_, id) { return id; };
+        var selectById = function (entities, id) { return entities[id]; };
+        var selectTotal = createDraftSafeSelector(selectIds, function (ids) { return ids.length; });
+        if (!selectState) {
+            return {
+                selectIds: selectIds,
+                selectEntities: selectEntities,
+                selectAll: selectAll,
+                selectTotal: selectTotal,
+                selectById: createDraftSafeSelector(selectEntities, selectId, selectById)
+            };
+        }
+        var selectGlobalizedEntities = createDraftSafeSelector(selectState, selectEntities);
+        return {
+            selectIds: createDraftSafeSelector(selectState, selectIds),
+            selectEntities: selectGlobalizedEntities,
+            selectAll: createDraftSafeSelector(selectState, selectAll),
+            selectTotal: createDraftSafeSelector(selectState, selectTotal),
+            selectById: createDraftSafeSelector(selectGlobalizedEntities, selectId, selectById)
+        };
+    }
+    return { getSelectors: getSelectors };
+}
+// src/entities/state_adapter.ts
+
+function createSingleArgumentStateOperator(mutator) {
+    var operator = createStateOperator(function (_, state) { return mutator(state); });
+    return function operation(state) {
+        return operator(state, void 0);
+    };
+}
+function createStateOperator(mutator) {
+    return function operation(state, arg) {
+        function isPayloadActionArgument(arg2) {
+            return isFSA(arg2);
+        }
+        var runMutator = function (draft) {
+            if (isPayloadActionArgument(arg)) {
+                mutator(arg.payload, draft);
+            }
+            else {
+                mutator(arg, draft);
+            }
+        };
+        if ((0,immer__WEBPACK_IMPORTED_MODULE_2__.isDraft)(state)) {
+            runMutator(state);
+            return state;
+        }
+        else {
+            return (0,immer__WEBPACK_IMPORTED_MODULE_2__["default"])(state, runMutator);
+        }
+    };
+}
+// src/entities/utils.ts
+function selectIdValue(entity, selectId) {
+    var key = selectId(entity);
+    if ( true && key === void 0) {
+        console.warn("The entity passed to the `selectId` implementation returned undefined.", "You should probably provide your own `selectId` implementation.", "The entity that was passed:", entity, "The `selectId` implementation:", selectId.toString());
+    }
+    return key;
+}
+function ensureEntitiesArray(entities) {
+    if (!Array.isArray(entities)) {
+        entities = Object.values(entities);
+    }
+    return entities;
+}
+function splitAddedUpdatedEntities(newEntities, selectId, state) {
+    newEntities = ensureEntitiesArray(newEntities);
+    var added = [];
+    var updated = [];
+    for (var _i = 0, newEntities_1 = newEntities; _i < newEntities_1.length; _i++) {
+        var entity = newEntities_1[_i];
+        var id = selectIdValue(entity, selectId);
+        if (id in state.entities) {
+            updated.push({ id: id, changes: entity });
+        }
+        else {
+            added.push(entity);
+        }
+    }
+    return [added, updated];
+}
+// src/entities/unsorted_state_adapter.ts
+function createUnsortedStateAdapter(selectId) {
+    function addOneMutably(entity, state) {
+        var key = selectIdValue(entity, selectId);
+        if (key in state.entities) {
+            return;
+        }
+        state.ids.push(key);
+        state.entities[key] = entity;
+    }
+    function addManyMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        for (var _i = 0, newEntities_2 = newEntities; _i < newEntities_2.length; _i++) {
+            var entity = newEntities_2[_i];
+            addOneMutably(entity, state);
+        }
+    }
+    function setOneMutably(entity, state) {
+        var key = selectIdValue(entity, selectId);
+        if (!(key in state.entities)) {
+            state.ids.push(key);
+        }
+        state.entities[key] = entity;
+    }
+    function setManyMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        for (var _i = 0, newEntities_3 = newEntities; _i < newEntities_3.length; _i++) {
+            var entity = newEntities_3[_i];
+            setOneMutably(entity, state);
+        }
+    }
+    function setAllMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        state.ids = [];
+        state.entities = {};
+        addManyMutably(newEntities, state);
+    }
+    function removeOneMutably(key, state) {
+        return removeManyMutably([key], state);
+    }
+    function removeManyMutably(keys, state) {
+        var didMutate = false;
+        keys.forEach(function (key) {
+            if (key in state.entities) {
+                delete state.entities[key];
+                didMutate = true;
+            }
+        });
+        if (didMutate) {
+            state.ids = state.ids.filter(function (id) { return id in state.entities; });
+        }
+    }
+    function removeAllMutably(state) {
+        Object.assign(state, {
+            ids: [],
+            entities: {}
+        });
+    }
+    function takeNewKey(keys, update, state) {
+        var original2 = state.entities[update.id];
+        var updated = Object.assign({}, original2, update.changes);
+        var newKey = selectIdValue(updated, selectId);
+        var hasNewKey = newKey !== update.id;
+        if (hasNewKey) {
+            keys[update.id] = newKey;
+            delete state.entities[update.id];
+        }
+        state.entities[newKey] = updated;
+        return hasNewKey;
+    }
+    function updateOneMutably(update, state) {
+        return updateManyMutably([update], state);
+    }
+    function updateManyMutably(updates, state) {
+        var newKeys = {};
+        var updatesPerEntity = {};
+        updates.forEach(function (update) {
+            if (update.id in state.entities) {
+                updatesPerEntity[update.id] = {
+                    id: update.id,
+                    changes: __spreadValues(__spreadValues({}, updatesPerEntity[update.id] ? updatesPerEntity[update.id].changes : null), update.changes)
+                };
+            }
+        });
+        updates = Object.values(updatesPerEntity);
+        var didMutateEntities = updates.length > 0;
+        if (didMutateEntities) {
+            var didMutateIds = updates.filter(function (update) { return takeNewKey(newKeys, update, state); }).length > 0;
+            if (didMutateIds) {
+                state.ids = Object.keys(state.entities);
+            }
+        }
+    }
+    function upsertOneMutably(entity, state) {
+        return upsertManyMutably([entity], state);
+    }
+    function upsertManyMutably(newEntities, state) {
+        var _c = splitAddedUpdatedEntities(newEntities, selectId, state), added = _c[0], updated = _c[1];
+        updateManyMutably(updated, state);
+        addManyMutably(added, state);
+    }
+    return {
+        removeAll: createSingleArgumentStateOperator(removeAllMutably),
+        addOne: createStateOperator(addOneMutably),
+        addMany: createStateOperator(addManyMutably),
+        setOne: createStateOperator(setOneMutably),
+        setMany: createStateOperator(setManyMutably),
+        setAll: createStateOperator(setAllMutably),
+        updateOne: createStateOperator(updateOneMutably),
+        updateMany: createStateOperator(updateManyMutably),
+        upsertOne: createStateOperator(upsertOneMutably),
+        upsertMany: createStateOperator(upsertManyMutably),
+        removeOne: createStateOperator(removeOneMutably),
+        removeMany: createStateOperator(removeManyMutably)
+    };
+}
+// src/entities/sorted_state_adapter.ts
+function createSortedStateAdapter(selectId, sort) {
+    var _c = createUnsortedStateAdapter(selectId), removeOne = _c.removeOne, removeMany = _c.removeMany, removeAll = _c.removeAll;
+    function addOneMutably(entity, state) {
+        return addManyMutably([entity], state);
+    }
+    function addManyMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        var models = newEntities.filter(function (model) { return !(selectIdValue(model, selectId) in state.entities); });
+        if (models.length !== 0) {
+            merge(models, state);
+        }
+    }
+    function setOneMutably(entity, state) {
+        return setManyMutably([entity], state);
+    }
+    function setManyMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        if (newEntities.length !== 0) {
+            merge(newEntities, state);
+        }
+    }
+    function setAllMutably(newEntities, state) {
+        newEntities = ensureEntitiesArray(newEntities);
+        state.entities = {};
+        state.ids = [];
+        addManyMutably(newEntities, state);
+    }
+    function updateOneMutably(update, state) {
+        return updateManyMutably([update], state);
+    }
+    function updateManyMutably(updates, state) {
+        var appliedUpdates = false;
+        for (var _i = 0, updates_1 = updates; _i < updates_1.length; _i++) {
+            var update = updates_1[_i];
+            var entity = state.entities[update.id];
+            if (!entity) {
+                continue;
+            }
+            appliedUpdates = true;
+            Object.assign(entity, update.changes);
+            var newId = selectId(entity);
+            if (update.id !== newId) {
+                delete state.entities[update.id];
+                state.entities[newId] = entity;
+            }
+        }
+        if (appliedUpdates) {
+            resortEntities(state);
+        }
+    }
+    function upsertOneMutably(entity, state) {
+        return upsertManyMutably([entity], state);
+    }
+    function upsertManyMutably(newEntities, state) {
+        var _c = splitAddedUpdatedEntities(newEntities, selectId, state), added = _c[0], updated = _c[1];
+        updateManyMutably(updated, state);
+        addManyMutably(added, state);
+    }
+    function areArraysEqual(a, b) {
+        if (a.length !== b.length) {
+            return false;
+        }
+        for (var i = 0; i < a.length && i < b.length; i++) {
+            if (a[i] === b[i]) {
+                continue;
+            }
+            return false;
+        }
+        return true;
+    }
+    function merge(models, state) {
+        models.forEach(function (model) {
+            state.entities[selectId(model)] = model;
+        });
+        resortEntities(state);
+    }
+    function resortEntities(state) {
+        var allEntities = Object.values(state.entities);
+        allEntities.sort(sort);
+        var newSortedIds = allEntities.map(selectId);
+        var ids = state.ids;
+        if (!areArraysEqual(ids, newSortedIds)) {
+            state.ids = newSortedIds;
+        }
+    }
+    return {
+        removeOne: removeOne,
+        removeMany: removeMany,
+        removeAll: removeAll,
+        addOne: createStateOperator(addOneMutably),
+        updateOne: createStateOperator(updateOneMutably),
+        upsertOne: createStateOperator(upsertOneMutably),
+        setOne: createStateOperator(setOneMutably),
+        setMany: createStateOperator(setManyMutably),
+        setAll: createStateOperator(setAllMutably),
+        addMany: createStateOperator(addManyMutably),
+        updateMany: createStateOperator(updateManyMutably),
+        upsertMany: createStateOperator(upsertManyMutably)
+    };
+}
+// src/entities/create_adapter.ts
+function createEntityAdapter(options) {
+    if (options === void 0) { options = {}; }
+    var _c = __spreadValues({
+        sortComparer: false,
+        selectId: function (instance) { return instance.id; }
+    }, options), selectId = _c.selectId, sortComparer = _c.sortComparer;
+    var stateFactory = createInitialStateFactory();
+    var selectorsFactory = createSelectorsFactory();
+    var stateAdapter = sortComparer ? createSortedStateAdapter(selectId, sortComparer) : createUnsortedStateAdapter(selectId);
+    return __spreadValues(__spreadValues(__spreadValues({
+        selectId: selectId,
+        sortComparer: sortComparer
+    }, stateFactory), selectorsFactory), stateAdapter);
+}
+// src/nanoid.ts
+var urlAlphabet = "ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXIjQW";
+var nanoid = function (size) {
+    if (size === void 0) { size = 21; }
+    var id = "";
+    var i = size;
+    while (i--) {
+        id += urlAlphabet[Math.random() * 64 | 0];
+    }
+    return id;
+};
+// src/createAsyncThunk.ts
+var commonProperties = [
+    "name",
+    "message",
+    "stack",
+    "code"
+];
+var RejectWithValue = /** @class */ (function () {
+    function RejectWithValue(payload, meta) {
+        this.payload = payload;
+        this.meta = meta;
+    }
+    return RejectWithValue;
+}());
+var FulfillWithMeta = /** @class */ (function () {
+    function FulfillWithMeta(payload, meta) {
+        this.payload = payload;
+        this.meta = meta;
+    }
+    return FulfillWithMeta;
+}());
+var miniSerializeError = function (value) {
+    if (typeof value === "object" && value !== null) {
+        var simpleError = {};
+        for (var _i = 0, commonProperties_1 = commonProperties; _i < commonProperties_1.length; _i++) {
+            var property = commonProperties_1[_i];
+            if (typeof value[property] === "string") {
+                simpleError[property] = value[property];
+            }
+        }
+        return simpleError;
+    }
+    return { message: String(value) };
+};
+var createAsyncThunk = (function () {
+    function createAsyncThunk2(typePrefix, payloadCreator, options) {
+        var fulfilled = createAction(typePrefix + "/fulfilled", function (payload, requestId, arg, meta) { return ({
+            payload: payload,
+            meta: __spreadProps(__spreadValues({}, meta || {}), {
+                arg: arg,
+                requestId: requestId,
+                requestStatus: "fulfilled"
+            })
+        }); });
+        var pending = createAction(typePrefix + "/pending", function (requestId, arg, meta) { return ({
+            payload: void 0,
+            meta: __spreadProps(__spreadValues({}, meta || {}), {
+                arg: arg,
+                requestId: requestId,
+                requestStatus: "pending"
+            })
+        }); });
+        var rejected = createAction(typePrefix + "/rejected", function (error, requestId, arg, payload, meta) { return ({
+            payload: payload,
+            error: (options && options.serializeError || miniSerializeError)(error || "Rejected"),
+            meta: __spreadProps(__spreadValues({}, meta || {}), {
+                arg: arg,
+                requestId: requestId,
+                rejectedWithValue: !!payload,
+                requestStatus: "rejected",
+                aborted: (error == null ? void 0 : error.name) === "AbortError",
+                condition: (error == null ? void 0 : error.name) === "ConditionError"
+            })
+        }); });
+        var displayedWarning = false;
+        var AC = typeof AbortController !== "undefined" ? AbortController : /** @class */ (function () {
+            function class_1() {
+                this.signal = {
+                    aborted: false,
+                    addEventListener: function () {
+                    },
+                    dispatchEvent: function () {
+                        return false;
+                    },
+                    onabort: function () {
+                    },
+                    removeEventListener: function () {
+                    },
+                    reason: void 0,
+                    throwIfAborted: function () {
+                    }
+                };
+            }
+            class_1.prototype.abort = function () {
+                if (true) {
+                    if (!displayedWarning) {
+                        displayedWarning = true;
+                        console.info("This platform does not implement AbortController. \nIf you want to use the AbortController to react to `abort` events, please consider importing a polyfill like 'abortcontroller-polyfill/dist/abortcontroller-polyfill-only'.");
+                    }
+                }
+            };
+            return class_1;
+        }());
+        function actionCreator(arg) {
+            return function (dispatch, getState, extra) {
+                var requestId = (options == null ? void 0 : options.idGenerator) ? options.idGenerator(arg) : nanoid();
+                var abortController = new AC();
+                var abortReason;
+                var started = false;
+                function abort(reason) {
+                    abortReason = reason;
+                    abortController.abort();
+                }
+                var promise2 = function () {
+                    return __async(this, null, function () {
+                        var _a, _b, finalAction, conditionResult, abortedPromise, err_1, skipDispatch;
+                        return __generator(this, function (_c) {
+                            switch (_c.label) {
+                                case 0:
+                                    _c.trys.push([0, 4, , 5]);
+                                    conditionResult = (_a = options == null ? void 0 : options.condition) == null ? void 0 : _a.call(options, arg, { getState: getState, extra: extra });
+                                    if (!isThenable(conditionResult)) return [3 /*break*/, 2];
+                                    return [4 /*yield*/, conditionResult];
+                                case 1:
+                                    conditionResult = _c.sent();
+                                    _c.label = 2;
+                                case 2:
+                                    if (conditionResult === false || abortController.signal.aborted) {
+                                        throw {
+                                            name: "ConditionError",
+                                            message: "Aborted due to condition callback returning false."
+                                        };
+                                    }
+                                    started = true;
+                                    abortedPromise = new Promise(function (_, reject) { return abortController.signal.addEventListener("abort", function () { return reject({
+                                        name: "AbortError",
+                                        message: abortReason || "Aborted"
+                                    }); }); });
+                                    dispatch(pending(requestId, arg, (_b = options == null ? void 0 : options.getPendingMeta) == null ? void 0 : _b.call(options, { requestId: requestId, arg: arg }, { getState: getState, extra: extra })));
+                                    return [4 /*yield*/, Promise.race([
+                                            abortedPromise,
+                                            Promise.resolve(payloadCreator(arg, {
+                                                dispatch: dispatch,
+                                                getState: getState,
+                                                extra: extra,
+                                                requestId: requestId,
+                                                signal: abortController.signal,
+                                                abort: abort,
+                                                rejectWithValue: function (value, meta) {
+                                                    return new RejectWithValue(value, meta);
+                                                },
+                                                fulfillWithValue: function (value, meta) {
+                                                    return new FulfillWithMeta(value, meta);
+                                                }
+                                            })).then(function (result) {
+                                                if (result instanceof RejectWithValue) {
+                                                    throw result;
+                                                }
+                                                if (result instanceof FulfillWithMeta) {
+                                                    return fulfilled(result.payload, requestId, arg, result.meta);
+                                                }
+                                                return fulfilled(result, requestId, arg);
+                                            })
+                                        ])];
+                                case 3:
+                                    finalAction = _c.sent();
+                                    return [3 /*break*/, 5];
+                                case 4:
+                                    err_1 = _c.sent();
+                                    finalAction = err_1 instanceof RejectWithValue ? rejected(null, requestId, arg, err_1.payload, err_1.meta) : rejected(err_1, requestId, arg);
+                                    return [3 /*break*/, 5];
+                                case 5:
+                                    skipDispatch = options && !options.dispatchConditionRejection && rejected.match(finalAction) && finalAction.meta.condition;
+                                    if (!skipDispatch) {
+                                        dispatch(finalAction);
+                                    }
+                                    return [2 /*return*/, finalAction];
+                            }
+                        });
+                    });
+                }();
+                return Object.assign(promise2, {
+                    abort: abort,
+                    requestId: requestId,
+                    arg: arg,
+                    unwrap: function () {
+                        return promise2.then(unwrapResult);
+                    }
+                });
+            };
+        }
+        return Object.assign(actionCreator, {
+            pending: pending,
+            rejected: rejected,
+            fulfilled: fulfilled,
+            typePrefix: typePrefix
+        });
+    }
+    createAsyncThunk2.withTypes = function () { return createAsyncThunk2; };
+    return createAsyncThunk2;
+})();
+function unwrapResult(action) {
+    if (action.meta && action.meta.rejectedWithValue) {
+        throw action.payload;
+    }
+    if (action.error) {
+        throw action.error;
+    }
+    return action.payload;
+}
+function isThenable(value) {
+    return value !== null && typeof value === "object" && typeof value.then === "function";
+}
+// src/matchers.ts
+var matches = function (matcher, action) {
+    if (hasMatchFunction(matcher)) {
+        return matcher.match(action);
+    }
+    else {
+        return matcher(action);
+    }
+};
+function isAnyOf() {
+    var matchers = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        matchers[_i] = arguments[_i];
+    }
+    return function (action) {
+        return matchers.some(function (matcher) { return matches(matcher, action); });
+    };
+}
+function isAllOf() {
+    var matchers = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        matchers[_i] = arguments[_i];
+    }
+    return function (action) {
+        return matchers.every(function (matcher) { return matches(matcher, action); });
+    };
+}
+function hasExpectedRequestMetadata(action, validStatus) {
+    if (!action || !action.meta)
+        return false;
+    var hasValidRequestId = typeof action.meta.requestId === "string";
+    var hasValidRequestStatus = validStatus.indexOf(action.meta.requestStatus) > -1;
+    return hasValidRequestId && hasValidRequestStatus;
+}
+function isAsyncThunkArray(a) {
+    return typeof a[0] === "function" && "pending" in a[0] && "fulfilled" in a[0] && "rejected" in a[0];
+}
+function isPending() {
+    var asyncThunks = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        asyncThunks[_i] = arguments[_i];
+    }
+    if (asyncThunks.length === 0) {
+        return function (action) { return hasExpectedRequestMetadata(action, ["pending"]); };
+    }
+    if (!isAsyncThunkArray(asyncThunks)) {
+        return isPending()(asyncThunks[0]);
+    }
+    return function (action) {
+        var matchers = asyncThunks.map(function (asyncThunk) { return asyncThunk.pending; });
+        var combinedMatcher = isAnyOf.apply(void 0, matchers);
+        return combinedMatcher(action);
+    };
+}
+function isRejected() {
+    var asyncThunks = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        asyncThunks[_i] = arguments[_i];
+    }
+    if (asyncThunks.length === 0) {
+        return function (action) { return hasExpectedRequestMetadata(action, ["rejected"]); };
+    }
+    if (!isAsyncThunkArray(asyncThunks)) {
+        return isRejected()(asyncThunks[0]);
+    }
+    return function (action) {
+        var matchers = asyncThunks.map(function (asyncThunk) { return asyncThunk.rejected; });
+        var combinedMatcher = isAnyOf.apply(void 0, matchers);
+        return combinedMatcher(action);
+    };
+}
+function isRejectedWithValue() {
+    var asyncThunks = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        asyncThunks[_i] = arguments[_i];
+    }
+    var hasFlag = function (action) {
+        return action && action.meta && action.meta.rejectedWithValue;
+    };
+    if (asyncThunks.length === 0) {
+        return function (action) {
+            var combinedMatcher = isAllOf(isRejected.apply(void 0, asyncThunks), hasFlag);
+            return combinedMatcher(action);
+        };
+    }
+    if (!isAsyncThunkArray(asyncThunks)) {
+        return isRejectedWithValue()(asyncThunks[0]);
+    }
+    return function (action) {
+        var combinedMatcher = isAllOf(isRejected.apply(void 0, asyncThunks), hasFlag);
+        return combinedMatcher(action);
+    };
+}
+function isFulfilled() {
+    var asyncThunks = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        asyncThunks[_i] = arguments[_i];
+    }
+    if (asyncThunks.length === 0) {
+        return function (action) { return hasExpectedRequestMetadata(action, ["fulfilled"]); };
+    }
+    if (!isAsyncThunkArray(asyncThunks)) {
+        return isFulfilled()(asyncThunks[0]);
+    }
+    return function (action) {
+        var matchers = asyncThunks.map(function (asyncThunk) { return asyncThunk.fulfilled; });
+        var combinedMatcher = isAnyOf.apply(void 0, matchers);
+        return combinedMatcher(action);
+    };
+}
+function isAsyncThunkAction() {
+    var asyncThunks = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        asyncThunks[_i] = arguments[_i];
+    }
+    if (asyncThunks.length === 0) {
+        return function (action) { return hasExpectedRequestMetadata(action, ["pending", "fulfilled", "rejected"]); };
+    }
+    if (!isAsyncThunkArray(asyncThunks)) {
+        return isAsyncThunkAction()(asyncThunks[0]);
+    }
+    return function (action) {
+        var matchers = [];
+        for (var _i = 0, asyncThunks_1 = asyncThunks; _i < asyncThunks_1.length; _i++) {
+            var asyncThunk = asyncThunks_1[_i];
+            matchers.push(asyncThunk.pending, asyncThunk.rejected, asyncThunk.fulfilled);
+        }
+        var combinedMatcher = isAnyOf.apply(void 0, matchers);
+        return combinedMatcher(action);
+    };
+}
+// src/listenerMiddleware/utils.ts
+var assertFunction = function (func, expected) {
+    if (typeof func !== "function") {
+        throw new TypeError(expected + " is not a function");
+    }
+};
+var noop = function () {
+};
+var catchRejection = function (promise2, onError) {
+    if (onError === void 0) { onError = noop; }
+    promise2.catch(onError);
+    return promise2;
+};
+var addAbortSignalListener = function (abortSignal, callback) {
+    abortSignal.addEventListener("abort", callback, { once: true });
+    return function () { return abortSignal.removeEventListener("abort", callback); };
+};
+var abortControllerWithReason = function (abortController, reason) {
+    var signal = abortController.signal;
+    if (signal.aborted) {
+        return;
+    }
+    if (!("reason" in signal)) {
+        Object.defineProperty(signal, "reason", {
+            enumerable: true,
+            value: reason,
+            configurable: true,
+            writable: true
+        });
+    }
+    ;
+    abortController.abort(reason);
+};
+// src/listenerMiddleware/exceptions.ts
+var task = "task";
+var listener = "listener";
+var completed = "completed";
+var cancelled = "cancelled";
+var taskCancelled = "task-" + cancelled;
+var taskCompleted = "task-" + completed;
+var listenerCancelled = listener + "-" + cancelled;
+var listenerCompleted = listener + "-" + completed;
+var TaskAbortError = /** @class */ (function () {
+    function TaskAbortError(code) {
+        this.code = code;
+        this.name = "TaskAbortError";
+        this.message = task + " " + cancelled + " (reason: " + code + ")";
+    }
+    return TaskAbortError;
+}());
+// src/listenerMiddleware/task.ts
+var validateActive = function (signal) {
+    if (signal.aborted) {
+        throw new TaskAbortError(signal.reason);
+    }
+};
+function raceWithSignal(signal, promise2) {
+    var cleanup = noop;
+    return new Promise(function (resolve, reject) {
+        var notifyRejection = function () { return reject(new TaskAbortError(signal.reason)); };
+        if (signal.aborted) {
+            notifyRejection();
+            return;
+        }
+        cleanup = addAbortSignalListener(signal, notifyRejection);
+        promise2.finally(function () { return cleanup(); }).then(resolve, reject);
+    }).finally(function () {
+        cleanup = noop;
+    });
+}
+var runTask = function (task2, cleanUp) { return __async(void 0, null, function () {
+    var value, error_1;
+    return __generator(this, function (_c) {
+        switch (_c.label) {
+            case 0:
+                _c.trys.push([0, 3, 4, 5]);
+                return [4 /*yield*/, Promise.resolve()];
+            case 1:
+                _c.sent();
+                return [4 /*yield*/, task2()];
+            case 2:
+                value = _c.sent();
+                return [2 /*return*/, {
+                        status: "ok",
+                        value: value
+                    }];
+            case 3:
+                error_1 = _c.sent();
+                return [2 /*return*/, {
+                        status: error_1 instanceof TaskAbortError ? "cancelled" : "rejected",
+                        error: error_1
+                    }];
+            case 4:
+                cleanUp == null ? void 0 : cleanUp();
+                return [7 /*endfinally*/];
+            case 5: return [2 /*return*/];
+        }
+    });
+}); };
+var createPause = function (signal) {
+    return function (promise2) {
+        return catchRejection(raceWithSignal(signal, promise2).then(function (output) {
+            validateActive(signal);
+            return output;
+        }));
+    };
+};
+var createDelay = function (signal) {
+    var pause = createPause(signal);
+    return function (timeoutMs) {
+        return pause(new Promise(function (resolve) { return setTimeout(resolve, timeoutMs); }));
+    };
+};
+// src/listenerMiddleware/index.ts
+var assign = Object.assign;
+var INTERNAL_NIL_TOKEN = {};
+var alm = "listenerMiddleware";
+var createFork = function (parentAbortSignal, parentBlockingPromises) {
+    var linkControllers = function (controller) { return addAbortSignalListener(parentAbortSignal, function () { return abortControllerWithReason(controller, parentAbortSignal.reason); }); };
+    return function (taskExecutor, opts) {
+        assertFunction(taskExecutor, "taskExecutor");
+        var childAbortController = new AbortController();
+        linkControllers(childAbortController);
+        var result = runTask(function () { return __async(void 0, null, function () {
+            var result2;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0:
+                        validateActive(parentAbortSignal);
+                        validateActive(childAbortController.signal);
+                        return [4 /*yield*/, taskExecutor({
+                                pause: createPause(childAbortController.signal),
+                                delay: createDelay(childAbortController.signal),
+                                signal: childAbortController.signal
+                            })];
+                    case 1:
+                        result2 = _c.sent();
+                        validateActive(childAbortController.signal);
+                        return [2 /*return*/, result2];
+                }
+            });
+        }); }, function () { return abortControllerWithReason(childAbortController, taskCompleted); });
+        if (opts == null ? void 0 : opts.autoJoin) {
+            parentBlockingPromises.push(result);
+        }
+        return {
+            result: createPause(parentAbortSignal)(result),
+            cancel: function () {
+                abortControllerWithReason(childAbortController, taskCancelled);
+            }
+        };
+    };
+};
+var createTakePattern = function (startListening, signal) {
+    var take = function (predicate, timeout) { return __async(void 0, null, function () {
+        var unsubscribe, tuplePromise, promises, output;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    validateActive(signal);
+                    unsubscribe = function () {
+                    };
+                    tuplePromise = new Promise(function (resolve, reject) {
+                        var stopListening = startListening({
+                            predicate: predicate,
+                            effect: function (action, listenerApi) {
+                                listenerApi.unsubscribe();
+                                resolve([
+                                    action,
+                                    listenerApi.getState(),
+                                    listenerApi.getOriginalState()
+                                ]);
+                            }
+                        });
+                        unsubscribe = function () {
+                            stopListening();
+                            reject();
+                        };
+                    });
+                    promises = [
+                        tuplePromise
+                    ];
+                    if (timeout != null) {
+                        promises.push(new Promise(function (resolve) { return setTimeout(resolve, timeout, null); }));
+                    }
+                    _c.label = 1;
+                case 1:
+                    _c.trys.push([1, , 3, 4]);
+                    return [4 /*yield*/, raceWithSignal(signal, Promise.race(promises))];
+                case 2:
+                    output = _c.sent();
+                    validateActive(signal);
+                    return [2 /*return*/, output];
+                case 3:
+                    unsubscribe();
+                    return [7 /*endfinally*/];
+                case 4: return [2 /*return*/];
+            }
+        });
+    }); };
+    return function (predicate, timeout) { return catchRejection(take(predicate, timeout)); };
+};
+var getListenerEntryPropsFrom = function (options) {
+    var type = options.type, actionCreator = options.actionCreator, matcher = options.matcher, predicate = options.predicate, effect = options.effect;
+    if (type) {
+        predicate = createAction(type).match;
+    }
+    else if (actionCreator) {
+        type = actionCreator.type;
+        predicate = actionCreator.match;
+    }
+    else if (matcher) {
+        predicate = matcher;
+    }
+    else if (predicate) {
+    }
+    else {
+        throw new Error("Creating or removing a listener requires one of the known fields for matching an action");
+    }
+    assertFunction(effect, "options.listener");
+    return { predicate: predicate, type: type, effect: effect };
+};
+var createListenerEntry = function (options) {
+    var _c = getListenerEntryPropsFrom(options), type = _c.type, predicate = _c.predicate, effect = _c.effect;
+    var id = nanoid();
+    var entry = {
+        id: id,
+        effect: effect,
+        type: type,
+        predicate: predicate,
+        pending: new Set(),
+        unsubscribe: function () {
+            throw new Error("Unsubscribe not initialized");
+        }
+    };
+    return entry;
+};
+var cancelActiveListeners = function (entry) {
+    entry.pending.forEach(function (controller) {
+        abortControllerWithReason(controller, listenerCancelled);
+    });
+};
+var createClearListenerMiddleware = function (listenerMap) {
+    return function () {
+        listenerMap.forEach(cancelActiveListeners);
+        listenerMap.clear();
+    };
+};
+var safelyNotifyError = function (errorHandler, errorToNotify, errorInfo) {
+    try {
+        errorHandler(errorToNotify, errorInfo);
+    }
+    catch (errorHandlerError) {
+        setTimeout(function () {
+            throw errorHandlerError;
+        }, 0);
+    }
+};
+var addListener = createAction(alm + "/add");
+var clearAllListeners = createAction(alm + "/removeAll");
+var removeListener = createAction(alm + "/remove");
+var defaultErrorHandler = function () {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    console.error.apply(console, __spreadArray([alm + "/error"], args));
+};
+function createListenerMiddleware(middlewareOptions) {
+    var _this = this;
+    if (middlewareOptions === void 0) { middlewareOptions = {}; }
+    var listenerMap = new Map();
+    var extra = middlewareOptions.extra, _c = middlewareOptions.onError, onError = _c === void 0 ? defaultErrorHandler : _c;
+    assertFunction(onError, "onError");
+    var insertEntry = function (entry) {
+        entry.unsubscribe = function () { return listenerMap.delete(entry.id); };
+        listenerMap.set(entry.id, entry);
+        return function (cancelOptions) {
+            entry.unsubscribe();
+            if (cancelOptions == null ? void 0 : cancelOptions.cancelActive) {
+                cancelActiveListeners(entry);
+            }
+        };
+    };
+    var findListenerEntry = function (comparator) {
+        for (var _i = 0, _c = Array.from(listenerMap.values()); _i < _c.length; _i++) {
+            var entry = _c[_i];
+            if (comparator(entry)) {
+                return entry;
+            }
+        }
+        return void 0;
+    };
+    var startListening = function (options) {
+        var entry = findListenerEntry(function (existingEntry) { return existingEntry.effect === options.effect; });
+        if (!entry) {
+            entry = createListenerEntry(options);
+        }
+        return insertEntry(entry);
+    };
+    var stopListening = function (options) {
+        var _c = getListenerEntryPropsFrom(options), type = _c.type, effect = _c.effect, predicate = _c.predicate;
+        var entry = findListenerEntry(function (entry2) {
+            var matchPredicateOrType = typeof type === "string" ? entry2.type === type : entry2.predicate === predicate;
+            return matchPredicateOrType && entry2.effect === effect;
+        });
+        if (entry) {
+            entry.unsubscribe();
+            if (options.cancelActive) {
+                cancelActiveListeners(entry);
+            }
+        }
+        return !!entry;
+    };
+    var notifyListener = function (entry, action, api, getOriginalState) { return __async(_this, null, function () {
+        var internalTaskController, take, autoJoinPromises, listenerError_1;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    internalTaskController = new AbortController();
+                    take = createTakePattern(startListening, internalTaskController.signal);
+                    autoJoinPromises = [];
+                    _c.label = 1;
+                case 1:
+                    _c.trys.push([1, 3, 4, 6]);
+                    entry.pending.add(internalTaskController);
+                    return [4 /*yield*/, Promise.resolve(entry.effect(action, assign({}, api, {
+                            getOriginalState: getOriginalState,
+                            condition: function (predicate, timeout) { return take(predicate, timeout).then(Boolean); },
+                            take: take,
+                            delay: createDelay(internalTaskController.signal),
+                            pause: createPause(internalTaskController.signal),
+                            extra: extra,
+                            signal: internalTaskController.signal,
+                            fork: createFork(internalTaskController.signal, autoJoinPromises),
+                            unsubscribe: entry.unsubscribe,
+                            subscribe: function () {
+                                listenerMap.set(entry.id, entry);
+                            },
+                            cancelActiveListeners: function () {
+                                entry.pending.forEach(function (controller, _, set) {
+                                    if (controller !== internalTaskController) {
+                                        abortControllerWithReason(controller, listenerCancelled);
+                                        set.delete(controller);
+                                    }
+                                });
+                            }
+                        })))];
+                case 2:
+                    _c.sent();
+                    return [3 /*break*/, 6];
+                case 3:
+                    listenerError_1 = _c.sent();
+                    if (!(listenerError_1 instanceof TaskAbortError)) {
+                        safelyNotifyError(onError, listenerError_1, {
+                            raisedBy: "effect"
+                        });
+                    }
+                    return [3 /*break*/, 6];
+                case 4: return [4 /*yield*/, Promise.allSettled(autoJoinPromises)];
+                case 5:
+                    _c.sent();
+                    abortControllerWithReason(internalTaskController, listenerCompleted);
+                    entry.pending.delete(internalTaskController);
+                    return [7 /*endfinally*/];
+                case 6: return [2 /*return*/];
+            }
+        });
+    }); };
+    var clearListenerMiddleware = createClearListenerMiddleware(listenerMap);
+    var middleware = function (api) { return function (next) { return function (action) {
+        if (!isAction(action)) {
+            return next(action);
+        }
+        if (addListener.match(action)) {
+            return startListening(action.payload);
+        }
+        if (clearAllListeners.match(action)) {
+            clearListenerMiddleware();
+            return;
+        }
+        if (removeListener.match(action)) {
+            return stopListening(action.payload);
+        }
+        var originalState = api.getState();
+        var getOriginalState = function () {
+            if (originalState === INTERNAL_NIL_TOKEN) {
+                throw new Error(alm + ": getOriginalState can only be called synchronously");
+            }
+            return originalState;
+        };
+        var result;
+        try {
+            result = next(action);
+            if (listenerMap.size > 0) {
+                var currentState = api.getState();
+                var listenerEntries = Array.from(listenerMap.values());
+                for (var _i = 0, listenerEntries_1 = listenerEntries; _i < listenerEntries_1.length; _i++) {
+                    var entry = listenerEntries_1[_i];
+                    var runListener = false;
+                    try {
+                        runListener = entry.predicate(action, currentState, originalState);
+                    }
+                    catch (predicateError) {
+                        runListener = false;
+                        safelyNotifyError(onError, predicateError, {
+                            raisedBy: "predicate"
+                        });
+                    }
+                    if (!runListener) {
+                        continue;
+                    }
+                    notifyListener(entry, action, api, getOriginalState);
+                }
+            }
+        }
+        finally {
+            originalState = INTERNAL_NIL_TOKEN;
+        }
+        return result;
+    }; }; };
+    return {
+        middleware: middleware,
+        startListening: startListening,
+        stopListening: stopListening,
+        clearListeners: clearListenerMiddleware
+    };
+}
+// src/autoBatchEnhancer.ts
+var SHOULD_AUTOBATCH = "RTK_autoBatch";
+var prepareAutoBatched = function () { return function (payload) {
+    var _c;
+    return ({
+        payload: payload,
+        meta: (_c = {}, _c[SHOULD_AUTOBATCH] = true, _c)
+    });
+}; };
+var promise;
+var queueMicrotaskShim = typeof queueMicrotask === "function" ? queueMicrotask.bind(typeof window !== "undefined" ? window : typeof __webpack_require__.g !== "undefined" ? __webpack_require__.g : globalThis) : function (cb) { return (promise || (promise = Promise.resolve())).then(cb).catch(function (err) { return setTimeout(function () {
+    throw err;
+}, 0); }); };
+var createQueueWithTimer = function (timeout) {
+    return function (notify) {
+        setTimeout(notify, timeout);
+    };
+};
+var rAF = typeof window !== "undefined" && window.requestAnimationFrame ? window.requestAnimationFrame : createQueueWithTimer(10);
+var autoBatchEnhancer = function (options) {
+    if (options === void 0) { options = { type: "raf" }; }
+    return function (next) { return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        var store = next.apply(void 0, args);
+        var notifying = true;
+        var shouldNotifyAtEndOfTick = false;
+        var notificationQueued = false;
+        var listeners = new Set();
+        var queueCallback = options.type === "tick" ? queueMicrotaskShim : options.type === "raf" ? rAF : options.type === "callback" ? options.queueNotification : createQueueWithTimer(options.timeout);
+        var notifyListeners = function () {
+            notificationQueued = false;
+            if (shouldNotifyAtEndOfTick) {
+                shouldNotifyAtEndOfTick = false;
+                listeners.forEach(function (l) { return l(); });
+            }
+        };
+        return Object.assign({}, store, {
+            subscribe: function (listener2) {
+                var wrappedListener = function () { return notifying && listener2(); };
+                var unsubscribe = store.subscribe(wrappedListener);
+                listeners.add(listener2);
+                return function () {
+                    unsubscribe();
+                    listeners.delete(listener2);
+                };
+            },
+            dispatch: function (action) {
+                var _a;
+                try {
+                    notifying = !((_a = action == null ? void 0 : action.meta) == null ? void 0 : _a[SHOULD_AUTOBATCH]);
+                    shouldNotifyAtEndOfTick = !notifying;
+                    if (shouldNotifyAtEndOfTick) {
+                        if (!notificationQueued) {
+                            notificationQueued = true;
+                            queueCallback(notifyListeners);
+                        }
+                    }
+                    return store.dispatch(action);
+                }
+                finally {
+                    notifying = true;
+                }
+            }
+        });
+    }; };
+};
+// src/index.ts
+(0,immer__WEBPACK_IMPORTED_MODULE_2__.enableES5)();
+
 //# sourceMappingURL=redux-toolkit.esm.js.map
 
 /***/ }),
@@ -32099,14 +32099,11 @@ InlineEditingBehavior = Marionette.Behavior.extend({
     var key = this.getEditingSettingKey(),
       container = this.view.getContainer();
     var parts = key.split('.');
-    var isRepeaterKey = 3 === parts.length;
-    if (isRepeaterKey) {
-      var repeaterId = parts[0];
-      var repeater = container.repeaters[repeaterId];
-      var repeaterChildIndex = parts[1];
-      container = repeater.children[repeaterChildIndex];
-      var fieldToUpdate = parts[2];
-      key = fieldToUpdate;
+
+    // Is it repeater?
+    if (3 === parts.length) {
+      container = container.children[parts[1]];
+      key = parts[2];
     }
     $e.run('document/elements/settings', {
       container: container,
@@ -56878,1435 +56875,1435 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ mixpanel)
 /* harmony export */ });
-var NodeType;
-(function (NodeType) {
-    NodeType[NodeType["Document"] = 0] = "Document";
-    NodeType[NodeType["DocumentType"] = 1] = "DocumentType";
-    NodeType[NodeType["Element"] = 2] = "Element";
-    NodeType[NodeType["Text"] = 3] = "Text";
-    NodeType[NodeType["CDATA"] = 4] = "CDATA";
-    NodeType[NodeType["Comment"] = 5] = "Comment";
+var NodeType;
+(function (NodeType) {
+    NodeType[NodeType["Document"] = 0] = "Document";
+    NodeType[NodeType["DocumentType"] = 1] = "DocumentType";
+    NodeType[NodeType["Element"] = 2] = "Element";
+    NodeType[NodeType["Text"] = 3] = "Text";
+    NodeType[NodeType["CDATA"] = 4] = "CDATA";
+    NodeType[NodeType["Comment"] = 5] = "Comment";
 })(NodeType || (NodeType = {}));
 
-function isElement(n) {
-    return n.nodeType === n.ELEMENT_NODE;
-}
-function isShadowRoot(n) {
-    const host = n === null || n === void 0 ? void 0 : n.host;
-    return Boolean((host === null || host === void 0 ? void 0 : host.shadowRoot) === n);
-}
-function isNativeShadowDom(shadowRoot) {
-    return Object.prototype.toString.call(shadowRoot) === '[object ShadowRoot]';
-}
-function fixBrowserCompatibilityIssuesInCSS(cssText) {
-    if (cssText.includes(' background-clip: text;') &&
-        !cssText.includes(' -webkit-background-clip: text;')) {
-        cssText = cssText.replace(' background-clip: text;', ' -webkit-background-clip: text; background-clip: text;');
-    }
-    return cssText;
-}
-function escapeImportStatement(rule) {
-    const { cssText } = rule;
-    if (cssText.split('"').length < 3)
-        return cssText;
-    const statement = ['@import', `url(${JSON.stringify(rule.href)})`];
-    if (rule.layerName === '') {
-        statement.push(`layer`);
-    }
-    else if (rule.layerName) {
-        statement.push(`layer(${rule.layerName})`);
-    }
-    if (rule.supportsText) {
-        statement.push(`supports(${rule.supportsText})`);
-    }
-    if (rule.media.length) {
-        statement.push(rule.media.mediaText);
-    }
-    return statement.join(' ') + ';';
-}
-function stringifyStylesheet(s) {
-    try {
-        const rules = s.rules || s.cssRules;
-        return rules
-            ? fixBrowserCompatibilityIssuesInCSS(Array.from(rules, stringifyRule).join(''))
-            : null;
-    }
-    catch (error) {
-        return null;
-    }
-}
-function stringifyRule(rule) {
-    let importStringified;
-    if (isCSSImportRule(rule)) {
-        try {
-            importStringified =
-                stringifyStylesheet(rule.styleSheet) ||
-                    escapeImportStatement(rule);
-        }
-        catch (error) {
-        }
-    }
-    else if (isCSSStyleRule(rule) && rule.selectorText.includes(':')) {
-        return fixSafariColons(rule.cssText);
-    }
-    return importStringified || rule.cssText;
-}
-function fixSafariColons(cssStringified) {
-    const regex = /(\[(?:[\w-]+)[^\\])(:(?:[\w-]+)\])/gm;
-    return cssStringified.replace(regex, '$1\\$2');
-}
-function isCSSImportRule(rule) {
-    return 'styleSheet' in rule;
-}
-function isCSSStyleRule(rule) {
-    return 'selectorText' in rule;
-}
-class Mirror {
-    constructor() {
-        this.idNodeMap = new Map();
-        this.nodeMetaMap = new WeakMap();
-    }
-    getId(n) {
-        var _a;
-        if (!n)
-            return -1;
-        const id = (_a = this.getMeta(n)) === null || _a === void 0 ? void 0 : _a.id;
-        return id !== null && id !== void 0 ? id : -1;
-    }
-    getNode(id) {
-        return this.idNodeMap.get(id) || null;
-    }
-    getIds() {
-        return Array.from(this.idNodeMap.keys());
-    }
-    getMeta(n) {
-        return this.nodeMetaMap.get(n) || null;
-    }
-    removeNodeFromMap(n) {
-        const id = this.getId(n);
-        this.idNodeMap.delete(id);
-        if (n.childNodes) {
-            n.childNodes.forEach((childNode) => this.removeNodeFromMap(childNode));
-        }
-    }
-    has(id) {
-        return this.idNodeMap.has(id);
-    }
-    hasNode(node) {
-        return this.nodeMetaMap.has(node);
-    }
-    add(n, meta) {
-        const id = meta.id;
-        this.idNodeMap.set(id, n);
-        this.nodeMetaMap.set(n, meta);
-    }
-    replace(id, n) {
-        const oldNode = this.getNode(id);
-        if (oldNode) {
-            const meta = this.nodeMetaMap.get(oldNode);
-            if (meta)
-                this.nodeMetaMap.set(n, meta);
-        }
-        this.idNodeMap.set(id, n);
-    }
-    reset() {
-        this.idNodeMap = new Map();
-        this.nodeMetaMap = new WeakMap();
-    }
-}
-function createMirror() {
-    return new Mirror();
-}
-function maskInputValue({ element, maskInputOptions, tagName, type, value, maskInputFn, }) {
-    let text = value || '';
-    const actualType = type && toLowerCase(type);
-    if (maskInputOptions[tagName.toLowerCase()] ||
-        (actualType && maskInputOptions[actualType])) {
-        if (maskInputFn) {
-            text = maskInputFn(text, element);
-        }
-        else {
-            text = '*'.repeat(text.length);
-        }
-    }
-    return text;
-}
-function toLowerCase(str) {
-    return str.toLowerCase();
-}
-const ORIGINAL_ATTRIBUTE_NAME = '__rrweb_original__';
-function is2DCanvasBlank(canvas) {
-    const ctx = canvas.getContext('2d');
-    if (!ctx)
-        return true;
-    const chunkSize = 50;
-    for (let x = 0; x < canvas.width; x += chunkSize) {
-        for (let y = 0; y < canvas.height; y += chunkSize) {
-            const getImageData = ctx.getImageData;
-            const originalGetImageData = ORIGINAL_ATTRIBUTE_NAME in getImageData
-                ? getImageData[ORIGINAL_ATTRIBUTE_NAME]
-                : getImageData;
-            const pixelBuffer = new Uint32Array(originalGetImageData.call(ctx, x, y, Math.min(chunkSize, canvas.width - x), Math.min(chunkSize, canvas.height - y)).data.buffer);
-            if (pixelBuffer.some((pixel) => pixel !== 0))
-                return false;
-        }
-    }
-    return true;
-}
-function getInputType(element) {
-    const type = element.type;
-    return element.hasAttribute('data-rr-is-password')
-        ? 'password'
-        : type
-            ?
-                toLowerCase(type)
-            : null;
-}
-function extractFileExtension(path, baseURL) {
-    var _a;
-    let url;
-    try {
-        url = new URL(path, baseURL !== null && baseURL !== void 0 ? baseURL : window.location.href);
-    }
-    catch (err) {
-        return null;
-    }
-    const regex = /\.([0-9a-z]+)(?:$)/i;
-    const match = url.pathname.match(regex);
-    return (_a = match === null || match === void 0 ? void 0 : match[1]) !== null && _a !== void 0 ? _a : null;
-}
-
-let _id = 1;
-const tagNameRegex = new RegExp('[^a-z0-9-_:]');
-const IGNORED_NODE = -2;
-function genId() {
-    return _id++;
-}
-function getValidTagName(element) {
-    if (element instanceof HTMLFormElement) {
-        return 'form';
-    }
-    const processedTagName = toLowerCase(element.tagName);
-    if (tagNameRegex.test(processedTagName)) {
-        return 'div';
-    }
-    return processedTagName;
-}
-function extractOrigin(url) {
-    let origin = '';
-    if (url.indexOf('//') > -1) {
-        origin = url.split('/').slice(0, 3).join('/');
-    }
-    else {
-        origin = url.split('/')[0];
-    }
-    origin = origin.split('?')[0];
-    return origin;
-}
-let canvasService;
-let canvasCtx;
-const URL_IN_CSS_REF = /url\((?:(')([^']*)'|(")(.*?)"|([^)]*))\)/gm;
-const URL_PROTOCOL_MATCH = /^(?:[a-z+]+:)?\/\//i;
-const URL_WWW_MATCH = /^www\..*/i;
-const DATA_URI = /^(data:)([^,]*),(.*)/i;
-function absoluteToStylesheet(cssText, href) {
-    return (cssText || '').replace(URL_IN_CSS_REF, (origin, quote1, path1, quote2, path2, path3) => {
-        const filePath = path1 || path2 || path3;
-        const maybeQuote = quote1 || quote2 || '';
-        if (!filePath) {
-            return origin;
-        }
-        if (URL_PROTOCOL_MATCH.test(filePath) || URL_WWW_MATCH.test(filePath)) {
-            return `url(${maybeQuote}${filePath}${maybeQuote})`;
-        }
-        if (DATA_URI.test(filePath)) {
-            return `url(${maybeQuote}${filePath}${maybeQuote})`;
-        }
-        if (filePath[0] === '/') {
-            return `url(${maybeQuote}${extractOrigin(href) + filePath}${maybeQuote})`;
-        }
-        const stack = href.split('/');
-        const parts = filePath.split('/');
-        stack.pop();
-        for (const part of parts) {
-            if (part === '.') {
-                continue;
-            }
-            else if (part === '..') {
-                stack.pop();
-            }
-            else {
-                stack.push(part);
-            }
-        }
-        return `url(${maybeQuote}${stack.join('/')}${maybeQuote})`;
-    });
-}
-const SRCSET_NOT_SPACES = /^[^ \t\n\r\u000c]+/;
-const SRCSET_COMMAS_OR_SPACES = /^[, \t\n\r\u000c]+/;
-function getAbsoluteSrcsetString(doc, attributeValue) {
-    if (attributeValue.trim() === '') {
-        return attributeValue;
-    }
-    let pos = 0;
-    function collectCharacters(regEx) {
-        let chars;
-        const match = regEx.exec(attributeValue.substring(pos));
-        if (match) {
-            chars = match[0];
-            pos += chars.length;
-            return chars;
-        }
-        return '';
-    }
-    const output = [];
-    while (true) {
-        collectCharacters(SRCSET_COMMAS_OR_SPACES);
-        if (pos >= attributeValue.length) {
-            break;
-        }
-        let url = collectCharacters(SRCSET_NOT_SPACES);
-        if (url.slice(-1) === ',') {
-            url = absoluteToDoc(doc, url.substring(0, url.length - 1));
-            output.push(url);
-        }
-        else {
-            let descriptorsStr = '';
-            url = absoluteToDoc(doc, url);
-            let inParens = false;
-            while (true) {
-                const c = attributeValue.charAt(pos);
-                if (c === '') {
-                    output.push((url + descriptorsStr).trim());
-                    break;
-                }
-                else if (!inParens) {
-                    if (c === ',') {
-                        pos += 1;
-                        output.push((url + descriptorsStr).trim());
-                        break;
-                    }
-                    else if (c === '(') {
-                        inParens = true;
-                    }
-                }
-                else {
-                    if (c === ')') {
-                        inParens = false;
-                    }
-                }
-                descriptorsStr += c;
-                pos += 1;
-            }
-        }
-    }
-    return output.join(', ');
-}
-function absoluteToDoc(doc, attributeValue) {
-    if (!attributeValue || attributeValue.trim() === '') {
-        return attributeValue;
-    }
-    const a = doc.createElement('a');
-    a.href = attributeValue;
-    return a.href;
-}
-function isSVGElement(el) {
-    return Boolean(el.tagName === 'svg' || el.ownerSVGElement);
-}
-function getHref() {
-    const a = document.createElement('a');
-    a.href = '';
-    return a.href;
-}
-function transformAttribute(doc, tagName, name, value) {
-    if (!value) {
-        return value;
-    }
-    if (name === 'src' ||
-        (name === 'href' && !(tagName === 'use' && value[0] === '#'))) {
-        return absoluteToDoc(doc, value);
-    }
-    else if (name === 'xlink:href' && value[0] !== '#') {
-        return absoluteToDoc(doc, value);
-    }
-    else if (name === 'background' &&
-        (tagName === 'table' || tagName === 'td' || tagName === 'th')) {
-        return absoluteToDoc(doc, value);
-    }
-    else if (name === 'srcset') {
-        return getAbsoluteSrcsetString(doc, value);
-    }
-    else if (name === 'style') {
-        return absoluteToStylesheet(value, getHref());
-    }
-    else if (tagName === 'object' && name === 'data') {
-        return absoluteToDoc(doc, value);
-    }
-    return value;
-}
-function ignoreAttribute(tagName, name, _value) {
-    return (tagName === 'video' || tagName === 'audio') && name === 'autoplay';
-}
-function _isBlockedElement(element, blockClass, blockSelector) {
-    try {
-        if (typeof blockClass === 'string') {
-            if (element.classList.contains(blockClass)) {
-                return true;
-            }
-        }
-        else {
-            for (let eIndex = element.classList.length; eIndex--;) {
-                const className = element.classList[eIndex];
-                if (blockClass.test(className)) {
-                    return true;
-                }
-            }
-        }
-        if (blockSelector) {
-            return element.matches(blockSelector);
-        }
-    }
-    catch (e) {
-    }
-    return false;
-}
-function classMatchesRegex(node, regex, checkAncestors) {
-    if (!node)
-        return false;
-    if (node.nodeType !== node.ELEMENT_NODE) {
-        if (!checkAncestors)
-            return false;
-        return classMatchesRegex(node.parentNode, regex, checkAncestors);
-    }
-    for (let eIndex = node.classList.length; eIndex--;) {
-        const className = node.classList[eIndex];
-        if (regex.test(className)) {
-            return true;
-        }
-    }
-    if (!checkAncestors)
-        return false;
-    return classMatchesRegex(node.parentNode, regex, checkAncestors);
-}
-function needMaskingText(node, maskTextClass, maskTextSelector, checkAncestors) {
-    try {
-        const el = node.nodeType === node.ELEMENT_NODE
-            ? node
-            : node.parentElement;
-        if (el === null)
-            return false;
-        if (typeof maskTextClass === 'string') {
-            if (checkAncestors) {
-                if (el.closest(`.${maskTextClass}`))
-                    return true;
-            }
-            else {
-                if (el.classList.contains(maskTextClass))
-                    return true;
-            }
-        }
-        else {
-            if (classMatchesRegex(el, maskTextClass, checkAncestors))
-                return true;
-        }
-        if (maskTextSelector) {
-            if (checkAncestors) {
-                if (el.closest(maskTextSelector))
-                    return true;
-            }
-            else {
-                if (el.matches(maskTextSelector))
-                    return true;
-            }
-        }
-    }
-    catch (e) {
-    }
-    return false;
-}
-function onceIframeLoaded(iframeEl, listener, iframeLoadTimeout) {
-    const win = iframeEl.contentWindow;
-    if (!win) {
-        return;
-    }
-    let fired = false;
-    let readyState;
-    try {
-        readyState = win.document.readyState;
-    }
-    catch (error) {
-        return;
-    }
-    if (readyState !== 'complete') {
-        const timer = setTimeout(() => {
-            if (!fired) {
-                listener();
-                fired = true;
-            }
-        }, iframeLoadTimeout);
-        iframeEl.addEventListener('load', () => {
-            clearTimeout(timer);
-            fired = true;
-            listener();
-        });
-        return;
-    }
-    const blankUrl = 'about:blank';
-    if (win.location.href !== blankUrl ||
-        iframeEl.src === blankUrl ||
-        iframeEl.src === '') {
-        setTimeout(listener, 0);
-        return iframeEl.addEventListener('load', listener);
-    }
-    iframeEl.addEventListener('load', listener);
-}
-function onceStylesheetLoaded(link, listener, styleSheetLoadTimeout) {
-    let fired = false;
-    let styleSheetLoaded;
-    try {
-        styleSheetLoaded = link.sheet;
-    }
-    catch (error) {
-        return;
-    }
-    if (styleSheetLoaded)
-        return;
-    const timer = setTimeout(() => {
-        if (!fired) {
-            listener();
-            fired = true;
-        }
-    }, styleSheetLoadTimeout);
-    link.addEventListener('load', () => {
-        clearTimeout(timer);
-        fired = true;
-        listener();
-    });
-}
-function serializeNode(n, options) {
-    const { doc, mirror, blockClass, blockSelector, needsMask, inlineStylesheet, maskInputOptions = {}, maskTextFn, maskInputFn, dataURLOptions = {}, inlineImages, recordCanvas, keepIframeSrcFn, newlyAddedElement = false, } = options;
-    const rootId = getRootId(doc, mirror);
-    switch (n.nodeType) {
-        case n.DOCUMENT_NODE:
-            if (n.compatMode !== 'CSS1Compat') {
-                return {
-                    type: NodeType.Document,
-                    childNodes: [],
-                    compatMode: n.compatMode,
-                };
-            }
-            else {
-                return {
-                    type: NodeType.Document,
-                    childNodes: [],
-                };
-            }
-        case n.DOCUMENT_TYPE_NODE:
-            return {
-                type: NodeType.DocumentType,
-                name: n.name,
-                publicId: n.publicId,
-                systemId: n.systemId,
-                rootId,
-            };
-        case n.ELEMENT_NODE:
-            return serializeElementNode(n, {
-                doc,
-                blockClass,
-                blockSelector,
-                inlineStylesheet,
-                maskInputOptions,
-                maskInputFn,
-                dataURLOptions,
-                inlineImages,
-                recordCanvas,
-                keepIframeSrcFn,
-                newlyAddedElement,
-                rootId,
-            });
-        case n.TEXT_NODE:
-            return serializeTextNode(n, {
-                needsMask,
-                maskTextFn,
-                rootId,
-            });
-        case n.CDATA_SECTION_NODE:
-            return {
-                type: NodeType.CDATA,
-                textContent: '',
-                rootId,
-            };
-        case n.COMMENT_NODE:
-            return {
-                type: NodeType.Comment,
-                textContent: n.textContent || '',
-                rootId,
-            };
-        default:
-            return false;
-    }
-}
-function getRootId(doc, mirror) {
-    if (!mirror.hasNode(doc))
-        return undefined;
-    const docId = mirror.getId(doc);
-    return docId === 1 ? undefined : docId;
-}
-function serializeTextNode(n, options) {
-    var _a;
-    const { needsMask, maskTextFn, rootId } = options;
-    const parentTagName = n.parentNode && n.parentNode.tagName;
-    let textContent = n.textContent;
-    const isStyle = parentTagName === 'STYLE' ? true : undefined;
-    const isScript = parentTagName === 'SCRIPT' ? true : undefined;
-    if (isStyle && textContent) {
-        try {
-            if (n.nextSibling || n.previousSibling) {
-            }
-            else if ((_a = n.parentNode.sheet) === null || _a === void 0 ? void 0 : _a.cssRules) {
-                textContent = stringifyStylesheet(n.parentNode.sheet);
-            }
-        }
-        catch (err) {
-            console.warn(`Cannot get CSS styles from text's parentNode. Error: ${err}`, n);
-        }
-        textContent = absoluteToStylesheet(textContent, getHref());
-    }
-    if (isScript) {
-        textContent = 'SCRIPT_PLACEHOLDER';
-    }
-    if (!isStyle && !isScript && textContent && needsMask) {
-        textContent = maskTextFn
-            ? maskTextFn(textContent, n.parentElement)
-            : textContent.replace(/[\S]/g, '*');
-    }
-    return {
-        type: NodeType.Text,
-        textContent: textContent || '',
-        isStyle,
-        rootId,
-    };
-}
-function serializeElementNode(n, options) {
-    const { doc, blockClass, blockSelector, inlineStylesheet, maskInputOptions = {}, maskInputFn, dataURLOptions = {}, inlineImages, recordCanvas, keepIframeSrcFn, newlyAddedElement = false, rootId, } = options;
-    const needBlock = _isBlockedElement(n, blockClass, blockSelector);
-    const tagName = getValidTagName(n);
-    let attributes = {};
-    const len = n.attributes.length;
-    for (let i = 0; i < len; i++) {
-        const attr = n.attributes[i];
-        if (!ignoreAttribute(tagName, attr.name, attr.value)) {
-            attributes[attr.name] = transformAttribute(doc, tagName, toLowerCase(attr.name), attr.value);
-        }
-    }
-    if (tagName === 'link' && inlineStylesheet) {
-        const stylesheet = Array.from(doc.styleSheets).find((s) => {
-            return s.href === n.href;
-        });
-        let cssText = null;
-        if (stylesheet) {
-            cssText = stringifyStylesheet(stylesheet);
-        }
-        if (cssText) {
-            delete attributes.rel;
-            delete attributes.href;
-            attributes._cssText = absoluteToStylesheet(cssText, stylesheet.href);
-        }
-    }
-    if (tagName === 'style' &&
-        n.sheet &&
-        !(n.innerText || n.textContent || '').trim().length) {
-        const cssText = stringifyStylesheet(n.sheet);
-        if (cssText) {
-            attributes._cssText = absoluteToStylesheet(cssText, getHref());
-        }
-    }
-    if (tagName === 'input' || tagName === 'textarea' || tagName === 'select') {
-        const value = n.value;
-        const checked = n.checked;
-        if (attributes.type !== 'radio' &&
-            attributes.type !== 'checkbox' &&
-            attributes.type !== 'submit' &&
-            attributes.type !== 'button' &&
-            value) {
-            attributes.value = maskInputValue({
-                element: n,
-                type: getInputType(n),
-                tagName,
-                value,
-                maskInputOptions,
-                maskInputFn,
-            });
-        }
-        else if (checked) {
-            attributes.checked = checked;
-        }
-    }
-    if (tagName === 'option') {
-        if (n.selected && !maskInputOptions['select']) {
-            attributes.selected = true;
-        }
-        else {
-            delete attributes.selected;
-        }
-    }
-    if (tagName === 'canvas' && recordCanvas) {
-        if (n.__context === '2d') {
-            if (!is2DCanvasBlank(n)) {
-                attributes.rr_dataURL = n.toDataURL(dataURLOptions.type, dataURLOptions.quality);
-            }
-        }
-        else if (!('__context' in n)) {
-            const canvasDataURL = n.toDataURL(dataURLOptions.type, dataURLOptions.quality);
-            const blankCanvas = document.createElement('canvas');
-            blankCanvas.width = n.width;
-            blankCanvas.height = n.height;
-            const blankCanvasDataURL = blankCanvas.toDataURL(dataURLOptions.type, dataURLOptions.quality);
-            if (canvasDataURL !== blankCanvasDataURL) {
-                attributes.rr_dataURL = canvasDataURL;
-            }
-        }
-    }
-    if (tagName === 'img' && inlineImages) {
-        if (!canvasService) {
-            canvasService = doc.createElement('canvas');
-            canvasCtx = canvasService.getContext('2d');
-        }
-        const image = n;
-        const oldValue = image.crossOrigin;
-        image.crossOrigin = 'anonymous';
-        const recordInlineImage = () => {
-            image.removeEventListener('load', recordInlineImage);
-            try {
-                canvasService.width = image.naturalWidth;
-                canvasService.height = image.naturalHeight;
-                canvasCtx.drawImage(image, 0, 0);
-                attributes.rr_dataURL = canvasService.toDataURL(dataURLOptions.type, dataURLOptions.quality);
-            }
-            catch (err) {
-                console.warn(`Cannot inline img src=${image.currentSrc}! Error: ${err}`);
-            }
-            oldValue
-                ? (attributes.crossOrigin = oldValue)
-                : image.removeAttribute('crossorigin');
-        };
-        if (image.complete && image.naturalWidth !== 0)
-            recordInlineImage();
-        else
-            image.addEventListener('load', recordInlineImage);
-    }
-    if (tagName === 'audio' || tagName === 'video') {
-        const mediaAttributes = attributes;
-        mediaAttributes.rr_mediaState = n.paused
-            ? 'paused'
-            : 'played';
-        mediaAttributes.rr_mediaCurrentTime = n.currentTime;
-        mediaAttributes.rr_mediaPlaybackRate = n.playbackRate;
-        mediaAttributes.rr_mediaMuted = n.muted;
-        mediaAttributes.rr_mediaLoop = n.loop;
-        mediaAttributes.rr_mediaVolume = n.volume;
-    }
-    if (!newlyAddedElement) {
-        if (n.scrollLeft) {
-            attributes.rr_scrollLeft = n.scrollLeft;
-        }
-        if (n.scrollTop) {
-            attributes.rr_scrollTop = n.scrollTop;
-        }
-    }
-    if (needBlock) {
-        const { width, height } = n.getBoundingClientRect();
-        attributes = {
-            class: attributes.class,
-            rr_width: `${width}px`,
-            rr_height: `${height}px`,
-        };
-    }
-    if (tagName === 'iframe' && !keepIframeSrcFn(attributes.src)) {
-        if (!n.contentDocument) {
-            attributes.rr_src = attributes.src;
-        }
-        delete attributes.src;
-    }
-    let isCustomElement;
-    try {
-        if (customElements.get(tagName))
-            isCustomElement = true;
-    }
-    catch (e) {
-    }
-    return {
-        type: NodeType.Element,
-        tagName,
-        attributes,
-        childNodes: [],
-        isSVG: isSVGElement(n) || undefined,
-        needBlock,
-        rootId,
-        isCustom: isCustomElement,
-    };
-}
-function lowerIfExists(maybeAttr) {
-    if (maybeAttr === undefined || maybeAttr === null) {
-        return '';
-    }
-    else {
-        return maybeAttr.toLowerCase();
-    }
-}
-function slimDOMExcluded(sn, slimDOMOptions) {
-    if (slimDOMOptions.comment && sn.type === NodeType.Comment) {
-        return true;
-    }
-    else if (sn.type === NodeType.Element) {
-        if (slimDOMOptions.script &&
-            (sn.tagName === 'script' ||
-                (sn.tagName === 'link' &&
-                    (sn.attributes.rel === 'preload' ||
-                        sn.attributes.rel === 'modulepreload') &&
-                    sn.attributes.as === 'script') ||
-                (sn.tagName === 'link' &&
-                    sn.attributes.rel === 'prefetch' &&
-                    typeof sn.attributes.href === 'string' &&
-                    extractFileExtension(sn.attributes.href) === 'js'))) {
-            return true;
-        }
-        else if (slimDOMOptions.headFavicon &&
-            ((sn.tagName === 'link' && sn.attributes.rel === 'shortcut icon') ||
-                (sn.tagName === 'meta' &&
-                    (lowerIfExists(sn.attributes.name).match(/^msapplication-tile(image|color)$/) ||
-                        lowerIfExists(sn.attributes.name) === 'application-name' ||
-                        lowerIfExists(sn.attributes.rel) === 'icon' ||
-                        lowerIfExists(sn.attributes.rel) === 'apple-touch-icon' ||
-                        lowerIfExists(sn.attributes.rel) === 'shortcut icon')))) {
-            return true;
-        }
-        else if (sn.tagName === 'meta') {
-            if (slimDOMOptions.headMetaDescKeywords &&
-                lowerIfExists(sn.attributes.name).match(/^description|keywords$/)) {
-                return true;
-            }
-            else if (slimDOMOptions.headMetaSocial &&
-                (lowerIfExists(sn.attributes.property).match(/^(og|twitter|fb):/) ||
-                    lowerIfExists(sn.attributes.name).match(/^(og|twitter):/) ||
-                    lowerIfExists(sn.attributes.name) === 'pinterest')) {
-                return true;
-            }
-            else if (slimDOMOptions.headMetaRobots &&
-                (lowerIfExists(sn.attributes.name) === 'robots' ||
-                    lowerIfExists(sn.attributes.name) === 'googlebot' ||
-                    lowerIfExists(sn.attributes.name) === 'bingbot')) {
-                return true;
-            }
-            else if (slimDOMOptions.headMetaHttpEquiv &&
-                sn.attributes['http-equiv'] !== undefined) {
-                return true;
-            }
-            else if (slimDOMOptions.headMetaAuthorship &&
-                (lowerIfExists(sn.attributes.name) === 'author' ||
-                    lowerIfExists(sn.attributes.name) === 'generator' ||
-                    lowerIfExists(sn.attributes.name) === 'framework' ||
-                    lowerIfExists(sn.attributes.name) === 'publisher' ||
-                    lowerIfExists(sn.attributes.name) === 'progid' ||
-                    lowerIfExists(sn.attributes.property).match(/^article:/) ||
-                    lowerIfExists(sn.attributes.property).match(/^product:/))) {
-                return true;
-            }
-            else if (slimDOMOptions.headMetaVerification &&
-                (lowerIfExists(sn.attributes.name) === 'google-site-verification' ||
-                    lowerIfExists(sn.attributes.name) === 'yandex-verification' ||
-                    lowerIfExists(sn.attributes.name) === 'csrf-token' ||
-                    lowerIfExists(sn.attributes.name) === 'p:domain_verify' ||
-                    lowerIfExists(sn.attributes.name) === 'verify-v1' ||
-                    lowerIfExists(sn.attributes.name) === 'verification' ||
-                    lowerIfExists(sn.attributes.name) === 'shopify-checkout-api-token')) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-function serializeNodeWithId(n, options) {
-    const { doc, mirror, blockClass, blockSelector, maskTextClass, maskTextSelector, skipChild = false, inlineStylesheet = true, maskInputOptions = {}, maskTextFn, maskInputFn, slimDOMOptions, dataURLOptions = {}, inlineImages = false, recordCanvas = false, onSerialize, onIframeLoad, iframeLoadTimeout = 5000, onStylesheetLoad, stylesheetLoadTimeout = 5000, keepIframeSrcFn = () => false, newlyAddedElement = false, } = options;
-    let { needsMask } = options;
-    let { preserveWhiteSpace = true } = options;
-    if (!needsMask &&
-        n.childNodes) {
-        const checkAncestors = needsMask === undefined;
-        needsMask = needMaskingText(n, maskTextClass, maskTextSelector, checkAncestors);
-    }
-    const _serializedNode = serializeNode(n, {
-        doc,
-        mirror,
-        blockClass,
-        blockSelector,
-        needsMask,
-        inlineStylesheet,
-        maskInputOptions,
-        maskTextFn,
-        maskInputFn,
-        dataURLOptions,
-        inlineImages,
-        recordCanvas,
-        keepIframeSrcFn,
-        newlyAddedElement,
-    });
-    if (!_serializedNode) {
-        console.warn(n, 'not serialized');
-        return null;
-    }
-    let id;
-    if (mirror.hasNode(n)) {
-        id = mirror.getId(n);
-    }
-    else if (slimDOMExcluded(_serializedNode, slimDOMOptions) ||
-        (!preserveWhiteSpace &&
-            _serializedNode.type === NodeType.Text &&
-            !_serializedNode.isStyle &&
-            !_serializedNode.textContent.replace(/^\s+|\s+$/gm, '').length)) {
-        id = IGNORED_NODE;
-    }
-    else {
-        id = genId();
-    }
-    const serializedNode = Object.assign(_serializedNode, { id });
-    mirror.add(n, serializedNode);
-    if (id === IGNORED_NODE) {
-        return null;
-    }
-    if (onSerialize) {
-        onSerialize(n);
-    }
-    let recordChild = !skipChild;
-    if (serializedNode.type === NodeType.Element) {
-        recordChild = recordChild && !serializedNode.needBlock;
-        delete serializedNode.needBlock;
-        const shadowRoot = n.shadowRoot;
-        if (shadowRoot && isNativeShadowDom(shadowRoot))
-            serializedNode.isShadowHost = true;
-    }
-    if ((serializedNode.type === NodeType.Document ||
-        serializedNode.type === NodeType.Element) &&
-        recordChild) {
-        if (slimDOMOptions.headWhitespace &&
-            serializedNode.type === NodeType.Element &&
-            serializedNode.tagName === 'head') {
-            preserveWhiteSpace = false;
-        }
-        const bypassOptions = {
-            doc,
-            mirror,
-            blockClass,
-            blockSelector,
-            needsMask,
-            maskTextClass,
-            maskTextSelector,
-            skipChild,
-            inlineStylesheet,
-            maskInputOptions,
-            maskTextFn,
-            maskInputFn,
-            slimDOMOptions,
-            dataURLOptions,
-            inlineImages,
-            recordCanvas,
-            preserveWhiteSpace,
-            onSerialize,
-            onIframeLoad,
-            iframeLoadTimeout,
-            onStylesheetLoad,
-            stylesheetLoadTimeout,
-            keepIframeSrcFn,
-        };
-        if (serializedNode.type === NodeType.Element &&
-            serializedNode.tagName === 'textarea' &&
-            serializedNode.attributes.value !== undefined) ;
-        else {
-            for (const childN of Array.from(n.childNodes)) {
-                const serializedChildNode = serializeNodeWithId(childN, bypassOptions);
-                if (serializedChildNode) {
-                    serializedNode.childNodes.push(serializedChildNode);
-                }
-            }
-        }
-        if (isElement(n) && n.shadowRoot) {
-            for (const childN of Array.from(n.shadowRoot.childNodes)) {
-                const serializedChildNode = serializeNodeWithId(childN, bypassOptions);
-                if (serializedChildNode) {
-                    isNativeShadowDom(n.shadowRoot) &&
-                        (serializedChildNode.isShadow = true);
-                    serializedNode.childNodes.push(serializedChildNode);
-                }
-            }
-        }
-    }
-    if (n.parentNode &&
-        isShadowRoot(n.parentNode) &&
-        isNativeShadowDom(n.parentNode)) {
-        serializedNode.isShadow = true;
-    }
-    if (serializedNode.type === NodeType.Element &&
-        serializedNode.tagName === 'iframe') {
-        onceIframeLoaded(n, () => {
-            const iframeDoc = n.contentDocument;
-            if (iframeDoc && onIframeLoad) {
-                const serializedIframeNode = serializeNodeWithId(iframeDoc, {
-                    doc: iframeDoc,
-                    mirror,
-                    blockClass,
-                    blockSelector,
-                    needsMask,
-                    maskTextClass,
-                    maskTextSelector,
-                    skipChild: false,
-                    inlineStylesheet,
-                    maskInputOptions,
-                    maskTextFn,
-                    maskInputFn,
-                    slimDOMOptions,
-                    dataURLOptions,
-                    inlineImages,
-                    recordCanvas,
-                    preserveWhiteSpace,
-                    onSerialize,
-                    onIframeLoad,
-                    iframeLoadTimeout,
-                    onStylesheetLoad,
-                    stylesheetLoadTimeout,
-                    keepIframeSrcFn,
-                });
-                if (serializedIframeNode) {
-                    onIframeLoad(n, serializedIframeNode);
-                }
-            }
-        }, iframeLoadTimeout);
-    }
-    if (serializedNode.type === NodeType.Element &&
-        serializedNode.tagName === 'link' &&
-        typeof serializedNode.attributes.rel === 'string' &&
-        (serializedNode.attributes.rel === 'stylesheet' ||
-            (serializedNode.attributes.rel === 'preload' &&
-                typeof serializedNode.attributes.href === 'string' &&
-                extractFileExtension(serializedNode.attributes.href) === 'css'))) {
-        onceStylesheetLoaded(n, () => {
-            if (onStylesheetLoad) {
-                const serializedLinkNode = serializeNodeWithId(n, {
-                    doc,
-                    mirror,
-                    blockClass,
-                    blockSelector,
-                    needsMask,
-                    maskTextClass,
-                    maskTextSelector,
-                    skipChild: false,
-                    inlineStylesheet,
-                    maskInputOptions,
-                    maskTextFn,
-                    maskInputFn,
-                    slimDOMOptions,
-                    dataURLOptions,
-                    inlineImages,
-                    recordCanvas,
-                    preserveWhiteSpace,
-                    onSerialize,
-                    onIframeLoad,
-                    iframeLoadTimeout,
-                    onStylesheetLoad,
-                    stylesheetLoadTimeout,
-                    keepIframeSrcFn,
-                });
-                if (serializedLinkNode) {
-                    onStylesheetLoad(n, serializedLinkNode);
-                }
-            }
-        }, stylesheetLoadTimeout);
-    }
-    return serializedNode;
-}
-function snapshot(n, options) {
-    const { mirror = new Mirror(), blockClass = 'rr-block', blockSelector = null, maskTextClass = 'rr-mask', maskTextSelector = null, inlineStylesheet = true, inlineImages = false, recordCanvas = false, maskAllInputs = false, maskTextFn, maskInputFn, slimDOM = false, dataURLOptions, preserveWhiteSpace, onSerialize, onIframeLoad, iframeLoadTimeout, onStylesheetLoad, stylesheetLoadTimeout, keepIframeSrcFn = () => false, } = options || {};
-    const maskInputOptions = maskAllInputs === true
-        ? {
-            color: true,
-            date: true,
-            'datetime-local': true,
-            email: true,
-            month: true,
-            number: true,
-            range: true,
-            search: true,
-            tel: true,
-            text: true,
-            time: true,
-            url: true,
-            week: true,
-            textarea: true,
-            select: true,
-            password: true,
-        }
-        : maskAllInputs === false
-            ? {
-                password: true,
-            }
-            : maskAllInputs;
-    const slimDOMOptions = slimDOM === true || slimDOM === 'all'
-        ?
-            {
-                script: true,
-                comment: true,
-                headFavicon: true,
-                headWhitespace: true,
-                headMetaDescKeywords: slimDOM === 'all',
-                headMetaSocial: true,
-                headMetaRobots: true,
-                headMetaHttpEquiv: true,
-                headMetaAuthorship: true,
-                headMetaVerification: true,
-            }
-        : slimDOM === false
-            ? {}
-            : slimDOM;
-    return serializeNodeWithId(n, {
-        doc: n,
-        mirror,
-        blockClass,
-        blockSelector,
-        maskTextClass,
-        maskTextSelector,
-        skipChild: false,
-        inlineStylesheet,
-        maskInputOptions,
-        maskTextFn,
-        maskInputFn,
-        slimDOMOptions,
-        dataURLOptions,
-        inlineImages,
-        recordCanvas,
-        preserveWhiteSpace,
-        onSerialize,
-        onIframeLoad,
-        iframeLoadTimeout,
-        onStylesheetLoad,
-        stylesheetLoadTimeout,
-        keepIframeSrcFn,
-        newlyAddedElement: false,
-    });
+function isElement(n) {
+    return n.nodeType === n.ELEMENT_NODE;
+}
+function isShadowRoot(n) {
+    const host = n === null || n === void 0 ? void 0 : n.host;
+    return Boolean((host === null || host === void 0 ? void 0 : host.shadowRoot) === n);
+}
+function isNativeShadowDom(shadowRoot) {
+    return Object.prototype.toString.call(shadowRoot) === '[object ShadowRoot]';
+}
+function fixBrowserCompatibilityIssuesInCSS(cssText) {
+    if (cssText.includes(' background-clip: text;') &&
+        !cssText.includes(' -webkit-background-clip: text;')) {
+        cssText = cssText.replace(' background-clip: text;', ' -webkit-background-clip: text; background-clip: text;');
+    }
+    return cssText;
+}
+function escapeImportStatement(rule) {
+    const { cssText } = rule;
+    if (cssText.split('"').length < 3)
+        return cssText;
+    const statement = ['@import', `url(${JSON.stringify(rule.href)})`];
+    if (rule.layerName === '') {
+        statement.push(`layer`);
+    }
+    else if (rule.layerName) {
+        statement.push(`layer(${rule.layerName})`);
+    }
+    if (rule.supportsText) {
+        statement.push(`supports(${rule.supportsText})`);
+    }
+    if (rule.media.length) {
+        statement.push(rule.media.mediaText);
+    }
+    return statement.join(' ') + ';';
+}
+function stringifyStylesheet(s) {
+    try {
+        const rules = s.rules || s.cssRules;
+        return rules
+            ? fixBrowserCompatibilityIssuesInCSS(Array.from(rules, stringifyRule).join(''))
+            : null;
+    }
+    catch (error) {
+        return null;
+    }
+}
+function stringifyRule(rule) {
+    let importStringified;
+    if (isCSSImportRule(rule)) {
+        try {
+            importStringified =
+                stringifyStylesheet(rule.styleSheet) ||
+                    escapeImportStatement(rule);
+        }
+        catch (error) {
+        }
+    }
+    else if (isCSSStyleRule(rule) && rule.selectorText.includes(':')) {
+        return fixSafariColons(rule.cssText);
+    }
+    return importStringified || rule.cssText;
+}
+function fixSafariColons(cssStringified) {
+    const regex = /(\[(?:[\w-]+)[^\\])(:(?:[\w-]+)\])/gm;
+    return cssStringified.replace(regex, '$1\\$2');
+}
+function isCSSImportRule(rule) {
+    return 'styleSheet' in rule;
+}
+function isCSSStyleRule(rule) {
+    return 'selectorText' in rule;
+}
+class Mirror {
+    constructor() {
+        this.idNodeMap = new Map();
+        this.nodeMetaMap = new WeakMap();
+    }
+    getId(n) {
+        var _a;
+        if (!n)
+            return -1;
+        const id = (_a = this.getMeta(n)) === null || _a === void 0 ? void 0 : _a.id;
+        return id !== null && id !== void 0 ? id : -1;
+    }
+    getNode(id) {
+        return this.idNodeMap.get(id) || null;
+    }
+    getIds() {
+        return Array.from(this.idNodeMap.keys());
+    }
+    getMeta(n) {
+        return this.nodeMetaMap.get(n) || null;
+    }
+    removeNodeFromMap(n) {
+        const id = this.getId(n);
+        this.idNodeMap.delete(id);
+        if (n.childNodes) {
+            n.childNodes.forEach((childNode) => this.removeNodeFromMap(childNode));
+        }
+    }
+    has(id) {
+        return this.idNodeMap.has(id);
+    }
+    hasNode(node) {
+        return this.nodeMetaMap.has(node);
+    }
+    add(n, meta) {
+        const id = meta.id;
+        this.idNodeMap.set(id, n);
+        this.nodeMetaMap.set(n, meta);
+    }
+    replace(id, n) {
+        const oldNode = this.getNode(id);
+        if (oldNode) {
+            const meta = this.nodeMetaMap.get(oldNode);
+            if (meta)
+                this.nodeMetaMap.set(n, meta);
+        }
+        this.idNodeMap.set(id, n);
+    }
+    reset() {
+        this.idNodeMap = new Map();
+        this.nodeMetaMap = new WeakMap();
+    }
+}
+function createMirror() {
+    return new Mirror();
+}
+function maskInputValue({ element, maskInputOptions, tagName, type, value, maskInputFn, }) {
+    let text = value || '';
+    const actualType = type && toLowerCase(type);
+    if (maskInputOptions[tagName.toLowerCase()] ||
+        (actualType && maskInputOptions[actualType])) {
+        if (maskInputFn) {
+            text = maskInputFn(text, element);
+        }
+        else {
+            text = '*'.repeat(text.length);
+        }
+    }
+    return text;
+}
+function toLowerCase(str) {
+    return str.toLowerCase();
+}
+const ORIGINAL_ATTRIBUTE_NAME = '__rrweb_original__';
+function is2DCanvasBlank(canvas) {
+    const ctx = canvas.getContext('2d');
+    if (!ctx)
+        return true;
+    const chunkSize = 50;
+    for (let x = 0; x < canvas.width; x += chunkSize) {
+        for (let y = 0; y < canvas.height; y += chunkSize) {
+            const getImageData = ctx.getImageData;
+            const originalGetImageData = ORIGINAL_ATTRIBUTE_NAME in getImageData
+                ? getImageData[ORIGINAL_ATTRIBUTE_NAME]
+                : getImageData;
+            const pixelBuffer = new Uint32Array(originalGetImageData.call(ctx, x, y, Math.min(chunkSize, canvas.width - x), Math.min(chunkSize, canvas.height - y)).data.buffer);
+            if (pixelBuffer.some((pixel) => pixel !== 0))
+                return false;
+        }
+    }
+    return true;
+}
+function getInputType(element) {
+    const type = element.type;
+    return element.hasAttribute('data-rr-is-password')
+        ? 'password'
+        : type
+            ?
+                toLowerCase(type)
+            : null;
+}
+function extractFileExtension(path, baseURL) {
+    var _a;
+    let url;
+    try {
+        url = new URL(path, baseURL !== null && baseURL !== void 0 ? baseURL : window.location.href);
+    }
+    catch (err) {
+        return null;
+    }
+    const regex = /\.([0-9a-z]+)(?:$)/i;
+    const match = url.pathname.match(regex);
+    return (_a = match === null || match === void 0 ? void 0 : match[1]) !== null && _a !== void 0 ? _a : null;
 }
 
-function on(type, fn, target = document) {
-    const options = { capture: true, passive: true };
-    target.addEventListener(type, fn, options);
-    return () => target.removeEventListener(type, fn, options);
+let _id = 1;
+const tagNameRegex = new RegExp('[^a-z0-9-_:]');
+const IGNORED_NODE = -2;
+function genId() {
+    return _id++;
+}
+function getValidTagName(element) {
+    if (element instanceof HTMLFormElement) {
+        return 'form';
+    }
+    const processedTagName = toLowerCase(element.tagName);
+    if (tagNameRegex.test(processedTagName)) {
+        return 'div';
+    }
+    return processedTagName;
+}
+function extractOrigin(url) {
+    let origin = '';
+    if (url.indexOf('//') > -1) {
+        origin = url.split('/').slice(0, 3).join('/');
+    }
+    else {
+        origin = url.split('/')[0];
+    }
+    origin = origin.split('?')[0];
+    return origin;
+}
+let canvasService;
+let canvasCtx;
+const URL_IN_CSS_REF = /url\((?:(')([^']*)'|(")(.*?)"|([^)]*))\)/gm;
+const URL_PROTOCOL_MATCH = /^(?:[a-z+]+:)?\/\//i;
+const URL_WWW_MATCH = /^www\..*/i;
+const DATA_URI = /^(data:)([^,]*),(.*)/i;
+function absoluteToStylesheet(cssText, href) {
+    return (cssText || '').replace(URL_IN_CSS_REF, (origin, quote1, path1, quote2, path2, path3) => {
+        const filePath = path1 || path2 || path3;
+        const maybeQuote = quote1 || quote2 || '';
+        if (!filePath) {
+            return origin;
+        }
+        if (URL_PROTOCOL_MATCH.test(filePath) || URL_WWW_MATCH.test(filePath)) {
+            return `url(${maybeQuote}${filePath}${maybeQuote})`;
+        }
+        if (DATA_URI.test(filePath)) {
+            return `url(${maybeQuote}${filePath}${maybeQuote})`;
+        }
+        if (filePath[0] === '/') {
+            return `url(${maybeQuote}${extractOrigin(href) + filePath}${maybeQuote})`;
+        }
+        const stack = href.split('/');
+        const parts = filePath.split('/');
+        stack.pop();
+        for (const part of parts) {
+            if (part === '.') {
+                continue;
+            }
+            else if (part === '..') {
+                stack.pop();
+            }
+            else {
+                stack.push(part);
+            }
+        }
+        return `url(${maybeQuote}${stack.join('/')}${maybeQuote})`;
+    });
+}
+const SRCSET_NOT_SPACES = /^[^ \t\n\r\u000c]+/;
+const SRCSET_COMMAS_OR_SPACES = /^[, \t\n\r\u000c]+/;
+function getAbsoluteSrcsetString(doc, attributeValue) {
+    if (attributeValue.trim() === '') {
+        return attributeValue;
+    }
+    let pos = 0;
+    function collectCharacters(regEx) {
+        let chars;
+        const match = regEx.exec(attributeValue.substring(pos));
+        if (match) {
+            chars = match[0];
+            pos += chars.length;
+            return chars;
+        }
+        return '';
+    }
+    const output = [];
+    while (true) {
+        collectCharacters(SRCSET_COMMAS_OR_SPACES);
+        if (pos >= attributeValue.length) {
+            break;
+        }
+        let url = collectCharacters(SRCSET_NOT_SPACES);
+        if (url.slice(-1) === ',') {
+            url = absoluteToDoc(doc, url.substring(0, url.length - 1));
+            output.push(url);
+        }
+        else {
+            let descriptorsStr = '';
+            url = absoluteToDoc(doc, url);
+            let inParens = false;
+            while (true) {
+                const c = attributeValue.charAt(pos);
+                if (c === '') {
+                    output.push((url + descriptorsStr).trim());
+                    break;
+                }
+                else if (!inParens) {
+                    if (c === ',') {
+                        pos += 1;
+                        output.push((url + descriptorsStr).trim());
+                        break;
+                    }
+                    else if (c === '(') {
+                        inParens = true;
+                    }
+                }
+                else {
+                    if (c === ')') {
+                        inParens = false;
+                    }
+                }
+                descriptorsStr += c;
+                pos += 1;
+            }
+        }
+    }
+    return output.join(', ');
+}
+function absoluteToDoc(doc, attributeValue) {
+    if (!attributeValue || attributeValue.trim() === '') {
+        return attributeValue;
+    }
+    const a = doc.createElement('a');
+    a.href = attributeValue;
+    return a.href;
+}
+function isSVGElement(el) {
+    return Boolean(el.tagName === 'svg' || el.ownerSVGElement);
+}
+function getHref() {
+    const a = document.createElement('a');
+    a.href = '';
+    return a.href;
+}
+function transformAttribute(doc, tagName, name, value) {
+    if (!value) {
+        return value;
+    }
+    if (name === 'src' ||
+        (name === 'href' && !(tagName === 'use' && value[0] === '#'))) {
+        return absoluteToDoc(doc, value);
+    }
+    else if (name === 'xlink:href' && value[0] !== '#') {
+        return absoluteToDoc(doc, value);
+    }
+    else if (name === 'background' &&
+        (tagName === 'table' || tagName === 'td' || tagName === 'th')) {
+        return absoluteToDoc(doc, value);
+    }
+    else if (name === 'srcset') {
+        return getAbsoluteSrcsetString(doc, value);
+    }
+    else if (name === 'style') {
+        return absoluteToStylesheet(value, getHref());
+    }
+    else if (tagName === 'object' && name === 'data') {
+        return absoluteToDoc(doc, value);
+    }
+    return value;
+}
+function ignoreAttribute(tagName, name, _value) {
+    return (tagName === 'video' || tagName === 'audio') && name === 'autoplay';
+}
+function _isBlockedElement(element, blockClass, blockSelector) {
+    try {
+        if (typeof blockClass === 'string') {
+            if (element.classList.contains(blockClass)) {
+                return true;
+            }
+        }
+        else {
+            for (let eIndex = element.classList.length; eIndex--;) {
+                const className = element.classList[eIndex];
+                if (blockClass.test(className)) {
+                    return true;
+                }
+            }
+        }
+        if (blockSelector) {
+            return element.matches(blockSelector);
+        }
+    }
+    catch (e) {
+    }
+    return false;
+}
+function classMatchesRegex(node, regex, checkAncestors) {
+    if (!node)
+        return false;
+    if (node.nodeType !== node.ELEMENT_NODE) {
+        if (!checkAncestors)
+            return false;
+        return classMatchesRegex(node.parentNode, regex, checkAncestors);
+    }
+    for (let eIndex = node.classList.length; eIndex--;) {
+        const className = node.classList[eIndex];
+        if (regex.test(className)) {
+            return true;
+        }
+    }
+    if (!checkAncestors)
+        return false;
+    return classMatchesRegex(node.parentNode, regex, checkAncestors);
+}
+function needMaskingText(node, maskTextClass, maskTextSelector, checkAncestors) {
+    try {
+        const el = node.nodeType === node.ELEMENT_NODE
+            ? node
+            : node.parentElement;
+        if (el === null)
+            return false;
+        if (typeof maskTextClass === 'string') {
+            if (checkAncestors) {
+                if (el.closest(`.${maskTextClass}`))
+                    return true;
+            }
+            else {
+                if (el.classList.contains(maskTextClass))
+                    return true;
+            }
+        }
+        else {
+            if (classMatchesRegex(el, maskTextClass, checkAncestors))
+                return true;
+        }
+        if (maskTextSelector) {
+            if (checkAncestors) {
+                if (el.closest(maskTextSelector))
+                    return true;
+            }
+            else {
+                if (el.matches(maskTextSelector))
+                    return true;
+            }
+        }
+    }
+    catch (e) {
+    }
+    return false;
+}
+function onceIframeLoaded(iframeEl, listener, iframeLoadTimeout) {
+    const win = iframeEl.contentWindow;
+    if (!win) {
+        return;
+    }
+    let fired = false;
+    let readyState;
+    try {
+        readyState = win.document.readyState;
+    }
+    catch (error) {
+        return;
+    }
+    if (readyState !== 'complete') {
+        const timer = setTimeout(() => {
+            if (!fired) {
+                listener();
+                fired = true;
+            }
+        }, iframeLoadTimeout);
+        iframeEl.addEventListener('load', () => {
+            clearTimeout(timer);
+            fired = true;
+            listener();
+        });
+        return;
+    }
+    const blankUrl = 'about:blank';
+    if (win.location.href !== blankUrl ||
+        iframeEl.src === blankUrl ||
+        iframeEl.src === '') {
+        setTimeout(listener, 0);
+        return iframeEl.addEventListener('load', listener);
+    }
+    iframeEl.addEventListener('load', listener);
+}
+function onceStylesheetLoaded(link, listener, styleSheetLoadTimeout) {
+    let fired = false;
+    let styleSheetLoaded;
+    try {
+        styleSheetLoaded = link.sheet;
+    }
+    catch (error) {
+        return;
+    }
+    if (styleSheetLoaded)
+        return;
+    const timer = setTimeout(() => {
+        if (!fired) {
+            listener();
+            fired = true;
+        }
+    }, styleSheetLoadTimeout);
+    link.addEventListener('load', () => {
+        clearTimeout(timer);
+        fired = true;
+        listener();
+    });
+}
+function serializeNode(n, options) {
+    const { doc, mirror, blockClass, blockSelector, needsMask, inlineStylesheet, maskInputOptions = {}, maskTextFn, maskInputFn, dataURLOptions = {}, inlineImages, recordCanvas, keepIframeSrcFn, newlyAddedElement = false, } = options;
+    const rootId = getRootId(doc, mirror);
+    switch (n.nodeType) {
+        case n.DOCUMENT_NODE:
+            if (n.compatMode !== 'CSS1Compat') {
+                return {
+                    type: NodeType.Document,
+                    childNodes: [],
+                    compatMode: n.compatMode,
+                };
+            }
+            else {
+                return {
+                    type: NodeType.Document,
+                    childNodes: [],
+                };
+            }
+        case n.DOCUMENT_TYPE_NODE:
+            return {
+                type: NodeType.DocumentType,
+                name: n.name,
+                publicId: n.publicId,
+                systemId: n.systemId,
+                rootId,
+            };
+        case n.ELEMENT_NODE:
+            return serializeElementNode(n, {
+                doc,
+                blockClass,
+                blockSelector,
+                inlineStylesheet,
+                maskInputOptions,
+                maskInputFn,
+                dataURLOptions,
+                inlineImages,
+                recordCanvas,
+                keepIframeSrcFn,
+                newlyAddedElement,
+                rootId,
+            });
+        case n.TEXT_NODE:
+            return serializeTextNode(n, {
+                needsMask,
+                maskTextFn,
+                rootId,
+            });
+        case n.CDATA_SECTION_NODE:
+            return {
+                type: NodeType.CDATA,
+                textContent: '',
+                rootId,
+            };
+        case n.COMMENT_NODE:
+            return {
+                type: NodeType.Comment,
+                textContent: n.textContent || '',
+                rootId,
+            };
+        default:
+            return false;
+    }
+}
+function getRootId(doc, mirror) {
+    if (!mirror.hasNode(doc))
+        return undefined;
+    const docId = mirror.getId(doc);
+    return docId === 1 ? undefined : docId;
+}
+function serializeTextNode(n, options) {
+    var _a;
+    const { needsMask, maskTextFn, rootId } = options;
+    const parentTagName = n.parentNode && n.parentNode.tagName;
+    let textContent = n.textContent;
+    const isStyle = parentTagName === 'STYLE' ? true : undefined;
+    const isScript = parentTagName === 'SCRIPT' ? true : undefined;
+    if (isStyle && textContent) {
+        try {
+            if (n.nextSibling || n.previousSibling) {
+            }
+            else if ((_a = n.parentNode.sheet) === null || _a === void 0 ? void 0 : _a.cssRules) {
+                textContent = stringifyStylesheet(n.parentNode.sheet);
+            }
+        }
+        catch (err) {
+            console.warn(`Cannot get CSS styles from text's parentNode. Error: ${err}`, n);
+        }
+        textContent = absoluteToStylesheet(textContent, getHref());
+    }
+    if (isScript) {
+        textContent = 'SCRIPT_PLACEHOLDER';
+    }
+    if (!isStyle && !isScript && textContent && needsMask) {
+        textContent = maskTextFn
+            ? maskTextFn(textContent, n.parentElement)
+            : textContent.replace(/[\S]/g, '*');
+    }
+    return {
+        type: NodeType.Text,
+        textContent: textContent || '',
+        isStyle,
+        rootId,
+    };
+}
+function serializeElementNode(n, options) {
+    const { doc, blockClass, blockSelector, inlineStylesheet, maskInputOptions = {}, maskInputFn, dataURLOptions = {}, inlineImages, recordCanvas, keepIframeSrcFn, newlyAddedElement = false, rootId, } = options;
+    const needBlock = _isBlockedElement(n, blockClass, blockSelector);
+    const tagName = getValidTagName(n);
+    let attributes = {};
+    const len = n.attributes.length;
+    for (let i = 0; i < len; i++) {
+        const attr = n.attributes[i];
+        if (!ignoreAttribute(tagName, attr.name, attr.value)) {
+            attributes[attr.name] = transformAttribute(doc, tagName, toLowerCase(attr.name), attr.value);
+        }
+    }
+    if (tagName === 'link' && inlineStylesheet) {
+        const stylesheet = Array.from(doc.styleSheets).find((s) => {
+            return s.href === n.href;
+        });
+        let cssText = null;
+        if (stylesheet) {
+            cssText = stringifyStylesheet(stylesheet);
+        }
+        if (cssText) {
+            delete attributes.rel;
+            delete attributes.href;
+            attributes._cssText = absoluteToStylesheet(cssText, stylesheet.href);
+        }
+    }
+    if (tagName === 'style' &&
+        n.sheet &&
+        !(n.innerText || n.textContent || '').trim().length) {
+        const cssText = stringifyStylesheet(n.sheet);
+        if (cssText) {
+            attributes._cssText = absoluteToStylesheet(cssText, getHref());
+        }
+    }
+    if (tagName === 'input' || tagName === 'textarea' || tagName === 'select') {
+        const value = n.value;
+        const checked = n.checked;
+        if (attributes.type !== 'radio' &&
+            attributes.type !== 'checkbox' &&
+            attributes.type !== 'submit' &&
+            attributes.type !== 'button' &&
+            value) {
+            attributes.value = maskInputValue({
+                element: n,
+                type: getInputType(n),
+                tagName,
+                value,
+                maskInputOptions,
+                maskInputFn,
+            });
+        }
+        else if (checked) {
+            attributes.checked = checked;
+        }
+    }
+    if (tagName === 'option') {
+        if (n.selected && !maskInputOptions['select']) {
+            attributes.selected = true;
+        }
+        else {
+            delete attributes.selected;
+        }
+    }
+    if (tagName === 'canvas' && recordCanvas) {
+        if (n.__context === '2d') {
+            if (!is2DCanvasBlank(n)) {
+                attributes.rr_dataURL = n.toDataURL(dataURLOptions.type, dataURLOptions.quality);
+            }
+        }
+        else if (!('__context' in n)) {
+            const canvasDataURL = n.toDataURL(dataURLOptions.type, dataURLOptions.quality);
+            const blankCanvas = document.createElement('canvas');
+            blankCanvas.width = n.width;
+            blankCanvas.height = n.height;
+            const blankCanvasDataURL = blankCanvas.toDataURL(dataURLOptions.type, dataURLOptions.quality);
+            if (canvasDataURL !== blankCanvasDataURL) {
+                attributes.rr_dataURL = canvasDataURL;
+            }
+        }
+    }
+    if (tagName === 'img' && inlineImages) {
+        if (!canvasService) {
+            canvasService = doc.createElement('canvas');
+            canvasCtx = canvasService.getContext('2d');
+        }
+        const image = n;
+        const oldValue = image.crossOrigin;
+        image.crossOrigin = 'anonymous';
+        const recordInlineImage = () => {
+            image.removeEventListener('load', recordInlineImage);
+            try {
+                canvasService.width = image.naturalWidth;
+                canvasService.height = image.naturalHeight;
+                canvasCtx.drawImage(image, 0, 0);
+                attributes.rr_dataURL = canvasService.toDataURL(dataURLOptions.type, dataURLOptions.quality);
+            }
+            catch (err) {
+                console.warn(`Cannot inline img src=${image.currentSrc}! Error: ${err}`);
+            }
+            oldValue
+                ? (attributes.crossOrigin = oldValue)
+                : image.removeAttribute('crossorigin');
+        };
+        if (image.complete && image.naturalWidth !== 0)
+            recordInlineImage();
+        else
+            image.addEventListener('load', recordInlineImage);
+    }
+    if (tagName === 'audio' || tagName === 'video') {
+        const mediaAttributes = attributes;
+        mediaAttributes.rr_mediaState = n.paused
+            ? 'paused'
+            : 'played';
+        mediaAttributes.rr_mediaCurrentTime = n.currentTime;
+        mediaAttributes.rr_mediaPlaybackRate = n.playbackRate;
+        mediaAttributes.rr_mediaMuted = n.muted;
+        mediaAttributes.rr_mediaLoop = n.loop;
+        mediaAttributes.rr_mediaVolume = n.volume;
+    }
+    if (!newlyAddedElement) {
+        if (n.scrollLeft) {
+            attributes.rr_scrollLeft = n.scrollLeft;
+        }
+        if (n.scrollTop) {
+            attributes.rr_scrollTop = n.scrollTop;
+        }
+    }
+    if (needBlock) {
+        const { width, height } = n.getBoundingClientRect();
+        attributes = {
+            class: attributes.class,
+            rr_width: `${width}px`,
+            rr_height: `${height}px`,
+        };
+    }
+    if (tagName === 'iframe' && !keepIframeSrcFn(attributes.src)) {
+        if (!n.contentDocument) {
+            attributes.rr_src = attributes.src;
+        }
+        delete attributes.src;
+    }
+    let isCustomElement;
+    try {
+        if (customElements.get(tagName))
+            isCustomElement = true;
+    }
+    catch (e) {
+    }
+    return {
+        type: NodeType.Element,
+        tagName,
+        attributes,
+        childNodes: [],
+        isSVG: isSVGElement(n) || undefined,
+        needBlock,
+        rootId,
+        isCustom: isCustomElement,
+    };
+}
+function lowerIfExists(maybeAttr) {
+    if (maybeAttr === undefined || maybeAttr === null) {
+        return '';
+    }
+    else {
+        return maybeAttr.toLowerCase();
+    }
+}
+function slimDOMExcluded(sn, slimDOMOptions) {
+    if (slimDOMOptions.comment && sn.type === NodeType.Comment) {
+        return true;
+    }
+    else if (sn.type === NodeType.Element) {
+        if (slimDOMOptions.script &&
+            (sn.tagName === 'script' ||
+                (sn.tagName === 'link' &&
+                    (sn.attributes.rel === 'preload' ||
+                        sn.attributes.rel === 'modulepreload') &&
+                    sn.attributes.as === 'script') ||
+                (sn.tagName === 'link' &&
+                    sn.attributes.rel === 'prefetch' &&
+                    typeof sn.attributes.href === 'string' &&
+                    extractFileExtension(sn.attributes.href) === 'js'))) {
+            return true;
+        }
+        else if (slimDOMOptions.headFavicon &&
+            ((sn.tagName === 'link' && sn.attributes.rel === 'shortcut icon') ||
+                (sn.tagName === 'meta' &&
+                    (lowerIfExists(sn.attributes.name).match(/^msapplication-tile(image|color)$/) ||
+                        lowerIfExists(sn.attributes.name) === 'application-name' ||
+                        lowerIfExists(sn.attributes.rel) === 'icon' ||
+                        lowerIfExists(sn.attributes.rel) === 'apple-touch-icon' ||
+                        lowerIfExists(sn.attributes.rel) === 'shortcut icon')))) {
+            return true;
+        }
+        else if (sn.tagName === 'meta') {
+            if (slimDOMOptions.headMetaDescKeywords &&
+                lowerIfExists(sn.attributes.name).match(/^description|keywords$/)) {
+                return true;
+            }
+            else if (slimDOMOptions.headMetaSocial &&
+                (lowerIfExists(sn.attributes.property).match(/^(og|twitter|fb):/) ||
+                    lowerIfExists(sn.attributes.name).match(/^(og|twitter):/) ||
+                    lowerIfExists(sn.attributes.name) === 'pinterest')) {
+                return true;
+            }
+            else if (slimDOMOptions.headMetaRobots &&
+                (lowerIfExists(sn.attributes.name) === 'robots' ||
+                    lowerIfExists(sn.attributes.name) === 'googlebot' ||
+                    lowerIfExists(sn.attributes.name) === 'bingbot')) {
+                return true;
+            }
+            else if (slimDOMOptions.headMetaHttpEquiv &&
+                sn.attributes['http-equiv'] !== undefined) {
+                return true;
+            }
+            else if (slimDOMOptions.headMetaAuthorship &&
+                (lowerIfExists(sn.attributes.name) === 'author' ||
+                    lowerIfExists(sn.attributes.name) === 'generator' ||
+                    lowerIfExists(sn.attributes.name) === 'framework' ||
+                    lowerIfExists(sn.attributes.name) === 'publisher' ||
+                    lowerIfExists(sn.attributes.name) === 'progid' ||
+                    lowerIfExists(sn.attributes.property).match(/^article:/) ||
+                    lowerIfExists(sn.attributes.property).match(/^product:/))) {
+                return true;
+            }
+            else if (slimDOMOptions.headMetaVerification &&
+                (lowerIfExists(sn.attributes.name) === 'google-site-verification' ||
+                    lowerIfExists(sn.attributes.name) === 'yandex-verification' ||
+                    lowerIfExists(sn.attributes.name) === 'csrf-token' ||
+                    lowerIfExists(sn.attributes.name) === 'p:domain_verify' ||
+                    lowerIfExists(sn.attributes.name) === 'verify-v1' ||
+                    lowerIfExists(sn.attributes.name) === 'verification' ||
+                    lowerIfExists(sn.attributes.name) === 'shopify-checkout-api-token')) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+function serializeNodeWithId(n, options) {
+    const { doc, mirror, blockClass, blockSelector, maskTextClass, maskTextSelector, skipChild = false, inlineStylesheet = true, maskInputOptions = {}, maskTextFn, maskInputFn, slimDOMOptions, dataURLOptions = {}, inlineImages = false, recordCanvas = false, onSerialize, onIframeLoad, iframeLoadTimeout = 5000, onStylesheetLoad, stylesheetLoadTimeout = 5000, keepIframeSrcFn = () => false, newlyAddedElement = false, } = options;
+    let { needsMask } = options;
+    let { preserveWhiteSpace = true } = options;
+    if (!needsMask &&
+        n.childNodes) {
+        const checkAncestors = needsMask === undefined;
+        needsMask = needMaskingText(n, maskTextClass, maskTextSelector, checkAncestors);
+    }
+    const _serializedNode = serializeNode(n, {
+        doc,
+        mirror,
+        blockClass,
+        blockSelector,
+        needsMask,
+        inlineStylesheet,
+        maskInputOptions,
+        maskTextFn,
+        maskInputFn,
+        dataURLOptions,
+        inlineImages,
+        recordCanvas,
+        keepIframeSrcFn,
+        newlyAddedElement,
+    });
+    if (!_serializedNode) {
+        console.warn(n, 'not serialized');
+        return null;
+    }
+    let id;
+    if (mirror.hasNode(n)) {
+        id = mirror.getId(n);
+    }
+    else if (slimDOMExcluded(_serializedNode, slimDOMOptions) ||
+        (!preserveWhiteSpace &&
+            _serializedNode.type === NodeType.Text &&
+            !_serializedNode.isStyle &&
+            !_serializedNode.textContent.replace(/^\s+|\s+$/gm, '').length)) {
+        id = IGNORED_NODE;
+    }
+    else {
+        id = genId();
+    }
+    const serializedNode = Object.assign(_serializedNode, { id });
+    mirror.add(n, serializedNode);
+    if (id === IGNORED_NODE) {
+        return null;
+    }
+    if (onSerialize) {
+        onSerialize(n);
+    }
+    let recordChild = !skipChild;
+    if (serializedNode.type === NodeType.Element) {
+        recordChild = recordChild && !serializedNode.needBlock;
+        delete serializedNode.needBlock;
+        const shadowRoot = n.shadowRoot;
+        if (shadowRoot && isNativeShadowDom(shadowRoot))
+            serializedNode.isShadowHost = true;
+    }
+    if ((serializedNode.type === NodeType.Document ||
+        serializedNode.type === NodeType.Element) &&
+        recordChild) {
+        if (slimDOMOptions.headWhitespace &&
+            serializedNode.type === NodeType.Element &&
+            serializedNode.tagName === 'head') {
+            preserveWhiteSpace = false;
+        }
+        const bypassOptions = {
+            doc,
+            mirror,
+            blockClass,
+            blockSelector,
+            needsMask,
+            maskTextClass,
+            maskTextSelector,
+            skipChild,
+            inlineStylesheet,
+            maskInputOptions,
+            maskTextFn,
+            maskInputFn,
+            slimDOMOptions,
+            dataURLOptions,
+            inlineImages,
+            recordCanvas,
+            preserveWhiteSpace,
+            onSerialize,
+            onIframeLoad,
+            iframeLoadTimeout,
+            onStylesheetLoad,
+            stylesheetLoadTimeout,
+            keepIframeSrcFn,
+        };
+        if (serializedNode.type === NodeType.Element &&
+            serializedNode.tagName === 'textarea' &&
+            serializedNode.attributes.value !== undefined) ;
+        else {
+            for (const childN of Array.from(n.childNodes)) {
+                const serializedChildNode = serializeNodeWithId(childN, bypassOptions);
+                if (serializedChildNode) {
+                    serializedNode.childNodes.push(serializedChildNode);
+                }
+            }
+        }
+        if (isElement(n) && n.shadowRoot) {
+            for (const childN of Array.from(n.shadowRoot.childNodes)) {
+                const serializedChildNode = serializeNodeWithId(childN, bypassOptions);
+                if (serializedChildNode) {
+                    isNativeShadowDom(n.shadowRoot) &&
+                        (serializedChildNode.isShadow = true);
+                    serializedNode.childNodes.push(serializedChildNode);
+                }
+            }
+        }
+    }
+    if (n.parentNode &&
+        isShadowRoot(n.parentNode) &&
+        isNativeShadowDom(n.parentNode)) {
+        serializedNode.isShadow = true;
+    }
+    if (serializedNode.type === NodeType.Element &&
+        serializedNode.tagName === 'iframe') {
+        onceIframeLoaded(n, () => {
+            const iframeDoc = n.contentDocument;
+            if (iframeDoc && onIframeLoad) {
+                const serializedIframeNode = serializeNodeWithId(iframeDoc, {
+                    doc: iframeDoc,
+                    mirror,
+                    blockClass,
+                    blockSelector,
+                    needsMask,
+                    maskTextClass,
+                    maskTextSelector,
+                    skipChild: false,
+                    inlineStylesheet,
+                    maskInputOptions,
+                    maskTextFn,
+                    maskInputFn,
+                    slimDOMOptions,
+                    dataURLOptions,
+                    inlineImages,
+                    recordCanvas,
+                    preserveWhiteSpace,
+                    onSerialize,
+                    onIframeLoad,
+                    iframeLoadTimeout,
+                    onStylesheetLoad,
+                    stylesheetLoadTimeout,
+                    keepIframeSrcFn,
+                });
+                if (serializedIframeNode) {
+                    onIframeLoad(n, serializedIframeNode);
+                }
+            }
+        }, iframeLoadTimeout);
+    }
+    if (serializedNode.type === NodeType.Element &&
+        serializedNode.tagName === 'link' &&
+        typeof serializedNode.attributes.rel === 'string' &&
+        (serializedNode.attributes.rel === 'stylesheet' ||
+            (serializedNode.attributes.rel === 'preload' &&
+                typeof serializedNode.attributes.href === 'string' &&
+                extractFileExtension(serializedNode.attributes.href) === 'css'))) {
+        onceStylesheetLoaded(n, () => {
+            if (onStylesheetLoad) {
+                const serializedLinkNode = serializeNodeWithId(n, {
+                    doc,
+                    mirror,
+                    blockClass,
+                    blockSelector,
+                    needsMask,
+                    maskTextClass,
+                    maskTextSelector,
+                    skipChild: false,
+                    inlineStylesheet,
+                    maskInputOptions,
+                    maskTextFn,
+                    maskInputFn,
+                    slimDOMOptions,
+                    dataURLOptions,
+                    inlineImages,
+                    recordCanvas,
+                    preserveWhiteSpace,
+                    onSerialize,
+                    onIframeLoad,
+                    iframeLoadTimeout,
+                    onStylesheetLoad,
+                    stylesheetLoadTimeout,
+                    keepIframeSrcFn,
+                });
+                if (serializedLinkNode) {
+                    onStylesheetLoad(n, serializedLinkNode);
+                }
+            }
+        }, stylesheetLoadTimeout);
+    }
+    return serializedNode;
+}
+function snapshot(n, options) {
+    const { mirror = new Mirror(), blockClass = 'rr-block', blockSelector = null, maskTextClass = 'rr-mask', maskTextSelector = null, inlineStylesheet = true, inlineImages = false, recordCanvas = false, maskAllInputs = false, maskTextFn, maskInputFn, slimDOM = false, dataURLOptions, preserveWhiteSpace, onSerialize, onIframeLoad, iframeLoadTimeout, onStylesheetLoad, stylesheetLoadTimeout, keepIframeSrcFn = () => false, } = options || {};
+    const maskInputOptions = maskAllInputs === true
+        ? {
+            color: true,
+            date: true,
+            'datetime-local': true,
+            email: true,
+            month: true,
+            number: true,
+            range: true,
+            search: true,
+            tel: true,
+            text: true,
+            time: true,
+            url: true,
+            week: true,
+            textarea: true,
+            select: true,
+            password: true,
+        }
+        : maskAllInputs === false
+            ? {
+                password: true,
+            }
+            : maskAllInputs;
+    const slimDOMOptions = slimDOM === true || slimDOM === 'all'
+        ?
+            {
+                script: true,
+                comment: true,
+                headFavicon: true,
+                headWhitespace: true,
+                headMetaDescKeywords: slimDOM === 'all',
+                headMetaSocial: true,
+                headMetaRobots: true,
+                headMetaHttpEquiv: true,
+                headMetaAuthorship: true,
+                headMetaVerification: true,
+            }
+        : slimDOM === false
+            ? {}
+            : slimDOM;
+    return serializeNodeWithId(n, {
+        doc: n,
+        mirror,
+        blockClass,
+        blockSelector,
+        maskTextClass,
+        maskTextSelector,
+        skipChild: false,
+        inlineStylesheet,
+        maskInputOptions,
+        maskTextFn,
+        maskInputFn,
+        slimDOMOptions,
+        dataURLOptions,
+        inlineImages,
+        recordCanvas,
+        preserveWhiteSpace,
+        onSerialize,
+        onIframeLoad,
+        iframeLoadTimeout,
+        onStylesheetLoad,
+        stylesheetLoadTimeout,
+        keepIframeSrcFn,
+        newlyAddedElement: false,
+    });
 }
-const DEPARTED_MIRROR_ACCESS_WARNING = 'Please stop import mirror directly. Instead of that,' +
-    '\r\n' +
-    'now you can use replayer.getMirror() to access the mirror instance of a replayer,' +
-    '\r\n' +
-    'or you can use record.mirror to access the mirror instance during recording.';
-let _mirror = {
-    map: {},
-    getId() {
-        console.error(DEPARTED_MIRROR_ACCESS_WARNING);
-        return -1;
-    },
-    getNode() {
-        console.error(DEPARTED_MIRROR_ACCESS_WARNING);
-        return null;
-    },
-    removeNodeFromMap() {
-        console.error(DEPARTED_MIRROR_ACCESS_WARNING);
-    },
-    has() {
-        console.error(DEPARTED_MIRROR_ACCESS_WARNING);
-        return false;
-    },
-    reset() {
-        console.error(DEPARTED_MIRROR_ACCESS_WARNING);
-    },
-};
-if (typeof window !== 'undefined' && window.Proxy && window.Reflect) {
-    _mirror = new Proxy(_mirror, {
-        get(target, prop, receiver) {
-            if (prop === 'map') {
-                console.error(DEPARTED_MIRROR_ACCESS_WARNING);
-            }
-            return Reflect.get(target, prop, receiver);
-        },
-    });
-}
-function throttle(func, wait, options = {}) {
-    let timeout = null;
-    let previous = 0;
-    return function (...args) {
-        const now = Date.now();
-        if (!previous && options.leading === false) {
-            previous = now;
-        }
-        const remaining = wait - (now - previous);
-        const context = this;
-        if (remaining <= 0 || remaining > wait) {
-            if (timeout) {
-                clearTimeout(timeout);
-                timeout = null;
-            }
-            previous = now;
-            func.apply(context, args);
-        }
-        else if (!timeout && options.trailing !== false) {
-            timeout = setTimeout(() => {
-                previous = options.leading === false ? 0 : Date.now();
-                timeout = null;
-                func.apply(context, args);
-            }, remaining);
-        }
-    };
-}
-function hookSetter(target, key, d, isRevoked, win = window) {
-    const original = win.Object.getOwnPropertyDescriptor(target, key);
-    win.Object.defineProperty(target, key, isRevoked
-        ? d
-        : {
-            set(value) {
-                setTimeout(() => {
-                    d.set.call(this, value);
-                }, 0);
-                if (original && original.set) {
-                    original.set.call(this, value);
-                }
-            },
-        });
-    return () => hookSetter(target, key, original || {}, true);
-}
-function patch(source, name, replacement) {
-    try {
-        if (!(name in source)) {
-            return () => {
-            };
-        }
-        const original = source[name];
-        const wrapped = replacement(original);
-        if (typeof wrapped === 'function') {
-            wrapped.prototype = wrapped.prototype || {};
-            Object.defineProperties(wrapped, {
-                __rrweb_original__: {
-                    enumerable: false,
-                    value: original,
-                },
-            });
-        }
-        source[name] = wrapped;
-        return () => {
-            source[name] = original;
-        };
-    }
-    catch (_a) {
-        return () => {
-        };
-    }
-}
-let nowTimestamp = Date.now;
-if (!(/[1-9][0-9]{12}/.test(Date.now().toString()))) {
-    nowTimestamp = () => new Date().getTime();
-}
-function getWindowScroll(win) {
-    var _a, _b, _c, _d, _e, _f;
-    const doc = win.document;
-    return {
-        left: doc.scrollingElement
-            ? doc.scrollingElement.scrollLeft
-            : win.pageXOffset !== undefined
-                ? win.pageXOffset
-                : (doc === null || doc === void 0 ? void 0 : doc.documentElement.scrollLeft) ||
-                    ((_b = (_a = doc === null || doc === void 0 ? void 0 : doc.body) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.scrollLeft) ||
-                    ((_c = doc === null || doc === void 0 ? void 0 : doc.body) === null || _c === void 0 ? void 0 : _c.scrollLeft) ||
-                    0,
-        top: doc.scrollingElement
-            ? doc.scrollingElement.scrollTop
-            : win.pageYOffset !== undefined
-                ? win.pageYOffset
-                : (doc === null || doc === void 0 ? void 0 : doc.documentElement.scrollTop) ||
-                    ((_e = (_d = doc === null || doc === void 0 ? void 0 : doc.body) === null || _d === void 0 ? void 0 : _d.parentElement) === null || _e === void 0 ? void 0 : _e.scrollTop) ||
-                    ((_f = doc === null || doc === void 0 ? void 0 : doc.body) === null || _f === void 0 ? void 0 : _f.scrollTop) ||
-                    0,
-    };
-}
-function getWindowHeight() {
-    return (window.innerHeight ||
-        (document.documentElement && document.documentElement.clientHeight) ||
-        (document.body && document.body.clientHeight));
-}
-function getWindowWidth() {
-    return (window.innerWidth ||
-        (document.documentElement && document.documentElement.clientWidth) ||
-        (document.body && document.body.clientWidth));
-}
-function closestElementOfNode(node) {
-    if (!node) {
-        return null;
-    }
-    const el = node.nodeType === node.ELEMENT_NODE
-        ? node
-        : node.parentElement;
-    return el;
-}
-function isBlocked(node, blockClass, blockSelector, checkAncestors) {
-    if (!node) {
-        return false;
-    }
-    const el = closestElementOfNode(node);
-    if (!el) {
-        return false;
-    }
-    try {
-        if (typeof blockClass === 'string') {
-            if (el.classList.contains(blockClass))
-                return true;
-            if (checkAncestors && el.closest('.' + blockClass) !== null)
-                return true;
-        }
-        else {
-            if (classMatchesRegex(el, blockClass, checkAncestors))
-                return true;
-        }
-    }
-    catch (e) {
-    }
-    if (blockSelector) {
-        if (el.matches(blockSelector))
-            return true;
-        if (checkAncestors && el.closest(blockSelector) !== null)
-            return true;
-    }
-    return false;
-}
-function isSerialized(n, mirror) {
-    return mirror.getId(n) !== -1;
-}
-function isIgnored(n, mirror) {
-    return mirror.getId(n) === IGNORED_NODE;
-}
-function isAncestorRemoved(target, mirror) {
-    if (isShadowRoot(target)) {
-        return false;
-    }
-    const id = mirror.getId(target);
-    if (!mirror.has(id)) {
-        return true;
-    }
-    if (target.parentNode &&
-        target.parentNode.nodeType === target.DOCUMENT_NODE) {
-        return false;
-    }
-    if (!target.parentNode) {
-        return true;
-    }
-    return isAncestorRemoved(target.parentNode, mirror);
-}
-function legacy_isTouchEvent(event) {
-    return Boolean(event.changedTouches);
-}
-function polyfill(win = window) {
-    if ('NodeList' in win && !win.NodeList.prototype.forEach) {
-        win.NodeList.prototype.forEach = Array.prototype
-            .forEach;
-    }
-    if ('DOMTokenList' in win && !win.DOMTokenList.prototype.forEach) {
-        win.DOMTokenList.prototype.forEach = Array.prototype
-            .forEach;
-    }
-    if (!Node.prototype.contains) {
-        Node.prototype.contains = (...args) => {
-            let node = args[0];
-            if (!(0 in args)) {
-                throw new TypeError('1 argument is required');
-            }
-            do {
-                if (this === node) {
-                    return true;
-                }
-            } while ((node = node && node.parentNode));
-            return false;
-        };
-    }
-}
-function isSerializedIframe(n, mirror) {
-    return Boolean(n.nodeName === 'IFRAME' && mirror.getMeta(n));
-}
-function isSerializedStylesheet(n, mirror) {
-    return Boolean(n.nodeName === 'LINK' &&
-        n.nodeType === n.ELEMENT_NODE &&
-        n.getAttribute &&
-        n.getAttribute('rel') === 'stylesheet' &&
-        mirror.getMeta(n));
-}
-function hasShadowRoot(n) {
-    return Boolean(n === null || n === void 0 ? void 0 : n.shadowRoot);
-}
-class StyleSheetMirror {
-    constructor() {
-        this.id = 1;
-        this.styleIDMap = new WeakMap();
-        this.idStyleMap = new Map();
-    }
-    getId(stylesheet) {
-        var _a;
-        return (_a = this.styleIDMap.get(stylesheet)) !== null && _a !== void 0 ? _a : -1;
-    }
-    has(stylesheet) {
-        return this.styleIDMap.has(stylesheet);
-    }
-    add(stylesheet, id) {
-        if (this.has(stylesheet))
-            return this.getId(stylesheet);
-        let newId;
-        if (id === undefined) {
-            newId = this.id++;
-        }
-        else
-            newId = id;
-        this.styleIDMap.set(stylesheet, newId);
-        this.idStyleMap.set(newId, stylesheet);
-        return newId;
-    }
-    getStyle(id) {
-        return this.idStyleMap.get(id) || null;
-    }
-    reset() {
-        this.styleIDMap = new WeakMap();
-        this.idStyleMap = new Map();
-        this.id = 1;
-    }
-    generateId() {
-        return this.id++;
-    }
-}
-function getShadowHost(n) {
-    var _a, _b;
-    let shadowHost = null;
-    if (((_b = (_a = n.getRootNode) === null || _a === void 0 ? void 0 : _a.call(n)) === null || _b === void 0 ? void 0 : _b.nodeType) === Node.DOCUMENT_FRAGMENT_NODE &&
-        n.getRootNode().host)
-        shadowHost = n.getRootNode().host;
-    return shadowHost;
-}
-function getRootShadowHost(n) {
-    let rootShadowHost = n;
-    let shadowHost;
-    while ((shadowHost = getShadowHost(rootShadowHost)))
-        rootShadowHost = shadowHost;
-    return rootShadowHost;
-}
-function shadowHostInDom(n) {
-    const doc = n.ownerDocument;
-    if (!doc)
-        return false;
-    const shadowHost = getRootShadowHost(n);
-    return doc.contains(shadowHost);
-}
-function inDom(n) {
-    const doc = n.ownerDocument;
-    if (!doc)
-        return false;
-    return doc.contains(n) || shadowHostInDom(n);
+
+function on(type, fn, target = document) {
+    const options = { capture: true, passive: true };
+    target.addEventListener(type, fn, options);
+    return () => target.removeEventListener(type, fn, options);
+}
+const DEPARTED_MIRROR_ACCESS_WARNING = 'Please stop import mirror directly. Instead of that,' +
+    '\r\n' +
+    'now you can use replayer.getMirror() to access the mirror instance of a replayer,' +
+    '\r\n' +
+    'or you can use record.mirror to access the mirror instance during recording.';
+let _mirror = {
+    map: {},
+    getId() {
+        console.error(DEPARTED_MIRROR_ACCESS_WARNING);
+        return -1;
+    },
+    getNode() {
+        console.error(DEPARTED_MIRROR_ACCESS_WARNING);
+        return null;
+    },
+    removeNodeFromMap() {
+        console.error(DEPARTED_MIRROR_ACCESS_WARNING);
+    },
+    has() {
+        console.error(DEPARTED_MIRROR_ACCESS_WARNING);
+        return false;
+    },
+    reset() {
+        console.error(DEPARTED_MIRROR_ACCESS_WARNING);
+    },
+};
+if (typeof window !== 'undefined' && window.Proxy && window.Reflect) {
+    _mirror = new Proxy(_mirror, {
+        get(target, prop, receiver) {
+            if (prop === 'map') {
+                console.error(DEPARTED_MIRROR_ACCESS_WARNING);
+            }
+            return Reflect.get(target, prop, receiver);
+        },
+    });
+}
+function throttle(func, wait, options = {}) {
+    let timeout = null;
+    let previous = 0;
+    return function (...args) {
+        const now = Date.now();
+        if (!previous && options.leading === false) {
+            previous = now;
+        }
+        const remaining = wait - (now - previous);
+        const context = this;
+        if (remaining <= 0 || remaining > wait) {
+            if (timeout) {
+                clearTimeout(timeout);
+                timeout = null;
+            }
+            previous = now;
+            func.apply(context, args);
+        }
+        else if (!timeout && options.trailing !== false) {
+            timeout = setTimeout(() => {
+                previous = options.leading === false ? 0 : Date.now();
+                timeout = null;
+                func.apply(context, args);
+            }, remaining);
+        }
+    };
+}
+function hookSetter(target, key, d, isRevoked, win = window) {
+    const original = win.Object.getOwnPropertyDescriptor(target, key);
+    win.Object.defineProperty(target, key, isRevoked
+        ? d
+        : {
+            set(value) {
+                setTimeout(() => {
+                    d.set.call(this, value);
+                }, 0);
+                if (original && original.set) {
+                    original.set.call(this, value);
+                }
+            },
+        });
+    return () => hookSetter(target, key, original || {}, true);
+}
+function patch(source, name, replacement) {
+    try {
+        if (!(name in source)) {
+            return () => {
+            };
+        }
+        const original = source[name];
+        const wrapped = replacement(original);
+        if (typeof wrapped === 'function') {
+            wrapped.prototype = wrapped.prototype || {};
+            Object.defineProperties(wrapped, {
+                __rrweb_original__: {
+                    enumerable: false,
+                    value: original,
+                },
+            });
+        }
+        source[name] = wrapped;
+        return () => {
+            source[name] = original;
+        };
+    }
+    catch (_a) {
+        return () => {
+        };
+    }
+}
+let nowTimestamp = Date.now;
+if (!(/[1-9][0-9]{12}/.test(Date.now().toString()))) {
+    nowTimestamp = () => new Date().getTime();
+}
+function getWindowScroll(win) {
+    var _a, _b, _c, _d, _e, _f;
+    const doc = win.document;
+    return {
+        left: doc.scrollingElement
+            ? doc.scrollingElement.scrollLeft
+            : win.pageXOffset !== undefined
+                ? win.pageXOffset
+                : (doc === null || doc === void 0 ? void 0 : doc.documentElement.scrollLeft) ||
+                    ((_b = (_a = doc === null || doc === void 0 ? void 0 : doc.body) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.scrollLeft) ||
+                    ((_c = doc === null || doc === void 0 ? void 0 : doc.body) === null || _c === void 0 ? void 0 : _c.scrollLeft) ||
+                    0,
+        top: doc.scrollingElement
+            ? doc.scrollingElement.scrollTop
+            : win.pageYOffset !== undefined
+                ? win.pageYOffset
+                : (doc === null || doc === void 0 ? void 0 : doc.documentElement.scrollTop) ||
+                    ((_e = (_d = doc === null || doc === void 0 ? void 0 : doc.body) === null || _d === void 0 ? void 0 : _d.parentElement) === null || _e === void 0 ? void 0 : _e.scrollTop) ||
+                    ((_f = doc === null || doc === void 0 ? void 0 : doc.body) === null || _f === void 0 ? void 0 : _f.scrollTop) ||
+                    0,
+    };
+}
+function getWindowHeight() {
+    return (window.innerHeight ||
+        (document.documentElement && document.documentElement.clientHeight) ||
+        (document.body && document.body.clientHeight));
+}
+function getWindowWidth() {
+    return (window.innerWidth ||
+        (document.documentElement && document.documentElement.clientWidth) ||
+        (document.body && document.body.clientWidth));
+}
+function closestElementOfNode(node) {
+    if (!node) {
+        return null;
+    }
+    const el = node.nodeType === node.ELEMENT_NODE
+        ? node
+        : node.parentElement;
+    return el;
+}
+function isBlocked(node, blockClass, blockSelector, checkAncestors) {
+    if (!node) {
+        return false;
+    }
+    const el = closestElementOfNode(node);
+    if (!el) {
+        return false;
+    }
+    try {
+        if (typeof blockClass === 'string') {
+            if (el.classList.contains(blockClass))
+                return true;
+            if (checkAncestors && el.closest('.' + blockClass) !== null)
+                return true;
+        }
+        else {
+            if (classMatchesRegex(el, blockClass, checkAncestors))
+                return true;
+        }
+    }
+    catch (e) {
+    }
+    if (blockSelector) {
+        if (el.matches(blockSelector))
+            return true;
+        if (checkAncestors && el.closest(blockSelector) !== null)
+            return true;
+    }
+    return false;
+}
+function isSerialized(n, mirror) {
+    return mirror.getId(n) !== -1;
+}
+function isIgnored(n, mirror) {
+    return mirror.getId(n) === IGNORED_NODE;
+}
+function isAncestorRemoved(target, mirror) {
+    if (isShadowRoot(target)) {
+        return false;
+    }
+    const id = mirror.getId(target);
+    if (!mirror.has(id)) {
+        return true;
+    }
+    if (target.parentNode &&
+        target.parentNode.nodeType === target.DOCUMENT_NODE) {
+        return false;
+    }
+    if (!target.parentNode) {
+        return true;
+    }
+    return isAncestorRemoved(target.parentNode, mirror);
+}
+function legacy_isTouchEvent(event) {
+    return Boolean(event.changedTouches);
+}
+function polyfill(win = window) {
+    if ('NodeList' in win && !win.NodeList.prototype.forEach) {
+        win.NodeList.prototype.forEach = Array.prototype
+            .forEach;
+    }
+    if ('DOMTokenList' in win && !win.DOMTokenList.prototype.forEach) {
+        win.DOMTokenList.prototype.forEach = Array.prototype
+            .forEach;
+    }
+    if (!Node.prototype.contains) {
+        Node.prototype.contains = (...args) => {
+            let node = args[0];
+            if (!(0 in args)) {
+                throw new TypeError('1 argument is required');
+            }
+            do {
+                if (this === node) {
+                    return true;
+                }
+            } while ((node = node && node.parentNode));
+            return false;
+        };
+    }
+}
+function isSerializedIframe(n, mirror) {
+    return Boolean(n.nodeName === 'IFRAME' && mirror.getMeta(n));
+}
+function isSerializedStylesheet(n, mirror) {
+    return Boolean(n.nodeName === 'LINK' &&
+        n.nodeType === n.ELEMENT_NODE &&
+        n.getAttribute &&
+        n.getAttribute('rel') === 'stylesheet' &&
+        mirror.getMeta(n));
+}
+function hasShadowRoot(n) {
+    return Boolean(n === null || n === void 0 ? void 0 : n.shadowRoot);
+}
+class StyleSheetMirror {
+    constructor() {
+        this.id = 1;
+        this.styleIDMap = new WeakMap();
+        this.idStyleMap = new Map();
+    }
+    getId(stylesheet) {
+        var _a;
+        return (_a = this.styleIDMap.get(stylesheet)) !== null && _a !== void 0 ? _a : -1;
+    }
+    has(stylesheet) {
+        return this.styleIDMap.has(stylesheet);
+    }
+    add(stylesheet, id) {
+        if (this.has(stylesheet))
+            return this.getId(stylesheet);
+        let newId;
+        if (id === undefined) {
+            newId = this.id++;
+        }
+        else
+            newId = id;
+        this.styleIDMap.set(stylesheet, newId);
+        this.idStyleMap.set(newId, stylesheet);
+        return newId;
+    }
+    getStyle(id) {
+        return this.idStyleMap.get(id) || null;
+    }
+    reset() {
+        this.styleIDMap = new WeakMap();
+        this.idStyleMap = new Map();
+        this.id = 1;
+    }
+    generateId() {
+        return this.id++;
+    }
+}
+function getShadowHost(n) {
+    var _a, _b;
+    let shadowHost = null;
+    if (((_b = (_a = n.getRootNode) === null || _a === void 0 ? void 0 : _a.call(n)) === null || _b === void 0 ? void 0 : _b.nodeType) === Node.DOCUMENT_FRAGMENT_NODE &&
+        n.getRootNode().host)
+        shadowHost = n.getRootNode().host;
+    return shadowHost;
+}
+function getRootShadowHost(n) {
+    let rootShadowHost = n;
+    let shadowHost;
+    while ((shadowHost = getShadowHost(rootShadowHost)))
+        rootShadowHost = shadowHost;
+    return rootShadowHost;
+}
+function shadowHostInDom(n) {
+    const doc = n.ownerDocument;
+    if (!doc)
+        return false;
+    const shadowHost = getRootShadowHost(n);
+    return doc.contains(shadowHost);
+}
+function inDom(n) {
+    const doc = n.ownerDocument;
+    if (!doc)
+        return false;
+    return doc.contains(n) || shadowHostInDom(n);
 }
 
 var EventType$1 = /* @__PURE__ */ ((EventType2) => {
@@ -58366,1857 +58363,1857 @@ var CanvasContext = /* @__PURE__ */ ((CanvasContext2) => {
   return CanvasContext2;
 })(CanvasContext || {});
 
-function isNodeInLinkedList(n) {
-    return '__ln' in n;
-}
-class DoubleLinkedList {
-    constructor() {
-        this.length = 0;
-        this.head = null;
-        this.tail = null;
-    }
-    get(position) {
-        if (position >= this.length) {
-            throw new Error('Position outside of list range');
-        }
-        let current = this.head;
-        for (let index = 0; index < position; index++) {
-            current = (current === null || current === void 0 ? void 0 : current.next) || null;
-        }
-        return current;
-    }
-    addNode(n) {
-        const node = {
-            value: n,
-            previous: null,
-            next: null,
-        };
-        n.__ln = node;
-        if (n.previousSibling && isNodeInLinkedList(n.previousSibling)) {
-            const current = n.previousSibling.__ln.next;
-            node.next = current;
-            node.previous = n.previousSibling.__ln;
-            n.previousSibling.__ln.next = node;
-            if (current) {
-                current.previous = node;
-            }
-        }
-        else if (n.nextSibling &&
-            isNodeInLinkedList(n.nextSibling) &&
-            n.nextSibling.__ln.previous) {
-            const current = n.nextSibling.__ln.previous;
-            node.previous = current;
-            node.next = n.nextSibling.__ln;
-            n.nextSibling.__ln.previous = node;
-            if (current) {
-                current.next = node;
-            }
-        }
-        else {
-            if (this.head) {
-                this.head.previous = node;
-            }
-            node.next = this.head;
-            this.head = node;
-        }
-        if (node.next === null) {
-            this.tail = node;
-        }
-        this.length++;
-    }
-    removeNode(n) {
-        const current = n.__ln;
-        if (!this.head) {
-            return;
-        }
-        if (!current.previous) {
-            this.head = current.next;
-            if (this.head) {
-                this.head.previous = null;
-            }
-            else {
-                this.tail = null;
-            }
-        }
-        else {
-            current.previous.next = current.next;
-            if (current.next) {
-                current.next.previous = current.previous;
-            }
-            else {
-                this.tail = current.previous;
-            }
-        }
-        if (n.__ln) {
-            delete n.__ln;
-        }
-        this.length--;
-    }
-}
-const moveKey = (id, parentId) => `${id}@${parentId}`;
-class MutationBuffer {
-    constructor() {
-        this.frozen = false;
-        this.locked = false;
-        this.texts = [];
-        this.attributes = [];
-        this.attributeMap = new WeakMap();
-        this.removes = [];
-        this.mapRemoves = [];
-        this.movedMap = {};
-        this.addedSet = new Set();
-        this.movedSet = new Set();
-        this.droppedSet = new Set();
-        this.processMutations = (mutations) => {
-            mutations.forEach(this.processMutation);
-            this.emit();
-        };
-        this.emit = () => {
-            if (this.frozen || this.locked) {
-                return;
-            }
-            const adds = [];
-            const addedIds = new Set();
-            const addList = new DoubleLinkedList();
-            const getNextId = (n) => {
-                let ns = n;
-                let nextId = IGNORED_NODE;
-                while (nextId === IGNORED_NODE) {
-                    ns = ns && ns.nextSibling;
-                    nextId = ns && this.mirror.getId(ns);
-                }
-                return nextId;
-            };
-            const pushAdd = (n) => {
-                if (!n.parentNode ||
-                    !inDom(n) ||
-                    n.parentNode.tagName === 'TEXTAREA') {
-                    return;
-                }
-                const parentId = isShadowRoot(n.parentNode)
-                    ? this.mirror.getId(getShadowHost(n))
-                    : this.mirror.getId(n.parentNode);
-                const nextId = getNextId(n);
-                if (parentId === -1 || nextId === -1) {
-                    return addList.addNode(n);
-                }
-                const sn = serializeNodeWithId(n, {
-                    doc: this.doc,
-                    mirror: this.mirror,
-                    blockClass: this.blockClass,
-                    blockSelector: this.blockSelector,
-                    maskTextClass: this.maskTextClass,
-                    maskTextSelector: this.maskTextSelector,
-                    skipChild: true,
-                    newlyAddedElement: true,
-                    inlineStylesheet: this.inlineStylesheet,
-                    maskInputOptions: this.maskInputOptions,
-                    maskTextFn: this.maskTextFn,
-                    maskInputFn: this.maskInputFn,
-                    slimDOMOptions: this.slimDOMOptions,
-                    dataURLOptions: this.dataURLOptions,
-                    recordCanvas: this.recordCanvas,
-                    inlineImages: this.inlineImages,
-                    onSerialize: (currentN) => {
-                        if (isSerializedIframe(currentN, this.mirror)) {
-                            this.iframeManager.addIframe(currentN);
-                        }
-                        if (isSerializedStylesheet(currentN, this.mirror)) {
-                            this.stylesheetManager.trackLinkElement(currentN);
-                        }
-                        if (hasShadowRoot(n)) {
-                            this.shadowDomManager.addShadowRoot(n.shadowRoot, this.doc);
-                        }
-                    },
-                    onIframeLoad: (iframe, childSn) => {
-                        this.iframeManager.attachIframe(iframe, childSn);
-                        this.shadowDomManager.observeAttachShadow(iframe);
-                    },
-                    onStylesheetLoad: (link, childSn) => {
-                        this.stylesheetManager.attachLinkElement(link, childSn);
-                    },
-                });
-                if (sn) {
-                    adds.push({
-                        parentId,
-                        nextId,
-                        node: sn,
-                    });
-                    addedIds.add(sn.id);
-                }
-            };
-            while (this.mapRemoves.length) {
-                this.mirror.removeNodeFromMap(this.mapRemoves.shift());
-            }
-            for (const n of this.movedSet) {
-                if (isParentRemoved(this.removes, n, this.mirror) &&
-                    !this.movedSet.has(n.parentNode)) {
-                    continue;
-                }
-                pushAdd(n);
-            }
-            for (const n of this.addedSet) {
-                if (!isAncestorInSet(this.droppedSet, n) &&
-                    !isParentRemoved(this.removes, n, this.mirror)) {
-                    pushAdd(n);
-                }
-                else if (isAncestorInSet(this.movedSet, n)) {
-                    pushAdd(n);
-                }
-                else {
-                    this.droppedSet.add(n);
-                }
-            }
-            let candidate = null;
-            while (addList.length) {
-                let node = null;
-                if (candidate) {
-                    const parentId = this.mirror.getId(candidate.value.parentNode);
-                    const nextId = getNextId(candidate.value);
-                    if (parentId !== -1 && nextId !== -1) {
-                        node = candidate;
-                    }
-                }
-                if (!node) {
-                    let tailNode = addList.tail;
-                    while (tailNode) {
-                        const _node = tailNode;
-                        tailNode = tailNode.previous;
-                        if (_node) {
-                            const parentId = this.mirror.getId(_node.value.parentNode);
-                            const nextId = getNextId(_node.value);
-                            if (nextId === -1)
-                                continue;
-                            else if (parentId !== -1) {
-                                node = _node;
-                                break;
-                            }
-                            else {
-                                const unhandledNode = _node.value;
-                                if (unhandledNode.parentNode &&
-                                    unhandledNode.parentNode.nodeType ===
-                                        Node.DOCUMENT_FRAGMENT_NODE) {
-                                    const shadowHost = unhandledNode.parentNode
-                                        .host;
-                                    const parentId = this.mirror.getId(shadowHost);
-                                    if (parentId !== -1) {
-                                        node = _node;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if (!node) {
-                    while (addList.head) {
-                        addList.removeNode(addList.head.value);
-                    }
-                    break;
-                }
-                candidate = node.previous;
-                addList.removeNode(node.value);
-                pushAdd(node.value);
-            }
-            const payload = {
-                texts: this.texts
-                    .map((text) => {
-                    const n = text.node;
-                    if (n.parentNode &&
-                        n.parentNode.tagName === 'TEXTAREA') {
-                        this.genTextAreaValueMutation(n.parentNode);
-                    }
-                    return {
-                        id: this.mirror.getId(n),
-                        value: text.value,
-                    };
-                })
-                    .filter((text) => !addedIds.has(text.id))
-                    .filter((text) => this.mirror.has(text.id)),
-                attributes: this.attributes
-                    .map((attribute) => {
-                    const { attributes } = attribute;
-                    if (typeof attributes.style === 'string') {
-                        const diffAsStr = JSON.stringify(attribute.styleDiff);
-                        const unchangedAsStr = JSON.stringify(attribute._unchangedStyles);
-                        if (diffAsStr.length < attributes.style.length) {
-                            if ((diffAsStr + unchangedAsStr).split('var(').length ===
-                                attributes.style.split('var(').length) {
-                                attributes.style = attribute.styleDiff;
-                            }
-                        }
-                    }
-                    return {
-                        id: this.mirror.getId(attribute.node),
-                        attributes: attributes,
-                    };
-                })
-                    .filter((attribute) => !addedIds.has(attribute.id))
-                    .filter((attribute) => this.mirror.has(attribute.id)),
-                removes: this.removes,
-                adds,
-            };
-            if (!payload.texts.length &&
-                !payload.attributes.length &&
-                !payload.removes.length &&
-                !payload.adds.length) {
-                return;
-            }
-            this.texts = [];
-            this.attributes = [];
-            this.attributeMap = new WeakMap();
-            this.removes = [];
-            this.addedSet = new Set();
-            this.movedSet = new Set();
-            this.droppedSet = new Set();
-            this.movedMap = {};
-            this.mutationCb(payload);
-        };
-        this.genTextAreaValueMutation = (textarea) => {
-            let item = this.attributeMap.get(textarea);
-            if (!item) {
-                item = {
-                    node: textarea,
-                    attributes: {},
-                    styleDiff: {},
-                    _unchangedStyles: {},
-                };
-                this.attributes.push(item);
-                this.attributeMap.set(textarea, item);
-            }
-            item.attributes.value = Array.from(textarea.childNodes, (cn) => cn.textContent || '').join('');
-        };
-        this.processMutation = (m) => {
-            if (isIgnored(m.target, this.mirror)) {
-                return;
-            }
-            switch (m.type) {
-                case 'characterData': {
-                    const value = m.target.textContent;
-                    if (!isBlocked(m.target, this.blockClass, this.blockSelector, false) &&
-                        value !== m.oldValue) {
-                        this.texts.push({
-                            value: needMaskingText(m.target, this.maskTextClass, this.maskTextSelector, true) && value
-                                ? this.maskTextFn
-                                    ? this.maskTextFn(value, closestElementOfNode(m.target))
-                                    : value.replace(/[\S]/g, '*')
-                                : value,
-                            node: m.target,
-                        });
-                    }
-                    break;
-                }
-                case 'attributes': {
-                    const target = m.target;
-                    let attributeName = m.attributeName;
-                    let value = m.target.getAttribute(attributeName);
-                    if (attributeName === 'value') {
-                        const type = getInputType(target);
-                        value = maskInputValue({
-                            element: target,
-                            maskInputOptions: this.maskInputOptions,
-                            tagName: target.tagName,
-                            type,
-                            value,
-                            maskInputFn: this.maskInputFn,
-                        });
-                    }
-                    if (isBlocked(m.target, this.blockClass, this.blockSelector, false) ||
-                        value === m.oldValue) {
-                        return;
-                    }
-                    let item = this.attributeMap.get(m.target);
-                    if (target.tagName === 'IFRAME' &&
-                        attributeName === 'src' &&
-                        !this.keepIframeSrcFn(value)) {
-                        if (!target.contentDocument) {
-                            attributeName = 'rr_src';
-                        }
-                        else {
-                            return;
-                        }
-                    }
-                    if (!item) {
-                        item = {
-                            node: m.target,
-                            attributes: {},
-                            styleDiff: {},
-                            _unchangedStyles: {},
-                        };
-                        this.attributes.push(item);
-                        this.attributeMap.set(m.target, item);
-                    }
-                    if (attributeName === 'type' &&
-                        target.tagName === 'INPUT' &&
-                        (m.oldValue || '').toLowerCase() === 'password') {
-                        target.setAttribute('data-rr-is-password', 'true');
-                    }
-                    if (!ignoreAttribute(target.tagName, attributeName)) {
-                        item.attributes[attributeName] = transformAttribute(this.doc, toLowerCase(target.tagName), toLowerCase(attributeName), value);
-                        if (attributeName === 'style') {
-                            if (!this.unattachedDoc) {
-                                try {
-                                    this.unattachedDoc =
-                                        document.implementation.createHTMLDocument();
-                                }
-                                catch (e) {
-                                    this.unattachedDoc = this.doc;
-                                }
-                            }
-                            const old = this.unattachedDoc.createElement('span');
-                            if (m.oldValue) {
-                                old.setAttribute('style', m.oldValue);
-                            }
-                            for (const pname of Array.from(target.style)) {
-                                const newValue = target.style.getPropertyValue(pname);
-                                const newPriority = target.style.getPropertyPriority(pname);
-                                if (newValue !== old.style.getPropertyValue(pname) ||
-                                    newPriority !== old.style.getPropertyPriority(pname)) {
-                                    if (newPriority === '') {
-                                        item.styleDiff[pname] = newValue;
-                                    }
-                                    else {
-                                        item.styleDiff[pname] = [newValue, newPriority];
-                                    }
-                                }
-                                else {
-                                    item._unchangedStyles[pname] = [newValue, newPriority];
-                                }
-                            }
-                            for (const pname of Array.from(old.style)) {
-                                if (target.style.getPropertyValue(pname) === '') {
-                                    item.styleDiff[pname] = false;
-                                }
-                            }
-                        }
-                    }
-                    break;
-                }
-                case 'childList': {
-                    if (isBlocked(m.target, this.blockClass, this.blockSelector, true))
-                        return;
-                    if (m.target.tagName === 'TEXTAREA') {
-                        this.genTextAreaValueMutation(m.target);
-                        return;
-                    }
-                    m.addedNodes.forEach((n) => this.genAdds(n, m.target));
-                    m.removedNodes.forEach((n) => {
-                        const nodeId = this.mirror.getId(n);
-                        const parentId = isShadowRoot(m.target)
-                            ? this.mirror.getId(m.target.host)
-                            : this.mirror.getId(m.target);
-                        if (isBlocked(m.target, this.blockClass, this.blockSelector, false) ||
-                            isIgnored(n, this.mirror) ||
-                            !isSerialized(n, this.mirror)) {
-                            return;
-                        }
-                        if (this.addedSet.has(n)) {
-                            deepDelete(this.addedSet, n);
-                            this.droppedSet.add(n);
-                        }
-                        else if (this.addedSet.has(m.target) && nodeId === -1) ;
-                        else if (isAncestorRemoved(m.target, this.mirror)) ;
-                        else if (this.movedSet.has(n) &&
-                            this.movedMap[moveKey(nodeId, parentId)]) {
-                            deepDelete(this.movedSet, n);
-                        }
-                        else {
-                            this.removes.push({
-                                parentId,
-                                id: nodeId,
-                                isShadow: isShadowRoot(m.target) && isNativeShadowDom(m.target)
-                                    ? true
-                                    : undefined,
-                            });
-                        }
-                        this.mapRemoves.push(n);
-                    });
-                    break;
-                }
-            }
-        };
-        this.genAdds = (n, target) => {
-            if (this.processedNodeManager.inOtherBuffer(n, this))
-                return;
-            if (this.addedSet.has(n) || this.movedSet.has(n))
-                return;
-            if (this.mirror.hasNode(n)) {
-                if (isIgnored(n, this.mirror)) {
-                    return;
-                }
-                this.movedSet.add(n);
-                let targetId = null;
-                if (target && this.mirror.hasNode(target)) {
-                    targetId = this.mirror.getId(target);
-                }
-                if (targetId && targetId !== -1) {
-                    this.movedMap[moveKey(this.mirror.getId(n), targetId)] = true;
-                }
-            }
-            else {
-                this.addedSet.add(n);
-                this.droppedSet.delete(n);
-            }
-            if (!isBlocked(n, this.blockClass, this.blockSelector, false)) {
-                n.childNodes.forEach((childN) => this.genAdds(childN));
-                if (hasShadowRoot(n)) {
-                    n.shadowRoot.childNodes.forEach((childN) => {
-                        this.processedNodeManager.add(childN, this);
-                        this.genAdds(childN, n);
-                    });
-                }
-            }
-        };
-    }
-    init(options) {
-        [
-            'mutationCb',
-            'blockClass',
-            'blockSelector',
-            'maskTextClass',
-            'maskTextSelector',
-            'inlineStylesheet',
-            'maskInputOptions',
-            'maskTextFn',
-            'maskInputFn',
-            'keepIframeSrcFn',
-            'recordCanvas',
-            'inlineImages',
-            'slimDOMOptions',
-            'dataURLOptions',
-            'doc',
-            'mirror',
-            'iframeManager',
-            'stylesheetManager',
-            'shadowDomManager',
-            'canvasManager',
-            'processedNodeManager',
-        ].forEach((key) => {
-            this[key] = options[key];
-        });
-    }
-    freeze() {
-        this.frozen = true;
-        this.canvasManager.freeze();
-    }
-    unfreeze() {
-        this.frozen = false;
-        this.canvasManager.unfreeze();
-        this.emit();
-    }
-    isFrozen() {
-        return this.frozen;
-    }
-    lock() {
-        this.locked = true;
-        this.canvasManager.lock();
-    }
-    unlock() {
-        this.locked = false;
-        this.canvasManager.unlock();
-        this.emit();
-    }
-    reset() {
-        this.shadowDomManager.reset();
-        this.canvasManager.reset();
-    }
-}
-function deepDelete(addsSet, n) {
-    addsSet.delete(n);
-    n.childNodes.forEach((childN) => deepDelete(addsSet, childN));
-}
-function isParentRemoved(removes, n, mirror) {
-    if (removes.length === 0)
-        return false;
-    return _isParentRemoved(removes, n, mirror);
-}
-function _isParentRemoved(removes, n, mirror) {
-    const { parentNode } = n;
-    if (!parentNode) {
-        return false;
-    }
-    const parentId = mirror.getId(parentNode);
-    if (removes.some((r) => r.id === parentId)) {
-        return true;
-    }
-    return _isParentRemoved(removes, parentNode, mirror);
-}
-function isAncestorInSet(set, n) {
-    if (set.size === 0)
-        return false;
-    return _isAncestorInSet(set, n);
-}
-function _isAncestorInSet(set, n) {
-    const { parentNode } = n;
-    if (!parentNode) {
-        return false;
-    }
-    if (set.has(parentNode)) {
-        return true;
-    }
-    return _isAncestorInSet(set, parentNode);
+function isNodeInLinkedList(n) {
+    return '__ln' in n;
+}
+class DoubleLinkedList {
+    constructor() {
+        this.length = 0;
+        this.head = null;
+        this.tail = null;
+    }
+    get(position) {
+        if (position >= this.length) {
+            throw new Error('Position outside of list range');
+        }
+        let current = this.head;
+        for (let index = 0; index < position; index++) {
+            current = (current === null || current === void 0 ? void 0 : current.next) || null;
+        }
+        return current;
+    }
+    addNode(n) {
+        const node = {
+            value: n,
+            previous: null,
+            next: null,
+        };
+        n.__ln = node;
+        if (n.previousSibling && isNodeInLinkedList(n.previousSibling)) {
+            const current = n.previousSibling.__ln.next;
+            node.next = current;
+            node.previous = n.previousSibling.__ln;
+            n.previousSibling.__ln.next = node;
+            if (current) {
+                current.previous = node;
+            }
+        }
+        else if (n.nextSibling &&
+            isNodeInLinkedList(n.nextSibling) &&
+            n.nextSibling.__ln.previous) {
+            const current = n.nextSibling.__ln.previous;
+            node.previous = current;
+            node.next = n.nextSibling.__ln;
+            n.nextSibling.__ln.previous = node;
+            if (current) {
+                current.next = node;
+            }
+        }
+        else {
+            if (this.head) {
+                this.head.previous = node;
+            }
+            node.next = this.head;
+            this.head = node;
+        }
+        if (node.next === null) {
+            this.tail = node;
+        }
+        this.length++;
+    }
+    removeNode(n) {
+        const current = n.__ln;
+        if (!this.head) {
+            return;
+        }
+        if (!current.previous) {
+            this.head = current.next;
+            if (this.head) {
+                this.head.previous = null;
+            }
+            else {
+                this.tail = null;
+            }
+        }
+        else {
+            current.previous.next = current.next;
+            if (current.next) {
+                current.next.previous = current.previous;
+            }
+            else {
+                this.tail = current.previous;
+            }
+        }
+        if (n.__ln) {
+            delete n.__ln;
+        }
+        this.length--;
+    }
+}
+const moveKey = (id, parentId) => `${id}@${parentId}`;
+class MutationBuffer {
+    constructor() {
+        this.frozen = false;
+        this.locked = false;
+        this.texts = [];
+        this.attributes = [];
+        this.attributeMap = new WeakMap();
+        this.removes = [];
+        this.mapRemoves = [];
+        this.movedMap = {};
+        this.addedSet = new Set();
+        this.movedSet = new Set();
+        this.droppedSet = new Set();
+        this.processMutations = (mutations) => {
+            mutations.forEach(this.processMutation);
+            this.emit();
+        };
+        this.emit = () => {
+            if (this.frozen || this.locked) {
+                return;
+            }
+            const adds = [];
+            const addedIds = new Set();
+            const addList = new DoubleLinkedList();
+            const getNextId = (n) => {
+                let ns = n;
+                let nextId = IGNORED_NODE;
+                while (nextId === IGNORED_NODE) {
+                    ns = ns && ns.nextSibling;
+                    nextId = ns && this.mirror.getId(ns);
+                }
+                return nextId;
+            };
+            const pushAdd = (n) => {
+                if (!n.parentNode ||
+                    !inDom(n) ||
+                    n.parentNode.tagName === 'TEXTAREA') {
+                    return;
+                }
+                const parentId = isShadowRoot(n.parentNode)
+                    ? this.mirror.getId(getShadowHost(n))
+                    : this.mirror.getId(n.parentNode);
+                const nextId = getNextId(n);
+                if (parentId === -1 || nextId === -1) {
+                    return addList.addNode(n);
+                }
+                const sn = serializeNodeWithId(n, {
+                    doc: this.doc,
+                    mirror: this.mirror,
+                    blockClass: this.blockClass,
+                    blockSelector: this.blockSelector,
+                    maskTextClass: this.maskTextClass,
+                    maskTextSelector: this.maskTextSelector,
+                    skipChild: true,
+                    newlyAddedElement: true,
+                    inlineStylesheet: this.inlineStylesheet,
+                    maskInputOptions: this.maskInputOptions,
+                    maskTextFn: this.maskTextFn,
+                    maskInputFn: this.maskInputFn,
+                    slimDOMOptions: this.slimDOMOptions,
+                    dataURLOptions: this.dataURLOptions,
+                    recordCanvas: this.recordCanvas,
+                    inlineImages: this.inlineImages,
+                    onSerialize: (currentN) => {
+                        if (isSerializedIframe(currentN, this.mirror)) {
+                            this.iframeManager.addIframe(currentN);
+                        }
+                        if (isSerializedStylesheet(currentN, this.mirror)) {
+                            this.stylesheetManager.trackLinkElement(currentN);
+                        }
+                        if (hasShadowRoot(n)) {
+                            this.shadowDomManager.addShadowRoot(n.shadowRoot, this.doc);
+                        }
+                    },
+                    onIframeLoad: (iframe, childSn) => {
+                        this.iframeManager.attachIframe(iframe, childSn);
+                        this.shadowDomManager.observeAttachShadow(iframe);
+                    },
+                    onStylesheetLoad: (link, childSn) => {
+                        this.stylesheetManager.attachLinkElement(link, childSn);
+                    },
+                });
+                if (sn) {
+                    adds.push({
+                        parentId,
+                        nextId,
+                        node: sn,
+                    });
+                    addedIds.add(sn.id);
+                }
+            };
+            while (this.mapRemoves.length) {
+                this.mirror.removeNodeFromMap(this.mapRemoves.shift());
+            }
+            for (const n of this.movedSet) {
+                if (isParentRemoved(this.removes, n, this.mirror) &&
+                    !this.movedSet.has(n.parentNode)) {
+                    continue;
+                }
+                pushAdd(n);
+            }
+            for (const n of this.addedSet) {
+                if (!isAncestorInSet(this.droppedSet, n) &&
+                    !isParentRemoved(this.removes, n, this.mirror)) {
+                    pushAdd(n);
+                }
+                else if (isAncestorInSet(this.movedSet, n)) {
+                    pushAdd(n);
+                }
+                else {
+                    this.droppedSet.add(n);
+                }
+            }
+            let candidate = null;
+            while (addList.length) {
+                let node = null;
+                if (candidate) {
+                    const parentId = this.mirror.getId(candidate.value.parentNode);
+                    const nextId = getNextId(candidate.value);
+                    if (parentId !== -1 && nextId !== -1) {
+                        node = candidate;
+                    }
+                }
+                if (!node) {
+                    let tailNode = addList.tail;
+                    while (tailNode) {
+                        const _node = tailNode;
+                        tailNode = tailNode.previous;
+                        if (_node) {
+                            const parentId = this.mirror.getId(_node.value.parentNode);
+                            const nextId = getNextId(_node.value);
+                            if (nextId === -1)
+                                continue;
+                            else if (parentId !== -1) {
+                                node = _node;
+                                break;
+                            }
+                            else {
+                                const unhandledNode = _node.value;
+                                if (unhandledNode.parentNode &&
+                                    unhandledNode.parentNode.nodeType ===
+                                        Node.DOCUMENT_FRAGMENT_NODE) {
+                                    const shadowHost = unhandledNode.parentNode
+                                        .host;
+                                    const parentId = this.mirror.getId(shadowHost);
+                                    if (parentId !== -1) {
+                                        node = _node;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (!node) {
+                    while (addList.head) {
+                        addList.removeNode(addList.head.value);
+                    }
+                    break;
+                }
+                candidate = node.previous;
+                addList.removeNode(node.value);
+                pushAdd(node.value);
+            }
+            const payload = {
+                texts: this.texts
+                    .map((text) => {
+                    const n = text.node;
+                    if (n.parentNode &&
+                        n.parentNode.tagName === 'TEXTAREA') {
+                        this.genTextAreaValueMutation(n.parentNode);
+                    }
+                    return {
+                        id: this.mirror.getId(n),
+                        value: text.value,
+                    };
+                })
+                    .filter((text) => !addedIds.has(text.id))
+                    .filter((text) => this.mirror.has(text.id)),
+                attributes: this.attributes
+                    .map((attribute) => {
+                    const { attributes } = attribute;
+                    if (typeof attributes.style === 'string') {
+                        const diffAsStr = JSON.stringify(attribute.styleDiff);
+                        const unchangedAsStr = JSON.stringify(attribute._unchangedStyles);
+                        if (diffAsStr.length < attributes.style.length) {
+                            if ((diffAsStr + unchangedAsStr).split('var(').length ===
+                                attributes.style.split('var(').length) {
+                                attributes.style = attribute.styleDiff;
+                            }
+                        }
+                    }
+                    return {
+                        id: this.mirror.getId(attribute.node),
+                        attributes: attributes,
+                    };
+                })
+                    .filter((attribute) => !addedIds.has(attribute.id))
+                    .filter((attribute) => this.mirror.has(attribute.id)),
+                removes: this.removes,
+                adds,
+            };
+            if (!payload.texts.length &&
+                !payload.attributes.length &&
+                !payload.removes.length &&
+                !payload.adds.length) {
+                return;
+            }
+            this.texts = [];
+            this.attributes = [];
+            this.attributeMap = new WeakMap();
+            this.removes = [];
+            this.addedSet = new Set();
+            this.movedSet = new Set();
+            this.droppedSet = new Set();
+            this.movedMap = {};
+            this.mutationCb(payload);
+        };
+        this.genTextAreaValueMutation = (textarea) => {
+            let item = this.attributeMap.get(textarea);
+            if (!item) {
+                item = {
+                    node: textarea,
+                    attributes: {},
+                    styleDiff: {},
+                    _unchangedStyles: {},
+                };
+                this.attributes.push(item);
+                this.attributeMap.set(textarea, item);
+            }
+            item.attributes.value = Array.from(textarea.childNodes, (cn) => cn.textContent || '').join('');
+        };
+        this.processMutation = (m) => {
+            if (isIgnored(m.target, this.mirror)) {
+                return;
+            }
+            switch (m.type) {
+                case 'characterData': {
+                    const value = m.target.textContent;
+                    if (!isBlocked(m.target, this.blockClass, this.blockSelector, false) &&
+                        value !== m.oldValue) {
+                        this.texts.push({
+                            value: needMaskingText(m.target, this.maskTextClass, this.maskTextSelector, true) && value
+                                ? this.maskTextFn
+                                    ? this.maskTextFn(value, closestElementOfNode(m.target))
+                                    : value.replace(/[\S]/g, '*')
+                                : value,
+                            node: m.target,
+                        });
+                    }
+                    break;
+                }
+                case 'attributes': {
+                    const target = m.target;
+                    let attributeName = m.attributeName;
+                    let value = m.target.getAttribute(attributeName);
+                    if (attributeName === 'value') {
+                        const type = getInputType(target);
+                        value = maskInputValue({
+                            element: target,
+                            maskInputOptions: this.maskInputOptions,
+                            tagName: target.tagName,
+                            type,
+                            value,
+                            maskInputFn: this.maskInputFn,
+                        });
+                    }
+                    if (isBlocked(m.target, this.blockClass, this.blockSelector, false) ||
+                        value === m.oldValue) {
+                        return;
+                    }
+                    let item = this.attributeMap.get(m.target);
+                    if (target.tagName === 'IFRAME' &&
+                        attributeName === 'src' &&
+                        !this.keepIframeSrcFn(value)) {
+                        if (!target.contentDocument) {
+                            attributeName = 'rr_src';
+                        }
+                        else {
+                            return;
+                        }
+                    }
+                    if (!item) {
+                        item = {
+                            node: m.target,
+                            attributes: {},
+                            styleDiff: {},
+                            _unchangedStyles: {},
+                        };
+                        this.attributes.push(item);
+                        this.attributeMap.set(m.target, item);
+                    }
+                    if (attributeName === 'type' &&
+                        target.tagName === 'INPUT' &&
+                        (m.oldValue || '').toLowerCase() === 'password') {
+                        target.setAttribute('data-rr-is-password', 'true');
+                    }
+                    if (!ignoreAttribute(target.tagName, attributeName)) {
+                        item.attributes[attributeName] = transformAttribute(this.doc, toLowerCase(target.tagName), toLowerCase(attributeName), value);
+                        if (attributeName === 'style') {
+                            if (!this.unattachedDoc) {
+                                try {
+                                    this.unattachedDoc =
+                                        document.implementation.createHTMLDocument();
+                                }
+                                catch (e) {
+                                    this.unattachedDoc = this.doc;
+                                }
+                            }
+                            const old = this.unattachedDoc.createElement('span');
+                            if (m.oldValue) {
+                                old.setAttribute('style', m.oldValue);
+                            }
+                            for (const pname of Array.from(target.style)) {
+                                const newValue = target.style.getPropertyValue(pname);
+                                const newPriority = target.style.getPropertyPriority(pname);
+                                if (newValue !== old.style.getPropertyValue(pname) ||
+                                    newPriority !== old.style.getPropertyPriority(pname)) {
+                                    if (newPriority === '') {
+                                        item.styleDiff[pname] = newValue;
+                                    }
+                                    else {
+                                        item.styleDiff[pname] = [newValue, newPriority];
+                                    }
+                                }
+                                else {
+                                    item._unchangedStyles[pname] = [newValue, newPriority];
+                                }
+                            }
+                            for (const pname of Array.from(old.style)) {
+                                if (target.style.getPropertyValue(pname) === '') {
+                                    item.styleDiff[pname] = false;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                }
+                case 'childList': {
+                    if (isBlocked(m.target, this.blockClass, this.blockSelector, true))
+                        return;
+                    if (m.target.tagName === 'TEXTAREA') {
+                        this.genTextAreaValueMutation(m.target);
+                        return;
+                    }
+                    m.addedNodes.forEach((n) => this.genAdds(n, m.target));
+                    m.removedNodes.forEach((n) => {
+                        const nodeId = this.mirror.getId(n);
+                        const parentId = isShadowRoot(m.target)
+                            ? this.mirror.getId(m.target.host)
+                            : this.mirror.getId(m.target);
+                        if (isBlocked(m.target, this.blockClass, this.blockSelector, false) ||
+                            isIgnored(n, this.mirror) ||
+                            !isSerialized(n, this.mirror)) {
+                            return;
+                        }
+                        if (this.addedSet.has(n)) {
+                            deepDelete(this.addedSet, n);
+                            this.droppedSet.add(n);
+                        }
+                        else if (this.addedSet.has(m.target) && nodeId === -1) ;
+                        else if (isAncestorRemoved(m.target, this.mirror)) ;
+                        else if (this.movedSet.has(n) &&
+                            this.movedMap[moveKey(nodeId, parentId)]) {
+                            deepDelete(this.movedSet, n);
+                        }
+                        else {
+                            this.removes.push({
+                                parentId,
+                                id: nodeId,
+                                isShadow: isShadowRoot(m.target) && isNativeShadowDom(m.target)
+                                    ? true
+                                    : undefined,
+                            });
+                        }
+                        this.mapRemoves.push(n);
+                    });
+                    break;
+                }
+            }
+        };
+        this.genAdds = (n, target) => {
+            if (this.processedNodeManager.inOtherBuffer(n, this))
+                return;
+            if (this.addedSet.has(n) || this.movedSet.has(n))
+                return;
+            if (this.mirror.hasNode(n)) {
+                if (isIgnored(n, this.mirror)) {
+                    return;
+                }
+                this.movedSet.add(n);
+                let targetId = null;
+                if (target && this.mirror.hasNode(target)) {
+                    targetId = this.mirror.getId(target);
+                }
+                if (targetId && targetId !== -1) {
+                    this.movedMap[moveKey(this.mirror.getId(n), targetId)] = true;
+                }
+            }
+            else {
+                this.addedSet.add(n);
+                this.droppedSet.delete(n);
+            }
+            if (!isBlocked(n, this.blockClass, this.blockSelector, false)) {
+                n.childNodes.forEach((childN) => this.genAdds(childN));
+                if (hasShadowRoot(n)) {
+                    n.shadowRoot.childNodes.forEach((childN) => {
+                        this.processedNodeManager.add(childN, this);
+                        this.genAdds(childN, n);
+                    });
+                }
+            }
+        };
+    }
+    init(options) {
+        [
+            'mutationCb',
+            'blockClass',
+            'blockSelector',
+            'maskTextClass',
+            'maskTextSelector',
+            'inlineStylesheet',
+            'maskInputOptions',
+            'maskTextFn',
+            'maskInputFn',
+            'keepIframeSrcFn',
+            'recordCanvas',
+            'inlineImages',
+            'slimDOMOptions',
+            'dataURLOptions',
+            'doc',
+            'mirror',
+            'iframeManager',
+            'stylesheetManager',
+            'shadowDomManager',
+            'canvasManager',
+            'processedNodeManager',
+        ].forEach((key) => {
+            this[key] = options[key];
+        });
+    }
+    freeze() {
+        this.frozen = true;
+        this.canvasManager.freeze();
+    }
+    unfreeze() {
+        this.frozen = false;
+        this.canvasManager.unfreeze();
+        this.emit();
+    }
+    isFrozen() {
+        return this.frozen;
+    }
+    lock() {
+        this.locked = true;
+        this.canvasManager.lock();
+    }
+    unlock() {
+        this.locked = false;
+        this.canvasManager.unlock();
+        this.emit();
+    }
+    reset() {
+        this.shadowDomManager.reset();
+        this.canvasManager.reset();
+    }
+}
+function deepDelete(addsSet, n) {
+    addsSet.delete(n);
+    n.childNodes.forEach((childN) => deepDelete(addsSet, childN));
+}
+function isParentRemoved(removes, n, mirror) {
+    if (removes.length === 0)
+        return false;
+    return _isParentRemoved(removes, n, mirror);
+}
+function _isParentRemoved(removes, n, mirror) {
+    const { parentNode } = n;
+    if (!parentNode) {
+        return false;
+    }
+    const parentId = mirror.getId(parentNode);
+    if (removes.some((r) => r.id === parentId)) {
+        return true;
+    }
+    return _isParentRemoved(removes, parentNode, mirror);
+}
+function isAncestorInSet(set, n) {
+    if (set.size === 0)
+        return false;
+    return _isAncestorInSet(set, n);
+}
+function _isAncestorInSet(set, n) {
+    const { parentNode } = n;
+    if (!parentNode) {
+        return false;
+    }
+    if (set.has(parentNode)) {
+        return true;
+    }
+    return _isAncestorInSet(set, parentNode);
 }
 
-let errorHandler;
-function registerErrorHandler(handler) {
-    errorHandler = handler;
-}
-function unregisterErrorHandler() {
-    errorHandler = undefined;
-}
-const callbackWrapper = (cb) => {
-    if (!errorHandler) {
-        return cb;
-    }
-    const rrwebWrapped = ((...rest) => {
-        try {
-            return cb(...rest);
-        }
-        catch (error) {
-            if (errorHandler && errorHandler(error) === true) {
-                return;
-            }
-            throw error;
-        }
-    });
-    return rrwebWrapped;
+let errorHandler;
+function registerErrorHandler(handler) {
+    errorHandler = handler;
+}
+function unregisterErrorHandler() {
+    errorHandler = undefined;
+}
+const callbackWrapper = (cb) => {
+    if (!errorHandler) {
+        return cb;
+    }
+    const rrwebWrapped = ((...rest) => {
+        try {
+            return cb(...rest);
+        }
+        catch (error) {
+            if (errorHandler && errorHandler(error) === true) {
+                return;
+            }
+            throw error;
+        }
+    });
+    return rrwebWrapped;
 };
 
-const mutationBuffers = [];
-function getEventTarget(event) {
-    try {
-        if ('composedPath' in event) {
-            const path = event.composedPath();
-            if (path.length) {
-                return path[0];
-            }
-        }
-        else if ('path' in event && event.path.length) {
-            return event.path[0];
-        }
-    }
-    catch (_a) {
-    }
-    return event && event.target;
-}
-function initMutationObserver(options, rootEl) {
-    var _a, _b;
-    const mutationBuffer = new MutationBuffer();
-    mutationBuffers.push(mutationBuffer);
-    mutationBuffer.init(options);
-    let mutationObserverCtor = window.MutationObserver ||
-        window.__rrMutationObserver;
-    const angularZoneSymbol = (_b = (_a = window === null || window === void 0 ? void 0 : window.Zone) === null || _a === void 0 ? void 0 : _a.__symbol__) === null || _b === void 0 ? void 0 : _b.call(_a, 'MutationObserver');
-    if (angularZoneSymbol &&
-        window[angularZoneSymbol]) {
-        mutationObserverCtor = window[angularZoneSymbol];
-    }
-    const observer = new mutationObserverCtor(callbackWrapper(mutationBuffer.processMutations.bind(mutationBuffer)));
-    observer.observe(rootEl, {
-        attributes: true,
-        attributeOldValue: true,
-        characterData: true,
-        characterDataOldValue: true,
-        childList: true,
-        subtree: true,
-    });
-    return observer;
-}
-function initMoveObserver({ mousemoveCb, sampling, doc, mirror, }) {
-    if (sampling.mousemove === false) {
-        return () => {
-        };
-    }
-    const threshold = typeof sampling.mousemove === 'number' ? sampling.mousemove : 50;
-    const callbackThreshold = typeof sampling.mousemoveCallback === 'number'
-        ? sampling.mousemoveCallback
-        : 500;
-    let positions = [];
-    let timeBaseline;
-    const wrappedCb = throttle(callbackWrapper((source) => {
-        const totalOffset = Date.now() - timeBaseline;
-        mousemoveCb(positions.map((p) => {
-            p.timeOffset -= totalOffset;
-            return p;
-        }), source);
-        positions = [];
-        timeBaseline = null;
-    }), callbackThreshold);
-    const updatePosition = callbackWrapper(throttle(callbackWrapper((evt) => {
-        const target = getEventTarget(evt);
-        const { clientX, clientY } = legacy_isTouchEvent(evt)
-            ? evt.changedTouches[0]
-            : evt;
-        if (!timeBaseline) {
-            timeBaseline = nowTimestamp();
-        }
-        positions.push({
-            x: clientX,
-            y: clientY,
-            id: mirror.getId(target),
-            timeOffset: nowTimestamp() - timeBaseline,
-        });
-        wrappedCb(typeof DragEvent !== 'undefined' && evt instanceof DragEvent
-            ? IncrementalSource$1.Drag
-            : evt instanceof MouseEvent
-                ? IncrementalSource$1.MouseMove
-                : IncrementalSource$1.TouchMove);
-    }), threshold, {
-        trailing: false,
-    }));
-    const handlers = [
-        on('mousemove', updatePosition, doc),
-        on('touchmove', updatePosition, doc),
-        on('drag', updatePosition, doc),
-    ];
-    return callbackWrapper(() => {
-        handlers.forEach((h) => h());
-    });
-}
-function initMouseInteractionObserver({ mouseInteractionCb, doc, mirror, blockClass, blockSelector, sampling, }) {
-    if (sampling.mouseInteraction === false) {
-        return () => {
-        };
-    }
-    const disableMap = sampling.mouseInteraction === true ||
-        sampling.mouseInteraction === undefined
-        ? {}
-        : sampling.mouseInteraction;
-    const handlers = [];
-    let currentPointerType = null;
-    const getHandler = (eventKey) => {
-        return (event) => {
-            const target = getEventTarget(event);
-            if (isBlocked(target, blockClass, blockSelector, true)) {
-                return;
-            }
-            let pointerType = null;
-            let thisEventKey = eventKey;
-            if ('pointerType' in event) {
-                switch (event.pointerType) {
-                    case 'mouse':
-                        pointerType = PointerTypes.Mouse;
-                        break;
-                    case 'touch':
-                        pointerType = PointerTypes.Touch;
-                        break;
-                    case 'pen':
-                        pointerType = PointerTypes.Pen;
-                        break;
-                }
-                if (pointerType === PointerTypes.Touch) {
-                    if (MouseInteractions[eventKey] === MouseInteractions.MouseDown) {
-                        thisEventKey = 'TouchStart';
-                    }
-                    else if (MouseInteractions[eventKey] === MouseInteractions.MouseUp) {
-                        thisEventKey = 'TouchEnd';
-                    }
-                }
-                else if (pointerType === PointerTypes.Pen) ;
-            }
-            else if (legacy_isTouchEvent(event)) {
-                pointerType = PointerTypes.Touch;
-            }
-            if (pointerType !== null) {
-                currentPointerType = pointerType;
-                if ((thisEventKey.startsWith('Touch') &&
-                    pointerType === PointerTypes.Touch) ||
-                    (thisEventKey.startsWith('Mouse') &&
-                        pointerType === PointerTypes.Mouse)) {
-                    pointerType = null;
-                }
-            }
-            else if (MouseInteractions[eventKey] === MouseInteractions.Click) {
-                pointerType = currentPointerType;
-                currentPointerType = null;
-            }
-            const e = legacy_isTouchEvent(event) ? event.changedTouches[0] : event;
-            if (!e) {
-                return;
-            }
-            const id = mirror.getId(target);
-            const { clientX, clientY } = e;
-            callbackWrapper(mouseInteractionCb)(Object.assign({ type: MouseInteractions[thisEventKey], id, x: clientX, y: clientY }, (pointerType !== null && { pointerType })));
-        };
-    };
-    Object.keys(MouseInteractions)
-        .filter((key) => Number.isNaN(Number(key)) &&
-        !key.endsWith('_Departed') &&
-        disableMap[key] !== false)
-        .forEach((eventKey) => {
-        let eventName = toLowerCase(eventKey);
-        const handler = getHandler(eventKey);
-        if (window.PointerEvent) {
-            switch (MouseInteractions[eventKey]) {
-                case MouseInteractions.MouseDown:
-                case MouseInteractions.MouseUp:
-                    eventName = eventName.replace('mouse', 'pointer');
-                    break;
-                case MouseInteractions.TouchStart:
-                case MouseInteractions.TouchEnd:
-                    return;
-            }
-        }
-        handlers.push(on(eventName, handler, doc));
-    });
-    return callbackWrapper(() => {
-        handlers.forEach((h) => h());
-    });
-}
-function initScrollObserver({ scrollCb, doc, mirror, blockClass, blockSelector, sampling, }) {
-    const updatePosition = callbackWrapper(throttle(callbackWrapper((evt) => {
-        const target = getEventTarget(evt);
-        if (!target ||
-            isBlocked(target, blockClass, blockSelector, true)) {
-            return;
-        }
-        const id = mirror.getId(target);
-        if (target === doc && doc.defaultView) {
-            const scrollLeftTop = getWindowScroll(doc.defaultView);
-            scrollCb({
-                id,
-                x: scrollLeftTop.left,
-                y: scrollLeftTop.top,
-            });
-        }
-        else {
-            scrollCb({
-                id,
-                x: target.scrollLeft,
-                y: target.scrollTop,
-            });
-        }
-    }), sampling.scroll || 100));
-    return on('scroll', updatePosition, doc);
-}
-function initViewportResizeObserver({ viewportResizeCb }, { win }) {
-    let lastH = -1;
-    let lastW = -1;
-    const updateDimension = callbackWrapper(throttle(callbackWrapper(() => {
-        const height = getWindowHeight();
-        const width = getWindowWidth();
-        if (lastH !== height || lastW !== width) {
-            viewportResizeCb({
-                width: Number(width),
-                height: Number(height),
-            });
-            lastH = height;
-            lastW = width;
-        }
-    }), 200));
-    return on('resize', updateDimension, win);
-}
-const INPUT_TAGS = ['INPUT', 'TEXTAREA', 'SELECT'];
-const lastInputValueMap = new WeakMap();
-function initInputObserver({ inputCb, doc, mirror, blockClass, blockSelector, ignoreClass, ignoreSelector, maskInputOptions, maskInputFn, sampling, userTriggeredOnInput, }) {
-    function eventHandler(event) {
-        let target = getEventTarget(event);
-        const userTriggered = event.isTrusted;
-        const tagName = target && target.tagName;
-        if (target && tagName === 'OPTION') {
-            target = target.parentElement;
-        }
-        if (!target ||
-            !tagName ||
-            INPUT_TAGS.indexOf(tagName) < 0 ||
-            isBlocked(target, blockClass, blockSelector, true)) {
-            return;
-        }
-        if (target.classList.contains(ignoreClass) ||
-            (ignoreSelector && target.matches(ignoreSelector))) {
-            return;
-        }
-        let text = target.value;
-        let isChecked = false;
-        const type = getInputType(target) || '';
-        if (type === 'radio' || type === 'checkbox') {
-            isChecked = target.checked;
-        }
-        else if (maskInputOptions[tagName.toLowerCase()] ||
-            maskInputOptions[type]) {
-            text = maskInputValue({
-                element: target,
-                maskInputOptions,
-                tagName,
-                type,
-                value: text,
-                maskInputFn,
-            });
-        }
-        cbWithDedup(target, userTriggeredOnInput
-            ? { text, isChecked, userTriggered }
-            : { text, isChecked });
-        const name = target.name;
-        if (type === 'radio' && name && isChecked) {
-            doc
-                .querySelectorAll(`input[type="radio"][name="${name}"]`)
-                .forEach((el) => {
-                if (el !== target) {
-                    const text = el.value;
-                    cbWithDedup(el, userTriggeredOnInput
-                        ? { text, isChecked: !isChecked, userTriggered: false }
-                        : { text, isChecked: !isChecked });
-                }
-            });
-        }
-    }
-    function cbWithDedup(target, v) {
-        const lastInputValue = lastInputValueMap.get(target);
-        if (!lastInputValue ||
-            lastInputValue.text !== v.text ||
-            lastInputValue.isChecked !== v.isChecked) {
-            lastInputValueMap.set(target, v);
-            const id = mirror.getId(target);
-            callbackWrapper(inputCb)(Object.assign(Object.assign({}, v), { id }));
-        }
-    }
-    const events = sampling.input === 'last' ? ['change'] : ['input', 'change'];
-    const handlers = events.map((eventName) => on(eventName, callbackWrapper(eventHandler), doc));
-    const currentWindow = doc.defaultView;
-    if (!currentWindow) {
-        return () => {
-            handlers.forEach((h) => h());
-        };
-    }
-    const propertyDescriptor = currentWindow.Object.getOwnPropertyDescriptor(currentWindow.HTMLInputElement.prototype, 'value');
-    const hookProperties = [
-        [currentWindow.HTMLInputElement.prototype, 'value'],
-        [currentWindow.HTMLInputElement.prototype, 'checked'],
-        [currentWindow.HTMLSelectElement.prototype, 'value'],
-        [currentWindow.HTMLTextAreaElement.prototype, 'value'],
-        [currentWindow.HTMLSelectElement.prototype, 'selectedIndex'],
-        [currentWindow.HTMLOptionElement.prototype, 'selected'],
-    ];
-    if (propertyDescriptor && propertyDescriptor.set) {
-        handlers.push(...hookProperties.map((p) => hookSetter(p[0], p[1], {
-            set() {
-                callbackWrapper(eventHandler)({
-                    target: this,
-                    isTrusted: false,
-                });
-            },
-        }, false, currentWindow)));
-    }
-    return callbackWrapper(() => {
-        handlers.forEach((h) => h());
-    });
-}
-function getNestedCSSRulePositions(rule) {
-    const positions = [];
-    function recurse(childRule, pos) {
-        if ((hasNestedCSSRule('CSSGroupingRule') &&
-            childRule.parentRule instanceof CSSGroupingRule) ||
-            (hasNestedCSSRule('CSSMediaRule') &&
-                childRule.parentRule instanceof CSSMediaRule) ||
-            (hasNestedCSSRule('CSSSupportsRule') &&
-                childRule.parentRule instanceof CSSSupportsRule) ||
-            (hasNestedCSSRule('CSSConditionRule') &&
-                childRule.parentRule instanceof CSSConditionRule)) {
-            const rules = Array.from(childRule.parentRule.cssRules);
-            const index = rules.indexOf(childRule);
-            pos.unshift(index);
-        }
-        else if (childRule.parentStyleSheet) {
-            const rules = Array.from(childRule.parentStyleSheet.cssRules);
-            const index = rules.indexOf(childRule);
-            pos.unshift(index);
-        }
-        return pos;
-    }
-    return recurse(rule, positions);
-}
-function getIdAndStyleId(sheet, mirror, styleMirror) {
-    let id, styleId;
-    if (!sheet)
-        return {};
-    if (sheet.ownerNode)
-        id = mirror.getId(sheet.ownerNode);
-    else
-        styleId = styleMirror.getId(sheet);
-    return {
-        styleId,
-        id,
-    };
-}
-function initStyleSheetObserver({ styleSheetRuleCb, mirror, stylesheetManager }, { win }) {
-    if (!win.CSSStyleSheet || !win.CSSStyleSheet.prototype) {
-        return () => {
-        };
-    }
-    const insertRule = win.CSSStyleSheet.prototype.insertRule;
-    win.CSSStyleSheet.prototype.insertRule = new Proxy(insertRule, {
-        apply: callbackWrapper((target, thisArg, argumentsList) => {
-            const [rule, index] = argumentsList;
-            const { id, styleId } = getIdAndStyleId(thisArg, mirror, stylesheetManager.styleMirror);
-            if ((id && id !== -1) || (styleId && styleId !== -1)) {
-                styleSheetRuleCb({
-                    id,
-                    styleId,
-                    adds: [{ rule, index }],
-                });
-            }
-            return target.apply(thisArg, argumentsList);
-        }),
-    });
-    const deleteRule = win.CSSStyleSheet.prototype.deleteRule;
-    win.CSSStyleSheet.prototype.deleteRule = new Proxy(deleteRule, {
-        apply: callbackWrapper((target, thisArg, argumentsList) => {
-            const [index] = argumentsList;
-            const { id, styleId } = getIdAndStyleId(thisArg, mirror, stylesheetManager.styleMirror);
-            if ((id && id !== -1) || (styleId && styleId !== -1)) {
-                styleSheetRuleCb({
-                    id,
-                    styleId,
-                    removes: [{ index }],
-                });
-            }
-            return target.apply(thisArg, argumentsList);
-        }),
-    });
-    let replace;
-    if (win.CSSStyleSheet.prototype.replace) {
-        replace = win.CSSStyleSheet.prototype.replace;
-        win.CSSStyleSheet.prototype.replace = new Proxy(replace, {
-            apply: callbackWrapper((target, thisArg, argumentsList) => {
-                const [text] = argumentsList;
-                const { id, styleId } = getIdAndStyleId(thisArg, mirror, stylesheetManager.styleMirror);
-                if ((id && id !== -1) || (styleId && styleId !== -1)) {
-                    styleSheetRuleCb({
-                        id,
-                        styleId,
-                        replace: text,
-                    });
-                }
-                return target.apply(thisArg, argumentsList);
-            }),
-        });
-    }
-    let replaceSync;
-    if (win.CSSStyleSheet.prototype.replaceSync) {
-        replaceSync = win.CSSStyleSheet.prototype.replaceSync;
-        win.CSSStyleSheet.prototype.replaceSync = new Proxy(replaceSync, {
-            apply: callbackWrapper((target, thisArg, argumentsList) => {
-                const [text] = argumentsList;
-                const { id, styleId } = getIdAndStyleId(thisArg, mirror, stylesheetManager.styleMirror);
-                if ((id && id !== -1) || (styleId && styleId !== -1)) {
-                    styleSheetRuleCb({
-                        id,
-                        styleId,
-                        replaceSync: text,
-                    });
-                }
-                return target.apply(thisArg, argumentsList);
-            }),
-        });
-    }
-    const supportedNestedCSSRuleTypes = {};
-    if (canMonkeyPatchNestedCSSRule('CSSGroupingRule')) {
-        supportedNestedCSSRuleTypes.CSSGroupingRule = win.CSSGroupingRule;
-    }
-    else {
-        if (canMonkeyPatchNestedCSSRule('CSSMediaRule')) {
-            supportedNestedCSSRuleTypes.CSSMediaRule = win.CSSMediaRule;
-        }
-        if (canMonkeyPatchNestedCSSRule('CSSConditionRule')) {
-            supportedNestedCSSRuleTypes.CSSConditionRule = win.CSSConditionRule;
-        }
-        if (canMonkeyPatchNestedCSSRule('CSSSupportsRule')) {
-            supportedNestedCSSRuleTypes.CSSSupportsRule = win.CSSSupportsRule;
-        }
-    }
-    const unmodifiedFunctions = {};
-    Object.entries(supportedNestedCSSRuleTypes).forEach(([typeKey, type]) => {
-        unmodifiedFunctions[typeKey] = {
-            insertRule: type.prototype.insertRule,
-            deleteRule: type.prototype.deleteRule,
-        };
-        type.prototype.insertRule = new Proxy(unmodifiedFunctions[typeKey].insertRule, {
-            apply: callbackWrapper((target, thisArg, argumentsList) => {
-                const [rule, index] = argumentsList;
-                const { id, styleId } = getIdAndStyleId(thisArg.parentStyleSheet, mirror, stylesheetManager.styleMirror);
-                if ((id && id !== -1) || (styleId && styleId !== -1)) {
-                    styleSheetRuleCb({
-                        id,
-                        styleId,
-                        adds: [
-                            {
-                                rule,
-                                index: [
-                                    ...getNestedCSSRulePositions(thisArg),
-                                    index || 0,
-                                ],
-                            },
-                        ],
-                    });
-                }
-                return target.apply(thisArg, argumentsList);
-            }),
-        });
-        type.prototype.deleteRule = new Proxy(unmodifiedFunctions[typeKey].deleteRule, {
-            apply: callbackWrapper((target, thisArg, argumentsList) => {
-                const [index] = argumentsList;
-                const { id, styleId } = getIdAndStyleId(thisArg.parentStyleSheet, mirror, stylesheetManager.styleMirror);
-                if ((id && id !== -1) || (styleId && styleId !== -1)) {
-                    styleSheetRuleCb({
-                        id,
-                        styleId,
-                        removes: [
-                            { index: [...getNestedCSSRulePositions(thisArg), index] },
-                        ],
-                    });
-                }
-                return target.apply(thisArg, argumentsList);
-            }),
-        });
-    });
-    return callbackWrapper(() => {
-        win.CSSStyleSheet.prototype.insertRule = insertRule;
-        win.CSSStyleSheet.prototype.deleteRule = deleteRule;
-        replace && (win.CSSStyleSheet.prototype.replace = replace);
-        replaceSync && (win.CSSStyleSheet.prototype.replaceSync = replaceSync);
-        Object.entries(supportedNestedCSSRuleTypes).forEach(([typeKey, type]) => {
-            type.prototype.insertRule = unmodifiedFunctions[typeKey].insertRule;
-            type.prototype.deleteRule = unmodifiedFunctions[typeKey].deleteRule;
-        });
-    });
-}
-function initAdoptedStyleSheetObserver({ mirror, stylesheetManager, }, host) {
-    var _a, _b, _c;
-    let hostId = null;
-    if (host.nodeName === '#document')
-        hostId = mirror.getId(host);
-    else
-        hostId = mirror.getId(host.host);
-    const patchTarget = host.nodeName === '#document'
-        ? (_a = host.defaultView) === null || _a === void 0 ? void 0 : _a.Document
-        : (_c = (_b = host.ownerDocument) === null || _b === void 0 ? void 0 : _b.defaultView) === null || _c === void 0 ? void 0 : _c.ShadowRoot;
-    const originalPropertyDescriptor = (patchTarget === null || patchTarget === void 0 ? void 0 : patchTarget.prototype)
-        ? Object.getOwnPropertyDescriptor(patchTarget === null || patchTarget === void 0 ? void 0 : patchTarget.prototype, 'adoptedStyleSheets')
-        : undefined;
-    if (hostId === null ||
-        hostId === -1 ||
-        !patchTarget ||
-        !originalPropertyDescriptor)
-        return () => {
-        };
-    Object.defineProperty(host, 'adoptedStyleSheets', {
-        configurable: originalPropertyDescriptor.configurable,
-        enumerable: originalPropertyDescriptor.enumerable,
-        get() {
-            var _a;
-            return (_a = originalPropertyDescriptor.get) === null || _a === void 0 ? void 0 : _a.call(this);
-        },
-        set(sheets) {
-            var _a;
-            const result = (_a = originalPropertyDescriptor.set) === null || _a === void 0 ? void 0 : _a.call(this, sheets);
-            if (hostId !== null && hostId !== -1) {
-                try {
-                    stylesheetManager.adoptStyleSheets(sheets, hostId);
-                }
-                catch (e) {
-                }
-            }
-            return result;
-        },
-    });
-    return callbackWrapper(() => {
-        Object.defineProperty(host, 'adoptedStyleSheets', {
-            configurable: originalPropertyDescriptor.configurable,
-            enumerable: originalPropertyDescriptor.enumerable,
-            get: originalPropertyDescriptor.get,
-            set: originalPropertyDescriptor.set,
-        });
-    });
-}
-function initStyleDeclarationObserver({ styleDeclarationCb, mirror, ignoreCSSAttributes, stylesheetManager, }, { win }) {
-    const setProperty = win.CSSStyleDeclaration.prototype.setProperty;
-    win.CSSStyleDeclaration.prototype.setProperty = new Proxy(setProperty, {
-        apply: callbackWrapper((target, thisArg, argumentsList) => {
-            var _a;
-            const [property, value, priority] = argumentsList;
-            if (ignoreCSSAttributes.has(property)) {
-                return setProperty.apply(thisArg, [property, value, priority]);
-            }
-            const { id, styleId } = getIdAndStyleId((_a = thisArg.parentRule) === null || _a === void 0 ? void 0 : _a.parentStyleSheet, mirror, stylesheetManager.styleMirror);
-            if ((id && id !== -1) || (styleId && styleId !== -1)) {
-                styleDeclarationCb({
-                    id,
-                    styleId,
-                    set: {
-                        property,
-                        value,
-                        priority,
-                    },
-                    index: getNestedCSSRulePositions(thisArg.parentRule),
-                });
-            }
-            return target.apply(thisArg, argumentsList);
-        }),
-    });
-    const removeProperty = win.CSSStyleDeclaration.prototype.removeProperty;
-    win.CSSStyleDeclaration.prototype.removeProperty = new Proxy(removeProperty, {
-        apply: callbackWrapper((target, thisArg, argumentsList) => {
-            var _a;
-            const [property] = argumentsList;
-            if (ignoreCSSAttributes.has(property)) {
-                return removeProperty.apply(thisArg, [property]);
-            }
-            const { id, styleId } = getIdAndStyleId((_a = thisArg.parentRule) === null || _a === void 0 ? void 0 : _a.parentStyleSheet, mirror, stylesheetManager.styleMirror);
-            if ((id && id !== -1) || (styleId && styleId !== -1)) {
-                styleDeclarationCb({
-                    id,
-                    styleId,
-                    remove: {
-                        property,
-                    },
-                    index: getNestedCSSRulePositions(thisArg.parentRule),
-                });
-            }
-            return target.apply(thisArg, argumentsList);
-        }),
-    });
-    return callbackWrapper(() => {
-        win.CSSStyleDeclaration.prototype.setProperty = setProperty;
-        win.CSSStyleDeclaration.prototype.removeProperty = removeProperty;
-    });
-}
-function initMediaInteractionObserver({ mediaInteractionCb, blockClass, blockSelector, mirror, sampling, doc, }) {
-    const handler = callbackWrapper((type) => throttle(callbackWrapper((event) => {
-        const target = getEventTarget(event);
-        if (!target ||
-            isBlocked(target, blockClass, blockSelector, true)) {
-            return;
-        }
-        const { currentTime, volume, muted, playbackRate, loop } = target;
-        mediaInteractionCb({
-            type,
-            id: mirror.getId(target),
-            currentTime,
-            volume,
-            muted,
-            playbackRate,
-            loop,
-        });
-    }), sampling.media || 500));
-    const handlers = [
-        on('play', handler(0), doc),
-        on('pause', handler(1), doc),
-        on('seeked', handler(2), doc),
-        on('volumechange', handler(3), doc),
-        on('ratechange', handler(4), doc),
-    ];
-    return callbackWrapper(() => {
-        handlers.forEach((h) => h());
-    });
-}
-function initFontObserver({ fontCb, doc }) {
-    const win = doc.defaultView;
-    if (!win) {
-        return () => {
-        };
-    }
-    const handlers = [];
-    const fontMap = new WeakMap();
-    const originalFontFace = win.FontFace;
-    win.FontFace = function FontFace(family, source, descriptors) {
-        const fontFace = new originalFontFace(family, source, descriptors);
-        fontMap.set(fontFace, {
-            family,
-            buffer: typeof source !== 'string',
-            descriptors,
-            fontSource: typeof source === 'string'
-                ? source
-                : JSON.stringify(Array.from(new Uint8Array(source))),
-        });
-        return fontFace;
-    };
-    const restoreHandler = patch(doc.fonts, 'add', function (original) {
-        return function (fontFace) {
-            setTimeout(callbackWrapper(() => {
-                const p = fontMap.get(fontFace);
-                if (p) {
-                    fontCb(p);
-                    fontMap.delete(fontFace);
-                }
-            }), 0);
-            return original.apply(this, [fontFace]);
-        };
-    });
-    handlers.push(() => {
-        win.FontFace = originalFontFace;
-    });
-    handlers.push(restoreHandler);
-    return callbackWrapper(() => {
-        handlers.forEach((h) => h());
-    });
-}
-function initSelectionObserver(param) {
-    const { doc, mirror, blockClass, blockSelector, selectionCb } = param;
-    let collapsed = true;
-    const updateSelection = callbackWrapper(() => {
-        const selection = doc.getSelection();
-        if (!selection || (collapsed && (selection === null || selection === void 0 ? void 0 : selection.isCollapsed)))
-            return;
-        collapsed = selection.isCollapsed || false;
-        const ranges = [];
-        const count = selection.rangeCount || 0;
-        for (let i = 0; i < count; i++) {
-            const range = selection.getRangeAt(i);
-            const { startContainer, startOffset, endContainer, endOffset } = range;
-            const blocked = isBlocked(startContainer, blockClass, blockSelector, true) ||
-                isBlocked(endContainer, blockClass, blockSelector, true);
-            if (blocked)
-                continue;
-            ranges.push({
-                start: mirror.getId(startContainer),
-                startOffset,
-                end: mirror.getId(endContainer),
-                endOffset,
-            });
-        }
-        selectionCb({ ranges });
-    });
-    updateSelection();
-    return on('selectionchange', updateSelection);
-}
-function initCustomElementObserver({ doc, customElementCb, }) {
-    const win = doc.defaultView;
-    if (!win || !win.customElements)
-        return () => { };
-    const restoreHandler = patch(win.customElements, 'define', function (original) {
-        return function (name, constructor, options) {
-            try {
-                customElementCb({
-                    define: {
-                        name,
-                    },
-                });
-            }
-            catch (e) {
-                console.warn(`Custom element callback failed for ${name}`);
-            }
-            return original.apply(this, [name, constructor, options]);
-        };
-    });
-    return restoreHandler;
-}
-function mergeHooks(o, hooks) {
-    const { mutationCb, mousemoveCb, mouseInteractionCb, scrollCb, viewportResizeCb, inputCb, mediaInteractionCb, styleSheetRuleCb, styleDeclarationCb, canvasMutationCb, fontCb, selectionCb, customElementCb, } = o;
-    o.mutationCb = (...p) => {
-        if (hooks.mutation) {
-            hooks.mutation(...p);
-        }
-        mutationCb(...p);
-    };
-    o.mousemoveCb = (...p) => {
-        if (hooks.mousemove) {
-            hooks.mousemove(...p);
-        }
-        mousemoveCb(...p);
-    };
-    o.mouseInteractionCb = (...p) => {
-        if (hooks.mouseInteraction) {
-            hooks.mouseInteraction(...p);
-        }
-        mouseInteractionCb(...p);
-    };
-    o.scrollCb = (...p) => {
-        if (hooks.scroll) {
-            hooks.scroll(...p);
-        }
-        scrollCb(...p);
-    };
-    o.viewportResizeCb = (...p) => {
-        if (hooks.viewportResize) {
-            hooks.viewportResize(...p);
-        }
-        viewportResizeCb(...p);
-    };
-    o.inputCb = (...p) => {
-        if (hooks.input) {
-            hooks.input(...p);
-        }
-        inputCb(...p);
-    };
-    o.mediaInteractionCb = (...p) => {
-        if (hooks.mediaInteaction) {
-            hooks.mediaInteaction(...p);
-        }
-        mediaInteractionCb(...p);
-    };
-    o.styleSheetRuleCb = (...p) => {
-        if (hooks.styleSheetRule) {
-            hooks.styleSheetRule(...p);
-        }
-        styleSheetRuleCb(...p);
-    };
-    o.styleDeclarationCb = (...p) => {
-        if (hooks.styleDeclaration) {
-            hooks.styleDeclaration(...p);
-        }
-        styleDeclarationCb(...p);
-    };
-    o.canvasMutationCb = (...p) => {
-        if (hooks.canvasMutation) {
-            hooks.canvasMutation(...p);
-        }
-        canvasMutationCb(...p);
-    };
-    o.fontCb = (...p) => {
-        if (hooks.font) {
-            hooks.font(...p);
-        }
-        fontCb(...p);
-    };
-    o.selectionCb = (...p) => {
-        if (hooks.selection) {
-            hooks.selection(...p);
-        }
-        selectionCb(...p);
-    };
-    o.customElementCb = (...c) => {
-        if (hooks.customElement) {
-            hooks.customElement(...c);
-        }
-        customElementCb(...c);
-    };
-}
-function initObservers(o, hooks = {}) {
-    const currentWindow = o.doc.defaultView;
-    if (!currentWindow) {
-        return () => {
-        };
-    }
-    mergeHooks(o, hooks);
-    let mutationObserver;
-    if (o.recordDOM) {
-        mutationObserver = initMutationObserver(o, o.doc);
-    }
-    const mousemoveHandler = initMoveObserver(o);
-    const mouseInteractionHandler = initMouseInteractionObserver(o);
-    const scrollHandler = initScrollObserver(o);
-    const viewportResizeHandler = initViewportResizeObserver(o, {
-        win: currentWindow,
-    });
-    const inputHandler = initInputObserver(o);
-    const mediaInteractionHandler = initMediaInteractionObserver(o);
-    let styleSheetObserver = () => { };
-    let adoptedStyleSheetObserver = () => { };
-    let styleDeclarationObserver = () => { };
-    let fontObserver = () => { };
-    if (o.recordDOM) {
-        styleSheetObserver = initStyleSheetObserver(o, { win: currentWindow });
-        adoptedStyleSheetObserver = initAdoptedStyleSheetObserver(o, o.doc);
-        styleDeclarationObserver = initStyleDeclarationObserver(o, {
-            win: currentWindow,
-        });
-        if (o.collectFonts) {
-            fontObserver = initFontObserver(o);
-        }
-    }
-    const selectionObserver = initSelectionObserver(o);
-    const customElementObserver = initCustomElementObserver(o);
-    const pluginHandlers = [];
-    for (const plugin of o.plugins) {
-        pluginHandlers.push(plugin.observer(plugin.callback, currentWindow, plugin.options));
-    }
-    return callbackWrapper(() => {
-        mutationBuffers.forEach((b) => b.reset());
-        mutationObserver === null || mutationObserver === void 0 ? void 0 : mutationObserver.disconnect();
-        mousemoveHandler();
-        mouseInteractionHandler();
-        scrollHandler();
-        viewportResizeHandler();
-        inputHandler();
-        mediaInteractionHandler();
-        styleSheetObserver();
-        adoptedStyleSheetObserver();
-        styleDeclarationObserver();
-        fontObserver();
-        selectionObserver();
-        customElementObserver();
-        pluginHandlers.forEach((h) => h());
-    });
-}
-function hasNestedCSSRule(prop) {
-    return typeof window[prop] !== 'undefined';
-}
-function canMonkeyPatchNestedCSSRule(prop) {
-    return Boolean(typeof window[prop] !== 'undefined' &&
-        window[prop].prototype &&
-        'insertRule' in window[prop].prototype &&
-        'deleteRule' in window[prop].prototype);
-}
-
-class CrossOriginIframeMirror {
-    constructor(generateIdFn) {
-        this.generateIdFn = generateIdFn;
-        this.iframeIdToRemoteIdMap = new WeakMap();
-        this.iframeRemoteIdToIdMap = new WeakMap();
-    }
-    getId(iframe, remoteId, idToRemoteMap, remoteToIdMap) {
-        const idToRemoteIdMap = idToRemoteMap || this.getIdToRemoteIdMap(iframe);
-        const remoteIdToIdMap = remoteToIdMap || this.getRemoteIdToIdMap(iframe);
-        let id = idToRemoteIdMap.get(remoteId);
-        if (!id) {
-            id = this.generateIdFn();
-            idToRemoteIdMap.set(remoteId, id);
-            remoteIdToIdMap.set(id, remoteId);
-        }
-        return id;
-    }
-    getIds(iframe, remoteId) {
-        const idToRemoteIdMap = this.getIdToRemoteIdMap(iframe);
-        const remoteIdToIdMap = this.getRemoteIdToIdMap(iframe);
-        return remoteId.map((id) => this.getId(iframe, id, idToRemoteIdMap, remoteIdToIdMap));
-    }
-    getRemoteId(iframe, id, map) {
-        const remoteIdToIdMap = map || this.getRemoteIdToIdMap(iframe);
-        if (typeof id !== 'number')
-            return id;
-        const remoteId = remoteIdToIdMap.get(id);
-        if (!remoteId)
-            return -1;
-        return remoteId;
-    }
-    getRemoteIds(iframe, ids) {
-        const remoteIdToIdMap = this.getRemoteIdToIdMap(iframe);
-        return ids.map((id) => this.getRemoteId(iframe, id, remoteIdToIdMap));
-    }
-    reset(iframe) {
-        if (!iframe) {
-            this.iframeIdToRemoteIdMap = new WeakMap();
-            this.iframeRemoteIdToIdMap = new WeakMap();
-            return;
-        }
-        this.iframeIdToRemoteIdMap.delete(iframe);
-        this.iframeRemoteIdToIdMap.delete(iframe);
-    }
-    getIdToRemoteIdMap(iframe) {
-        let idToRemoteIdMap = this.iframeIdToRemoteIdMap.get(iframe);
-        if (!idToRemoteIdMap) {
-            idToRemoteIdMap = new Map();
-            this.iframeIdToRemoteIdMap.set(iframe, idToRemoteIdMap);
-        }
-        return idToRemoteIdMap;
-    }
-    getRemoteIdToIdMap(iframe) {
-        let remoteIdToIdMap = this.iframeRemoteIdToIdMap.get(iframe);
-        if (!remoteIdToIdMap) {
-            remoteIdToIdMap = new Map();
-            this.iframeRemoteIdToIdMap.set(iframe, remoteIdToIdMap);
-        }
-        return remoteIdToIdMap;
-    }
+const mutationBuffers = [];
+function getEventTarget(event) {
+    try {
+        if ('composedPath' in event) {
+            const path = event.composedPath();
+            if (path.length) {
+                return path[0];
+            }
+        }
+        else if ('path' in event && event.path.length) {
+            return event.path[0];
+        }
+    }
+    catch (_a) {
+    }
+    return event && event.target;
+}
+function initMutationObserver(options, rootEl) {
+    var _a, _b;
+    const mutationBuffer = new MutationBuffer();
+    mutationBuffers.push(mutationBuffer);
+    mutationBuffer.init(options);
+    let mutationObserverCtor = window.MutationObserver ||
+        window.__rrMutationObserver;
+    const angularZoneSymbol = (_b = (_a = window === null || window === void 0 ? void 0 : window.Zone) === null || _a === void 0 ? void 0 : _a.__symbol__) === null || _b === void 0 ? void 0 : _b.call(_a, 'MutationObserver');
+    if (angularZoneSymbol &&
+        window[angularZoneSymbol]) {
+        mutationObserverCtor = window[angularZoneSymbol];
+    }
+    const observer = new mutationObserverCtor(callbackWrapper(mutationBuffer.processMutations.bind(mutationBuffer)));
+    observer.observe(rootEl, {
+        attributes: true,
+        attributeOldValue: true,
+        characterData: true,
+        characterDataOldValue: true,
+        childList: true,
+        subtree: true,
+    });
+    return observer;
+}
+function initMoveObserver({ mousemoveCb, sampling, doc, mirror, }) {
+    if (sampling.mousemove === false) {
+        return () => {
+        };
+    }
+    const threshold = typeof sampling.mousemove === 'number' ? sampling.mousemove : 50;
+    const callbackThreshold = typeof sampling.mousemoveCallback === 'number'
+        ? sampling.mousemoveCallback
+        : 500;
+    let positions = [];
+    let timeBaseline;
+    const wrappedCb = throttle(callbackWrapper((source) => {
+        const totalOffset = Date.now() - timeBaseline;
+        mousemoveCb(positions.map((p) => {
+            p.timeOffset -= totalOffset;
+            return p;
+        }), source);
+        positions = [];
+        timeBaseline = null;
+    }), callbackThreshold);
+    const updatePosition = callbackWrapper(throttle(callbackWrapper((evt) => {
+        const target = getEventTarget(evt);
+        const { clientX, clientY } = legacy_isTouchEvent(evt)
+            ? evt.changedTouches[0]
+            : evt;
+        if (!timeBaseline) {
+            timeBaseline = nowTimestamp();
+        }
+        positions.push({
+            x: clientX,
+            y: clientY,
+            id: mirror.getId(target),
+            timeOffset: nowTimestamp() - timeBaseline,
+        });
+        wrappedCb(typeof DragEvent !== 'undefined' && evt instanceof DragEvent
+            ? IncrementalSource$1.Drag
+            : evt instanceof MouseEvent
+                ? IncrementalSource$1.MouseMove
+                : IncrementalSource$1.TouchMove);
+    }), threshold, {
+        trailing: false,
+    }));
+    const handlers = [
+        on('mousemove', updatePosition, doc),
+        on('touchmove', updatePosition, doc),
+        on('drag', updatePosition, doc),
+    ];
+    return callbackWrapper(() => {
+        handlers.forEach((h) => h());
+    });
+}
+function initMouseInteractionObserver({ mouseInteractionCb, doc, mirror, blockClass, blockSelector, sampling, }) {
+    if (sampling.mouseInteraction === false) {
+        return () => {
+        };
+    }
+    const disableMap = sampling.mouseInteraction === true ||
+        sampling.mouseInteraction === undefined
+        ? {}
+        : sampling.mouseInteraction;
+    const handlers = [];
+    let currentPointerType = null;
+    const getHandler = (eventKey) => {
+        return (event) => {
+            const target = getEventTarget(event);
+            if (isBlocked(target, blockClass, blockSelector, true)) {
+                return;
+            }
+            let pointerType = null;
+            let thisEventKey = eventKey;
+            if ('pointerType' in event) {
+                switch (event.pointerType) {
+                    case 'mouse':
+                        pointerType = PointerTypes.Mouse;
+                        break;
+                    case 'touch':
+                        pointerType = PointerTypes.Touch;
+                        break;
+                    case 'pen':
+                        pointerType = PointerTypes.Pen;
+                        break;
+                }
+                if (pointerType === PointerTypes.Touch) {
+                    if (MouseInteractions[eventKey] === MouseInteractions.MouseDown) {
+                        thisEventKey = 'TouchStart';
+                    }
+                    else if (MouseInteractions[eventKey] === MouseInteractions.MouseUp) {
+                        thisEventKey = 'TouchEnd';
+                    }
+                }
+                else if (pointerType === PointerTypes.Pen) ;
+            }
+            else if (legacy_isTouchEvent(event)) {
+                pointerType = PointerTypes.Touch;
+            }
+            if (pointerType !== null) {
+                currentPointerType = pointerType;
+                if ((thisEventKey.startsWith('Touch') &&
+                    pointerType === PointerTypes.Touch) ||
+                    (thisEventKey.startsWith('Mouse') &&
+                        pointerType === PointerTypes.Mouse)) {
+                    pointerType = null;
+                }
+            }
+            else if (MouseInteractions[eventKey] === MouseInteractions.Click) {
+                pointerType = currentPointerType;
+                currentPointerType = null;
+            }
+            const e = legacy_isTouchEvent(event) ? event.changedTouches[0] : event;
+            if (!e) {
+                return;
+            }
+            const id = mirror.getId(target);
+            const { clientX, clientY } = e;
+            callbackWrapper(mouseInteractionCb)(Object.assign({ type: MouseInteractions[thisEventKey], id, x: clientX, y: clientY }, (pointerType !== null && { pointerType })));
+        };
+    };
+    Object.keys(MouseInteractions)
+        .filter((key) => Number.isNaN(Number(key)) &&
+        !key.endsWith('_Departed') &&
+        disableMap[key] !== false)
+        .forEach((eventKey) => {
+        let eventName = toLowerCase(eventKey);
+        const handler = getHandler(eventKey);
+        if (window.PointerEvent) {
+            switch (MouseInteractions[eventKey]) {
+                case MouseInteractions.MouseDown:
+                case MouseInteractions.MouseUp:
+                    eventName = eventName.replace('mouse', 'pointer');
+                    break;
+                case MouseInteractions.TouchStart:
+                case MouseInteractions.TouchEnd:
+                    return;
+            }
+        }
+        handlers.push(on(eventName, handler, doc));
+    });
+    return callbackWrapper(() => {
+        handlers.forEach((h) => h());
+    });
+}
+function initScrollObserver({ scrollCb, doc, mirror, blockClass, blockSelector, sampling, }) {
+    const updatePosition = callbackWrapper(throttle(callbackWrapper((evt) => {
+        const target = getEventTarget(evt);
+        if (!target ||
+            isBlocked(target, blockClass, blockSelector, true)) {
+            return;
+        }
+        const id = mirror.getId(target);
+        if (target === doc && doc.defaultView) {
+            const scrollLeftTop = getWindowScroll(doc.defaultView);
+            scrollCb({
+                id,
+                x: scrollLeftTop.left,
+                y: scrollLeftTop.top,
+            });
+        }
+        else {
+            scrollCb({
+                id,
+                x: target.scrollLeft,
+                y: target.scrollTop,
+            });
+        }
+    }), sampling.scroll || 100));
+    return on('scroll', updatePosition, doc);
+}
+function initViewportResizeObserver({ viewportResizeCb }, { win }) {
+    let lastH = -1;
+    let lastW = -1;
+    const updateDimension = callbackWrapper(throttle(callbackWrapper(() => {
+        const height = getWindowHeight();
+        const width = getWindowWidth();
+        if (lastH !== height || lastW !== width) {
+            viewportResizeCb({
+                width: Number(width),
+                height: Number(height),
+            });
+            lastH = height;
+            lastW = width;
+        }
+    }), 200));
+    return on('resize', updateDimension, win);
+}
+const INPUT_TAGS = ['INPUT', 'TEXTAREA', 'SELECT'];
+const lastInputValueMap = new WeakMap();
+function initInputObserver({ inputCb, doc, mirror, blockClass, blockSelector, ignoreClass, ignoreSelector, maskInputOptions, maskInputFn, sampling, userTriggeredOnInput, }) {
+    function eventHandler(event) {
+        let target = getEventTarget(event);
+        const userTriggered = event.isTrusted;
+        const tagName = target && target.tagName;
+        if (target && tagName === 'OPTION') {
+            target = target.parentElement;
+        }
+        if (!target ||
+            !tagName ||
+            INPUT_TAGS.indexOf(tagName) < 0 ||
+            isBlocked(target, blockClass, blockSelector, true)) {
+            return;
+        }
+        if (target.classList.contains(ignoreClass) ||
+            (ignoreSelector && target.matches(ignoreSelector))) {
+            return;
+        }
+        let text = target.value;
+        let isChecked = false;
+        const type = getInputType(target) || '';
+        if (type === 'radio' || type === 'checkbox') {
+            isChecked = target.checked;
+        }
+        else if (maskInputOptions[tagName.toLowerCase()] ||
+            maskInputOptions[type]) {
+            text = maskInputValue({
+                element: target,
+                maskInputOptions,
+                tagName,
+                type,
+                value: text,
+                maskInputFn,
+            });
+        }
+        cbWithDedup(target, userTriggeredOnInput
+            ? { text, isChecked, userTriggered }
+            : { text, isChecked });
+        const name = target.name;
+        if (type === 'radio' && name && isChecked) {
+            doc
+                .querySelectorAll(`input[type="radio"][name="${name}"]`)
+                .forEach((el) => {
+                if (el !== target) {
+                    const text = el.value;
+                    cbWithDedup(el, userTriggeredOnInput
+                        ? { text, isChecked: !isChecked, userTriggered: false }
+                        : { text, isChecked: !isChecked });
+                }
+            });
+        }
+    }
+    function cbWithDedup(target, v) {
+        const lastInputValue = lastInputValueMap.get(target);
+        if (!lastInputValue ||
+            lastInputValue.text !== v.text ||
+            lastInputValue.isChecked !== v.isChecked) {
+            lastInputValueMap.set(target, v);
+            const id = mirror.getId(target);
+            callbackWrapper(inputCb)(Object.assign(Object.assign({}, v), { id }));
+        }
+    }
+    const events = sampling.input === 'last' ? ['change'] : ['input', 'change'];
+    const handlers = events.map((eventName) => on(eventName, callbackWrapper(eventHandler), doc));
+    const currentWindow = doc.defaultView;
+    if (!currentWindow) {
+        return () => {
+            handlers.forEach((h) => h());
+        };
+    }
+    const propertyDescriptor = currentWindow.Object.getOwnPropertyDescriptor(currentWindow.HTMLInputElement.prototype, 'value');
+    const hookProperties = [
+        [currentWindow.HTMLInputElement.prototype, 'value'],
+        [currentWindow.HTMLInputElement.prototype, 'checked'],
+        [currentWindow.HTMLSelectElement.prototype, 'value'],
+        [currentWindow.HTMLTextAreaElement.prototype, 'value'],
+        [currentWindow.HTMLSelectElement.prototype, 'selectedIndex'],
+        [currentWindow.HTMLOptionElement.prototype, 'selected'],
+    ];
+    if (propertyDescriptor && propertyDescriptor.set) {
+        handlers.push(...hookProperties.map((p) => hookSetter(p[0], p[1], {
+            set() {
+                callbackWrapper(eventHandler)({
+                    target: this,
+                    isTrusted: false,
+                });
+            },
+        }, false, currentWindow)));
+    }
+    return callbackWrapper(() => {
+        handlers.forEach((h) => h());
+    });
+}
+function getNestedCSSRulePositions(rule) {
+    const positions = [];
+    function recurse(childRule, pos) {
+        if ((hasNestedCSSRule('CSSGroupingRule') &&
+            childRule.parentRule instanceof CSSGroupingRule) ||
+            (hasNestedCSSRule('CSSMediaRule') &&
+                childRule.parentRule instanceof CSSMediaRule) ||
+            (hasNestedCSSRule('CSSSupportsRule') &&
+                childRule.parentRule instanceof CSSSupportsRule) ||
+            (hasNestedCSSRule('CSSConditionRule') &&
+                childRule.parentRule instanceof CSSConditionRule)) {
+            const rules = Array.from(childRule.parentRule.cssRules);
+            const index = rules.indexOf(childRule);
+            pos.unshift(index);
+        }
+        else if (childRule.parentStyleSheet) {
+            const rules = Array.from(childRule.parentStyleSheet.cssRules);
+            const index = rules.indexOf(childRule);
+            pos.unshift(index);
+        }
+        return pos;
+    }
+    return recurse(rule, positions);
+}
+function getIdAndStyleId(sheet, mirror, styleMirror) {
+    let id, styleId;
+    if (!sheet)
+        return {};
+    if (sheet.ownerNode)
+        id = mirror.getId(sheet.ownerNode);
+    else
+        styleId = styleMirror.getId(sheet);
+    return {
+        styleId,
+        id,
+    };
+}
+function initStyleSheetObserver({ styleSheetRuleCb, mirror, stylesheetManager }, { win }) {
+    if (!win.CSSStyleSheet || !win.CSSStyleSheet.prototype) {
+        return () => {
+        };
+    }
+    const insertRule = win.CSSStyleSheet.prototype.insertRule;
+    win.CSSStyleSheet.prototype.insertRule = new Proxy(insertRule, {
+        apply: callbackWrapper((target, thisArg, argumentsList) => {
+            const [rule, index] = argumentsList;
+            const { id, styleId } = getIdAndStyleId(thisArg, mirror, stylesheetManager.styleMirror);
+            if ((id && id !== -1) || (styleId && styleId !== -1)) {
+                styleSheetRuleCb({
+                    id,
+                    styleId,
+                    adds: [{ rule, index }],
+                });
+            }
+            return target.apply(thisArg, argumentsList);
+        }),
+    });
+    const deleteRule = win.CSSStyleSheet.prototype.deleteRule;
+    win.CSSStyleSheet.prototype.deleteRule = new Proxy(deleteRule, {
+        apply: callbackWrapper((target, thisArg, argumentsList) => {
+            const [index] = argumentsList;
+            const { id, styleId } = getIdAndStyleId(thisArg, mirror, stylesheetManager.styleMirror);
+            if ((id && id !== -1) || (styleId && styleId !== -1)) {
+                styleSheetRuleCb({
+                    id,
+                    styleId,
+                    removes: [{ index }],
+                });
+            }
+            return target.apply(thisArg, argumentsList);
+        }),
+    });
+    let replace;
+    if (win.CSSStyleSheet.prototype.replace) {
+        replace = win.CSSStyleSheet.prototype.replace;
+        win.CSSStyleSheet.prototype.replace = new Proxy(replace, {
+            apply: callbackWrapper((target, thisArg, argumentsList) => {
+                const [text] = argumentsList;
+                const { id, styleId } = getIdAndStyleId(thisArg, mirror, stylesheetManager.styleMirror);
+                if ((id && id !== -1) || (styleId && styleId !== -1)) {
+                    styleSheetRuleCb({
+                        id,
+                        styleId,
+                        replace: text,
+                    });
+                }
+                return target.apply(thisArg, argumentsList);
+            }),
+        });
+    }
+    let replaceSync;
+    if (win.CSSStyleSheet.prototype.replaceSync) {
+        replaceSync = win.CSSStyleSheet.prototype.replaceSync;
+        win.CSSStyleSheet.prototype.replaceSync = new Proxy(replaceSync, {
+            apply: callbackWrapper((target, thisArg, argumentsList) => {
+                const [text] = argumentsList;
+                const { id, styleId } = getIdAndStyleId(thisArg, mirror, stylesheetManager.styleMirror);
+                if ((id && id !== -1) || (styleId && styleId !== -1)) {
+                    styleSheetRuleCb({
+                        id,
+                        styleId,
+                        replaceSync: text,
+                    });
+                }
+                return target.apply(thisArg, argumentsList);
+            }),
+        });
+    }
+    const supportedNestedCSSRuleTypes = {};
+    if (canMonkeyPatchNestedCSSRule('CSSGroupingRule')) {
+        supportedNestedCSSRuleTypes.CSSGroupingRule = win.CSSGroupingRule;
+    }
+    else {
+        if (canMonkeyPatchNestedCSSRule('CSSMediaRule')) {
+            supportedNestedCSSRuleTypes.CSSMediaRule = win.CSSMediaRule;
+        }
+        if (canMonkeyPatchNestedCSSRule('CSSConditionRule')) {
+            supportedNestedCSSRuleTypes.CSSConditionRule = win.CSSConditionRule;
+        }
+        if (canMonkeyPatchNestedCSSRule('CSSSupportsRule')) {
+            supportedNestedCSSRuleTypes.CSSSupportsRule = win.CSSSupportsRule;
+        }
+    }
+    const unmodifiedFunctions = {};
+    Object.entries(supportedNestedCSSRuleTypes).forEach(([typeKey, type]) => {
+        unmodifiedFunctions[typeKey] = {
+            insertRule: type.prototype.insertRule,
+            deleteRule: type.prototype.deleteRule,
+        };
+        type.prototype.insertRule = new Proxy(unmodifiedFunctions[typeKey].insertRule, {
+            apply: callbackWrapper((target, thisArg, argumentsList) => {
+                const [rule, index] = argumentsList;
+                const { id, styleId } = getIdAndStyleId(thisArg.parentStyleSheet, mirror, stylesheetManager.styleMirror);
+                if ((id && id !== -1) || (styleId && styleId !== -1)) {
+                    styleSheetRuleCb({
+                        id,
+                        styleId,
+                        adds: [
+                            {
+                                rule,
+                                index: [
+                                    ...getNestedCSSRulePositions(thisArg),
+                                    index || 0,
+                                ],
+                            },
+                        ],
+                    });
+                }
+                return target.apply(thisArg, argumentsList);
+            }),
+        });
+        type.prototype.deleteRule = new Proxy(unmodifiedFunctions[typeKey].deleteRule, {
+            apply: callbackWrapper((target, thisArg, argumentsList) => {
+                const [index] = argumentsList;
+                const { id, styleId } = getIdAndStyleId(thisArg.parentStyleSheet, mirror, stylesheetManager.styleMirror);
+                if ((id && id !== -1) || (styleId && styleId !== -1)) {
+                    styleSheetRuleCb({
+                        id,
+                        styleId,
+                        removes: [
+                            { index: [...getNestedCSSRulePositions(thisArg), index] },
+                        ],
+                    });
+                }
+                return target.apply(thisArg, argumentsList);
+            }),
+        });
+    });
+    return callbackWrapper(() => {
+        win.CSSStyleSheet.prototype.insertRule = insertRule;
+        win.CSSStyleSheet.prototype.deleteRule = deleteRule;
+        replace && (win.CSSStyleSheet.prototype.replace = replace);
+        replaceSync && (win.CSSStyleSheet.prototype.replaceSync = replaceSync);
+        Object.entries(supportedNestedCSSRuleTypes).forEach(([typeKey, type]) => {
+            type.prototype.insertRule = unmodifiedFunctions[typeKey].insertRule;
+            type.prototype.deleteRule = unmodifiedFunctions[typeKey].deleteRule;
+        });
+    });
+}
+function initAdoptedStyleSheetObserver({ mirror, stylesheetManager, }, host) {
+    var _a, _b, _c;
+    let hostId = null;
+    if (host.nodeName === '#document')
+        hostId = mirror.getId(host);
+    else
+        hostId = mirror.getId(host.host);
+    const patchTarget = host.nodeName === '#document'
+        ? (_a = host.defaultView) === null || _a === void 0 ? void 0 : _a.Document
+        : (_c = (_b = host.ownerDocument) === null || _b === void 0 ? void 0 : _b.defaultView) === null || _c === void 0 ? void 0 : _c.ShadowRoot;
+    const originalPropertyDescriptor = (patchTarget === null || patchTarget === void 0 ? void 0 : patchTarget.prototype)
+        ? Object.getOwnPropertyDescriptor(patchTarget === null || patchTarget === void 0 ? void 0 : patchTarget.prototype, 'adoptedStyleSheets')
+        : undefined;
+    if (hostId === null ||
+        hostId === -1 ||
+        !patchTarget ||
+        !originalPropertyDescriptor)
+        return () => {
+        };
+    Object.defineProperty(host, 'adoptedStyleSheets', {
+        configurable: originalPropertyDescriptor.configurable,
+        enumerable: originalPropertyDescriptor.enumerable,
+        get() {
+            var _a;
+            return (_a = originalPropertyDescriptor.get) === null || _a === void 0 ? void 0 : _a.call(this);
+        },
+        set(sheets) {
+            var _a;
+            const result = (_a = originalPropertyDescriptor.set) === null || _a === void 0 ? void 0 : _a.call(this, sheets);
+            if (hostId !== null && hostId !== -1) {
+                try {
+                    stylesheetManager.adoptStyleSheets(sheets, hostId);
+                }
+                catch (e) {
+                }
+            }
+            return result;
+        },
+    });
+    return callbackWrapper(() => {
+        Object.defineProperty(host, 'adoptedStyleSheets', {
+            configurable: originalPropertyDescriptor.configurable,
+            enumerable: originalPropertyDescriptor.enumerable,
+            get: originalPropertyDescriptor.get,
+            set: originalPropertyDescriptor.set,
+        });
+    });
+}
+function initStyleDeclarationObserver({ styleDeclarationCb, mirror, ignoreCSSAttributes, stylesheetManager, }, { win }) {
+    const setProperty = win.CSSStyleDeclaration.prototype.setProperty;
+    win.CSSStyleDeclaration.prototype.setProperty = new Proxy(setProperty, {
+        apply: callbackWrapper((target, thisArg, argumentsList) => {
+            var _a;
+            const [property, value, priority] = argumentsList;
+            if (ignoreCSSAttributes.has(property)) {
+                return setProperty.apply(thisArg, [property, value, priority]);
+            }
+            const { id, styleId } = getIdAndStyleId((_a = thisArg.parentRule) === null || _a === void 0 ? void 0 : _a.parentStyleSheet, mirror, stylesheetManager.styleMirror);
+            if ((id && id !== -1) || (styleId && styleId !== -1)) {
+                styleDeclarationCb({
+                    id,
+                    styleId,
+                    set: {
+                        property,
+                        value,
+                        priority,
+                    },
+                    index: getNestedCSSRulePositions(thisArg.parentRule),
+                });
+            }
+            return target.apply(thisArg, argumentsList);
+        }),
+    });
+    const removeProperty = win.CSSStyleDeclaration.prototype.removeProperty;
+    win.CSSStyleDeclaration.prototype.removeProperty = new Proxy(removeProperty, {
+        apply: callbackWrapper((target, thisArg, argumentsList) => {
+            var _a;
+            const [property] = argumentsList;
+            if (ignoreCSSAttributes.has(property)) {
+                return removeProperty.apply(thisArg, [property]);
+            }
+            const { id, styleId } = getIdAndStyleId((_a = thisArg.parentRule) === null || _a === void 0 ? void 0 : _a.parentStyleSheet, mirror, stylesheetManager.styleMirror);
+            if ((id && id !== -1) || (styleId && styleId !== -1)) {
+                styleDeclarationCb({
+                    id,
+                    styleId,
+                    remove: {
+                        property,
+                    },
+                    index: getNestedCSSRulePositions(thisArg.parentRule),
+                });
+            }
+            return target.apply(thisArg, argumentsList);
+        }),
+    });
+    return callbackWrapper(() => {
+        win.CSSStyleDeclaration.prototype.setProperty = setProperty;
+        win.CSSStyleDeclaration.prototype.removeProperty = removeProperty;
+    });
+}
+function initMediaInteractionObserver({ mediaInteractionCb, blockClass, blockSelector, mirror, sampling, doc, }) {
+    const handler = callbackWrapper((type) => throttle(callbackWrapper((event) => {
+        const target = getEventTarget(event);
+        if (!target ||
+            isBlocked(target, blockClass, blockSelector, true)) {
+            return;
+        }
+        const { currentTime, volume, muted, playbackRate, loop } = target;
+        mediaInteractionCb({
+            type,
+            id: mirror.getId(target),
+            currentTime,
+            volume,
+            muted,
+            playbackRate,
+            loop,
+        });
+    }), sampling.media || 500));
+    const handlers = [
+        on('play', handler(0), doc),
+        on('pause', handler(1), doc),
+        on('seeked', handler(2), doc),
+        on('volumechange', handler(3), doc),
+        on('ratechange', handler(4), doc),
+    ];
+    return callbackWrapper(() => {
+        handlers.forEach((h) => h());
+    });
+}
+function initFontObserver({ fontCb, doc }) {
+    const win = doc.defaultView;
+    if (!win) {
+        return () => {
+        };
+    }
+    const handlers = [];
+    const fontMap = new WeakMap();
+    const originalFontFace = win.FontFace;
+    win.FontFace = function FontFace(family, source, descriptors) {
+        const fontFace = new originalFontFace(family, source, descriptors);
+        fontMap.set(fontFace, {
+            family,
+            buffer: typeof source !== 'string',
+            descriptors,
+            fontSource: typeof source === 'string'
+                ? source
+                : JSON.stringify(Array.from(new Uint8Array(source))),
+        });
+        return fontFace;
+    };
+    const restoreHandler = patch(doc.fonts, 'add', function (original) {
+        return function (fontFace) {
+            setTimeout(callbackWrapper(() => {
+                const p = fontMap.get(fontFace);
+                if (p) {
+                    fontCb(p);
+                    fontMap.delete(fontFace);
+                }
+            }), 0);
+            return original.apply(this, [fontFace]);
+        };
+    });
+    handlers.push(() => {
+        win.FontFace = originalFontFace;
+    });
+    handlers.push(restoreHandler);
+    return callbackWrapper(() => {
+        handlers.forEach((h) => h());
+    });
+}
+function initSelectionObserver(param) {
+    const { doc, mirror, blockClass, blockSelector, selectionCb } = param;
+    let collapsed = true;
+    const updateSelection = callbackWrapper(() => {
+        const selection = doc.getSelection();
+        if (!selection || (collapsed && (selection === null || selection === void 0 ? void 0 : selection.isCollapsed)))
+            return;
+        collapsed = selection.isCollapsed || false;
+        const ranges = [];
+        const count = selection.rangeCount || 0;
+        for (let i = 0; i < count; i++) {
+            const range = selection.getRangeAt(i);
+            const { startContainer, startOffset, endContainer, endOffset } = range;
+            const blocked = isBlocked(startContainer, blockClass, blockSelector, true) ||
+                isBlocked(endContainer, blockClass, blockSelector, true);
+            if (blocked)
+                continue;
+            ranges.push({
+                start: mirror.getId(startContainer),
+                startOffset,
+                end: mirror.getId(endContainer),
+                endOffset,
+            });
+        }
+        selectionCb({ ranges });
+    });
+    updateSelection();
+    return on('selectionchange', updateSelection);
+}
+function initCustomElementObserver({ doc, customElementCb, }) {
+    const win = doc.defaultView;
+    if (!win || !win.customElements)
+        return () => { };
+    const restoreHandler = patch(win.customElements, 'define', function (original) {
+        return function (name, constructor, options) {
+            try {
+                customElementCb({
+                    define: {
+                        name,
+                    },
+                });
+            }
+            catch (e) {
+                console.warn(`Custom element callback failed for ${name}`);
+            }
+            return original.apply(this, [name, constructor, options]);
+        };
+    });
+    return restoreHandler;
+}
+function mergeHooks(o, hooks) {
+    const { mutationCb, mousemoveCb, mouseInteractionCb, scrollCb, viewportResizeCb, inputCb, mediaInteractionCb, styleSheetRuleCb, styleDeclarationCb, canvasMutationCb, fontCb, selectionCb, customElementCb, } = o;
+    o.mutationCb = (...p) => {
+        if (hooks.mutation) {
+            hooks.mutation(...p);
+        }
+        mutationCb(...p);
+    };
+    o.mousemoveCb = (...p) => {
+        if (hooks.mousemove) {
+            hooks.mousemove(...p);
+        }
+        mousemoveCb(...p);
+    };
+    o.mouseInteractionCb = (...p) => {
+        if (hooks.mouseInteraction) {
+            hooks.mouseInteraction(...p);
+        }
+        mouseInteractionCb(...p);
+    };
+    o.scrollCb = (...p) => {
+        if (hooks.scroll) {
+            hooks.scroll(...p);
+        }
+        scrollCb(...p);
+    };
+    o.viewportResizeCb = (...p) => {
+        if (hooks.viewportResize) {
+            hooks.viewportResize(...p);
+        }
+        viewportResizeCb(...p);
+    };
+    o.inputCb = (...p) => {
+        if (hooks.input) {
+            hooks.input(...p);
+        }
+        inputCb(...p);
+    };
+    o.mediaInteractionCb = (...p) => {
+        if (hooks.mediaInteaction) {
+            hooks.mediaInteaction(...p);
+        }
+        mediaInteractionCb(...p);
+    };
+    o.styleSheetRuleCb = (...p) => {
+        if (hooks.styleSheetRule) {
+            hooks.styleSheetRule(...p);
+        }
+        styleSheetRuleCb(...p);
+    };
+    o.styleDeclarationCb = (...p) => {
+        if (hooks.styleDeclaration) {
+            hooks.styleDeclaration(...p);
+        }
+        styleDeclarationCb(...p);
+    };
+    o.canvasMutationCb = (...p) => {
+        if (hooks.canvasMutation) {
+            hooks.canvasMutation(...p);
+        }
+        canvasMutationCb(...p);
+    };
+    o.fontCb = (...p) => {
+        if (hooks.font) {
+            hooks.font(...p);
+        }
+        fontCb(...p);
+    };
+    o.selectionCb = (...p) => {
+        if (hooks.selection) {
+            hooks.selection(...p);
+        }
+        selectionCb(...p);
+    };
+    o.customElementCb = (...c) => {
+        if (hooks.customElement) {
+            hooks.customElement(...c);
+        }
+        customElementCb(...c);
+    };
+}
+function initObservers(o, hooks = {}) {
+    const currentWindow = o.doc.defaultView;
+    if (!currentWindow) {
+        return () => {
+        };
+    }
+    mergeHooks(o, hooks);
+    let mutationObserver;
+    if (o.recordDOM) {
+        mutationObserver = initMutationObserver(o, o.doc);
+    }
+    const mousemoveHandler = initMoveObserver(o);
+    const mouseInteractionHandler = initMouseInteractionObserver(o);
+    const scrollHandler = initScrollObserver(o);
+    const viewportResizeHandler = initViewportResizeObserver(o, {
+        win: currentWindow,
+    });
+    const inputHandler = initInputObserver(o);
+    const mediaInteractionHandler = initMediaInteractionObserver(o);
+    let styleSheetObserver = () => { };
+    let adoptedStyleSheetObserver = () => { };
+    let styleDeclarationObserver = () => { };
+    let fontObserver = () => { };
+    if (o.recordDOM) {
+        styleSheetObserver = initStyleSheetObserver(o, { win: currentWindow });
+        adoptedStyleSheetObserver = initAdoptedStyleSheetObserver(o, o.doc);
+        styleDeclarationObserver = initStyleDeclarationObserver(o, {
+            win: currentWindow,
+        });
+        if (o.collectFonts) {
+            fontObserver = initFontObserver(o);
+        }
+    }
+    const selectionObserver = initSelectionObserver(o);
+    const customElementObserver = initCustomElementObserver(o);
+    const pluginHandlers = [];
+    for (const plugin of o.plugins) {
+        pluginHandlers.push(plugin.observer(plugin.callback, currentWindow, plugin.options));
+    }
+    return callbackWrapper(() => {
+        mutationBuffers.forEach((b) => b.reset());
+        mutationObserver === null || mutationObserver === void 0 ? void 0 : mutationObserver.disconnect();
+        mousemoveHandler();
+        mouseInteractionHandler();
+        scrollHandler();
+        viewportResizeHandler();
+        inputHandler();
+        mediaInteractionHandler();
+        styleSheetObserver();
+        adoptedStyleSheetObserver();
+        styleDeclarationObserver();
+        fontObserver();
+        selectionObserver();
+        customElementObserver();
+        pluginHandlers.forEach((h) => h());
+    });
+}
+function hasNestedCSSRule(prop) {
+    return typeof window[prop] !== 'undefined';
+}
+function canMonkeyPatchNestedCSSRule(prop) {
+    return Boolean(typeof window[prop] !== 'undefined' &&
+        window[prop].prototype &&
+        'insertRule' in window[prop].prototype &&
+        'deleteRule' in window[prop].prototype);
 }
 
-class IframeManager {
-    constructor(options) {
-        this.iframes = new WeakMap();
-        this.crossOriginIframeMap = new WeakMap();
-        this.crossOriginIframeMirror = new CrossOriginIframeMirror(genId);
-        this.crossOriginIframeRootIdMap = new WeakMap();
-        this.mutationCb = options.mutationCb;
-        this.wrappedEmit = options.wrappedEmit;
-        this.stylesheetManager = options.stylesheetManager;
-        this.recordCrossOriginIframes = options.recordCrossOriginIframes;
-        this.crossOriginIframeStyleMirror = new CrossOriginIframeMirror(this.stylesheetManager.styleMirror.generateId.bind(this.stylesheetManager.styleMirror));
-        this.mirror = options.mirror;
-        if (this.recordCrossOriginIframes) {
-            window.addEventListener('message', this.handleMessage.bind(this));
-        }
-    }
-    addIframe(iframeEl) {
-        this.iframes.set(iframeEl, true);
-        if (iframeEl.contentWindow)
-            this.crossOriginIframeMap.set(iframeEl.contentWindow, iframeEl);
-    }
-    addLoadListener(cb) {
-        this.loadListener = cb;
-    }
-    attachIframe(iframeEl, childSn) {
-        var _a;
-        this.mutationCb({
-            adds: [
-                {
-                    parentId: this.mirror.getId(iframeEl),
-                    nextId: null,
-                    node: childSn,
-                },
-            ],
-            removes: [],
-            texts: [],
-            attributes: [],
-            isAttachIframe: true,
-        });
-        (_a = this.loadListener) === null || _a === void 0 ? void 0 : _a.call(this, iframeEl);
-        if (iframeEl.contentDocument &&
-            iframeEl.contentDocument.adoptedStyleSheets &&
-            iframeEl.contentDocument.adoptedStyleSheets.length > 0)
-            this.stylesheetManager.adoptStyleSheets(iframeEl.contentDocument.adoptedStyleSheets, this.mirror.getId(iframeEl.contentDocument));
-    }
-    handleMessage(message) {
-        const crossOriginMessageEvent = message;
-        if (crossOriginMessageEvent.data.type !== 'rrweb' ||
-            crossOriginMessageEvent.origin !== crossOriginMessageEvent.data.origin)
-            return;
-        const iframeSourceWindow = message.source;
-        if (!iframeSourceWindow)
-            return;
-        const iframeEl = this.crossOriginIframeMap.get(message.source);
-        if (!iframeEl)
-            return;
-        const transformedEvent = this.transformCrossOriginEvent(iframeEl, crossOriginMessageEvent.data.event);
-        if (transformedEvent)
-            this.wrappedEmit(transformedEvent, crossOriginMessageEvent.data.isCheckout);
-    }
-    transformCrossOriginEvent(iframeEl, e) {
-        var _a;
-        switch (e.type) {
-            case EventType$1.FullSnapshot: {
-                this.crossOriginIframeMirror.reset(iframeEl);
-                this.crossOriginIframeStyleMirror.reset(iframeEl);
-                this.replaceIdOnNode(e.data.node, iframeEl);
-                const rootId = e.data.node.id;
-                this.crossOriginIframeRootIdMap.set(iframeEl, rootId);
-                this.patchRootIdOnNode(e.data.node, rootId);
-                return {
-                    timestamp: e.timestamp,
-                    type: EventType$1.IncrementalSnapshot,
-                    data: {
-                        source: IncrementalSource$1.Mutation,
-                        adds: [
-                            {
-                                parentId: this.mirror.getId(iframeEl),
-                                nextId: null,
-                                node: e.data.node,
-                            },
-                        ],
-                        removes: [],
-                        texts: [],
-                        attributes: [],
-                        isAttachIframe: true,
-                    },
-                };
-            }
-            case EventType$1.Meta:
-            case EventType$1.Load:
-            case EventType$1.DomContentLoaded: {
-                return false;
-            }
-            case EventType$1.Plugin: {
-                return e;
-            }
-            case EventType$1.Custom: {
-                this.replaceIds(e.data.payload, iframeEl, ['id', 'parentId', 'previousId', 'nextId']);
-                return e;
-            }
-            case EventType$1.IncrementalSnapshot: {
-                switch (e.data.source) {
-                    case IncrementalSource$1.Mutation: {
-                        e.data.adds.forEach((n) => {
-                            this.replaceIds(n, iframeEl, [
-                                'parentId',
-                                'nextId',
-                                'previousId',
-                            ]);
-                            this.replaceIdOnNode(n.node, iframeEl);
-                            const rootId = this.crossOriginIframeRootIdMap.get(iframeEl);
-                            rootId && this.patchRootIdOnNode(n.node, rootId);
-                        });
-                        e.data.removes.forEach((n) => {
-                            this.replaceIds(n, iframeEl, ['parentId', 'id']);
-                        });
-                        e.data.attributes.forEach((n) => {
-                            this.replaceIds(n, iframeEl, ['id']);
-                        });
-                        e.data.texts.forEach((n) => {
-                            this.replaceIds(n, iframeEl, ['id']);
-                        });
-                        return e;
-                    }
-                    case IncrementalSource$1.Drag:
-                    case IncrementalSource$1.TouchMove:
-                    case IncrementalSource$1.MouseMove: {
-                        e.data.positions.forEach((p) => {
-                            this.replaceIds(p, iframeEl, ['id']);
-                        });
-                        return e;
-                    }
-                    case IncrementalSource$1.ViewportResize: {
-                        return false;
-                    }
-                    case IncrementalSource$1.MediaInteraction:
-                    case IncrementalSource$1.MouseInteraction:
-                    case IncrementalSource$1.Scroll:
-                    case IncrementalSource$1.CanvasMutation:
-                    case IncrementalSource$1.Input: {
-                        this.replaceIds(e.data, iframeEl, ['id']);
-                        return e;
-                    }
-                    case IncrementalSource$1.StyleSheetRule:
-                    case IncrementalSource$1.StyleDeclaration: {
-                        this.replaceIds(e.data, iframeEl, ['id']);
-                        this.replaceStyleIds(e.data, iframeEl, ['styleId']);
-                        return e;
-                    }
-                    case IncrementalSource$1.Font: {
-                        return e;
-                    }
-                    case IncrementalSource$1.Selection: {
-                        e.data.ranges.forEach((range) => {
-                            this.replaceIds(range, iframeEl, ['start', 'end']);
-                        });
-                        return e;
-                    }
-                    case IncrementalSource$1.AdoptedStyleSheet: {
-                        this.replaceIds(e.data, iframeEl, ['id']);
-                        this.replaceStyleIds(e.data, iframeEl, ['styleIds']);
-                        (_a = e.data.styles) === null || _a === void 0 ? void 0 : _a.forEach((style) => {
-                            this.replaceStyleIds(style, iframeEl, ['styleId']);
-                        });
-                        return e;
-                    }
-                }
-            }
-        }
-        return false;
-    }
-    replace(iframeMirror, obj, iframeEl, keys) {
-        for (const key of keys) {
-            if (!Array.isArray(obj[key]) && typeof obj[key] !== 'number')
-                continue;
-            if (Array.isArray(obj[key])) {
-                obj[key] = iframeMirror.getIds(iframeEl, obj[key]);
-            }
-            else {
-                obj[key] = iframeMirror.getId(iframeEl, obj[key]);
-            }
-        }
-        return obj;
-    }
-    replaceIds(obj, iframeEl, keys) {
-        return this.replace(this.crossOriginIframeMirror, obj, iframeEl, keys);
-    }
-    replaceStyleIds(obj, iframeEl, keys) {
-        return this.replace(this.crossOriginIframeStyleMirror, obj, iframeEl, keys);
-    }
-    replaceIdOnNode(node, iframeEl) {
-        this.replaceIds(node, iframeEl, ['id', 'rootId']);
-        if ('childNodes' in node) {
-            node.childNodes.forEach((child) => {
-                this.replaceIdOnNode(child, iframeEl);
-            });
-        }
-    }
-    patchRootIdOnNode(node, rootId) {
-        if (node.type !== NodeType.Document && !node.rootId)
-            node.rootId = rootId;
-        if ('childNodes' in node) {
-            node.childNodes.forEach((child) => {
-                this.patchRootIdOnNode(child, rootId);
-            });
-        }
-    }
+class CrossOriginIframeMirror {
+    constructor(generateIdFn) {
+        this.generateIdFn = generateIdFn;
+        this.iframeIdToRemoteIdMap = new WeakMap();
+        this.iframeRemoteIdToIdMap = new WeakMap();
+    }
+    getId(iframe, remoteId, idToRemoteMap, remoteToIdMap) {
+        const idToRemoteIdMap = idToRemoteMap || this.getIdToRemoteIdMap(iframe);
+        const remoteIdToIdMap = remoteToIdMap || this.getRemoteIdToIdMap(iframe);
+        let id = idToRemoteIdMap.get(remoteId);
+        if (!id) {
+            id = this.generateIdFn();
+            idToRemoteIdMap.set(remoteId, id);
+            remoteIdToIdMap.set(id, remoteId);
+        }
+        return id;
+    }
+    getIds(iframe, remoteId) {
+        const idToRemoteIdMap = this.getIdToRemoteIdMap(iframe);
+        const remoteIdToIdMap = this.getRemoteIdToIdMap(iframe);
+        return remoteId.map((id) => this.getId(iframe, id, idToRemoteIdMap, remoteIdToIdMap));
+    }
+    getRemoteId(iframe, id, map) {
+        const remoteIdToIdMap = map || this.getRemoteIdToIdMap(iframe);
+        if (typeof id !== 'number')
+            return id;
+        const remoteId = remoteIdToIdMap.get(id);
+        if (!remoteId)
+            return -1;
+        return remoteId;
+    }
+    getRemoteIds(iframe, ids) {
+        const remoteIdToIdMap = this.getRemoteIdToIdMap(iframe);
+        return ids.map((id) => this.getRemoteId(iframe, id, remoteIdToIdMap));
+    }
+    reset(iframe) {
+        if (!iframe) {
+            this.iframeIdToRemoteIdMap = new WeakMap();
+            this.iframeRemoteIdToIdMap = new WeakMap();
+            return;
+        }
+        this.iframeIdToRemoteIdMap.delete(iframe);
+        this.iframeRemoteIdToIdMap.delete(iframe);
+    }
+    getIdToRemoteIdMap(iframe) {
+        let idToRemoteIdMap = this.iframeIdToRemoteIdMap.get(iframe);
+        if (!idToRemoteIdMap) {
+            idToRemoteIdMap = new Map();
+            this.iframeIdToRemoteIdMap.set(iframe, idToRemoteIdMap);
+        }
+        return idToRemoteIdMap;
+    }
+    getRemoteIdToIdMap(iframe) {
+        let remoteIdToIdMap = this.iframeRemoteIdToIdMap.get(iframe);
+        if (!remoteIdToIdMap) {
+            remoteIdToIdMap = new Map();
+            this.iframeRemoteIdToIdMap.set(iframe, remoteIdToIdMap);
+        }
+        return remoteIdToIdMap;
+    }
 }
 
-class ShadowDomManager {
-    constructor(options) {
-        this.shadowDoms = new WeakSet();
-        this.restoreHandlers = [];
-        this.mutationCb = options.mutationCb;
-        this.scrollCb = options.scrollCb;
-        this.bypassOptions = options.bypassOptions;
-        this.mirror = options.mirror;
-        this.init();
-    }
-    init() {
-        this.reset();
-        this.patchAttachShadow(Element, document);
-    }
-    addShadowRoot(shadowRoot, doc) {
-        if (!isNativeShadowDom(shadowRoot))
-            return;
-        if (this.shadowDoms.has(shadowRoot))
-            return;
-        this.shadowDoms.add(shadowRoot);
-        const observer = initMutationObserver(Object.assign(Object.assign({}, this.bypassOptions), { doc, mutationCb: this.mutationCb, mirror: this.mirror, shadowDomManager: this }), shadowRoot);
-        this.restoreHandlers.push(() => observer.disconnect());
-        this.restoreHandlers.push(initScrollObserver(Object.assign(Object.assign({}, this.bypassOptions), { scrollCb: this.scrollCb, doc: shadowRoot, mirror: this.mirror })));
-        setTimeout(() => {
-            if (shadowRoot.adoptedStyleSheets &&
-                shadowRoot.adoptedStyleSheets.length > 0)
-                this.bypassOptions.stylesheetManager.adoptStyleSheets(shadowRoot.adoptedStyleSheets, this.mirror.getId(shadowRoot.host));
-            this.restoreHandlers.push(initAdoptedStyleSheetObserver({
-                mirror: this.mirror,
-                stylesheetManager: this.bypassOptions.stylesheetManager,
-            }, shadowRoot));
-        }, 0);
-    }
-    observeAttachShadow(iframeElement) {
-        if (!iframeElement.contentWindow || !iframeElement.contentDocument)
-            return;
-        this.patchAttachShadow(iframeElement.contentWindow.Element, iframeElement.contentDocument);
-    }
-    patchAttachShadow(element, doc) {
-        const manager = this;
-        this.restoreHandlers.push(patch(element.prototype, 'attachShadow', function (original) {
-            return function (option) {
-                const shadowRoot = original.call(this, option);
-                if (this.shadowRoot && inDom(this))
-                    manager.addShadowRoot(this.shadowRoot, doc);
-                return shadowRoot;
-            };
-        }));
-    }
-    reset() {
-        this.restoreHandlers.forEach((handler) => {
-            try {
-                handler();
-            }
-            catch (e) {
-            }
-        });
-        this.restoreHandlers = [];
-        this.shadowDoms = new WeakSet();
-    }
+class IframeManager {
+    constructor(options) {
+        this.iframes = new WeakMap();
+        this.crossOriginIframeMap = new WeakMap();
+        this.crossOriginIframeMirror = new CrossOriginIframeMirror(genId);
+        this.crossOriginIframeRootIdMap = new WeakMap();
+        this.mutationCb = options.mutationCb;
+        this.wrappedEmit = options.wrappedEmit;
+        this.stylesheetManager = options.stylesheetManager;
+        this.recordCrossOriginIframes = options.recordCrossOriginIframes;
+        this.crossOriginIframeStyleMirror = new CrossOriginIframeMirror(this.stylesheetManager.styleMirror.generateId.bind(this.stylesheetManager.styleMirror));
+        this.mirror = options.mirror;
+        if (this.recordCrossOriginIframes) {
+            window.addEventListener('message', this.handleMessage.bind(this));
+        }
+    }
+    addIframe(iframeEl) {
+        this.iframes.set(iframeEl, true);
+        if (iframeEl.contentWindow)
+            this.crossOriginIframeMap.set(iframeEl.contentWindow, iframeEl);
+    }
+    addLoadListener(cb) {
+        this.loadListener = cb;
+    }
+    attachIframe(iframeEl, childSn) {
+        var _a;
+        this.mutationCb({
+            adds: [
+                {
+                    parentId: this.mirror.getId(iframeEl),
+                    nextId: null,
+                    node: childSn,
+                },
+            ],
+            removes: [],
+            texts: [],
+            attributes: [],
+            isAttachIframe: true,
+        });
+        (_a = this.loadListener) === null || _a === void 0 ? void 0 : _a.call(this, iframeEl);
+        if (iframeEl.contentDocument &&
+            iframeEl.contentDocument.adoptedStyleSheets &&
+            iframeEl.contentDocument.adoptedStyleSheets.length > 0)
+            this.stylesheetManager.adoptStyleSheets(iframeEl.contentDocument.adoptedStyleSheets, this.mirror.getId(iframeEl.contentDocument));
+    }
+    handleMessage(message) {
+        const crossOriginMessageEvent = message;
+        if (crossOriginMessageEvent.data.type !== 'rrweb' ||
+            crossOriginMessageEvent.origin !== crossOriginMessageEvent.data.origin)
+            return;
+        const iframeSourceWindow = message.source;
+        if (!iframeSourceWindow)
+            return;
+        const iframeEl = this.crossOriginIframeMap.get(message.source);
+        if (!iframeEl)
+            return;
+        const transformedEvent = this.transformCrossOriginEvent(iframeEl, crossOriginMessageEvent.data.event);
+        if (transformedEvent)
+            this.wrappedEmit(transformedEvent, crossOriginMessageEvent.data.isCheckout);
+    }
+    transformCrossOriginEvent(iframeEl, e) {
+        var _a;
+        switch (e.type) {
+            case EventType$1.FullSnapshot: {
+                this.crossOriginIframeMirror.reset(iframeEl);
+                this.crossOriginIframeStyleMirror.reset(iframeEl);
+                this.replaceIdOnNode(e.data.node, iframeEl);
+                const rootId = e.data.node.id;
+                this.crossOriginIframeRootIdMap.set(iframeEl, rootId);
+                this.patchRootIdOnNode(e.data.node, rootId);
+                return {
+                    timestamp: e.timestamp,
+                    type: EventType$1.IncrementalSnapshot,
+                    data: {
+                        source: IncrementalSource$1.Mutation,
+                        adds: [
+                            {
+                                parentId: this.mirror.getId(iframeEl),
+                                nextId: null,
+                                node: e.data.node,
+                            },
+                        ],
+                        removes: [],
+                        texts: [],
+                        attributes: [],
+                        isAttachIframe: true,
+                    },
+                };
+            }
+            case EventType$1.Meta:
+            case EventType$1.Load:
+            case EventType$1.DomContentLoaded: {
+                return false;
+            }
+            case EventType$1.Plugin: {
+                return e;
+            }
+            case EventType$1.Custom: {
+                this.replaceIds(e.data.payload, iframeEl, ['id', 'parentId', 'previousId', 'nextId']);
+                return e;
+            }
+            case EventType$1.IncrementalSnapshot: {
+                switch (e.data.source) {
+                    case IncrementalSource$1.Mutation: {
+                        e.data.adds.forEach((n) => {
+                            this.replaceIds(n, iframeEl, [
+                                'parentId',
+                                'nextId',
+                                'previousId',
+                            ]);
+                            this.replaceIdOnNode(n.node, iframeEl);
+                            const rootId = this.crossOriginIframeRootIdMap.get(iframeEl);
+                            rootId && this.patchRootIdOnNode(n.node, rootId);
+                        });
+                        e.data.removes.forEach((n) => {
+                            this.replaceIds(n, iframeEl, ['parentId', 'id']);
+                        });
+                        e.data.attributes.forEach((n) => {
+                            this.replaceIds(n, iframeEl, ['id']);
+                        });
+                        e.data.texts.forEach((n) => {
+                            this.replaceIds(n, iframeEl, ['id']);
+                        });
+                        return e;
+                    }
+                    case IncrementalSource$1.Drag:
+                    case IncrementalSource$1.TouchMove:
+                    case IncrementalSource$1.MouseMove: {
+                        e.data.positions.forEach((p) => {
+                            this.replaceIds(p, iframeEl, ['id']);
+                        });
+                        return e;
+                    }
+                    case IncrementalSource$1.ViewportResize: {
+                        return false;
+                    }
+                    case IncrementalSource$1.MediaInteraction:
+                    case IncrementalSource$1.MouseInteraction:
+                    case IncrementalSource$1.Scroll:
+                    case IncrementalSource$1.CanvasMutation:
+                    case IncrementalSource$1.Input: {
+                        this.replaceIds(e.data, iframeEl, ['id']);
+                        return e;
+                    }
+                    case IncrementalSource$1.StyleSheetRule:
+                    case IncrementalSource$1.StyleDeclaration: {
+                        this.replaceIds(e.data, iframeEl, ['id']);
+                        this.replaceStyleIds(e.data, iframeEl, ['styleId']);
+                        return e;
+                    }
+                    case IncrementalSource$1.Font: {
+                        return e;
+                    }
+                    case IncrementalSource$1.Selection: {
+                        e.data.ranges.forEach((range) => {
+                            this.replaceIds(range, iframeEl, ['start', 'end']);
+                        });
+                        return e;
+                    }
+                    case IncrementalSource$1.AdoptedStyleSheet: {
+                        this.replaceIds(e.data, iframeEl, ['id']);
+                        this.replaceStyleIds(e.data, iframeEl, ['styleIds']);
+                        (_a = e.data.styles) === null || _a === void 0 ? void 0 : _a.forEach((style) => {
+                            this.replaceStyleIds(style, iframeEl, ['styleId']);
+                        });
+                        return e;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    replace(iframeMirror, obj, iframeEl, keys) {
+        for (const key of keys) {
+            if (!Array.isArray(obj[key]) && typeof obj[key] !== 'number')
+                continue;
+            if (Array.isArray(obj[key])) {
+                obj[key] = iframeMirror.getIds(iframeEl, obj[key]);
+            }
+            else {
+                obj[key] = iframeMirror.getId(iframeEl, obj[key]);
+            }
+        }
+        return obj;
+    }
+    replaceIds(obj, iframeEl, keys) {
+        return this.replace(this.crossOriginIframeMirror, obj, iframeEl, keys);
+    }
+    replaceStyleIds(obj, iframeEl, keys) {
+        return this.replace(this.crossOriginIframeStyleMirror, obj, iframeEl, keys);
+    }
+    replaceIdOnNode(node, iframeEl) {
+        this.replaceIds(node, iframeEl, ['id', 'rootId']);
+        if ('childNodes' in node) {
+            node.childNodes.forEach((child) => {
+                this.replaceIdOnNode(child, iframeEl);
+            });
+        }
+    }
+    patchRootIdOnNode(node, rootId) {
+        if (node.type !== NodeType.Document && !node.rootId)
+            node.rootId = rootId;
+        if ('childNodes' in node) {
+            node.childNodes.forEach((child) => {
+                this.patchRootIdOnNode(child, rootId);
+            });
+        }
+    }
 }
 
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
+class ShadowDomManager {
+    constructor(options) {
+        this.shadowDoms = new WeakSet();
+        this.restoreHandlers = [];
+        this.mutationCb = options.mutationCb;
+        this.scrollCb = options.scrollCb;
+        this.bypassOptions = options.bypassOptions;
+        this.mirror = options.mirror;
+        this.init();
+    }
+    init() {
+        this.reset();
+        this.patchAttachShadow(Element, document);
+    }
+    addShadowRoot(shadowRoot, doc) {
+        if (!isNativeShadowDom(shadowRoot))
+            return;
+        if (this.shadowDoms.has(shadowRoot))
+            return;
+        this.shadowDoms.add(shadowRoot);
+        const observer = initMutationObserver(Object.assign(Object.assign({}, this.bypassOptions), { doc, mutationCb: this.mutationCb, mirror: this.mirror, shadowDomManager: this }), shadowRoot);
+        this.restoreHandlers.push(() => observer.disconnect());
+        this.restoreHandlers.push(initScrollObserver(Object.assign(Object.assign({}, this.bypassOptions), { scrollCb: this.scrollCb, doc: shadowRoot, mirror: this.mirror })));
+        setTimeout(() => {
+            if (shadowRoot.adoptedStyleSheets &&
+                shadowRoot.adoptedStyleSheets.length > 0)
+                this.bypassOptions.stylesheetManager.adoptStyleSheets(shadowRoot.adoptedStyleSheets, this.mirror.getId(shadowRoot.host));
+            this.restoreHandlers.push(initAdoptedStyleSheetObserver({
+                mirror: this.mirror,
+                stylesheetManager: this.bypassOptions.stylesheetManager,
+            }, shadowRoot));
+        }, 0);
+    }
+    observeAttachShadow(iframeElement) {
+        if (!iframeElement.contentWindow || !iframeElement.contentDocument)
+            return;
+        this.patchAttachShadow(iframeElement.contentWindow.Element, iframeElement.contentDocument);
+    }
+    patchAttachShadow(element, doc) {
+        const manager = this;
+        this.restoreHandlers.push(patch(element.prototype, 'attachShadow', function (original) {
+            return function (option) {
+                const shadowRoot = original.call(this, option);
+                if (this.shadowRoot && inDom(this))
+                    manager.addShadowRoot(this.shadowRoot, doc);
+                return shadowRoot;
+            };
+        }));
+    }
+    reset() {
+        this.restoreHandlers.forEach((handler) => {
+            try {
+                handler();
+            }
+            catch (e) {
+            }
+        });
+        this.restoreHandlers = [];
+        this.shadowDoms = new WeakSet();
+    }
 }
 
-function __awaiter(thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
 }
 
 /*
@@ -60247,270 +60244,270 @@ var encode = function (arraybuffer) {
     return base64;
 };
 
-const canvasVarMap = new Map();
-function variableListFor(ctx, ctor) {
-    let contextMap = canvasVarMap.get(ctx);
-    if (!contextMap) {
-        contextMap = new Map();
-        canvasVarMap.set(ctx, contextMap);
-    }
-    if (!contextMap.has(ctor)) {
-        contextMap.set(ctor, []);
-    }
-    return contextMap.get(ctor);
-}
-const saveWebGLVar = (value, win, ctx) => {
-    if (!value ||
-        !(isInstanceOfWebGLObject(value, win) || typeof value === 'object'))
-        return;
-    const name = value.constructor.name;
-    const list = variableListFor(ctx, name);
-    let index = list.indexOf(value);
-    if (index === -1) {
-        index = list.length;
-        list.push(value);
-    }
-    return index;
-};
-function serializeArg(value, win, ctx) {
-    if (value instanceof Array) {
-        return value.map((arg) => serializeArg(arg, win, ctx));
-    }
-    else if (value === null) {
-        return value;
-    }
-    else if (value instanceof Float32Array ||
-        value instanceof Float64Array ||
-        value instanceof Int32Array ||
-        value instanceof Uint32Array ||
-        value instanceof Uint8Array ||
-        value instanceof Uint16Array ||
-        value instanceof Int16Array ||
-        value instanceof Int8Array ||
-        value instanceof Uint8ClampedArray) {
-        const name = value.constructor.name;
-        return {
-            rr_type: name,
-            args: [Object.values(value)],
-        };
-    }
-    else if (value instanceof ArrayBuffer) {
-        const name = value.constructor.name;
-        const base64 = encode(value);
-        return {
-            rr_type: name,
-            base64,
-        };
-    }
-    else if (value instanceof DataView) {
-        const name = value.constructor.name;
-        return {
-            rr_type: name,
-            args: [
-                serializeArg(value.buffer, win, ctx),
-                value.byteOffset,
-                value.byteLength,
-            ],
-        };
-    }
-    else if (value instanceof HTMLImageElement) {
-        const name = value.constructor.name;
-        const { src } = value;
-        return {
-            rr_type: name,
-            src,
-        };
-    }
-    else if (value instanceof HTMLCanvasElement) {
-        const name = 'HTMLImageElement';
-        const src = value.toDataURL();
-        return {
-            rr_type: name,
-            src,
-        };
-    }
-    else if (value instanceof ImageData) {
-        const name = value.constructor.name;
-        return {
-            rr_type: name,
-            args: [serializeArg(value.data, win, ctx), value.width, value.height],
-        };
-    }
-    else if (isInstanceOfWebGLObject(value, win) || typeof value === 'object') {
-        const name = value.constructor.name;
-        const index = saveWebGLVar(value, win, ctx);
-        return {
-            rr_type: name,
-            index: index,
-        };
-    }
-    return value;
-}
-const serializeArgs = (args, win, ctx) => {
-    return args.map((arg) => serializeArg(arg, win, ctx));
-};
-const isInstanceOfWebGLObject = (value, win) => {
-    const webGLConstructorNames = [
-        'WebGLActiveInfo',
-        'WebGLBuffer',
-        'WebGLFramebuffer',
-        'WebGLProgram',
-        'WebGLRenderbuffer',
-        'WebGLShader',
-        'WebGLShaderPrecisionFormat',
-        'WebGLTexture',
-        'WebGLUniformLocation',
-        'WebGLVertexArrayObject',
-        'WebGLVertexArrayObjectOES',
-    ];
-    const supportedWebGLConstructorNames = webGLConstructorNames.filter((name) => typeof win[name] === 'function');
-    return Boolean(supportedWebGLConstructorNames.find((name) => value instanceof win[name]));
+const canvasVarMap = new Map();
+function variableListFor(ctx, ctor) {
+    let contextMap = canvasVarMap.get(ctx);
+    if (!contextMap) {
+        contextMap = new Map();
+        canvasVarMap.set(ctx, contextMap);
+    }
+    if (!contextMap.has(ctor)) {
+        contextMap.set(ctor, []);
+    }
+    return contextMap.get(ctor);
+}
+const saveWebGLVar = (value, win, ctx) => {
+    if (!value ||
+        !(isInstanceOfWebGLObject(value, win) || typeof value === 'object'))
+        return;
+    const name = value.constructor.name;
+    const list = variableListFor(ctx, name);
+    let index = list.indexOf(value);
+    if (index === -1) {
+        index = list.length;
+        list.push(value);
+    }
+    return index;
+};
+function serializeArg(value, win, ctx) {
+    if (value instanceof Array) {
+        return value.map((arg) => serializeArg(arg, win, ctx));
+    }
+    else if (value === null) {
+        return value;
+    }
+    else if (value instanceof Float32Array ||
+        value instanceof Float64Array ||
+        value instanceof Int32Array ||
+        value instanceof Uint32Array ||
+        value instanceof Uint8Array ||
+        value instanceof Uint16Array ||
+        value instanceof Int16Array ||
+        value instanceof Int8Array ||
+        value instanceof Uint8ClampedArray) {
+        const name = value.constructor.name;
+        return {
+            rr_type: name,
+            args: [Object.values(value)],
+        };
+    }
+    else if (value instanceof ArrayBuffer) {
+        const name = value.constructor.name;
+        const base64 = encode(value);
+        return {
+            rr_type: name,
+            base64,
+        };
+    }
+    else if (value instanceof DataView) {
+        const name = value.constructor.name;
+        return {
+            rr_type: name,
+            args: [
+                serializeArg(value.buffer, win, ctx),
+                value.byteOffset,
+                value.byteLength,
+            ],
+        };
+    }
+    else if (value instanceof HTMLImageElement) {
+        const name = value.constructor.name;
+        const { src } = value;
+        return {
+            rr_type: name,
+            src,
+        };
+    }
+    else if (value instanceof HTMLCanvasElement) {
+        const name = 'HTMLImageElement';
+        const src = value.toDataURL();
+        return {
+            rr_type: name,
+            src,
+        };
+    }
+    else if (value instanceof ImageData) {
+        const name = value.constructor.name;
+        return {
+            rr_type: name,
+            args: [serializeArg(value.data, win, ctx), value.width, value.height],
+        };
+    }
+    else if (isInstanceOfWebGLObject(value, win) || typeof value === 'object') {
+        const name = value.constructor.name;
+        const index = saveWebGLVar(value, win, ctx);
+        return {
+            rr_type: name,
+            index: index,
+        };
+    }
+    return value;
+}
+const serializeArgs = (args, win, ctx) => {
+    return args.map((arg) => serializeArg(arg, win, ctx));
+};
+const isInstanceOfWebGLObject = (value, win) => {
+    const webGLConstructorNames = [
+        'WebGLActiveInfo',
+        'WebGLBuffer',
+        'WebGLFramebuffer',
+        'WebGLProgram',
+        'WebGLRenderbuffer',
+        'WebGLShader',
+        'WebGLShaderPrecisionFormat',
+        'WebGLTexture',
+        'WebGLUniformLocation',
+        'WebGLVertexArrayObject',
+        'WebGLVertexArrayObjectOES',
+    ];
+    const supportedWebGLConstructorNames = webGLConstructorNames.filter((name) => typeof win[name] === 'function');
+    return Boolean(supportedWebGLConstructorNames.find((name) => value instanceof win[name]));
 };
 
-function initCanvas2DMutationObserver(cb, win, blockClass, blockSelector) {
-    const handlers = [];
-    const props2D = Object.getOwnPropertyNames(win.CanvasRenderingContext2D.prototype);
-    for (const prop of props2D) {
-        try {
-            if (typeof win.CanvasRenderingContext2D.prototype[prop] !== 'function') {
-                continue;
-            }
-            const restoreHandler = patch(win.CanvasRenderingContext2D.prototype, prop, function (original) {
-                return function (...args) {
-                    if (!isBlocked(this.canvas, blockClass, blockSelector, true)) {
-                        setTimeout(() => {
-                            const recordArgs = serializeArgs(args, win, this);
-                            cb(this.canvas, {
-                                type: CanvasContext['2D'],
-                                property: prop,
-                                args: recordArgs,
-                            });
-                        }, 0);
-                    }
-                    return original.apply(this, args);
-                };
-            });
-            handlers.push(restoreHandler);
-        }
-        catch (_a) {
-            const hookHandler = hookSetter(win.CanvasRenderingContext2D.prototype, prop, {
-                set(v) {
-                    cb(this.canvas, {
-                        type: CanvasContext['2D'],
-                        property: prop,
-                        args: [v],
-                        setter: true,
-                    });
-                },
-            });
-            handlers.push(hookHandler);
-        }
-    }
-    return () => {
-        handlers.forEach((h) => h());
-    };
+function initCanvas2DMutationObserver(cb, win, blockClass, blockSelector) {
+    const handlers = [];
+    const props2D = Object.getOwnPropertyNames(win.CanvasRenderingContext2D.prototype);
+    for (const prop of props2D) {
+        try {
+            if (typeof win.CanvasRenderingContext2D.prototype[prop] !== 'function') {
+                continue;
+            }
+            const restoreHandler = patch(win.CanvasRenderingContext2D.prototype, prop, function (original) {
+                return function (...args) {
+                    if (!isBlocked(this.canvas, blockClass, blockSelector, true)) {
+                        setTimeout(() => {
+                            const recordArgs = serializeArgs(args, win, this);
+                            cb(this.canvas, {
+                                type: CanvasContext['2D'],
+                                property: prop,
+                                args: recordArgs,
+                            });
+                        }, 0);
+                    }
+                    return original.apply(this, args);
+                };
+            });
+            handlers.push(restoreHandler);
+        }
+        catch (_a) {
+            const hookHandler = hookSetter(win.CanvasRenderingContext2D.prototype, prop, {
+                set(v) {
+                    cb(this.canvas, {
+                        type: CanvasContext['2D'],
+                        property: prop,
+                        args: [v],
+                        setter: true,
+                    });
+                },
+            });
+            handlers.push(hookHandler);
+        }
+    }
+    return () => {
+        handlers.forEach((h) => h());
+    };
 }
 
-function getNormalizedContextName(contextType) {
-    return contextType === 'experimental-webgl' ? 'webgl' : contextType;
-}
-function initCanvasContextObserver(win, blockClass, blockSelector, setPreserveDrawingBufferToTrue) {
-    const handlers = [];
-    try {
-        const restoreHandler = patch(win.HTMLCanvasElement.prototype, 'getContext', function (original) {
-            return function (contextType, ...args) {
-                if (!isBlocked(this, blockClass, blockSelector, true)) {
-                    const ctxName = getNormalizedContextName(contextType);
-                    if (!('__context' in this))
-                        this.__context = ctxName;
-                    if (setPreserveDrawingBufferToTrue &&
-                        ['webgl', 'webgl2'].includes(ctxName)) {
-                        if (args[0] && typeof args[0] === 'object') {
-                            const contextAttributes = args[0];
-                            if (!contextAttributes.preserveDrawingBuffer) {
-                                contextAttributes.preserveDrawingBuffer = true;
-                            }
-                        }
-                        else {
-                            args.splice(0, 1, {
-                                preserveDrawingBuffer: true,
-                            });
-                        }
-                    }
-                }
-                return original.apply(this, [contextType, ...args]);
-            };
-        });
-        handlers.push(restoreHandler);
-    }
-    catch (_a) {
-        console.error('failed to patch HTMLCanvasElement.prototype.getContext');
-    }
-    return () => {
-        handlers.forEach((h) => h());
-    };
+function getNormalizedContextName(contextType) {
+    return contextType === 'experimental-webgl' ? 'webgl' : contextType;
+}
+function initCanvasContextObserver(win, blockClass, blockSelector, setPreserveDrawingBufferToTrue) {
+    const handlers = [];
+    try {
+        const restoreHandler = patch(win.HTMLCanvasElement.prototype, 'getContext', function (original) {
+            return function (contextType, ...args) {
+                if (!isBlocked(this, blockClass, blockSelector, true)) {
+                    const ctxName = getNormalizedContextName(contextType);
+                    if (!('__context' in this))
+                        this.__context = ctxName;
+                    if (setPreserveDrawingBufferToTrue &&
+                        ['webgl', 'webgl2'].includes(ctxName)) {
+                        if (args[0] && typeof args[0] === 'object') {
+                            const contextAttributes = args[0];
+                            if (!contextAttributes.preserveDrawingBuffer) {
+                                contextAttributes.preserveDrawingBuffer = true;
+                            }
+                        }
+                        else {
+                            args.splice(0, 1, {
+                                preserveDrawingBuffer: true,
+                            });
+                        }
+                    }
+                }
+                return original.apply(this, [contextType, ...args]);
+            };
+        });
+        handlers.push(restoreHandler);
+    }
+    catch (_a) {
+        console.error('failed to patch HTMLCanvasElement.prototype.getContext');
+    }
+    return () => {
+        handlers.forEach((h) => h());
+    };
 }
 
-function patchGLPrototype(prototype, type, cb, blockClass, blockSelector, mirror, win) {
-    const handlers = [];
-    const props = Object.getOwnPropertyNames(prototype);
-    for (const prop of props) {
-        if ([
-            'isContextLost',
-            'canvas',
-            'drawingBufferWidth',
-            'drawingBufferHeight',
-        ].includes(prop)) {
-            continue;
-        }
-        try {
-            if (typeof prototype[prop] !== 'function') {
-                continue;
-            }
-            const restoreHandler = patch(prototype, prop, function (original) {
-                return function (...args) {
-                    const result = original.apply(this, args);
-                    saveWebGLVar(result, win, this);
-                    if ('tagName' in this.canvas &&
-                        !isBlocked(this.canvas, blockClass, blockSelector, true)) {
-                        const recordArgs = serializeArgs(args, win, this);
-                        const mutation = {
-                            type,
-                            property: prop,
-                            args: recordArgs,
-                        };
-                        cb(this.canvas, mutation);
-                    }
-                    return result;
-                };
-            });
-            handlers.push(restoreHandler);
-        }
-        catch (_a) {
-            const hookHandler = hookSetter(prototype, prop, {
-                set(v) {
-                    cb(this.canvas, {
-                        type,
-                        property: prop,
-                        args: [v],
-                        setter: true,
-                    });
-                },
-            });
-            handlers.push(hookHandler);
-        }
-    }
-    return handlers;
-}
-function initCanvasWebGLMutationObserver(cb, win, blockClass, blockSelector, mirror) {
-    const handlers = [];
-    handlers.push(...patchGLPrototype(win.WebGLRenderingContext.prototype, CanvasContext.WebGL, cb, blockClass, blockSelector, mirror, win));
-    if (typeof win.WebGL2RenderingContext !== 'undefined') {
-        handlers.push(...patchGLPrototype(win.WebGL2RenderingContext.prototype, CanvasContext.WebGL2, cb, blockClass, blockSelector, mirror, win));
-    }
-    return () => {
-        handlers.forEach((h) => h());
-    };
+function patchGLPrototype(prototype, type, cb, blockClass, blockSelector, mirror, win) {
+    const handlers = [];
+    const props = Object.getOwnPropertyNames(prototype);
+    for (const prop of props) {
+        if ([
+            'isContextLost',
+            'canvas',
+            'drawingBufferWidth',
+            'drawingBufferHeight',
+        ].includes(prop)) {
+            continue;
+        }
+        try {
+            if (typeof prototype[prop] !== 'function') {
+                continue;
+            }
+            const restoreHandler = patch(prototype, prop, function (original) {
+                return function (...args) {
+                    const result = original.apply(this, args);
+                    saveWebGLVar(result, win, this);
+                    if ('tagName' in this.canvas &&
+                        !isBlocked(this.canvas, blockClass, blockSelector, true)) {
+                        const recordArgs = serializeArgs(args, win, this);
+                        const mutation = {
+                            type,
+                            property: prop,
+                            args: recordArgs,
+                        };
+                        cb(this.canvas, mutation);
+                    }
+                    return result;
+                };
+            });
+            handlers.push(restoreHandler);
+        }
+        catch (_a) {
+            const hookHandler = hookSetter(prototype, prop, {
+                set(v) {
+                    cb(this.canvas, {
+                        type,
+                        property: prop,
+                        args: [v],
+                        setter: true,
+                    });
+                },
+            });
+            handlers.push(hookHandler);
+        }
+    }
+    return handlers;
+}
+function initCanvasWebGLMutationObserver(cb, win, blockClass, blockSelector, mirror) {
+    const handlers = [];
+    handlers.push(...patchGLPrototype(win.WebGLRenderingContext.prototype, CanvasContext.WebGL, cb, blockClass, blockSelector, mirror, win));
+    if (typeof win.WebGL2RenderingContext !== 'undefined') {
+        handlers.push(...patchGLPrototype(win.WebGL2RenderingContext.prototype, CanvasContext.WebGL2, cb, blockClass, blockSelector, mirror, win));
+    }
+    return () => {
+        handlers.forEach((h) => h());
+    };
 }
 
 function funcToSource(fn, sourcemapArg) {
@@ -60548,29 +60545,29 @@ var WorkerFactory = createInlineWorkerFactory(/* rollup-plugin-web-worker-loader
 (function () {
     '__worker_loader_strict__';
 
-    /*! *****************************************************************************
-    Copyright (c) Microsoft Corporation.
-
-    Permission to use, copy, modify, and/or distribute this software for any
-    purpose with or without fee is hereby granted.
-
-    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-    PERFORMANCE OF THIS SOFTWARE.
-    ***************************************************************************** */
-
-    function __awaiter(thisArg, _arguments, P, generator) {
-        function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-        return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-            function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-            function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-            step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
+    /*! *****************************************************************************
+    Copyright (c) Microsoft Corporation.
+
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+    PERFORMANCE OF THIS SOFTWARE.
+    ***************************************************************************** */
+
+    function __awaiter(thisArg, _arguments, P, generator) {
+        function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+            function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+            function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+            step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
     }
 
     /*
@@ -60601,757 +60598,757 @@ var WorkerFactory = createInlineWorkerFactory(/* rollup-plugin-web-worker-loader
         return base64;
     };
 
-    const lastBlobMap = new Map();
-    const transparentBlobMap = new Map();
-    function getTransparentBlobFor(width, height, dataURLOptions) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const id = `${width}-${height}`;
-            if ('OffscreenCanvas' in globalThis) {
-                if (transparentBlobMap.has(id))
-                    return transparentBlobMap.get(id);
-                const offscreen = new OffscreenCanvas(width, height);
-                offscreen.getContext('2d');
-                const blob = yield offscreen.convertToBlob(dataURLOptions);
-                const arrayBuffer = yield blob.arrayBuffer();
-                const base64 = encode(arrayBuffer);
-                transparentBlobMap.set(id, base64);
-                return base64;
-            }
-            else {
-                return '';
-            }
-        });
-    }
-    const worker = self;
-    worker.onmessage = function (e) {
-        return __awaiter(this, void 0, void 0, function* () {
-            if ('OffscreenCanvas' in globalThis) {
-                const { id, bitmap, width, height, dataURLOptions } = e.data;
-                const transparentBase64 = getTransparentBlobFor(width, height, dataURLOptions);
-                const offscreen = new OffscreenCanvas(width, height);
-                const ctx = offscreen.getContext('2d');
-                ctx.drawImage(bitmap, 0, 0);
-                bitmap.close();
-                const blob = yield offscreen.convertToBlob(dataURLOptions);
-                const type = blob.type;
-                const arrayBuffer = yield blob.arrayBuffer();
-                const base64 = encode(arrayBuffer);
-                if (!lastBlobMap.has(id) && (yield transparentBase64) === base64) {
-                    lastBlobMap.set(id, base64);
-                    return worker.postMessage({ id });
-                }
-                if (lastBlobMap.get(id) === base64)
-                    return worker.postMessage({ id });
-                worker.postMessage({
-                    id,
-                    type,
-                    base64,
-                    width,
-                    height,
-                });
-                lastBlobMap.set(id, base64);
-            }
-            else {
-                return worker.postMessage({ id: e.data.id });
-            }
-        });
+    const lastBlobMap = new Map();
+    const transparentBlobMap = new Map();
+    function getTransparentBlobFor(width, height, dataURLOptions) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id = `${width}-${height}`;
+            if ('OffscreenCanvas' in globalThis) {
+                if (transparentBlobMap.has(id))
+                    return transparentBlobMap.get(id);
+                const offscreen = new OffscreenCanvas(width, height);
+                offscreen.getContext('2d');
+                const blob = yield offscreen.convertToBlob(dataURLOptions);
+                const arrayBuffer = yield blob.arrayBuffer();
+                const base64 = encode(arrayBuffer);
+                transparentBlobMap.set(id, base64);
+                return base64;
+            }
+            else {
+                return '';
+            }
+        });
+    }
+    const worker = self;
+    worker.onmessage = function (e) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if ('OffscreenCanvas' in globalThis) {
+                const { id, bitmap, width, height, dataURLOptions } = e.data;
+                const transparentBase64 = getTransparentBlobFor(width, height, dataURLOptions);
+                const offscreen = new OffscreenCanvas(width, height);
+                const ctx = offscreen.getContext('2d');
+                ctx.drawImage(bitmap, 0, 0);
+                bitmap.close();
+                const blob = yield offscreen.convertToBlob(dataURLOptions);
+                const type = blob.type;
+                const arrayBuffer = yield blob.arrayBuffer();
+                const base64 = encode(arrayBuffer);
+                if (!lastBlobMap.has(id) && (yield transparentBase64) === base64) {
+                    lastBlobMap.set(id, base64);
+                    return worker.postMessage({ id });
+                }
+                if (lastBlobMap.get(id) === base64)
+                    return worker.postMessage({ id });
+                worker.postMessage({
+                    id,
+                    type,
+                    base64,
+                    width,
+                    height,
+                });
+                lastBlobMap.set(id, base64);
+            }
+            else {
+                return worker.postMessage({ id: e.data.id });
+            }
+        });
     };
 
 })();
 }, null);
 
-class CanvasManager {
-    reset() {
-        this.pendingCanvasMutations.clear();
-        this.resetObservers && this.resetObservers();
-    }
-    freeze() {
-        this.frozen = true;
-    }
-    unfreeze() {
-        this.frozen = false;
-    }
-    lock() {
-        this.locked = true;
-    }
-    unlock() {
-        this.locked = false;
-    }
-    constructor(options) {
-        this.pendingCanvasMutations = new Map();
-        this.rafStamps = { latestId: 0, invokeId: null };
-        this.frozen = false;
-        this.locked = false;
-        this.processMutation = (target, mutation) => {
-            const newFrame = this.rafStamps.invokeId &&
-                this.rafStamps.latestId !== this.rafStamps.invokeId;
-            if (newFrame || !this.rafStamps.invokeId)
-                this.rafStamps.invokeId = this.rafStamps.latestId;
-            if (!this.pendingCanvasMutations.has(target)) {
-                this.pendingCanvasMutations.set(target, []);
-            }
-            this.pendingCanvasMutations.get(target).push(mutation);
-        };
-        const { sampling = 'all', win, blockClass, blockSelector, recordCanvas, dataURLOptions, } = options;
-        this.mutationCb = options.mutationCb;
-        this.mirror = options.mirror;
-        if (recordCanvas && sampling === 'all')
-            this.initCanvasMutationObserver(win, blockClass, blockSelector);
-        if (recordCanvas && typeof sampling === 'number')
-            this.initCanvasFPSObserver(sampling, win, blockClass, blockSelector, {
-                dataURLOptions,
-            });
-    }
-    initCanvasFPSObserver(fps, win, blockClass, blockSelector, options) {
-        const canvasContextReset = initCanvasContextObserver(win, blockClass, blockSelector, true);
-        const snapshotInProgressMap = new Map();
-        const worker = new WorkerFactory();
-        worker.onmessage = (e) => {
-            const { id } = e.data;
-            snapshotInProgressMap.set(id, false);
-            if (!('base64' in e.data))
-                return;
-            const { base64, type, width, height } = e.data;
-            this.mutationCb({
-                id,
-                type: CanvasContext['2D'],
-                commands: [
-                    {
-                        property: 'clearRect',
-                        args: [0, 0, width, height],
-                    },
-                    {
-                        property: 'drawImage',
-                        args: [
-                            {
-                                rr_type: 'ImageBitmap',
-                                args: [
-                                    {
-                                        rr_type: 'Blob',
-                                        data: [{ rr_type: 'ArrayBuffer', base64 }],
-                                        type,
-                                    },
-                                ],
-                            },
-                            0,
-                            0,
-                        ],
-                    },
-                ],
-            });
-        };
-        const timeBetweenSnapshots = 1000 / fps;
-        let lastSnapshotTime = 0;
-        let rafId;
-        const getCanvas = () => {
-            const matchedCanvas = [];
-            win.document.querySelectorAll('canvas').forEach((canvas) => {
-                if (!isBlocked(canvas, blockClass, blockSelector, true)) {
-                    matchedCanvas.push(canvas);
-                }
-            });
-            return matchedCanvas;
-        };
-        const takeCanvasSnapshots = (timestamp) => {
-            if (lastSnapshotTime &&
-                timestamp - lastSnapshotTime < timeBetweenSnapshots) {
-                rafId = requestAnimationFrame(takeCanvasSnapshots);
-                return;
-            }
-            lastSnapshotTime = timestamp;
-            getCanvas()
-                .forEach((canvas) => __awaiter(this, void 0, void 0, function* () {
-                var _a;
-                const id = this.mirror.getId(canvas);
-                if (snapshotInProgressMap.get(id))
-                    return;
-                if (canvas.width === 0 || canvas.height === 0)
-                    return;
-                snapshotInProgressMap.set(id, true);
-                if (['webgl', 'webgl2'].includes(canvas.__context)) {
-                    const context = canvas.getContext(canvas.__context);
-                    if (((_a = context === null || context === void 0 ? void 0 : context.getContextAttributes()) === null || _a === void 0 ? void 0 : _a.preserveDrawingBuffer) === false) {
-                        context.clear(context.COLOR_BUFFER_BIT);
-                    }
-                }
-                const bitmap = yield createImageBitmap(canvas);
-                worker.postMessage({
-                    id,
-                    bitmap,
-                    width: canvas.width,
-                    height: canvas.height,
-                    dataURLOptions: options.dataURLOptions,
-                }, [bitmap]);
-            }));
-            rafId = requestAnimationFrame(takeCanvasSnapshots);
-        };
-        rafId = requestAnimationFrame(takeCanvasSnapshots);
-        this.resetObservers = () => {
-            canvasContextReset();
-            cancelAnimationFrame(rafId);
-        };
-    }
-    initCanvasMutationObserver(win, blockClass, blockSelector) {
-        this.startRAFTimestamping();
-        this.startPendingCanvasMutationFlusher();
-        const canvasContextReset = initCanvasContextObserver(win, blockClass, blockSelector, false);
-        const canvas2DReset = initCanvas2DMutationObserver(this.processMutation.bind(this), win, blockClass, blockSelector);
-        const canvasWebGL1and2Reset = initCanvasWebGLMutationObserver(this.processMutation.bind(this), win, blockClass, blockSelector, this.mirror);
-        this.resetObservers = () => {
-            canvasContextReset();
-            canvas2DReset();
-            canvasWebGL1and2Reset();
-        };
-    }
-    startPendingCanvasMutationFlusher() {
-        requestAnimationFrame(() => this.flushPendingCanvasMutations());
-    }
-    startRAFTimestamping() {
-        const setLatestRAFTimestamp = (timestamp) => {
-            this.rafStamps.latestId = timestamp;
-            requestAnimationFrame(setLatestRAFTimestamp);
-        };
-        requestAnimationFrame(setLatestRAFTimestamp);
-    }
-    flushPendingCanvasMutations() {
-        this.pendingCanvasMutations.forEach((values, canvas) => {
-            const id = this.mirror.getId(canvas);
-            this.flushPendingCanvasMutationFor(canvas, id);
-        });
-        requestAnimationFrame(() => this.flushPendingCanvasMutations());
-    }
-    flushPendingCanvasMutationFor(canvas, id) {
-        if (this.frozen || this.locked) {
-            return;
-        }
-        const valuesWithType = this.pendingCanvasMutations.get(canvas);
-        if (!valuesWithType || id === -1)
-            return;
-        const values = valuesWithType.map((value) => {
-            const rest = __rest(value, ["type"]);
-            return rest;
-        });
-        const { type } = valuesWithType[0];
-        this.mutationCb({ id, type, commands: values });
-        this.pendingCanvasMutations.delete(canvas);
-    }
+class CanvasManager {
+    reset() {
+        this.pendingCanvasMutations.clear();
+        this.resetObservers && this.resetObservers();
+    }
+    freeze() {
+        this.frozen = true;
+    }
+    unfreeze() {
+        this.frozen = false;
+    }
+    lock() {
+        this.locked = true;
+    }
+    unlock() {
+        this.locked = false;
+    }
+    constructor(options) {
+        this.pendingCanvasMutations = new Map();
+        this.rafStamps = { latestId: 0, invokeId: null };
+        this.frozen = false;
+        this.locked = false;
+        this.processMutation = (target, mutation) => {
+            const newFrame = this.rafStamps.invokeId &&
+                this.rafStamps.latestId !== this.rafStamps.invokeId;
+            if (newFrame || !this.rafStamps.invokeId)
+                this.rafStamps.invokeId = this.rafStamps.latestId;
+            if (!this.pendingCanvasMutations.has(target)) {
+                this.pendingCanvasMutations.set(target, []);
+            }
+            this.pendingCanvasMutations.get(target).push(mutation);
+        };
+        const { sampling = 'all', win, blockClass, blockSelector, recordCanvas, dataURLOptions, } = options;
+        this.mutationCb = options.mutationCb;
+        this.mirror = options.mirror;
+        if (recordCanvas && sampling === 'all')
+            this.initCanvasMutationObserver(win, blockClass, blockSelector);
+        if (recordCanvas && typeof sampling === 'number')
+            this.initCanvasFPSObserver(sampling, win, blockClass, blockSelector, {
+                dataURLOptions,
+            });
+    }
+    initCanvasFPSObserver(fps, win, blockClass, blockSelector, options) {
+        const canvasContextReset = initCanvasContextObserver(win, blockClass, blockSelector, true);
+        const snapshotInProgressMap = new Map();
+        const worker = new WorkerFactory();
+        worker.onmessage = (e) => {
+            const { id } = e.data;
+            snapshotInProgressMap.set(id, false);
+            if (!('base64' in e.data))
+                return;
+            const { base64, type, width, height } = e.data;
+            this.mutationCb({
+                id,
+                type: CanvasContext['2D'],
+                commands: [
+                    {
+                        property: 'clearRect',
+                        args: [0, 0, width, height],
+                    },
+                    {
+                        property: 'drawImage',
+                        args: [
+                            {
+                                rr_type: 'ImageBitmap',
+                                args: [
+                                    {
+                                        rr_type: 'Blob',
+                                        data: [{ rr_type: 'ArrayBuffer', base64 }],
+                                        type,
+                                    },
+                                ],
+                            },
+                            0,
+                            0,
+                        ],
+                    },
+                ],
+            });
+        };
+        const timeBetweenSnapshots = 1000 / fps;
+        let lastSnapshotTime = 0;
+        let rafId;
+        const getCanvas = () => {
+            const matchedCanvas = [];
+            win.document.querySelectorAll('canvas').forEach((canvas) => {
+                if (!isBlocked(canvas, blockClass, blockSelector, true)) {
+                    matchedCanvas.push(canvas);
+                }
+            });
+            return matchedCanvas;
+        };
+        const takeCanvasSnapshots = (timestamp) => {
+            if (lastSnapshotTime &&
+                timestamp - lastSnapshotTime < timeBetweenSnapshots) {
+                rafId = requestAnimationFrame(takeCanvasSnapshots);
+                return;
+            }
+            lastSnapshotTime = timestamp;
+            getCanvas()
+                .forEach((canvas) => __awaiter(this, void 0, void 0, function* () {
+                var _a;
+                const id = this.mirror.getId(canvas);
+                if (snapshotInProgressMap.get(id))
+                    return;
+                if (canvas.width === 0 || canvas.height === 0)
+                    return;
+                snapshotInProgressMap.set(id, true);
+                if (['webgl', 'webgl2'].includes(canvas.__context)) {
+                    const context = canvas.getContext(canvas.__context);
+                    if (((_a = context === null || context === void 0 ? void 0 : context.getContextAttributes()) === null || _a === void 0 ? void 0 : _a.preserveDrawingBuffer) === false) {
+                        context.clear(context.COLOR_BUFFER_BIT);
+                    }
+                }
+                const bitmap = yield createImageBitmap(canvas);
+                worker.postMessage({
+                    id,
+                    bitmap,
+                    width: canvas.width,
+                    height: canvas.height,
+                    dataURLOptions: options.dataURLOptions,
+                }, [bitmap]);
+            }));
+            rafId = requestAnimationFrame(takeCanvasSnapshots);
+        };
+        rafId = requestAnimationFrame(takeCanvasSnapshots);
+        this.resetObservers = () => {
+            canvasContextReset();
+            cancelAnimationFrame(rafId);
+        };
+    }
+    initCanvasMutationObserver(win, blockClass, blockSelector) {
+        this.startRAFTimestamping();
+        this.startPendingCanvasMutationFlusher();
+        const canvasContextReset = initCanvasContextObserver(win, blockClass, blockSelector, false);
+        const canvas2DReset = initCanvas2DMutationObserver(this.processMutation.bind(this), win, blockClass, blockSelector);
+        const canvasWebGL1and2Reset = initCanvasWebGLMutationObserver(this.processMutation.bind(this), win, blockClass, blockSelector, this.mirror);
+        this.resetObservers = () => {
+            canvasContextReset();
+            canvas2DReset();
+            canvasWebGL1and2Reset();
+        };
+    }
+    startPendingCanvasMutationFlusher() {
+        requestAnimationFrame(() => this.flushPendingCanvasMutations());
+    }
+    startRAFTimestamping() {
+        const setLatestRAFTimestamp = (timestamp) => {
+            this.rafStamps.latestId = timestamp;
+            requestAnimationFrame(setLatestRAFTimestamp);
+        };
+        requestAnimationFrame(setLatestRAFTimestamp);
+    }
+    flushPendingCanvasMutations() {
+        this.pendingCanvasMutations.forEach((values, canvas) => {
+            const id = this.mirror.getId(canvas);
+            this.flushPendingCanvasMutationFor(canvas, id);
+        });
+        requestAnimationFrame(() => this.flushPendingCanvasMutations());
+    }
+    flushPendingCanvasMutationFor(canvas, id) {
+        if (this.frozen || this.locked) {
+            return;
+        }
+        const valuesWithType = this.pendingCanvasMutations.get(canvas);
+        if (!valuesWithType || id === -1)
+            return;
+        const values = valuesWithType.map((value) => {
+            const rest = __rest(value, ["type"]);
+            return rest;
+        });
+        const { type } = valuesWithType[0];
+        this.mutationCb({ id, type, commands: values });
+        this.pendingCanvasMutations.delete(canvas);
+    }
 }
 
-class StylesheetManager {
-    constructor(options) {
-        this.trackedLinkElements = new WeakSet();
-        this.styleMirror = new StyleSheetMirror();
-        this.mutationCb = options.mutationCb;
-        this.adoptedStyleSheetCb = options.adoptedStyleSheetCb;
-    }
-    attachLinkElement(linkEl, childSn) {
-        if ('_cssText' in childSn.attributes)
-            this.mutationCb({
-                adds: [],
-                removes: [],
-                texts: [],
-                attributes: [
-                    {
-                        id: childSn.id,
-                        attributes: childSn
-                            .attributes,
-                    },
-                ],
-            });
-        this.trackLinkElement(linkEl);
-    }
-    trackLinkElement(linkEl) {
-        if (this.trackedLinkElements.has(linkEl))
-            return;
-        this.trackedLinkElements.add(linkEl);
-        this.trackStylesheetInLinkElement(linkEl);
-    }
-    adoptStyleSheets(sheets, hostId) {
-        if (sheets.length === 0)
-            return;
-        const adoptedStyleSheetData = {
-            id: hostId,
-            styleIds: [],
-        };
-        const styles = [];
-        for (const sheet of sheets) {
-            let styleId;
-            if (!this.styleMirror.has(sheet)) {
-                styleId = this.styleMirror.add(sheet);
-                styles.push({
-                    styleId,
-                    rules: Array.from(sheet.rules || CSSRule, (r, index) => ({
-                        rule: stringifyRule(r),
-                        index,
-                    })),
-                });
-            }
-            else
-                styleId = this.styleMirror.getId(sheet);
-            adoptedStyleSheetData.styleIds.push(styleId);
-        }
-        if (styles.length > 0)
-            adoptedStyleSheetData.styles = styles;
-        this.adoptedStyleSheetCb(adoptedStyleSheetData);
-    }
-    reset() {
-        this.styleMirror.reset();
-        this.trackedLinkElements = new WeakSet();
-    }
-    trackStylesheetInLinkElement(linkEl) {
-    }
+class StylesheetManager {
+    constructor(options) {
+        this.trackedLinkElements = new WeakSet();
+        this.styleMirror = new StyleSheetMirror();
+        this.mutationCb = options.mutationCb;
+        this.adoptedStyleSheetCb = options.adoptedStyleSheetCb;
+    }
+    attachLinkElement(linkEl, childSn) {
+        if ('_cssText' in childSn.attributes)
+            this.mutationCb({
+                adds: [],
+                removes: [],
+                texts: [],
+                attributes: [
+                    {
+                        id: childSn.id,
+                        attributes: childSn
+                            .attributes,
+                    },
+                ],
+            });
+        this.trackLinkElement(linkEl);
+    }
+    trackLinkElement(linkEl) {
+        if (this.trackedLinkElements.has(linkEl))
+            return;
+        this.trackedLinkElements.add(linkEl);
+        this.trackStylesheetInLinkElement(linkEl);
+    }
+    adoptStyleSheets(sheets, hostId) {
+        if (sheets.length === 0)
+            return;
+        const adoptedStyleSheetData = {
+            id: hostId,
+            styleIds: [],
+        };
+        const styles = [];
+        for (const sheet of sheets) {
+            let styleId;
+            if (!this.styleMirror.has(sheet)) {
+                styleId = this.styleMirror.add(sheet);
+                styles.push({
+                    styleId,
+                    rules: Array.from(sheet.rules || CSSRule, (r, index) => ({
+                        rule: stringifyRule(r),
+                        index,
+                    })),
+                });
+            }
+            else
+                styleId = this.styleMirror.getId(sheet);
+            adoptedStyleSheetData.styleIds.push(styleId);
+        }
+        if (styles.length > 0)
+            adoptedStyleSheetData.styles = styles;
+        this.adoptedStyleSheetCb(adoptedStyleSheetData);
+    }
+    reset() {
+        this.styleMirror.reset();
+        this.trackedLinkElements = new WeakSet();
+    }
+    trackStylesheetInLinkElement(linkEl) {
+    }
 }
 
-class ProcessedNodeManager {
-    constructor() {
-        this.nodeMap = new WeakMap();
-        this.loop = true;
-        this.periodicallyClear();
-    }
-    periodicallyClear() {
-        requestAnimationFrame(() => {
-            this.clear();
-            if (this.loop)
-                this.periodicallyClear();
-        });
-    }
-    inOtherBuffer(node, thisBuffer) {
-        const buffers = this.nodeMap.get(node);
-        return (buffers && Array.from(buffers).some((buffer) => buffer !== thisBuffer));
-    }
-    add(node, buffer) {
-        this.nodeMap.set(node, (this.nodeMap.get(node) || new Set()).add(buffer));
-    }
-    clear() {
-        this.nodeMap = new WeakMap();
-    }
-    destroy() {
-        this.loop = false;
-    }
+class ProcessedNodeManager {
+    constructor() {
+        this.nodeMap = new WeakMap();
+        this.loop = true;
+        this.periodicallyClear();
+    }
+    periodicallyClear() {
+        requestAnimationFrame(() => {
+            this.clear();
+            if (this.loop)
+                this.periodicallyClear();
+        });
+    }
+    inOtherBuffer(node, thisBuffer) {
+        const buffers = this.nodeMap.get(node);
+        return (buffers && Array.from(buffers).some((buffer) => buffer !== thisBuffer));
+    }
+    add(node, buffer) {
+        this.nodeMap.set(node, (this.nodeMap.get(node) || new Set()).add(buffer));
+    }
+    clear() {
+        this.nodeMap = new WeakMap();
+    }
+    destroy() {
+        this.loop = false;
+    }
 }
 
-function wrapEvent(e) {
-    return Object.assign(Object.assign({}, e), { timestamp: nowTimestamp() });
-}
-let wrappedEmit;
-let takeFullSnapshot;
-let canvasManager;
-let recording = false;
-const mirror = createMirror();
-function record(options = {}) {
-    const { emit, checkoutEveryNms, checkoutEveryNth, blockClass = 'rr-block', blockSelector = null, ignoreClass = 'rr-ignore', ignoreSelector = null, maskTextClass = 'rr-mask', maskTextSelector = null, inlineStylesheet = true, maskAllInputs, maskInputOptions: _maskInputOptions, slimDOMOptions: _slimDOMOptions, maskInputFn, maskTextFn, hooks, packFn, sampling = {}, dataURLOptions = {}, mousemoveWait, recordDOM = true, recordCanvas = false, recordCrossOriginIframes = false, recordAfter = options.recordAfter === 'DOMContentLoaded'
-        ? options.recordAfter
-        : 'load', userTriggeredOnInput = false, collectFonts = false, inlineImages = false, plugins, keepIframeSrcFn = () => false, ignoreCSSAttributes = new Set([]), errorHandler, } = options;
-    registerErrorHandler(errorHandler);
-    const inEmittingFrame = recordCrossOriginIframes
-        ? window.parent === window
-        : true;
-    let passEmitsToParent = false;
-    if (!inEmittingFrame) {
-        try {
-            if (window.parent.document) {
-                passEmitsToParent = false;
-            }
-        }
-        catch (e) {
-            passEmitsToParent = true;
-        }
-    }
-    if (inEmittingFrame && !emit) {
-        throw new Error('emit function is required');
-    }
-    if (mousemoveWait !== undefined && sampling.mousemove === undefined) {
-        sampling.mousemove = mousemoveWait;
-    }
-    mirror.reset();
-    const maskInputOptions = maskAllInputs === true
-        ? {
-            color: true,
-            date: true,
-            'datetime-local': true,
-            email: true,
-            month: true,
-            number: true,
-            range: true,
-            search: true,
-            tel: true,
-            text: true,
-            time: true,
-            url: true,
-            week: true,
-            textarea: true,
-            select: true,
-            password: true,
-        }
-        : _maskInputOptions !== undefined
-            ? _maskInputOptions
-            : { password: true };
-    const slimDOMOptions = _slimDOMOptions === true || _slimDOMOptions === 'all'
-        ? {
-            script: true,
-            comment: true,
-            headFavicon: true,
-            headWhitespace: true,
-            headMetaSocial: true,
-            headMetaRobots: true,
-            headMetaHttpEquiv: true,
-            headMetaVerification: true,
-            headMetaAuthorship: _slimDOMOptions === 'all',
-            headMetaDescKeywords: _slimDOMOptions === 'all',
-        }
-        : _slimDOMOptions
-            ? _slimDOMOptions
-            : {};
-    polyfill();
-    let lastFullSnapshotEvent;
-    let incrementalSnapshotCount = 0;
-    const eventProcessor = (e) => {
-        for (const plugin of plugins || []) {
-            if (plugin.eventProcessor) {
-                e = plugin.eventProcessor(e);
-            }
-        }
-        if (packFn &&
-            !passEmitsToParent) {
-            e = packFn(e);
-        }
-        return e;
-    };
-    wrappedEmit = (e, isCheckout) => {
-        var _a;
-        if (((_a = mutationBuffers[0]) === null || _a === void 0 ? void 0 : _a.isFrozen()) &&
-            e.type !== EventType$1.FullSnapshot &&
-            !(e.type === EventType$1.IncrementalSnapshot &&
-                e.data.source === IncrementalSource$1.Mutation)) {
-            mutationBuffers.forEach((buf) => buf.unfreeze());
-        }
-        if (inEmittingFrame) {
-            emit === null || emit === void 0 ? void 0 : emit(eventProcessor(e), isCheckout);
-        }
-        else if (passEmitsToParent) {
-            const message = {
-                type: 'rrweb',
-                event: eventProcessor(e),
-                origin: window.location.origin,
-                isCheckout,
-            };
-            window.parent.postMessage(message, '*');
-        }
-        if (e.type === EventType$1.FullSnapshot) {
-            lastFullSnapshotEvent = e;
-            incrementalSnapshotCount = 0;
-        }
-        else if (e.type === EventType$1.IncrementalSnapshot) {
-            if (e.data.source === IncrementalSource$1.Mutation &&
-                e.data.isAttachIframe) {
-                return;
-            }
-            incrementalSnapshotCount++;
-            const exceedCount = checkoutEveryNth && incrementalSnapshotCount >= checkoutEveryNth;
-            const exceedTime = checkoutEveryNms &&
-                e.timestamp - lastFullSnapshotEvent.timestamp > checkoutEveryNms;
-            if (exceedCount || exceedTime) {
-                takeFullSnapshot(true);
-            }
-        }
-    };
-    const wrappedMutationEmit = (m) => {
-        wrappedEmit(wrapEvent({
-            type: EventType$1.IncrementalSnapshot,
-            data: Object.assign({ source: IncrementalSource$1.Mutation }, m),
-        }));
-    };
-    const wrappedScrollEmit = (p) => wrappedEmit(wrapEvent({
-        type: EventType$1.IncrementalSnapshot,
-        data: Object.assign({ source: IncrementalSource$1.Scroll }, p),
-    }));
-    const wrappedCanvasMutationEmit = (p) => wrappedEmit(wrapEvent({
-        type: EventType$1.IncrementalSnapshot,
-        data: Object.assign({ source: IncrementalSource$1.CanvasMutation }, p),
-    }));
-    const wrappedAdoptedStyleSheetEmit = (a) => wrappedEmit(wrapEvent({
-        type: EventType$1.IncrementalSnapshot,
-        data: Object.assign({ source: IncrementalSource$1.AdoptedStyleSheet }, a),
-    }));
-    const stylesheetManager = new StylesheetManager({
-        mutationCb: wrappedMutationEmit,
-        adoptedStyleSheetCb: wrappedAdoptedStyleSheetEmit,
-    });
-    const iframeManager = new IframeManager({
-        mirror,
-        mutationCb: wrappedMutationEmit,
-        stylesheetManager: stylesheetManager,
-        recordCrossOriginIframes,
-        wrappedEmit,
-    });
-    for (const plugin of plugins || []) {
-        if (plugin.getMirror)
-            plugin.getMirror({
-                nodeMirror: mirror,
-                crossOriginIframeMirror: iframeManager.crossOriginIframeMirror,
-                crossOriginIframeStyleMirror: iframeManager.crossOriginIframeStyleMirror,
-            });
-    }
-    const processedNodeManager = new ProcessedNodeManager();
-    canvasManager = new CanvasManager({
-        recordCanvas,
-        mutationCb: wrappedCanvasMutationEmit,
-        win: window,
-        blockClass,
-        blockSelector,
-        mirror,
-        sampling: sampling.canvas,
-        dataURLOptions,
-    });
-    const shadowDomManager = new ShadowDomManager({
-        mutationCb: wrappedMutationEmit,
-        scrollCb: wrappedScrollEmit,
-        bypassOptions: {
-            blockClass,
-            blockSelector,
-            maskTextClass,
-            maskTextSelector,
-            inlineStylesheet,
-            maskInputOptions,
-            dataURLOptions,
-            maskTextFn,
-            maskInputFn,
-            recordCanvas,
-            inlineImages,
-            sampling,
-            slimDOMOptions,
-            iframeManager,
-            stylesheetManager,
-            canvasManager,
-            keepIframeSrcFn,
-            processedNodeManager,
-        },
-        mirror,
-    });
-    takeFullSnapshot = (isCheckout = false) => {
-        if (!recordDOM) {
-            return;
-        }
-        wrappedEmit(wrapEvent({
-            type: EventType$1.Meta,
-            data: {
-                href: window.location.href,
-                width: getWindowWidth(),
-                height: getWindowHeight(),
-            },
-        }), isCheckout);
-        stylesheetManager.reset();
-        shadowDomManager.init();
-        mutationBuffers.forEach((buf) => buf.lock());
-        const node = snapshot(document, {
-            mirror,
-            blockClass,
-            blockSelector,
-            maskTextClass,
-            maskTextSelector,
-            inlineStylesheet,
-            maskAllInputs: maskInputOptions,
-            maskTextFn,
-            slimDOM: slimDOMOptions,
-            dataURLOptions,
-            recordCanvas,
-            inlineImages,
-            onSerialize: (n) => {
-                if (isSerializedIframe(n, mirror)) {
-                    iframeManager.addIframe(n);
-                }
-                if (isSerializedStylesheet(n, mirror)) {
-                    stylesheetManager.trackLinkElement(n);
-                }
-                if (hasShadowRoot(n)) {
-                    shadowDomManager.addShadowRoot(n.shadowRoot, document);
-                }
-            },
-            onIframeLoad: (iframe, childSn) => {
-                iframeManager.attachIframe(iframe, childSn);
-                shadowDomManager.observeAttachShadow(iframe);
-            },
-            onStylesheetLoad: (linkEl, childSn) => {
-                stylesheetManager.attachLinkElement(linkEl, childSn);
-            },
-            keepIframeSrcFn,
-        });
-        if (!node) {
-            return console.warn('Failed to snapshot the document');
-        }
-        wrappedEmit(wrapEvent({
-            type: EventType$1.FullSnapshot,
-            data: {
-                node,
-                initialOffset: getWindowScroll(window),
-            },
-        }), isCheckout);
-        mutationBuffers.forEach((buf) => buf.unlock());
-        if (document.adoptedStyleSheets && document.adoptedStyleSheets.length > 0)
-            stylesheetManager.adoptStyleSheets(document.adoptedStyleSheets, mirror.getId(document));
-    };
-    try {
-        const handlers = [];
-        const observe = (doc) => {
-            var _a;
-            return callbackWrapper(initObservers)({
-                mutationCb: wrappedMutationEmit,
-                mousemoveCb: (positions, source) => wrappedEmit(wrapEvent({
-                    type: EventType$1.IncrementalSnapshot,
-                    data: {
-                        source,
-                        positions,
-                    },
-                })),
-                mouseInteractionCb: (d) => wrappedEmit(wrapEvent({
-                    type: EventType$1.IncrementalSnapshot,
-                    data: Object.assign({ source: IncrementalSource$1.MouseInteraction }, d),
-                })),
-                scrollCb: wrappedScrollEmit,
-                viewportResizeCb: (d) => wrappedEmit(wrapEvent({
-                    type: EventType$1.IncrementalSnapshot,
-                    data: Object.assign({ source: IncrementalSource$1.ViewportResize }, d),
-                })),
-                inputCb: (v) => wrappedEmit(wrapEvent({
-                    type: EventType$1.IncrementalSnapshot,
-                    data: Object.assign({ source: IncrementalSource$1.Input }, v),
-                })),
-                mediaInteractionCb: (p) => wrappedEmit(wrapEvent({
-                    type: EventType$1.IncrementalSnapshot,
-                    data: Object.assign({ source: IncrementalSource$1.MediaInteraction }, p),
-                })),
-                styleSheetRuleCb: (r) => wrappedEmit(wrapEvent({
-                    type: EventType$1.IncrementalSnapshot,
-                    data: Object.assign({ source: IncrementalSource$1.StyleSheetRule }, r),
-                })),
-                styleDeclarationCb: (r) => wrappedEmit(wrapEvent({
-                    type: EventType$1.IncrementalSnapshot,
-                    data: Object.assign({ source: IncrementalSource$1.StyleDeclaration }, r),
-                })),
-                canvasMutationCb: wrappedCanvasMutationEmit,
-                fontCb: (p) => wrappedEmit(wrapEvent({
-                    type: EventType$1.IncrementalSnapshot,
-                    data: Object.assign({ source: IncrementalSource$1.Font }, p),
-                })),
-                selectionCb: (p) => {
-                    wrappedEmit(wrapEvent({
-                        type: EventType$1.IncrementalSnapshot,
-                        data: Object.assign({ source: IncrementalSource$1.Selection }, p),
-                    }));
-                },
-                customElementCb: (c) => {
-                    wrappedEmit(wrapEvent({
-                        type: EventType$1.IncrementalSnapshot,
-                        data: Object.assign({ source: IncrementalSource$1.CustomElement }, c),
-                    }));
-                },
-                blockClass,
-                ignoreClass,
-                ignoreSelector,
-                maskTextClass,
-                maskTextSelector,
-                maskInputOptions,
-                inlineStylesheet,
-                sampling,
-                recordDOM,
-                recordCanvas,
-                inlineImages,
-                userTriggeredOnInput,
-                collectFonts,
-                doc,
-                maskInputFn,
-                maskTextFn,
-                keepIframeSrcFn,
-                blockSelector,
-                slimDOMOptions,
-                dataURLOptions,
-                mirror,
-                iframeManager,
-                stylesheetManager,
-                shadowDomManager,
-                processedNodeManager,
-                canvasManager,
-                ignoreCSSAttributes,
-                plugins: ((_a = plugins === null || plugins === void 0 ? void 0 : plugins.filter((p) => p.observer)) === null || _a === void 0 ? void 0 : _a.map((p) => ({
-                    observer: p.observer,
-                    options: p.options,
-                    callback: (payload) => wrappedEmit(wrapEvent({
-                        type: EventType$1.Plugin,
-                        data: {
-                            plugin: p.name,
-                            payload,
-                        },
-                    })),
-                }))) || [],
-            }, hooks);
-        };
-        iframeManager.addLoadListener((iframeEl) => {
-            try {
-                handlers.push(observe(iframeEl.contentDocument));
-            }
-            catch (error) {
-                console.warn(error);
-            }
-        });
-        const init = () => {
-            takeFullSnapshot();
-            handlers.push(observe(document));
-            recording = true;
-        };
-        if (document.readyState === 'interactive' ||
-            document.readyState === 'complete') {
-            init();
-        }
-        else {
-            handlers.push(on('DOMContentLoaded', () => {
-                wrappedEmit(wrapEvent({
-                    type: EventType$1.DomContentLoaded,
-                    data: {},
-                }));
-                if (recordAfter === 'DOMContentLoaded')
-                    init();
-            }));
-            handlers.push(on('load', () => {
-                wrappedEmit(wrapEvent({
-                    type: EventType$1.Load,
-                    data: {},
-                }));
-                if (recordAfter === 'load')
-                    init();
-            }, window));
-        }
-        return () => {
-            handlers.forEach((h) => h());
-            processedNodeManager.destroy();
-            recording = false;
-            unregisterErrorHandler();
-        };
-    }
-    catch (error) {
-        console.warn(error);
-    }
-}
-record.addCustomEvent = (tag, payload) => {
-    if (!recording) {
-        throw new Error('please add custom event after start recording');
-    }
-    wrappedEmit(wrapEvent({
-        type: EventType$1.Custom,
-        data: {
-            tag,
-            payload,
-        },
-    }));
-};
-record.freezePage = () => {
-    mutationBuffers.forEach((buf) => buf.freeze());
-};
-record.takeFullSnapshot = (isCheckout) => {
-    if (!recording) {
-        throw new Error('please take full snapshot after start recording');
-    }
-    takeFullSnapshot(isCheckout);
-};
+function wrapEvent(e) {
+    return Object.assign(Object.assign({}, e), { timestamp: nowTimestamp() });
+}
+let wrappedEmit;
+let takeFullSnapshot;
+let canvasManager;
+let recording = false;
+const mirror = createMirror();
+function record(options = {}) {
+    const { emit, checkoutEveryNms, checkoutEveryNth, blockClass = 'rr-block', blockSelector = null, ignoreClass = 'rr-ignore', ignoreSelector = null, maskTextClass = 'rr-mask', maskTextSelector = null, inlineStylesheet = true, maskAllInputs, maskInputOptions: _maskInputOptions, slimDOMOptions: _slimDOMOptions, maskInputFn, maskTextFn, hooks, packFn, sampling = {}, dataURLOptions = {}, mousemoveWait, recordDOM = true, recordCanvas = false, recordCrossOriginIframes = false, recordAfter = options.recordAfter === 'DOMContentLoaded'
+        ? options.recordAfter
+        : 'load', userTriggeredOnInput = false, collectFonts = false, inlineImages = false, plugins, keepIframeSrcFn = () => false, ignoreCSSAttributes = new Set([]), errorHandler, } = options;
+    registerErrorHandler(errorHandler);
+    const inEmittingFrame = recordCrossOriginIframes
+        ? window.parent === window
+        : true;
+    let passEmitsToParent = false;
+    if (!inEmittingFrame) {
+        try {
+            if (window.parent.document) {
+                passEmitsToParent = false;
+            }
+        }
+        catch (e) {
+            passEmitsToParent = true;
+        }
+    }
+    if (inEmittingFrame && !emit) {
+        throw new Error('emit function is required');
+    }
+    if (mousemoveWait !== undefined && sampling.mousemove === undefined) {
+        sampling.mousemove = mousemoveWait;
+    }
+    mirror.reset();
+    const maskInputOptions = maskAllInputs === true
+        ? {
+            color: true,
+            date: true,
+            'datetime-local': true,
+            email: true,
+            month: true,
+            number: true,
+            range: true,
+            search: true,
+            tel: true,
+            text: true,
+            time: true,
+            url: true,
+            week: true,
+            textarea: true,
+            select: true,
+            password: true,
+        }
+        : _maskInputOptions !== undefined
+            ? _maskInputOptions
+            : { password: true };
+    const slimDOMOptions = _slimDOMOptions === true || _slimDOMOptions === 'all'
+        ? {
+            script: true,
+            comment: true,
+            headFavicon: true,
+            headWhitespace: true,
+            headMetaSocial: true,
+            headMetaRobots: true,
+            headMetaHttpEquiv: true,
+            headMetaVerification: true,
+            headMetaAuthorship: _slimDOMOptions === 'all',
+            headMetaDescKeywords: _slimDOMOptions === 'all',
+        }
+        : _slimDOMOptions
+            ? _slimDOMOptions
+            : {};
+    polyfill();
+    let lastFullSnapshotEvent;
+    let incrementalSnapshotCount = 0;
+    const eventProcessor = (e) => {
+        for (const plugin of plugins || []) {
+            if (plugin.eventProcessor) {
+                e = plugin.eventProcessor(e);
+            }
+        }
+        if (packFn &&
+            !passEmitsToParent) {
+            e = packFn(e);
+        }
+        return e;
+    };
+    wrappedEmit = (e, isCheckout) => {
+        var _a;
+        if (((_a = mutationBuffers[0]) === null || _a === void 0 ? void 0 : _a.isFrozen()) &&
+            e.type !== EventType$1.FullSnapshot &&
+            !(e.type === EventType$1.IncrementalSnapshot &&
+                e.data.source === IncrementalSource$1.Mutation)) {
+            mutationBuffers.forEach((buf) => buf.unfreeze());
+        }
+        if (inEmittingFrame) {
+            emit === null || emit === void 0 ? void 0 : emit(eventProcessor(e), isCheckout);
+        }
+        else if (passEmitsToParent) {
+            const message = {
+                type: 'rrweb',
+                event: eventProcessor(e),
+                origin: window.location.origin,
+                isCheckout,
+            };
+            window.parent.postMessage(message, '*');
+        }
+        if (e.type === EventType$1.FullSnapshot) {
+            lastFullSnapshotEvent = e;
+            incrementalSnapshotCount = 0;
+        }
+        else if (e.type === EventType$1.IncrementalSnapshot) {
+            if (e.data.source === IncrementalSource$1.Mutation &&
+                e.data.isAttachIframe) {
+                return;
+            }
+            incrementalSnapshotCount++;
+            const exceedCount = checkoutEveryNth && incrementalSnapshotCount >= checkoutEveryNth;
+            const exceedTime = checkoutEveryNms &&
+                e.timestamp - lastFullSnapshotEvent.timestamp > checkoutEveryNms;
+            if (exceedCount || exceedTime) {
+                takeFullSnapshot(true);
+            }
+        }
+    };
+    const wrappedMutationEmit = (m) => {
+        wrappedEmit(wrapEvent({
+            type: EventType$1.IncrementalSnapshot,
+            data: Object.assign({ source: IncrementalSource$1.Mutation }, m),
+        }));
+    };
+    const wrappedScrollEmit = (p) => wrappedEmit(wrapEvent({
+        type: EventType$1.IncrementalSnapshot,
+        data: Object.assign({ source: IncrementalSource$1.Scroll }, p),
+    }));
+    const wrappedCanvasMutationEmit = (p) => wrappedEmit(wrapEvent({
+        type: EventType$1.IncrementalSnapshot,
+        data: Object.assign({ source: IncrementalSource$1.CanvasMutation }, p),
+    }));
+    const wrappedAdoptedStyleSheetEmit = (a) => wrappedEmit(wrapEvent({
+        type: EventType$1.IncrementalSnapshot,
+        data: Object.assign({ source: IncrementalSource$1.AdoptedStyleSheet }, a),
+    }));
+    const stylesheetManager = new StylesheetManager({
+        mutationCb: wrappedMutationEmit,
+        adoptedStyleSheetCb: wrappedAdoptedStyleSheetEmit,
+    });
+    const iframeManager = new IframeManager({
+        mirror,
+        mutationCb: wrappedMutationEmit,
+        stylesheetManager: stylesheetManager,
+        recordCrossOriginIframes,
+        wrappedEmit,
+    });
+    for (const plugin of plugins || []) {
+        if (plugin.getMirror)
+            plugin.getMirror({
+                nodeMirror: mirror,
+                crossOriginIframeMirror: iframeManager.crossOriginIframeMirror,
+                crossOriginIframeStyleMirror: iframeManager.crossOriginIframeStyleMirror,
+            });
+    }
+    const processedNodeManager = new ProcessedNodeManager();
+    canvasManager = new CanvasManager({
+        recordCanvas,
+        mutationCb: wrappedCanvasMutationEmit,
+        win: window,
+        blockClass,
+        blockSelector,
+        mirror,
+        sampling: sampling.canvas,
+        dataURLOptions,
+    });
+    const shadowDomManager = new ShadowDomManager({
+        mutationCb: wrappedMutationEmit,
+        scrollCb: wrappedScrollEmit,
+        bypassOptions: {
+            blockClass,
+            blockSelector,
+            maskTextClass,
+            maskTextSelector,
+            inlineStylesheet,
+            maskInputOptions,
+            dataURLOptions,
+            maskTextFn,
+            maskInputFn,
+            recordCanvas,
+            inlineImages,
+            sampling,
+            slimDOMOptions,
+            iframeManager,
+            stylesheetManager,
+            canvasManager,
+            keepIframeSrcFn,
+            processedNodeManager,
+        },
+        mirror,
+    });
+    takeFullSnapshot = (isCheckout = false) => {
+        if (!recordDOM) {
+            return;
+        }
+        wrappedEmit(wrapEvent({
+            type: EventType$1.Meta,
+            data: {
+                href: window.location.href,
+                width: getWindowWidth(),
+                height: getWindowHeight(),
+            },
+        }), isCheckout);
+        stylesheetManager.reset();
+        shadowDomManager.init();
+        mutationBuffers.forEach((buf) => buf.lock());
+        const node = snapshot(document, {
+            mirror,
+            blockClass,
+            blockSelector,
+            maskTextClass,
+            maskTextSelector,
+            inlineStylesheet,
+            maskAllInputs: maskInputOptions,
+            maskTextFn,
+            slimDOM: slimDOMOptions,
+            dataURLOptions,
+            recordCanvas,
+            inlineImages,
+            onSerialize: (n) => {
+                if (isSerializedIframe(n, mirror)) {
+                    iframeManager.addIframe(n);
+                }
+                if (isSerializedStylesheet(n, mirror)) {
+                    stylesheetManager.trackLinkElement(n);
+                }
+                if (hasShadowRoot(n)) {
+                    shadowDomManager.addShadowRoot(n.shadowRoot, document);
+                }
+            },
+            onIframeLoad: (iframe, childSn) => {
+                iframeManager.attachIframe(iframe, childSn);
+                shadowDomManager.observeAttachShadow(iframe);
+            },
+            onStylesheetLoad: (linkEl, childSn) => {
+                stylesheetManager.attachLinkElement(linkEl, childSn);
+            },
+            keepIframeSrcFn,
+        });
+        if (!node) {
+            return console.warn('Failed to snapshot the document');
+        }
+        wrappedEmit(wrapEvent({
+            type: EventType$1.FullSnapshot,
+            data: {
+                node,
+                initialOffset: getWindowScroll(window),
+            },
+        }), isCheckout);
+        mutationBuffers.forEach((buf) => buf.unlock());
+        if (document.adoptedStyleSheets && document.adoptedStyleSheets.length > 0)
+            stylesheetManager.adoptStyleSheets(document.adoptedStyleSheets, mirror.getId(document));
+    };
+    try {
+        const handlers = [];
+        const observe = (doc) => {
+            var _a;
+            return callbackWrapper(initObservers)({
+                mutationCb: wrappedMutationEmit,
+                mousemoveCb: (positions, source) => wrappedEmit(wrapEvent({
+                    type: EventType$1.IncrementalSnapshot,
+                    data: {
+                        source,
+                        positions,
+                    },
+                })),
+                mouseInteractionCb: (d) => wrappedEmit(wrapEvent({
+                    type: EventType$1.IncrementalSnapshot,
+                    data: Object.assign({ source: IncrementalSource$1.MouseInteraction }, d),
+                })),
+                scrollCb: wrappedScrollEmit,
+                viewportResizeCb: (d) => wrappedEmit(wrapEvent({
+                    type: EventType$1.IncrementalSnapshot,
+                    data: Object.assign({ source: IncrementalSource$1.ViewportResize }, d),
+                })),
+                inputCb: (v) => wrappedEmit(wrapEvent({
+                    type: EventType$1.IncrementalSnapshot,
+                    data: Object.assign({ source: IncrementalSource$1.Input }, v),
+                })),
+                mediaInteractionCb: (p) => wrappedEmit(wrapEvent({
+                    type: EventType$1.IncrementalSnapshot,
+                    data: Object.assign({ source: IncrementalSource$1.MediaInteraction }, p),
+                })),
+                styleSheetRuleCb: (r) => wrappedEmit(wrapEvent({
+                    type: EventType$1.IncrementalSnapshot,
+                    data: Object.assign({ source: IncrementalSource$1.StyleSheetRule }, r),
+                })),
+                styleDeclarationCb: (r) => wrappedEmit(wrapEvent({
+                    type: EventType$1.IncrementalSnapshot,
+                    data: Object.assign({ source: IncrementalSource$1.StyleDeclaration }, r),
+                })),
+                canvasMutationCb: wrappedCanvasMutationEmit,
+                fontCb: (p) => wrappedEmit(wrapEvent({
+                    type: EventType$1.IncrementalSnapshot,
+                    data: Object.assign({ source: IncrementalSource$1.Font }, p),
+                })),
+                selectionCb: (p) => {
+                    wrappedEmit(wrapEvent({
+                        type: EventType$1.IncrementalSnapshot,
+                        data: Object.assign({ source: IncrementalSource$1.Selection }, p),
+                    }));
+                },
+                customElementCb: (c) => {
+                    wrappedEmit(wrapEvent({
+                        type: EventType$1.IncrementalSnapshot,
+                        data: Object.assign({ source: IncrementalSource$1.CustomElement }, c),
+                    }));
+                },
+                blockClass,
+                ignoreClass,
+                ignoreSelector,
+                maskTextClass,
+                maskTextSelector,
+                maskInputOptions,
+                inlineStylesheet,
+                sampling,
+                recordDOM,
+                recordCanvas,
+                inlineImages,
+                userTriggeredOnInput,
+                collectFonts,
+                doc,
+                maskInputFn,
+                maskTextFn,
+                keepIframeSrcFn,
+                blockSelector,
+                slimDOMOptions,
+                dataURLOptions,
+                mirror,
+                iframeManager,
+                stylesheetManager,
+                shadowDomManager,
+                processedNodeManager,
+                canvasManager,
+                ignoreCSSAttributes,
+                plugins: ((_a = plugins === null || plugins === void 0 ? void 0 : plugins.filter((p) => p.observer)) === null || _a === void 0 ? void 0 : _a.map((p) => ({
+                    observer: p.observer,
+                    options: p.options,
+                    callback: (payload) => wrappedEmit(wrapEvent({
+                        type: EventType$1.Plugin,
+                        data: {
+                            plugin: p.name,
+                            payload,
+                        },
+                    })),
+                }))) || [],
+            }, hooks);
+        };
+        iframeManager.addLoadListener((iframeEl) => {
+            try {
+                handlers.push(observe(iframeEl.contentDocument));
+            }
+            catch (error) {
+                console.warn(error);
+            }
+        });
+        const init = () => {
+            takeFullSnapshot();
+            handlers.push(observe(document));
+            recording = true;
+        };
+        if (document.readyState === 'interactive' ||
+            document.readyState === 'complete') {
+            init();
+        }
+        else {
+            handlers.push(on('DOMContentLoaded', () => {
+                wrappedEmit(wrapEvent({
+                    type: EventType$1.DomContentLoaded,
+                    data: {},
+                }));
+                if (recordAfter === 'DOMContentLoaded')
+                    init();
+            }));
+            handlers.push(on('load', () => {
+                wrappedEmit(wrapEvent({
+                    type: EventType$1.Load,
+                    data: {},
+                }));
+                if (recordAfter === 'load')
+                    init();
+            }, window));
+        }
+        return () => {
+            handlers.forEach((h) => h());
+            processedNodeManager.destroy();
+            recording = false;
+            unregisterErrorHandler();
+        };
+    }
+    catch (error) {
+        console.warn(error);
+    }
+}
+record.addCustomEvent = (tag, payload) => {
+    if (!recording) {
+        throw new Error('please add custom event after start recording');
+    }
+    wrappedEmit(wrapEvent({
+        type: EventType$1.Custom,
+        data: {
+            tag,
+            payload,
+        },
+    }));
+};
+record.freezePage = () => {
+    mutationBuffers.forEach((buf) => buf.freeze());
+};
+record.takeFullSnapshot = (isCheckout) => {
+    if (!recording) {
+        throw new Error('please take full snapshot after start recording');
+    }
+    takeFullSnapshot(isCheckout);
+};
 record.mirror = mirror;
 
 var EventType = /* @__PURE__ */ ((EventType2) => {
@@ -69305,8 +69302,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/** A function that accepts a potential "extra argument" value to be injected later,
- * and returns an instance of the thunk middleware that uses that value
+/** A function that accepts a potential "extra argument" value to be injected later,
+ * and returns an instance of the thunk middleware that uses that value
  */
 function createThunkMiddleware(extraArgument) {
   // Standard Redux middleware definition pattern:

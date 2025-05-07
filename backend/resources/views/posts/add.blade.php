@@ -24,6 +24,14 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="featured_image" class="form-label">Featured Image</label>
+                        <input type="file" class="form-control" id="featured_image" name="featured_image" accept="image/*">
+                    </div>
+                    <div id="preview-container" style="margin-top: 10px;">
+                        <img id="preview-image" src="" alt="Preview Image" style="max-width: 200px; display: none;">
+                    </div>
+
+                    <div class="mb-3">
                         <label for="content" class="form-label">Post Content</label>
                         <textarea class="form-control" id="content" name="content" rows="10"></textarea>
                     </div>
@@ -41,13 +49,6 @@
                             <option value="id">Indonesian</option>
                             <option value="en">English</option>
                         </select>
-                    </div>
-
-                    <!-- Input Gambar Sampul -->
-                    <div class="mb-3">
-                        <label for="featured_image" class="form-label">Featured Image</label>
-                        <input type="file" class="form-control" id="featured_image" name="featured_image"
-                            accept="image/*">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Save Post</button>
@@ -68,11 +69,31 @@
             toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code'
         });
 
+        $('#featured_image').on('change', function() {
+            var file = this.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#preview-image').attr('src', e.target.result).show();
+                };
+                reader.readAsDataURL(file);
+            } else {
+                $('#preview-image').hide();
+            }
+        });
+
         $('#add-post-form').submit(function(e) {
             e.preventDefault();
 
             var formData = new FormData(this);
             formData.append('content', tinymce.get('content').getContent());
+
+            var file = formData.get('featured_image');
+            if (file.size > 2000000) {
+                Swal.fire('Error', 'Ukuran file terlalu besar. Maksimum 2MB.', 'error');
+                return;
+            }
+
 
             $.ajax({
                 url: '/api/post-add',

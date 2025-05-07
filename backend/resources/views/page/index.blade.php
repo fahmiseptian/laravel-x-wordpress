@@ -35,15 +35,15 @@
                                     <td>{{ $page['lang'] == 'en' ? 'English' : 'Indonesia' }}</td>
                                     <td>
                                         @if ($page['status'] === 'publish')
-                                            <span title="Published" style="color: green;"
+                                            <a href="#" title="Published" style="color: green;"
                                                 onclick="updatePageStatus('{{ $page['id'] }}', 'draft')">
                                                 <i class="bi bi-check-circle-fill"></i>
-                                            </span>
+                                            </a>
                                         @else
-                                            <span title="Draft" style="color: gray;"
+                                            <a href="#" title="Draft" style="color: gray;"
                                                 onclick="updatePageStatus('{{ $page['id'] }}', 'publish')">
                                                 <i class="bi bi-dash-circle-fill"></i>
-                                            </span>
+                                            </a>
                                         @endif
                                     </td>
                                     <td>
@@ -87,10 +87,11 @@
                 },
                 success: function(response) {
                     if (response.status === 'success') {
-                        alert('Status halaman berhasil diperbarui.');
-                        location.reload();
+                        Swal.fire('Success', 'Status halaman berhasil diperbarui.', 'success').then(() => {
+                            location.reload();
+                        });
                     } else {
-                        alert('Gagal memperbarui status halaman.');
+                        Swal.fire('Error', 'Gagal memperbarui status halaman.', 'error');
                     }
                 },
                 error: function(xhr, status, error) {

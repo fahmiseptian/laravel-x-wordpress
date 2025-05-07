@@ -30,6 +30,8 @@ Route::post('/post-update-status', [PostsController::class, 'updatePostStatus'])
 Route::post('/post-add', [PostsController::class, 'addPost']);
 Route::post('/post-update', [PostsController::class, 'updatePost']);
 Route::delete('/post-delete/{id}', [PostsController::class, 'deletePost']);
+Route::post('/posts/update-cover', [PostsController::class, 'updateCover']);
+
 
 
 Route::post('/page-update', [PageController::class, 'UpdatePage']);

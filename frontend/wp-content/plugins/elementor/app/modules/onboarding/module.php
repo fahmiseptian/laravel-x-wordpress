@@ -76,20 +76,13 @@ class Module extends BaseModule {
 			'isLibraryConnected' => $library->is_connected(),
 			// Used to check if the Hello Elementor theme is installed but not activated.
 			'helloInstalled' => empty( $hello_theme_errors['theme_not_found'] ),
-			'helloActivated' => 'hello-elementor' === get_option( 'template' ) || 'hello-biz' === get_option( 'template' ),
+			'helloActivated' => 'hello-elementor' === get_option( 'template' ),
 			// The "Use Hello theme on my site" checkbox should be checked by default only if this condition is met.
 			'helloOptOut' => count( $pages_and_posts->posts ) < 5,
 			'siteName' => esc_html( $site_name ),
 			'isUnfilteredFilesEnabled' => Uploads_Manager::are_unfiltered_uploads_enabled(),
 			'urls' => [
 				'kitLibrary' => Plugin::$instance->app->get_base_url() . '#/kit-library?order[direction]=desc&order[by]=featuredIndex',
-				'sitePlanner' => add_query_arg( [
-					'type' => 'editor',
-					'siteUrl' => esc_url( home_url() ),
-					'siteName' => esc_html( $site_name ),
-					'siteDescription' => esc_html( get_bloginfo( 'description' ) ),
-					'siteLanguage' => get_locale(),
-				], 'https://planner.elementor.com/onboarding.html' ),
 				'createNewPage' => Plugin::$instance->documents->get_create_new_post_url(),
 				'connect' => $library->get_admin_url( 'authorize', [
 					'utm_source' => 'onboarding-wizard',
@@ -325,7 +318,7 @@ class Module extends BaseModule {
 			return $this->get_permission_error_response();
 		}
 
-		switch_theme( 'hello-biz' );
+		switch_theme( 'hello-elementor' );
 
 		return [
 			'status' => 'success',
